@@ -22,12 +22,13 @@ export default MainScreenButton;
 
 const styles = StyleSheet.create({
   button: {
-    height: 64,
+    flex: 1,
     backgroundColor: '#129C96',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginTop: 4,
     padding: 16,
+    paddingLeft: 128,
   },
   buttonText: {
     color: '#fff',
