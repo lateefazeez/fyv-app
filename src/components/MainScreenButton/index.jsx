@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#129C96',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginTop: 4,
-    padding: 16,
+    marginTop: 8,
     paddingLeft: 128,
+    paddingRight: 16,
   },
   buttonText: {
     color: '#fff',

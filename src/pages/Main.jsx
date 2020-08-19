@@ -15,7 +15,7 @@ const Main = () => (
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 32,
+        padding: 64,
       }}
     >
       <Image
@@ -29,7 +29,8 @@ const Main = () => (
     <View
       style={{
         flex: 2,
-        padding: 4,
+        paddingHorizontal: 8,
+        paddingBottom: 8,
         alignItems: 'stretch',
         justifyContent: 'flex-end',
       }}

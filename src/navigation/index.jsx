@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Feather';
+
+import MenuDrawerContent from '../pages/MenuDrawerContent';
 
 import Main from '../pages/Main';
 import WorkplaceSafety from '../pages/WorkplaceSafety';
@@ -11,7 +12,6 @@ import FindingYourVoice from '../pages/FindingYourVoice';
 import Disclaimers from '../pages/Disclaimers';
 
 const App = createStackNavigator();
-const Root = createStackNavigator();
 
 const HomeNavigation = ({ navigation }) => (
   <App.Navigator
@@ -45,16 +45,19 @@ const HomeNavigation = ({ navigation }) => (
 const Drawer = createDrawerNavigator();
 
 const MenuNavigation = () => (
-  <Drawer.Navigator
-    drawerStyle={{ backgroundColor: '#fff' }}
-    overlayColor="rgba(51, 75, 73, 0.8)"
-  >
+  <Drawer.Navigator drawerContent={props => <MenuDrawerContent {...props} />}>
     <Drawer.Screen name="Home" component={HomeNavigation} />
-    <Drawer.Screen name="Workplace Safety" component={WorkplaceSafety} />
-    <Drawer.Screen name="Resources" component={Resources} />
-    <Drawer.Screen name="Finding Your Voice" component={FindingYourVoice} />
-    <Drawer.Screen name="Disclaimers" component={Disclaimers} />
   </Drawer.Navigator>
+  // <Drawer.Navigator
+  //   drawerStyle={{ backgroundColor: '#fff' }}
+  //   overlayColor="rgba(51, 75, 73, 0.8)"
+  // >
+  //   <Drawer.Screen name="Home" component={HomeNavigation} />
+  //   <Drawer.Screen name="Workplace Safety" component={WorkplaceSafety} />
+  //   <Drawer.Screen name="Resources" component={Resources} />
+  //   <Drawer.Screen name="Finding Your Voice" component={FindingYourVoice} />
+  //   <Drawer.Screen name="Disclaimers" component={Disclaimers} />
+  // </Drawer.Navigator>
 );
 
 export default MenuNavigation;
