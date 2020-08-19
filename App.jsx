@@ -1,14 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Routes from './src/routes';
+import MenuNavigation from './src/navigation';
 
 function App() {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="#000" />
-      <Routes />
+      <MenuNavigation />
     </NavigationContainer>
   );
 }

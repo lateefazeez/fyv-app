@@ -27,8 +27,10 @@
             "react-hooks/exhaustive-deps": "warn",
             "import/prefer-default-export": "off",
             "import/extensions": [
-              "error",
+              "error"
             ],
+            "no-use-before-define": "off",
+            "react/prop-types":"off",
             "prettier/prettier": "error"
     }
 }
