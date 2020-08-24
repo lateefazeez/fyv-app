@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Image ,StyleSheet} from 'react-native';
+import { View, Text, Image ,StyleSheet, Button} from 'react-native';
 
-function WorkplaceSafety (props) {
-  return(
+// function WorkplaceSafety (props) {
+  // return(
+    const WorkplaceSafety = () => (
   <View style={styles.container}>
     <Image 
     style={styles.logo} 
@@ -10,14 +11,14 @@ function WorkplaceSafety (props) {
   
   <View style={styles.headingContainer}>
 
-       <Text  style={{fontSize:30, marginTop:20, fontWeight:"bold"}}>Workplace</Text>
-        <Text style={{fontSize:30,marginTop:5,fontWeight:"bold",marginLeft:20}}>Safety</Text>
+       <Text  style={{fontSize:25, marginTop:20, fontWeight:"bold"}}>Workplace</Text>
+        <Text style={{fontSize:25,marginTop:5,fontWeight:"bold",marginLeft:20}}>Safety</Text>
   </View>
   <View  style={styles.maintextcontainer}>
 
-    <Image  style={{ width:100,height:100,marginLeft:10}} source={require('./icons/group_325.png')} />
+    <Image  style={{ resizeMode:"contain",width:150,height:150,marginLeft:10,top:10}} source={require('./icons/group_325.png')} />
 
-    <View   style={{marginTop:20, marginLeft:30,marginBottom:20}} >
+    <View   style={{marginTop:18, marginStart:200,marginTop:-120}} >
 
     <Text  style={{fontSize:20, }}>A safe workplace takes your </Text>
     <Text   style={{fontSize:20,  }}> physical, mental, and emotional </Text>
@@ -26,30 +27,30 @@ function WorkplaceSafety (props) {
     <Text  style={{fontSize:20, }}>by 3 laws (pieces of legislation):</Text>
     </View>
   </View>
+  <View  style={{ marginTop:10 }}>
+    <Button style={{height:100, width:100,}}    title="Occupational Health And Safety"/>
+    <Button style={{height:100, width:100,marginTop:10 }}  title="Human Rights"/>
+   <Button  style={{height:100, width:100,marginTop:10 }} title="Employment Standards"/>
+
+  </View>
   </View>
     
   );
-}
-
+// }
+export default WorkplaceSafety;
 
 const styles = StyleSheet.create({
   container:{
     flex: 1,
     justifyContent: 'flex-start',
     alignItems:"center"
-    
-     
-     
-     
-  },
+     },
   logo:{
     
-    width:200,
-    height:200,
+    width:150,
+    height:150,
     top:10
-    
-   
-  },
+     },
   headingContainer:{
     alignContent:"center"
   },
@@ -57,11 +58,11 @@ const styles = StyleSheet.create({
   maintextcontainer:{
     backgroundColor:"#D3D3D3",
    marginTop:20,
+   width:500,
+   height:200
+
+    },
    
-    
-  },
+  })
 
-  
-})
 
-export default WorkplaceSafety;
