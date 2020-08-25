@@ -1,29 +1,15 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, StyleSheet, Platform } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
 import logo from '../../assets/logo_green.png';
 
 const Main = () => (
-  <View
-    style={{
-      flex: 1,
-    }}
-  >
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 64,
-      }}
-    >
+  <View style={styles.pageContainer}>
+    <View style={styles.logoContainer}>
       <Image
-        source={logo}
-        style={{ flex: 1 }}
-        width="null"
-        height="null"
-        resizeMode="contain"
+        style={styles.mainPageLogo}
+        source={require('../../assets/logo_green.png')}
       />
     </View>
     <View
@@ -44,3 +30,19 @@ const Main = () => (
 );
 
 export default Main;
+
+const styles = StyleSheet.create({
+  pageContainer: {
+    flex: 1,
+  },
+  logoContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 64,
+  },
+  mainPageLogo: {
+    flex: 1,
+    resizeMode: 'contain',
+  },
+});

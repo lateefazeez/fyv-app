@@ -18,11 +18,8 @@ const MenuDrawerContent = () => (
       }}
     >
       <Image
-        source={menuLogo}
-        style={{ flex: 2, margin: 36 }}
-        width="null"
-        height="null"
-        resizeMode="contain"
+        source={require('../../assets/logo_white.png')}
+        style={styles.image}
       />
       <Text
         style={{
@@ -87,6 +84,11 @@ const MenuDrawerContent = () => (
 export default MenuDrawerContent;
 
 const styles = StyleSheet.create({
+  image: {
+    flex: 2,
+    margin: 36,
+    resizeMode: 'contain',
+  },
   menuContainer: {
     flex: 1,
     alignItems: 'stretch',
