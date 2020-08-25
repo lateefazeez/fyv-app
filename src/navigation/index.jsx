@@ -11,13 +11,15 @@ import Resources from '../pages/Resources';
 import FindingYourVoice from '../pages/FindingYourVoice';
 import Disclaimers from '../pages/Disclaimers';
 
+import colors from '../config/colors';
+
 const App = createStackNavigator();
 
 const HomeNavigation = ({ navigation }) => (
   <App.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: '#129C96' },
-      headerTintColor: '#fff',
+      headerStyle: { backgroundColor: colors.primary },
+      headerTintColor: colors.white,
     }}
   >
     <App.Screen
