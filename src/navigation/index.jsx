@@ -45,7 +45,7 @@ const HomeNavigation = ({ navigation }) => (
 const Drawer = createDrawerNavigator();
 
 const MenuNavigation = () => (
-  <Drawer.Navigator drawerContent={props => <MenuDrawerContent {...props} />}>
+  <Drawer.Navigator drawerContent={() => <MenuDrawerContent />}>
     <Drawer.Screen name="Home" component={HomeNavigation} />
   </Drawer.Navigator>
   // <Drawer.Navigator

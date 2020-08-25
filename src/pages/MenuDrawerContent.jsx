@@ -46,7 +46,11 @@ const MenuDrawerContent = () => (
       </View>
       <View style={styles.menuSubItem}>
         <Fa5Icon style={styles.menuIcon} name="hand-holding-heart" size={20} />
-        <Text style={styles.menuText}>Occupational Health and Safety</Text>
+        <Text style={styles.menuText}>
+          Occupational Health
+          {'\n'}
+          and Safety
+        </Text>
       </View>
       <View style={styles.menuSubItem}>
         <MaterialIcon style={styles.menuIcon} name="scale-balance" size={24} />
@@ -103,12 +107,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingVertical: 8,
     marginVertical: 4,
-    marginLeft: 16,
+    marginLeft: 32,
   },
   menuIcon: { color: '#fff' },
   menuText: {
     fontSize: 14,
-    marginLeft: 8,
+    marginLeft: 12,
     color: '#fff',
   },
 });
