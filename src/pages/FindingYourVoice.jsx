@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     height:200
   },
   maintext:{
-    fontSize:18,
+    fontSize:16,
     marginStart:10,
      
   }
