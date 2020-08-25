@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Image, StyleSheet, Platform } from 'react-native';
+import { View, Image, StyleSheet, Platform, SafeAreaView } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
 import logo from '../../assets/logo_green.png';
 
 const Main = () => (
-  <View style={styles.pageContainer}>
+  <SafeAreaView style={styles.pageContainer}>
     <View style={styles.logoContainer}>
       <Image
         style={styles.mainPageLogo}
@@ -26,7 +26,7 @@ const Main = () => (
       <MainScreenButton>Finding Your Voice</MainScreenButton>
       <MainScreenButton>Disclaimers</MainScreenButton>
     </View>
-  </View>
+  </SafeAreaView>
 );
 
 export default Main;

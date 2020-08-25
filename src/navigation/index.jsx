@@ -30,7 +30,7 @@ const HomeNavigation = ({ navigation }) => (
           <Icon
             name="menu"
             size={24}
-            color="#fff"
+            color={colors.white}
             onPress={() => navigation.toggleDrawer()}
             style={{ marginRight: 16 }}
           />
