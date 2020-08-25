@@ -8,7 +8,7 @@ import MenuNavigation from './src/navigation';
 function App() {
   return (
     <NavigationContainer>
-      <StatusBar barStyle="light-content" style={styles.statusBar} />
+      <StatusBar barStyle="light-content" backgroundColor={colors.statusBar} />
       <MenuNavigation />
     </NavigationContainer>
   );
