@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import colors from './src/config/colors';
@@ -15,9 +15,3 @@ function App() {
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  statusBar: {
-    backgroundColor: colors.statusBar,
-  },
-});
