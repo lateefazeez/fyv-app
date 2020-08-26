@@ -13,7 +13,7 @@ function SubSectionNavButton({ children, style }) {
   return (
     <View
       style={[styles.button, style]}
-      onPress={() => navigation.navigate(children)}
+      //   onPress={() => navigation.navigate(children)}
     >
       <ButtonText style={styles.ButtonText}>{children}</ButtonText>
     </View>

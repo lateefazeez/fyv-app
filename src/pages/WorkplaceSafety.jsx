@@ -59,15 +59,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 160,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     padding: 20,
   },
-  buttonContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
+
   navButton: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -78,7 +74,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 5,
     elevation: 30,
-    margin: 5,
   },
   pageBottom: {
     flex: 1.7,
