@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import colors from '../config/colors';
 import SectionTitleText from '../components/SectionTitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
+import SubSectionNavButton from '../components/SubSectionNavButton';
 
 const Stack = createStackNavigator();
 
@@ -32,9 +33,21 @@ const WorkplaceSafety = () => (
             {'\n'}
             Your Safety at work is protected by 3 pieces of legislatons:
           </SectionDetailsText>
+          <Image
+            style={styles.rock}
+            source={require('../../assets/group_392.png')}
+          />
         </View>
       </View>
-      <View style={styles.BottomNavigation}></View>
+      <View style={styles.BottomNavigation}>
+        <SubSectionNavButton style={styles.navButton}>OHS</SubSectionNavButton>
+        <SubSectionNavButton style={styles.navButton}>
+          Human Rights
+        </SubSectionNavButton>
+        <SubSectionNavButton style={styles.navButton}>
+          Employment Standards
+        </SubSectionNavButton>
+      </View>
     </View>
   </View>
 );
@@ -42,7 +55,31 @@ const WorkplaceSafety = () => (
 export default WorkplaceSafety;
 
 const styles = StyleSheet.create({
-  BottomNavigation: {},
+  BottomNavigation: {
+    width: '100%',
+    height: 160,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  navButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 105,
+    height: 60,
+    shadowColor: colors.primary,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 30,
+    margin: 5,
+  },
   pageBottom: {
     flex: 1.7,
     width: '100%',
@@ -54,6 +91,12 @@ const styles = StyleSheet.create({
   },
   pageTop: {
     flex: 1.3,
+  },
+  rock: {
+    width: 60,
+    height: 20,
+    alignSelf: 'flex-end',
+    marginTop: Platform.OS === 'android' ? 10 : 20,
   },
   sectionDetails: {
     width: '100%',
@@ -67,7 +110,7 @@ const styles = StyleSheet.create({
   sectionDetailsText: {
     marginTop: 30,
     alignSelf: 'flex-start',
-    lineHeight: 25,
+    lineHeight: Platform.OS === 'android' ? 25 : 22,
   },
   SectionIcon: {
     width: 150,
@@ -85,6 +128,6 @@ const styles = StyleSheet.create({
   textContainer: {
     width: Platform.OS === 'android' ? 265 : 200,
     alignSelf: 'flex-start',
-    paddingRight: Platform.OS === 'android' ? 15 : 0,
+    paddingRight: Platform.OS === 'android' ? 20 : 0,
   },
 });

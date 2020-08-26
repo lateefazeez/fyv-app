@@ -10,7 +10,7 @@ function SectionDetailsText({ children, style }) {
 const styles = StyleSheet.create({
   text: {
     color: colors.black,
-    fontSize: Platform.OS === 'android' ? 17 : 13.5,
+    fontSize: Platform.OS === 'android' ? 16 : 13.5,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
   },
 });
