@@ -18,7 +18,7 @@ const App = createStackNavigator();
 const HomeNavigation = ({ navigation }) => (
   <App.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: colors.primary },
+      headerStyle: { backgroundColor: colors.title },
       headerTintColor: colors.white,
     }}
   >
@@ -37,7 +37,24 @@ const HomeNavigation = ({ navigation }) => (
         ),
       }}
     />
-    <App.Screen name="Workplace Safety" component={WorkplaceSafety} />
+    <App.Screen
+      name="Workplace Safety"
+      component={WorkplaceSafety}
+      options={
+        ({ title: 'School of Global Access' },
+        {
+          headerRight: () => (
+            <Icon
+              name="menu"
+              size={24}
+              color={colors.white}
+              onPress={() => navigation.toggleDrawer()}
+              style={{ marginRight: 16 }}
+            />
+          ),
+        })
+      }
+    />
     <App.Screen name="Resources" component={Resources} />
     <App.Screen name="Finding Your Voice" component={FindingYourVoice} />
     <App.Screen name="Disclaimers" component={Disclaimers} />

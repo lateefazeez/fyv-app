@@ -1,10 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const WorkplaceSafety = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Workplace Safety Screen</Text>
-  </View>
-);
+import colors from '../config/colors';
+
+const Stack = createStackNavigator();
+
+const WorkplaceSafety = () => <View style={styles.pageContainer}></View>;
 
 export default WorkplaceSafety;
+
+const styles = StyleSheet.create({
+  pageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
