@@ -15,24 +15,28 @@ const menuItems = [
     menuIconLib: 'Fa5Icon',
     menuIconName: 'hard-hat',
     menuIconSize: 20,
+    menuCategory: 'item',
   },
   {
     menuLabel: 'Occupational Health and Safety',
     menuIconLib: 'Fa5Icon',
     menuIconName: 'hand-holding-heart',
     menuIconSize: 20,
+    menuCategory: 'subItem',
   },
   {
     menuLabel: 'Human Rights',
     menuIconLib: 'MaterialIcon',
     menuIconName: 'scale-balance',
     menuIconSize: 24,
+    menuCategory: 'subItem',
   },
   {
     menuLabel: 'Employment Standards',
     menuIconLib: 'MaterialIcon',
     menuIconName: 'clock-check-outline',
     menuIconSize: 24,
+    menuCategory: 'subItem',
   },
   {
     menuLabel: 'Finding Your Voice',
