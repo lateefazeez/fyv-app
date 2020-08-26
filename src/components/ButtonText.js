@@ -4,7 +4,11 @@ import { Text, Platform, StyleSheet } from 'react-native';
 import colors from '../config/colors';
 
 function ButtonText({ children, style }) {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+  return (
+    <Text accessible style={[styles.text, style]}>
+      {children}
+    </Text>
+  );
 }
 
 const styles = StyleSheet.create({

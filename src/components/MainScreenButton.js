@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import colors from '../../config/colors';
-import ButtonText from '../ButtonText';
+import colors from '../config/colors';
+import ButtonText from './ButtonText';
 
 const MainScreenButton = ({ children }) => {
   const navigation = useNavigation();
@@ -14,9 +14,7 @@ const MainScreenButton = ({ children }) => {
       style={styles.button}
       onPress={() => navigation.navigate(children)}
     >
-      <View accessible>
-        <ButtonText>{children}</ButtonText>
-      </View>
+      <ButtonText>{children}</ButtonText>
     </RectButton>
   );
 };
