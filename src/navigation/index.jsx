@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -40,20 +41,18 @@ const HomeNavigation = ({ navigation }) => (
     <App.Screen
       name="Workplace Safety"
       component={WorkplaceSafety}
-      options={
-        ({ title: 'School of Global Access' },
-        {
-          headerRight: () => (
-            <Icon
-              name="menu"
-              size={24}
-              color={colors.white}
-              onPress={() => navigation.toggleDrawer()}
-              style={{ marginRight: 16 }}
-            />
-          ),
-        })
-      }
+      options={{
+        title: 'School of Global Access',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
     />
     <App.Screen name="Resources" component={Resources} />
     <App.Screen name="Finding Your Voice" component={FindingYourVoice} />

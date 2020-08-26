@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -10,10 +11,7 @@ const MainScreenButton = ({ children, imageLeft, imageRight, style }) => {
   const navigation = useNavigation();
 
   return (
-    <RectButton
-      style={styles.button}
-      onPress={() => navigation.navigate(children)}
-    >
+    <RectButton style={styles.button} onPress={() => navigation.push(children)}>
       <View style={styles.buttonContent} accessible>
         <Image source={imageLeft} style={styles.imageLeft} />
         <ButtonText>{children}</ButtonText>

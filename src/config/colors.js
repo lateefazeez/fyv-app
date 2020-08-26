@@ -6,4 +6,5 @@ export default {
   white: '#fff',
   appBackground: '#f8f4f4',
   fadeDetails: '#6e6969',
+  pageDetailsBackground: '#aeaeae36',
 };
