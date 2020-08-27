@@ -104,6 +104,7 @@ const RootNavigation = ({ navigation }) => (
       name="Workplace Safety Tabs"
       component={WorkplaceSafetyTabs}
       options={{
+        headerTitle: 'Workplace Safety',
         headerBackTitle: 'Back',
         headerRight: () => (
           <Icon
@@ -116,57 +117,6 @@ const RootNavigation = ({ navigation }) => (
         ),
       }}
     />
-    {/* <App.Screen
-      name="OHS"
-      component={Ohs}
-      options={{
-        title: 'Occupational Health',
-        headerBackTitle: 'Back',
-        headerRight: () => (
-          <Icon
-            name="menu"
-            size={24}
-            color={colors.white}
-            onPress={() => navigation.toggleDrawer()}
-            style={{ marginRight: 16 }}
-          />
-        ),
-      }}
-    />
-
-    <App.Screen
-      name="Human Rights"
-      component={HumanRights}
-      options={{
-        headerBackTitle: 'Back',
-        headerRight: () => (
-          <Icon
-            name="menu"
-            size={24}
-            color={colors.white}
-            onPress={() => navigation.toggleDrawer()}
-            style={{ marginRight: 16 }}
-          />
-        ),
-      }}
-    />
-
-    <App.Screen
-      name="Employment Standards"
-      component={EmploymentStandards}
-      options={{
-        headerBackTitle: 'Back',
-        headerRight: () => (
-          <Icon
-            name="menu"
-            size={24}
-            color={colors.white}
-            onPress={() => navigation.toggleDrawer()}
-            style={{ marginRight: 16 }}
-          />
-        ),
-      }}
-    /> */}
   </App.Navigator>
 );
 

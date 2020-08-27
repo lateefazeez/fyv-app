@@ -1,14 +1,24 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Text } from 'react-native';
+import { View, StyleSheet, Platform, Text, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import SelectedPageButton from '../../components/SelectedPageButton';
 import SubSectionNavButton from '../../components/SubSectionNavButton';
 
 import colors from '../../config/colors';
 
 const HumanRights = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Human Rights Screen</Text>
+      <Button
+        onPress={() => {
+          navigation.jumpTo('OHS');
+        }}
+        title="Test OHS"
+      />
     </View>
 
     // <View style={styles.pageContainer}>

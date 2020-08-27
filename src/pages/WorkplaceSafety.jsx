@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Platform, Button, Text } from 'react-native';
+import { View, StyleSheet, Image, Platform, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import colors from '../config/colors';
@@ -13,13 +13,6 @@ const WorkplaceSafety = () => {
   return (
     <View style={styles.pageContainer}>
       <View style={styles.pageTop}>
-        <Button
-          onPress={() => {
-            console.log('click');
-            navigation.navigate('Workplace Safety Tabs');
-          }}
-          title="Test Tabs"
-        />
         <Image
           style={styles.SectionIcon}
           source={require('../../assets/workplace_safety_icon.png')}
@@ -38,8 +31,7 @@ const WorkplaceSafety = () => {
             <SectionDetailsText style={styles.sectionDetailsText}>
               A safe workplace takes your physical, mental, and emotional safety
               into consideration.
-{' '}
-{'\n'}
+              {'\n'}
               {'\n'}
               Your Safety at work is protected by 3 pieces of legislatons:
             </SectionDetailsText>
@@ -60,6 +52,14 @@ const WorkplaceSafety = () => {
             Employment Standards
           </SubSectionNavButton>
         </View>
+
+        <Button
+          style={styles.navButton}
+          onPress={() => {
+            navigation.navigate('Workplace Safety Tabs');
+          }}
+          title="Test OHS"
+        />
       </View>
     </View>
   );
@@ -86,10 +86,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
     shadowRadius: 5,
-    elevation: 30,
+    elevation: 3,
   },
   pageBottom: {
-    flex: 1.7,
+    flex: 2,
     width: '100%',
   },
   pageContainer: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   pageTop: {
-    flex: 1.3,
+    flex: 1,
   },
   rock: {
     width: 60,
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   sectionDetailsText: {
-    marginTop: 30,
+    marginTop: 24,
     alignSelf: 'flex-start',
     lineHeight: Platform.OS === 'android' ? 25 : 22,
   },
   SectionIcon: {
     width: 150,
     height: 150,
-    margin: 25,
+    margin: 24,
   },
   sectionImage: {
     width: 140,
