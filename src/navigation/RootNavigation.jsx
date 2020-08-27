@@ -7,9 +7,7 @@ import WorkplaceSafety from '../pages/WorkplaceSafety';
 import Resources from '../pages/Resources';
 import FindingYourVoice from '../pages/FindingYourVoice';
 import Disclaimers from '../pages/Disclaimers';
-import Ohs from '../pages/SubSections/Ohs';
-import HumanRights from '../pages/SubSections/HumanRights';
-import EmploymentStandards from '../pages/SubSections/EmploymentStandards';
+import WorkplaceSafetyTabs from '../pages/WorkplaceSafetyTabs';
 
 import colors from '../config/colors';
 
@@ -103,6 +101,22 @@ const RootNavigation = ({ navigation }) => (
       }}
     />
     <App.Screen
+      name="Workplace Safety Tabs"
+      component={WorkplaceSafetyTabs}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    {/* <App.Screen
       name="OHS"
       component={Ohs}
       options={{
@@ -152,7 +166,7 @@ const RootNavigation = ({ navigation }) => (
           />
         ),
       }}
-    />
+    /> */}
   </App.Navigator>
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform, Text } from 'react-native';
 import SelectedPageButton from '../../components/SelectedPageButton';
 import SubSectionNavButton from '../../components/SubSectionNavButton';
 
@@ -7,17 +7,21 @@ import colors from '../../config/colors';
 
 const HumanRights = () => {
   return (
-    <View style={styles.pageContainer}>
-      <View style={styles.BottomNavigation}>
-        <SubSectionNavButton style={styles.navButton}>OHS</SubSectionNavButton>
-        <SelectedPageButton style={styles.navButton}>
-          Human Rights
-        </SelectedPageButton>
-        <SubSectionNavButton style={styles.navButton}>
-          Employment Standards
-        </SubSectionNavButton>
-      </View>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Human Rights Screen</Text>
     </View>
+
+    // <View style={styles.pageContainer}>
+    //   <View style={styles.BottomNavigation}>
+    //     <SubSectionNavButton style={styles.navButton}>OHS</SubSectionNavButton>
+    //     <SelectedPageButton style={styles.navButton}>
+    //       Human Rights
+    //     </SelectedPageButton>
+    //     <SubSectionNavButton style={styles.navButton}>
+    //       Employment Standards
+    //     </SubSectionNavButton>
+    //   </View>
+    // </View>
   );
 };
 export default HumanRights;

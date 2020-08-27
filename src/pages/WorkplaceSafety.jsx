@@ -1,53 +1,69 @@
 import React from 'react';
-import { View, StyleSheet, Image, Platform } from 'react-native';
+import { View, StyleSheet, Image, Platform, Button, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import colors from '../config/colors';
 import SectionTitleText from '../components/SectionTitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
 import SubSectionNavButton from '../components/SubSectionNavButton';
 
-const WorkplaceSafety = () => (
-  <View style={styles.pageContainer}>
-    <View style={styles.pageTop}>
-      <Image
-        style={styles.SectionIcon}
-        source={require('../../assets/workplace_safety_icon.png')}
-      />
-      <SectionTitleText style={styles.sectionTitleText}>
-        Workplace Safety
-      </SectionTitleText>
-    </View>
-    <View style={styles.pageBottom}>
-      <View style={styles.sectionDetails}>
-        <Image
-          style={styles.sectionImage}
-          source={require('../../assets/workplace_safety.png')}
+const WorkplaceSafety = () => {
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.pageContainer}>
+      <View style={styles.pageTop}>
+        <Button
+          onPress={() => {
+            console.log('click');
+            navigation.navigate('Workplace Safety Tabs');
+          }}
+          title="Test Tabs"
         />
-        <View style={styles.textContainer}>
-          <SectionDetailsText style={styles.sectionDetailsText}>
-            A safe workplace takes your physical, mental, and emotional safety
-            into consideration. {'\n'}
-            {'\n'}
-            Your Safety at work is protected by 3 pieces of legislatons:
-          </SectionDetailsText>
+        <Image
+          style={styles.SectionIcon}
+          source={require('../../assets/workplace_safety_icon.png')}
+        />
+        <SectionTitleText style={styles.sectionTitleText}>
+          Workplace Safety
+        </SectionTitleText>
+      </View>
+      <View style={styles.pageBottom}>
+        <View style={styles.sectionDetails}>
           <Image
-            style={styles.rock}
-            source={require('../../assets/group_392.png')}
+            style={styles.sectionImage}
+            source={require('../../assets/workplace_safety.png')}
           />
+          <View style={styles.textContainer}>
+            <SectionDetailsText style={styles.sectionDetailsText}>
+              A safe workplace takes your physical, mental, and emotional safety
+              into consideration.
+{' '}
+{'\n'}
+              {'\n'}
+              Your Safety at work is protected by 3 pieces of legislatons:
+            </SectionDetailsText>
+            <Image
+              style={styles.rock}
+              source={require('../../assets/group_392.png')}
+            />
+          </View>
+        </View>
+        <View style={styles.BottomNavigation}>
+          <SubSectionNavButton style={styles.navButton}>
+            OHS
+          </SubSectionNavButton>
+          <SubSectionNavButton style={styles.navButton}>
+            Human Rights
+          </SubSectionNavButton>
+          <SubSectionNavButton style={styles.navButton}>
+            Employment Standards
+          </SubSectionNavButton>
         </View>
       </View>
-      <View style={styles.BottomNavigation}>
-        <SubSectionNavButton style={styles.navButton}>OHS</SubSectionNavButton>
-        <SubSectionNavButton style={styles.navButton}>
-          Human Rights
-        </SubSectionNavButton>
-        <SubSectionNavButton style={styles.navButton}>
-          Employment Standards
-        </SubSectionNavButton>
-      </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default WorkplaceSafety;
 
