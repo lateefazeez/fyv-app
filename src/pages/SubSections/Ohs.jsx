@@ -2,8 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Platform, Text } from 'react-native';
 
 import colors from '../../config/colors';
-import SubSectionNavButton from '../../components/SubSectionNavButton';
-import SelectedPageButton from '../../components/SelectedPageButton';
 
 const Ohs = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
