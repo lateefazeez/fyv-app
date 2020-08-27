@@ -1,24 +1,52 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Text } from 'react-native';
+import { View, StyleSheet, Platform, Text, SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+import BasicRights from './BasicRights';
+import TypesOfHazards from './TypedOfHzards';
 
 import colors from '../../config/colors';
 
-const Ohs = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>OHS Screen</Text>
-  </View>
+const Tab = createMaterialTopTabNavigator();
 
-  // <View style={styles.pageContainer}>
-  //   <View style={styles.BottomNavigation}>
-  //     <SelectedPageButton style={styles.navButton}>OHS</SelectedPageButton>
-  //     <SubSectionNavButton style={styles.navButton}>
-  //       Human Rights
-  //     </SubSectionNavButton>
-  //     <SubSectionNavButton style={styles.navButton}>
-  //       Employment Standards
-  //     </SubSectionNavButton>
-  //   </View>
-  // </View>
+const Ohs = () => (
+  <SafeAreaView style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: colors.white,
+          height: 400,
+        }}
+      >
+        <Text>OHS Screen</Text>
+      </View>
+      <View style={{ height: 400 }}>
+        <Tab.Navigator
+          tabBarOptions={{
+            labelStyle: {
+              fontSize: 13,
+              fontWeight: 'bold',
+            },
+            activeTintColor: colors.primary,
+            inactiveTintColor: colors.darkGrey,
+            indicatorStyle: {
+              backgroundColor: colors.primary,
+            },
+            style: {
+              backgroundColor: colors.lightGrey,
+            },
+          }}
+        >
+          <Tab.Screen name="Basic Rights" component={BasicRights} />
+          <Tab.Screen name="Types of Hazards" component={TypesOfHazards} />
+        </Tab.Navigator>
+      </View>
+    </ScrollView>
+  </SafeAreaView>
 );
 
 export default Ohs;
