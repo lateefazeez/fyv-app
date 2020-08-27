@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
+import logo from '../../assets/logo_green.png';
 
 const Main = () => (
   <SafeAreaView style={styles.pageContainer}>

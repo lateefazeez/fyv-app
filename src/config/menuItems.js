@@ -1,0 +1,58 @@
+export default [
+  {
+    menuLabel: 'Home',
+    menuIconLib: 'MaterialIcon',
+    menuIconName: 'home',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
+  {
+    menuLabel: 'Workplace Safety',
+    menuIconLib: 'Fa5Icon',
+    menuIconName: 'hard-hat',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
+  {
+    menuLabel: 'Occupational Health and Safety',
+    menuIconLib: 'Fa5Icon',
+    menuIconName: 'hand-holding-heart',
+    menuIconSize: 20,
+    menuCategory: 'subSection',
+  },
+  {
+    menuLabel: 'Human Rights',
+    menuIconLib: 'MaterialIcon',
+    menuIconName: 'scale-balance',
+    menuIconSize: 24,
+    menuCategory: 'subSection',
+  },
+  {
+    menuLabel: 'Employment Standards',
+    menuIconLib: 'MaterialIcon',
+    menuIconName: 'clock-check-outline',
+    menuIconSize: 24,
+    menuCategory: 'subSection',
+  },
+  {
+    menuLabel: 'Finding Your Voice',
+    menuIconLib: 'MaterialIcon',
+    menuIconName: 'chat-processing',
+    menuIconSize: 24,
+    menuCategory: 'section',
+  },
+  {
+    menuLabel: 'Resources',
+    menuIconLib: 'FeatherIcon',
+    menuIconName: 'external-link',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
+  {
+    menuLabel: 'Disclaimers',
+    menuIconLib: 'Fa5Icon',
+    menuIconName: 'exclamation-circle',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
+];

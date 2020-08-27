@@ -12,7 +12,10 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigation = () => (
   <NavigationContainer>
     <StatusBar barStyle="light-content" backgroundColor={colors.statusBar} />
-    <Drawer.Navigator drawerContent={props => <MenuDrawerContent {...props} />}>
+    <Drawer.Navigator
+      drawerContent={props => <MenuDrawerContent {...props} />}
+      drawerStyle={{ width: '85%', maxWidth: 360 }}
+    >
       <Drawer.Screen name="Root" component={RootNavigation} />
     </Drawer.Navigator>
   </NavigationContainer>

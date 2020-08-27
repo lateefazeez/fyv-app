@@ -14,22 +14,23 @@ const App = createStackNavigator();
 
 const RootNavigation = ({ navigation }) => (
   <App.Navigator
+    initialRouteName="Home"
     screenOptions={{
       headerStyle: { backgroundColor: colors.primary },
       headerTintColor: colors.white,
     }}
   >
     <App.Screen
-      name="Worker's App"
+      name="Home"
       component={Main}
       options={{
-        headerLeft: () => (
+        headerRight: () => (
           <Icon
             name="menu"
             size={24}
             color={colors.white}
             onPress={() => navigation.toggleDrawer()}
-            style={{ marginLeft: 16 }}
+            style={{ marginRight: 16 }}
           />
         ),
       }}
@@ -37,22 +38,66 @@ const RootNavigation = ({ navigation }) => (
     <App.Screen
       name="Workplace Safety"
       component={WorkplaceSafety}
-      options={{ headerBackTitle: 'Back' }}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
     />
     <App.Screen
       name="Resources"
       component={Resources}
-      options={{ headerBackTitle: 'Back' }}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
     />
     <App.Screen
       name="Finding Your Voice"
       component={FindingYourVoice}
-      options={{ headerBackTitle: 'Back' }}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
     />
     <App.Screen
       name="Disclaimers"
       component={Disclaimers}
-      options={{ headerBackTitle: 'Back' }}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
     />
   </App.Navigator>
 );
