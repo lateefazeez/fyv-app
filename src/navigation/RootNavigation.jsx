@@ -7,6 +7,9 @@ import WorkplaceSafety from '../pages/WorkplaceSafety';
 import Resources from '../pages/Resources';
 import FindingYourVoice from '../pages/FindingYourVoice';
 import Disclaimers from '../pages/Disclaimers';
+import Ohs from '../pages/SubSections/Ohs';
+import HumanRights from '../pages/SubSections/HumanRights';
+import EmploymentStandards from '../pages/SubSections/EmploymentStandards';
 
 import colors from '../config/colors';
 
@@ -86,6 +89,57 @@ const RootNavigation = ({ navigation }) => (
     <App.Screen
       name="Disclaimers"
       component={Disclaimers}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="OHS"
+      component={Ohs}
+      options={{
+        title: 'Occupational Health',
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+
+    <App.Screen
+      name="Human Rights"
+      component={HumanRights}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+
+    <App.Screen
+      name="Employment Standards"
+      component={EmploymentStandards}
       options={{
         headerBackTitle: 'Back',
         headerRight: () => (

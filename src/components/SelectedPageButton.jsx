@@ -1,26 +1,28 @@
-import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import colors from '../config/colors';
-import ButtonText from '../components/ButtonText';
+import ButtonText from './ButtonText';
 
-function SubSectionNavButton({ children, style }) {
+function SelectedPageButton({ children, style, title }) {
   const navigation = useNavigation();
 
   return (
-    <View
+    <RectButton
+      title={title}
       style={[styles.button, style]}
-      //   onPress={() => navigation.navigate(children)}
+      onPress={() => navigation.navigate(children)}
     >
-      <ButtonText style={styles.ButtonText}>{children}</ButtonText>
-    </View>
+      <View accessible>
+        <ButtonText style={styles.ButtonText}>{children}</ButtonText>
+      </View>
+    </RectButton>
   );
 }
 
-export default SubSectionNavButton;
+export default SelectedPageButton;
 
 const styles = StyleSheet.create({
   button: {
@@ -29,10 +31,10 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.primary,
     borderRadius: 10,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
   },
   ButtonText: {
-    color: colors.primary,
+    color: colors.white,
     fontSize: 16,
     textAlign: 'center',
   },

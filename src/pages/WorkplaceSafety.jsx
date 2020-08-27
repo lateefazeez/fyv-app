@@ -1,13 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Image, Platform } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 import colors from '../config/colors';
 import SectionTitleText from '../components/SectionTitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
 import SubSectionNavButton from '../components/SubSectionNavButton';
-
-const Stack = createStackNavigator();
 
 const WorkplaceSafety = () => (
   <View style={styles.pageContainer}>
