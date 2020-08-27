@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
-import logo from '../../assets/logo_green.png';
 
 const Main = () => (
   <SafeAreaView style={styles.pageContainer}>
@@ -18,10 +17,46 @@ const Main = () => (
         justifyContent: 'flex-end',
       }}
     >
-      <MainScreenButton>Workplace Safety</MainScreenButton>
-      <MainScreenButton>Resources</MainScreenButton>
-      <MainScreenButton>Finding Your Voice</MainScreenButton>
-      <MainScreenButton>Disclaimers</MainScreenButton>
+      <MainScreenButton
+        style={{ marginLeft: 30 }}
+        imageLeft={require('../../assets/workplace_safety.png')}
+        imageRight={require('../../assets/group_326.png')}
+      >
+        Workplace Safety
+      </MainScreenButton>
+      <MainScreenButton
+        style={{ marginLeft: 90 }}
+        imageLeft={require('../../assets/resources.png')}
+        imageRight={require('../../assets/group_329.png')}
+      >
+        Resources
+      </MainScreenButton>
+      <MainScreenButton
+        style={{
+          marginLeft: 70,
+          width: 30,
+          height: 30,
+          alignSelf: 'flex-end',
+          marginBottom: 10,
+        }}
+        imageLeft={require('../../assets/finding_your_voice.png')}
+        imageRight={require('../../assets/rock.png')}
+      >
+        Finding Your Voice
+      </MainScreenButton>
+      <MainScreenButton
+        style={{
+          marginLeft: 130,
+          width: 30,
+          height: 30,
+          alignSelf: 'flex-end',
+          marginBottom: 10,
+        }}
+        imageLeft={require('../../assets/disclaimer.png')}
+        imageRight={require('../../assets/rock.png')}
+      >
+        Disclaimers
+      </MainScreenButton>
     </View>
   </SafeAreaView>
 );
