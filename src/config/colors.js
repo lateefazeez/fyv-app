@@ -8,5 +8,5 @@ export default {
   fadeDetails: '#6e6969',
   pageDetailsBackground: '#aeaeae36',
   lightGrey: '#c6c9cf',
-  darkGrey: '#48494a',
+  darkGrey: '#909396',
 };
