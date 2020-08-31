@@ -1,7 +1,14 @@
 import React from 'react';
-import { StyleSheet, View, Text, Platform } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import ViewPager from '@react-native-community/viewpager';
-import TouchableOpacity from 'react-native-gesture-handler';
+
 import { Entypo } from '@expo/vector-icons';
 
 import colors from '../config/colors';
@@ -30,27 +37,188 @@ const BasicRightViewPager = () => {
             {'\n'}
             and Safety rights
           </Text>
-          <TouchableOpacity>
-            <View
-              style={styles.legislationLink}
-              onPress={() => console.log('Link Clicked')}
-            >
-              <Entypo name="link" size={30} color={colors.white} />
-              <Text style={{ fontSize: 13, margin: 5, color: colors.white }}>
-                Read More
-              </Text>
-            </View>
+
+          <TouchableOpacity
+            style={styles.legislationLink}
+            onPress={() => console.log('Link Clicked')}
+          >
+            <Entypo name="link" size={30} color={colors.white} />
+            <Text style={{ fontSize: 13, margin: 5, color: colors.white }}>
+              Read More
+            </Text>
           </TouchableOpacity>
 
-          <View style={{ flex: 1, justifyContent: 'flex-end', padding: 5 }}>
-            <Text>Swipe ➡️</Text>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-end',
+              padding: 5,
+              margin: 10,
+            }}
+          >
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}
+            >
+              <Text>Swipe</Text>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 70 }}>
+                <AntDesign name="right" size={20} color="black" />
+              </View>
+            </View>
           </View>
         </View>
         <View style={styles.page} key="2">
-          <Text>Second page</Text>
+          <Text style={styles.sectionDetailsText}>Right to</Text>
+          <Text style={styles.mainDetailsText}>KNOW</Text>
+
+          <Text
+            style={{
+              textAlign: 'center',
+              paddingTop: 15,
+              color: colors.faintText,
+            }}
+          >
+            about the dangers of our jobs and how we
+            {'\n'}
+            are protected
+          </Text>
+
+          <TouchableOpacity
+            style={styles.legislationLink}
+            onPress={() => console.log('Link Clicked')}
+          >
+            <Entypo name="link" size={30} color={colors.white} />
+            <Text style={{ fontSize: 13, margin: 5, color: colors.white }}>
+              Read More
+            </Text>
+          </TouchableOpacity>
+
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-end',
+              padding: 5,
+              margin: 10,
+            }}
+          >
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}
+            >
+              <View style={{ justifyContent: 'flex-end', marginRight: 120 }}>
+                <AntDesign name="left" size={20} color="black" />
+              </View>
+              <Text>Swipe</Text>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 120 }}>
+                <AntDesign name="right" size={20} color="black" />
+              </View>
+            </View>
+          </View>
         </View>
         <View style={styles.page} key="3">
-          <Text>Third page</Text>
+          <Text style={styles.sectionDetailsText}>Right to</Text>
+          <Text style={styles.mainDetailsText}>PARTICIPATE</Text>
+
+          <Text
+            style={{
+              textAlign: 'center',
+              paddingTop: 15,
+              color: colors.faintText,
+            }}
+          >
+            in activities affecting our
+            {'\n'}
+            Health and Safety
+          </Text>
+
+          <TouchableOpacity
+            style={styles.legislationLink}
+            onPress={() => console.log('Link Clicked')}
+          >
+            <Entypo name="link" size={30} color={colors.white} />
+            <Text style={{ fontSize: 13, margin: 5, color: colors.white }}>
+              Read More
+            </Text>
+          </TouchableOpacity>
+
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-end',
+              padding: 5,
+              margin: 10,
+            }}
+          >
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}
+            >
+              <View style={{ justifyContent: 'flex-end', marginRight: 120 }}>
+                <AntDesign name="left" size={20} color="black" />
+              </View>
+              <Text>Swipe</Text>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 120 }}>
+                <AntDesign name="right" size={20} color="black" />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View style={styles.page} key="4">
+          <Text style={styles.sectionDetailsText}>Right to</Text>
+          <Text style={styles.mainDetailsText}>REFUSE WORKS</Text>
+
+          <Text
+            style={{
+              textAlign: 'center',
+              paddingTop: 15,
+              color: colors.faintText,
+            }}
+          >
+            we feel may be dangerous to ourselves or
+            {'\n'}
+            others
+          </Text>
+
+          <TouchableOpacity
+            style={styles.legislationLink}
+            onPress={() => console.log('Link Clicked')}
+          >
+            <Entypo name="link" size={30} color={colors.white} />
+            <Text style={{ fontSize: 13, margin: 5, color: colors.white }}>
+              Read More
+            </Text>
+          </TouchableOpacity>
+
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-end',
+              padding: 5,
+              margin: 10,
+            }}
+          >
+            <View
+              style={{
+                width: '100%',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+              }}
+            >
+              <View style={{ justifyContent: 'flex-end', marginRight: 80 }}>
+                <AntDesign name="left" size={20} color="black" />
+              </View>
+              <Text>Swipe</Text>
+            </View>
+          </View>
         </View>
       </ViewPager>
     </View>

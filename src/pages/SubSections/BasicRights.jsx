@@ -5,10 +5,11 @@ import SectionDetailsText from '../../components/SectionDetailsText';
 
 import colors from '../../config/colors';
 import BasicRightViewPager from '../../components/BasicRightViewPager';
+import SubSectionNavButton from '../../components/SubSectionNavButton';
 
 const BasicRights = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, paddingBottom: 30 }}>
       <View
         style={{
           flex: 1,
@@ -25,13 +26,29 @@ const BasicRights = () => {
       </View>
       <View
         style={{
-          height: 300,
+          height: 350,
           backgroundColor: colors.effect,
-          marginBottom: 50,
-          padding: 10,
+
+          padding: 20,
         }}
       >
         <BasicRightViewPager />
+      </View>
+      <View
+        style={{
+          backgroundColor: colors.white,
+          padding: 20,
+          marginBottom: 20,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <SubSectionNavButton
+          style={{ width: 180, height: 40 }}
+          title="Finding Your Voice"
+        >
+          Finding Your Voice
+        </SubSectionNavButton>
       </View>
     </View>
   );
