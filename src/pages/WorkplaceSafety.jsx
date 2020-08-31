@@ -50,16 +50,18 @@ const WorkplaceSafety = () => (
       </View>
     </View>
     </View>
-    <View  style={{ marginTop:10 }}>
-    <Button style={{height:100, width:100,}}    title="Occupational Health And Safety"/>
+     <View  style={{ marginTop:10 }}>
+   <Button style={{height:100, width:100,}}    title="Occupational Health And Safety"/>
     <Button style={{height:100, width:100,marginTop:10 }}  title="Human Rights"/>
-   <Button  style={{height:100, width:100,marginTop:10 }} title="Employment Standards"/>
-     </View>
+      <Button  style={{height:100, width:100,marginTop:10 }} title="Employment Standards"/>
     </View>
+    </View>
+
     
     );
-// }
-export default WorkplaceSafety;
+
+    export default WorkplaceSafety;
+
 
 const styles = StyleSheet.create({
   BottomNavigation: {
