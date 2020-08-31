@@ -1,32 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { View, Text, Image ,StyleSheet, Button} from 'react-native';
-
-// function WorkplaceSafety (props) {
-  // return(
-    const WorkplaceSafety = () => (
-  <View style={styles.container}>
-    <Image 
-    style={styles.logo} 
-    source={require('./icons/workplace_safety_icon.png')}/>
-  
-  <View style={styles.headingContainer}>
-
-       <Text  style={{fontSize:25, marginTop:20, fontWeight:"bold"}}>Workplace</Text>
-        <Text style={{fontSize:25,marginTop:5,fontWeight:"bold",marginLeft:20}}>Safety</Text>
-  </View>
-  <View  style={styles.maintextcontainer}>
-
-    <Image  style={{ resizeMode:"contain",width:150,height:150,marginLeft:10,top:10}} source={require('./icons/group_325.png')} />
-
-    <View   style={{marginTop:18, marginStart:200,marginTop:-120}} >
-
-    <Text  style={{fontSize:20, }}>A safe workplace takes your </Text>
-    <Text   style={{fontSize:20,  }}> physical, mental, and emotional </Text>
-    <Text style={{fontSize:20, }}>safety into consideration. </Text>
-    <Text  style={{fontSize:20, }}>Your safety at work is protected </Text>
-    <Text  style={{fontSize:20, }}>by 3 laws (pieces of legislation):</Text>
-=======
 import { View, StyleSheet, Image, Platform } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -76,7 +48,6 @@ const WorkplaceSafety = () => (
           Employment Standards
         </SubSectionNavButton>
       </View>
->>>>>>> master
     </View>
   </View>
   <View  style={{ marginTop:10 }}>
@@ -92,31 +63,6 @@ const WorkplaceSafety = () => (
 export default WorkplaceSafety;
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-  container:{
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems:"center"
-     },
-  logo:{
-    
-    width:150,
-    height:150,
-    top:10
-     },
-  headingContainer:{
-    alignContent:"center"
-  },
-
-  maintextcontainer:{
-    backgroundColor:"#D3D3D3",
-   marginTop:20,
-   width:500,
-   height:200
-
-    },
-   
-=======
   BottomNavigation: {
     width: '100%',
     height: 160,
@@ -187,5 +133,4 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     paddingRight: Platform.OS === 'android' ? 20 : 0,
   },
->>>>>>> master
 });
