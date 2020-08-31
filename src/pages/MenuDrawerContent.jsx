@@ -6,109 +6,101 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
+import colors from '../config/colors';
+import menuItems from '../config/menuItems';
 import menuLogo from '../../assets/logo_white.png';
 
-const MenuDrawerContent = () => (
-  <View style={styles.menuContainer}>
-    <View
-      style={{
-        flex: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Image
-        source={menuLogo}
-        style={{ flex: 2, margin: 36 }}
-        width="null"
-        height="null"
-        resizeMode="contain"
-      />
-      <Text
-        style={{
-          flex: 1,
-          fontWeight: 'bold',
-          fontSize: 16,
-          color: '#fff',
-        }}
+const MenuDrawerContent = ({ navigation }) => {
+  return (
+    <View style={styles.menuContainer}>
+      <View style={styles.menuContainerUpperSection}>
+        <Image source={menuLogo} style={styles.menuLogo} />
+        <Text style={styles.menuLogoText}>School of Global Access</Text>
+      </View>
+      <DrawerContentScrollView
+        contentContainerStyle={styles.menuContainerLowerSection}
       >
-        School of Global Access
-      </Text>
+        {menuItems.map(item => (
+          <DrawerItem
+            key={item.menuLabel}
+            label={item.menuLabel}
+            style={
+              item.menuCategory === 'subSection'
+                ? styles.menuSubItem
+                : styles.menuItem
+            }
+            labelStyle={styles.menuItemText}
+            icon={() => {
+              switch (item.menuIconLib) {
+                case 'MaterialIcon':
+                  return (
+                    <MaterialIcon
+                      color={colors.white}
+                      name={item.menuIconName}
+                      size={item.menuIconSize}
+                    />
+                  );
+                case 'FeatherIcon':
+                  return (
+                    <FeatherIcon
+                      color={colors.white}
+                      name={item.menuIconName}
+                      size={item.menuIconSize}
+                    />
+                  );
+                case 'Fa5Icon':
+                  return (
+                    <Fa5Icon
+                      color={colors.white}
+                      name={item.menuIconName}
+                      size={item.menuIconSize}
+                    />
+                  );
+
+                default:
+                  return null;
+              }
+            }}
+            onPress={() => navigation.navigate(item.menuLabel)}
+          />
+        ))}
+      </DrawerContentScrollView>
     </View>
-    <View
-      style={{
-        flex: 3,
-      }}
-    >
-      <View style={styles.menuItem}>
-        <Fa5Icon style={styles.menuIcon} name="hard-hat" size={20} />
-        <Text style={styles.menuText}>Workplace Safety</Text>
-      </View>
-      <View style={styles.menuSubItem}>
-        <Fa5Icon style={styles.menuIcon} name="hand-holding-heart" size={20} />
-        <Text style={styles.menuText}>Occupational Health and Safety</Text>
-      </View>
-      <View style={styles.menuSubItem}>
-        <MaterialIcon style={styles.menuIcon} name="scale-balance" size={24} />
-        <Text style={styles.menuText}>Human Rights</Text>
-      </View>
-      <View style={styles.menuSubItem}>
-        <MaterialIcon
-          style={styles.menuIcon}
-          name="clock-check-outline"
-          size={24}
-        />
-        <Text style={styles.menuText}>Employment Standards</Text>
-      </View>
-      <View style={styles.menuItem}>
-        <MaterialIcon
-          style={styles.menuIcon}
-          name="chat-processing"
-          size={24}
-        />
-        <Text style={styles.menuText}>Finding Your Voice</Text>
-      </View>
-      <View style={styles.menuItem}>
-        <FeatherIcon style={styles.menuIcon} name="external-link" size={24} />
-        <Text style={styles.menuText}>Resources</Text>
-      </View>
-      <View style={styles.menuItem}>
-        <Fa5Icon style={styles.menuIcon} name="exclamation-circle" size={20} />
-        <Text style={styles.menuText}>Disclaimer</Text>
-      </View>
-    </View>
-  </View>
-);
+  );
+};
 
 export default MenuDrawerContent;
 
 const styles = StyleSheet.create({
   menuContainer: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    padding: 16,
     backgroundColor: '#3B3B3B',
+    flex: 1,
+  },
+  menuContainerLowerSection: {
+    flex: 1,
+    justifyContent: 'flex-start',
+  },
+  menuContainerUpperSection: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  menuLogo: {
+    height: 128,
+    marginTop: 64,
+    resizeMode: 'contain',
+  },
+  menuLogoText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginVertical: 24,
   },
   menuItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingVertical: 8,
-    marginVertical: 4,
+    marginTop: 0,
   },
   menuSubItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingVertical: 8,
-    marginVertical: 4,
-    marginLeft: 16,
+    marginLeft: 64,
+    marginTop: 0,
   },
-  menuIcon: { color: '#fff' },
-  menuText: {
-    fontSize: 14,
-    marginLeft: 8,
-    color: '#fff',
-  },
+  menuItemText: { color: '#fff' },
 });
