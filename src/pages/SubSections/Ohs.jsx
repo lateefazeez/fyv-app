@@ -2,25 +2,11 @@ import React from 'react';
 import { View, StyleSheet, Platform, Text } from 'react-native';
 
 import colors from '../../config/colors';
-import SubSectionNavButton from '../../components/SubSectionNavButton';
-import SelectedPageButton from '../../components/SelectedPageButton';
 
 const Ohs = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     <Text>OHS Screen</Text>
   </View>
-
-  // <View style={styles.pageContainer}>
-  //   <View style={styles.BottomNavigation}>
-  //     <SelectedPageButton style={styles.navButton}>OHS</SelectedPageButton>
-  //     <SubSectionNavButton style={styles.navButton}>
-  //       Human Rights
-  //     </SubSectionNavButton>
-  //     <SubSectionNavButton style={styles.navButton}>
-  //       Employment Standards
-  //     </SubSectionNavButton>
-  //   </View>
-  // </View>
 );
 
 export default Ohs;

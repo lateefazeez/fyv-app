@@ -2,9 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Platform, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import SelectedPageButton from '../../components/SelectedPageButton';
-import SubSectionNavButton from '../../components/SubSectionNavButton';
-
 import colors from '../../config/colors';
 
 const HumanRights = () => {
@@ -20,18 +17,6 @@ const HumanRights = () => {
         title="Test OHS"
       />
     </View>
-
-    // <View style={styles.pageContainer}>
-    //   <View style={styles.BottomNavigation}>
-    //     <SubSectionNavButton style={styles.navButton}>OHS</SubSectionNavButton>
-    //     <SelectedPageButton style={styles.navButton}>
-    //       Human Rights
-    //     </SelectedPageButton>
-    //     <SubSectionNavButton style={styles.navButton}>
-    //       Employment Standards
-    //     </SubSectionNavButton>
-    //   </View>
-    // </View>
   );
 };
 export default HumanRights;

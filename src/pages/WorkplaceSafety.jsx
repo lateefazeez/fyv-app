@@ -1,65 +1,87 @@
 import React from 'react';
-import { View, StyleSheet, Image, Platform, Button } from 'react-native';
+import { View, StyleSheet, Image, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import {
+  Title,
+  Paragraph,
+  Button,
+  Subheading,
+  Divider,
+} from 'react-native-paper';
 
 import colors from '../config/colors';
-import SectionTitleText from '../components/SectionTitleText';
-import SectionDetailsText from '../components/SectionDetailsText';
-import SubSectionNavButton from '../components/SubSectionNavButton';
+import sectionIcon from '../../assets/workplace_safety_icon.png';
+import contentImageLeft from '../../assets/workplace_safety.png';
+import contentImageRight from '../../assets/group_392.png';
 
 const WorkplaceSafety = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.pageContainer}>
-      <View style={styles.pageTop}>
-        <Image
-          style={styles.SectionIcon}
-          source={require('../../assets/workplace_safety_icon.png')}
-        />
-        <SectionTitleText style={styles.sectionTitleText}>
-          Workplace Safety
-        </SectionTitleText>
+      <View style={styles.pageHeader}>
+        <Image style={styles.sectionIcon} source={sectionIcon} />
+
+        <View style={styles.sectionIconLabel}>
+          <Title>Workplace Safety</Title>
+          <Subheading>We can add something useful here...</Subheading>
+        </View>
       </View>
-      <View style={styles.pageBottom}>
-        <View style={styles.sectionDetails}>
-          <Image
-            style={styles.sectionImage}
-            source={require('../../assets/workplace_safety.png')}
-          />
-          <View style={styles.textContainer}>
-            <SectionDetailsText style={styles.sectionDetailsText}>
-              A safe workplace takes your physical, mental, and emotional safety
-              into consideration.
-              {'\n'}
-              {'\n'}
-              Your Safety at work is protected by 3 pieces of legislatons:
-            </SectionDetailsText>
-            <Image
-              style={styles.rock}
-              source={require('../../assets/group_392.png')}
-            />
-          </View>
+
+      <View style={styles.pageMainContent}>
+        <View style={styles.contentDetails}>
+          <Image style={styles.contentImageLeft} source={contentImageLeft} />
+
+          <Paragraph style={styles.contentText}>
+            A safe workplace takes your physical, mental, and emotional safety
+            into consideration.
+            {'\n'}
+            {'\n'}
+            Your Safety at work is protected by 3 pieces of legislatons:
+          </Paragraph>
+          <Image style={styles.contentImageRight} source={contentImageRight} />
         </View>
         <View style={styles.BottomNavigation}>
-          <SubSectionNavButton style={styles.navButton}>
-            OHS
-          </SubSectionNavButton>
-          <SubSectionNavButton style={styles.navButton}>
+          <Button
+            style={styles.navigationButton}
+            mode="contained"
+            theme={{ roundness: 5 }}
+            color={colors.primary}
+            onPress={() => {
+              navigation.navigate('Workplace Safety Tabs', {
+                screen: 'OHS',
+              });
+            }}
+          >
+            Occupational Health and Safety
+          </Button>
+          <Button
+            style={styles.navigationButton}
+            mode="contained"
+            theme={{ roundness: 5 }}
+            color={colors.primary}
+            onPress={() => {
+              navigation.navigate('Workplace Safety Tabs', {
+                screen: 'Human Rights',
+              });
+            }}
+          >
             Human Rights
-          </SubSectionNavButton>
-          <SubSectionNavButton style={styles.navButton}>
+          </Button>
+          <Button
+            style={styles.navigationButton}
+            mode="contained"
+            theme={{ roundness: 5 }}
+            color={colors.primary}
+            onPress={() => {
+              navigation.navigate('Workplace Safety Tabs', {
+                screen: 'Employment Standards',
+              });
+            }}
+          >
             Employment Standards
-          </SubSectionNavButton>
+          </Button>
         </View>
-
-        <Button
-          style={styles.navButton}
-          onPress={() => {
-            navigation.navigate('Workplace Safety Tabs');
-          }}
-          title="Test OHS"
-        />
       </View>
     </View>
   );
@@ -69,73 +91,55 @@ export default WorkplaceSafety;
 
 const styles = StyleSheet.create({
   BottomNavigation: {
-    width: '100%',
-    height: 160,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: 20,
-  },
-
-  navButton: {
+    flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    width: 105,
-    height: 60,
-    shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 3,
+    alignItems: 'stretch',
+    paddingHorizontal: 32,
+    paddingBottom: 32,
+    paddingTop: 16,
+    position: 'relative',
   },
-  pageBottom: {
-    flex: 2,
-    width: '100%',
+  pageMainContent: {
+    justifyContent: 'space-evenly',
+    position: 'relative',
+    flexGrow: 1,
   },
   pageContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
   },
-  pageTop: {
-    flex: 1,
-  },
-  rock: {
-    width: 60,
-    height: 20,
-    alignSelf: 'flex-end',
-    marginTop: Platform.OS === 'android' ? 10 : 20,
-  },
-  sectionDetails: {
-    width: '100%',
-    height: 230,
-    backgroundColor: colors.pageDetailsBackground,
+  pageHeader: {
     flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: 16,
+  },
+  contentImageLeft: {},
+  contentImageRight: {
+    position: 'absolute',
+    bottom: 16,
+    right: 16,
+  },
+  contentDetails: {
+    backgroundColor: colors.pageDetailsBackground,
+    padding: 32,
+    flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: 10,
+    flexGrow: 1,
   },
-  sectionDetailsText: {
-    marginTop: 24,
-    alignSelf: 'flex-start',
-    lineHeight: Platform.OS === 'android' ? 25 : 22,
+  contentText: {
+    alignSelf: 'center',
+    marginTop: 32,
   },
-  SectionIcon: {
-    width: 150,
-    height: 150,
-    margin: 24,
+  sectionIcon: {
+    width: 64,
+    height: 64,
   },
-  sectionImage: {
-    width: 140,
-    marginRight: 10,
+  sectionIconLabel: {
+    flexDirection: 'column',
+    flexGrow: 1,
+    marginLeft: 16,
   },
-  sectionTitleText: {
-    width: 200,
-    textAlign: 'center',
-  },
-  textContainer: {
-    width: Platform.OS === 'android' ? 265 : 200,
-    alignSelf: 'flex-start',
-    paddingRight: Platform.OS === 'android' ? 20 : 0,
+  navigationButton: {
+    marginTop: 16,
   },
 });
