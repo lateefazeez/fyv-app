@@ -9,4 +9,6 @@ export default {
   pageDetailsBackground: '#aeaeae36',
   lightGrey: '#c6c9cf',
   darkGrey: '#909396',
+  effect: '#f2f7f4',
+  faintText: '#525453',
 };

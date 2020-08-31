@@ -22,7 +22,7 @@ const Ohs = () => (
           justifyContent: 'flex-start',
           alignItems: 'center',
           backgroundColor: colors.white,
-          height: Platform.OS === 'android' ? 320 : 290,
+
           padding: 30,
         }}
       >
@@ -46,7 +46,7 @@ const Ohs = () => (
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={{ height: 400 }}>
+      <View style={{ flex: 1 }}>
         <Tab.Navigator
           tabBarOptions={{
             labelStyle: {
