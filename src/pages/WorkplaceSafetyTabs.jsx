@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import Ohs from './subSections/Ohs';
-import HumanRights from './subSections/HumanRights';
-import EmploymentStandards from './subSections/EmploymentStandards';
+import Ohs from './SubSections/Ohs';
+import HumanRights from './SubSections/HumanRights';
+import EmploymentStandards from './SubSections/EmploymentStandards';
 
 const Tab = createMaterialTopTabNavigator();
 
