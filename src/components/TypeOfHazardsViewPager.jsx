@@ -5,36 +5,35 @@ import {
   Text,
   Platform,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import ViewPager from '@react-native-community/viewpager';
 
 import colors from '../config/colors';
+import PsychosocialImage from '../../assets/psychosocial_image.png';
+import BiologicalImage from '../../assets/suit.png';
+import PhysicalImage from '../../assets/man.png';
+import ChemicalImage from '../../assets/chemical_image.png';
 
-const BasicRightViewPager = () => {
+const TypeOfHazardsViewPager = () => {
   return (
     <View style={{ flex: 1 }}>
       <ViewPager style={styles.viewPager} initialPage={0}>
         <View style={styles.page} key="1">
-          <Text style={styles.sectionDetailsText}>Right to</Text>
-          <Text style={styles.mainDetailsText}>BE FREE FROM</Text>
-          <Text
-            style={styles.reprisal}
-            onPress={() => console.log('Reprisal Clicked')}
-          >
-            REPRISAL
+          <View style={styles.imageContainer}>
+            <Image style={styles.pageImage} source={PsychosocialImage} />
+          </View>
+          <Text style={styles.mainDetailsText}>
+            Psychosocial
+            {'\n'}Hazards
           </Text>
-          <Text
-            style={{
-              textAlign: 'center',
-              paddingTop: 15,
-              color: colors.faintText,
-            }}
-          >
-            (disciplined or fired) for using our Health
-            {'\n'}
-            and Safety rights
-          </Text>
+          <View style={{ padding: 20 }}>
+            <Text style={styles.sectionDetailsText}>
+              Psychosocial hazards may include stress, violence, prevention,
+              bullying, mental health, aging workers, and many more.
+            </Text>
+          </View>
 
           <TouchableOpacity
             style={styles.legislationLink}
@@ -48,7 +47,6 @@ const BasicRightViewPager = () => {
 
           <View
             style={{
-              flex: 1,
               justifyContent: 'flex-end',
               padding: 5,
               margin: 10,
@@ -56,34 +54,36 @@ const BasicRightViewPager = () => {
           >
             <View
               style={{
-                width: '100%',
                 flexDirection: 'row',
                 justifyContent: 'center',
+                alignItems: 'flex-end',
               }}
             >
               <Text>Swipe</Text>
-              <View style={{ justifyContent: 'flex-end', marginLeft: 70 }}>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 50 }}>
                 <AntDesign name="right" size={20} color="black" />
               </View>
             </View>
           </View>
         </View>
         <View style={styles.page} key="2">
-          <Text style={styles.sectionDetailsText}>Right to</Text>
-          <Text style={styles.mainDetailsText}>KNOW</Text>
-
-          <Text
-            style={{
-              textAlign: 'center',
-              paddingTop: 15,
-              color: colors.faintText,
-            }}
-          >
-            about the dangers of our jobs and how we
-            {'\n'}
-            are protected
+          <View style={styles.imageContainer}>
+            <Image style={styles.pageImage} source={BiologicalImage} />
+          </View>
+          <Text style={styles.mainDetailsText}>
+            Biological
+            {'\n'}Hazards
           </Text>
 
+          <View style={{ padding: 20 }}>
+            <Text style={styles.sectionDetailsText}>
+              Sources of biological hazards may include bacteria, viruses,
+              insects, plants, birds, animals, and humans. These sources can
+              cause a variety of health effects ranging from skin irritation and
+              allergies to infections (e.g., tuberculosis, AIDS), cancer and so
+              on.
+            </Text>
+          </View>
           <TouchableOpacity
             style={styles.legislationLink}
             onPress={() => console.log('Link Clicked')}
@@ -96,7 +96,6 @@ const BasicRightViewPager = () => {
 
           <View
             style={{
-              flex: 1,
               justifyContent: 'flex-end',
               padding: 5,
               margin: 10,
@@ -104,37 +103,36 @@ const BasicRightViewPager = () => {
           >
             <View
               style={{
-                width: '100%',
                 flexDirection: 'row',
                 justifyContent: 'center',
               }}
             >
-              <View style={{ justifyContent: 'flex-end', marginRight: 120 }}>
+              <View style={{ justifyContent: 'flex-end', marginRight: 100 }}>
                 <AntDesign name="left" size={20} color="black" />
               </View>
               <Text>Swipe</Text>
-              <View style={{ justifyContent: 'flex-end', marginLeft: 120 }}>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 100 }}>
                 <AntDesign name="right" size={20} color="black" />
               </View>
             </View>
           </View>
         </View>
         <View style={styles.page} key="3">
-          <Text style={styles.sectionDetailsText}>Right to</Text>
-          <Text style={styles.mainDetailsText}>PARTICIPATE</Text>
-
-          <Text
-            style={{
-              textAlign: 'center',
-              paddingTop: 15,
-              color: colors.faintText,
-            }}
-          >
-            in activities affecting our
-            {'\n'}
-            Health and Safety
+          <View style={styles.imageContainer}>
+            <Image style={styles.pageImage} source={PhysicalImage} />
+          </View>
+          <Text style={styles.mainDetailsText}>
+            Physical
+            {'\n'}Hazards
           </Text>
 
+          <View style={{ padding: 20 }}>
+            <Text style={styles.sectionDetailsText}>
+              Physical hazards are sources of energy that may cause injury or
+              disease. Examples include noise, vibration, radiation, and
+              extremes in temperature.
+            </Text>
+          </View>
           <TouchableOpacity
             style={styles.legislationLink}
             onPress={() => console.log('Link Clicked')}
@@ -147,7 +145,6 @@ const BasicRightViewPager = () => {
 
           <View
             style={{
-              flex: 1,
               justifyContent: 'flex-end',
               padding: 5,
               margin: 10,
@@ -160,32 +157,31 @@ const BasicRightViewPager = () => {
                 justifyContent: 'center',
               }}
             >
-              <View style={{ justifyContent: 'flex-end', marginRight: 120 }}>
+              <View style={{ justifyContent: 'flex-end', marginRight: 100 }}>
                 <AntDesign name="left" size={20} color="black" />
               </View>
               <Text>Swipe</Text>
-              <View style={{ justifyContent: 'flex-end', marginLeft: 120 }}>
+              <View style={{ justifyContent: 'flex-end', marginLeft: 100 }}>
                 <AntDesign name="right" size={20} color="black" />
               </View>
             </View>
           </View>
         </View>
         <View style={styles.page} key="4">
-          <Text style={styles.sectionDetailsText}>Right to</Text>
-          <Text style={styles.mainDetailsText}>REFUSE WORKS</Text>
-
-          <Text
-            style={{
-              textAlign: 'center',
-              paddingTop: 15,
-              color: colors.faintText,
-            }}
-          >
-            we feel may be dangerous to ourselves or
-            {'\n'}
-            others
+          <View style={styles.imageContainer}>
+            <Image style={styles.pageImage} source={PhysicalImage} />
+          </View>
+          <Text style={styles.mainDetailsText}>
+            Chemical
+            {'\n'}Hazards
           </Text>
 
+          <View style={{ padding: 20 }}>
+            <Text style={styles.sectionDetailsText}>
+              Chemical effects will depend on the physical, chemical, and toxic
+              properties of the chemical.
+            </Text>
+          </View>
           <TouchableOpacity
             style={styles.legislationLink}
             onPress={() => console.log('Link Clicked')}
@@ -198,7 +194,6 @@ const BasicRightViewPager = () => {
 
           <View
             style={{
-              flex: 1,
               justifyContent: 'flex-end',
               padding: 5,
               margin: 10,
@@ -208,10 +203,10 @@ const BasicRightViewPager = () => {
               style={{
                 width: '100%',
                 flexDirection: 'row',
-                justifyContent: 'flex-start',
+                justifyContent: 'center',
               }}
             >
-              <View style={{ justifyContent: 'flex-end', marginRight: 80 }}>
+              <View style={{ justifyContent: 'flex-start', marginLeft: 0 }}>
                 <AntDesign name="left" size={20} color="black" />
               </View>
               <Text>Swipe</Text>
@@ -227,36 +222,46 @@ const styles = StyleSheet.create({
   viewPager: {
     flex: 1,
   },
+  imageContainer: {
+    width: 250,
+    height: 250,
+    backgroundColor: colors.lightGrey,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 25,
+  },
+  pageImage: {
+    flex: 1,
+    resizeMode: 'contain',
+  },
   page: {
+    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
   sectionDetailsText: {
+    alignSelf: 'flex-start',
     lineHeight: Platform.OS === 'android' ? 25 : 22,
     fontSize: Platform.OS === 'android' ? 16 : 15,
   },
   mainDetailsText: {
     fontWeight: 'bold',
-    fontSize: Platform.OS === 'android' ? 37 : 35,
-  },
-  reprisal: {
-    color: colors.primary,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline',
-    fontSize: Platform.OS === 'android' ? 37 : 35,
+    fontSize: Platform.OS === 'android' ? 20 : 20,
+    textAlign: 'center',
+    margin: 20,
   },
   legislationLink: {
     width: 120,
     height: 40,
     backgroundColor: colors.darkGrey,
-    marginTop: 30,
-
     borderRadius: 10,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 5,
+    margin: 20,
   },
 });
 
-export default BasicRightViewPager;
+export default TypeOfHazardsViewPager;

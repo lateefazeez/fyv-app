@@ -12,7 +12,6 @@ const BasicRights = () => {
     <View style={{ flex: 1, paddingBottom: 30 }}>
       <View
         style={{
-          flex: 1,
           justifyContent: 'flex-start',
           alignItems: 'center',
           backgroundColor: colors.white,
@@ -28,7 +27,6 @@ const BasicRights = () => {
         style={{
           height: 350,
           backgroundColor: colors.effect,
-
           padding: 20,
         }}
       >
@@ -57,7 +55,6 @@ export default BasicRights;
 
 const styles = StyleSheet.create({
   sectionDetailsText: {
-    flex: 1,
     alignSelf: 'flex-start',
     lineHeight: Platform.OS === 'android' ? 25 : 22,
     fontSize: Platform.OS === 'android' ? 16 : 15,
