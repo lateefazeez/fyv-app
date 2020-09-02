@@ -1,13 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import {
-  Title,
-  Paragraph,
-  Button,
-  Subheading,
-  Divider,
-} from 'react-native-paper';
+import { Title, Paragraph, Button, Subheading } from 'react-native-paper';
 
 import colors from '../config/colors';
 import sectionIcon from '../../assets/workplace_safety_icon.png';

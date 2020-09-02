@@ -136,6 +136,7 @@ const RootNavigation = ({ navigation }) => (
             style={{
               flexDirection: 'row',
               alignItems: 'center',
+              justifyContent: 'center',
               color: colors.white,
             }}
           >
