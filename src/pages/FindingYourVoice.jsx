@@ -1,4 +1,5 @@
 import React from 'react';
+ 
 import { View, Text, Image, StyleSheet } from 'react-native';
 const FindingYourVoice = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
