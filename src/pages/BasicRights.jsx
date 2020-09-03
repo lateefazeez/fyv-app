@@ -1,5 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import { Text, View, ScrollView, StyleSheet } from 'react-native';
+import {  View, ScrollView, StyleSheet } from 'react-native';
+// eslint-disable-next-line import/no-unresolved
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
