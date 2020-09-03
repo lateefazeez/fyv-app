@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, StyleSheet, Platform, Text } from 'react-native';
 
