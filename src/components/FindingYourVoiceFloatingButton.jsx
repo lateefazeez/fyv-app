@@ -7,7 +7,6 @@ import colors from '../config/colors';
 const FloatingButton = props => (
   <FAB
     style={styles.fab}
-    small
     icon="chat-processing"
     color="white"
     {...props}
