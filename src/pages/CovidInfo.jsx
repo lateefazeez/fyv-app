@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, ScrollView } from 'react-native';
+
 // eslint-disable-next-line import/no-unresolved
 import Unorderedlist from 'react-native-unordered-list';
 

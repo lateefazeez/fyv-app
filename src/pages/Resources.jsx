@@ -4,6 +4,7 @@ import React from 'react';
 import { View, Linking } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
+
 // eslint-disable-next-line import/no-unresolved
 import call from 'react-native-phone-call';
 
