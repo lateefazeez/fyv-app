@@ -1,7 +1,8 @@
 export default {
   statusBar: '#334B49',
   primary: '#129C96',
-  title: '#474646',
+  title: '#3B3B3B',
+  paragraph: '#3B3B3B',
   black: '#000',
   white: '#fff',
   appBackground: '#f8f4f4',
@@ -11,4 +12,5 @@ export default {
   darkGrey: '#909396',
   effect: '#f2f7f4',
   faintText: '#525453',
+  fabButton: '#A27BCA',
 };

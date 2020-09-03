@@ -3,19 +3,18 @@ import { Text, Platform, StyleSheet } from 'react-native';
 
 import colors from '../config/colors';
 
-function SectionTitleText({ children, style }) {
+function SectionSubtitleText({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
 const styles = StyleSheet.create({
   text: {
-    textAlign: 'center',
-    color: colors.title,
-    fontSize: 32,
+    color: colors.paragraph,
+    fontSize: 16,
     fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    marginBottom: 24,
+    marginBottom: 16,
   },
 });
 
-export default SectionTitleText;
+export default SectionSubtitleText;

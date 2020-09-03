@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Platform, Text } from 'react-native';
 
-import colors from '../../config/colors';
-import TypeOfHazardsViewPager from '../../components/TypeOfHazardsViewPager';
-import SubSectionNavButton from '../../components/SubSectionNavButton';
+import colors from '../config/colors';
+import TypeOfHazardsViewPager from '../components/TypeOfHazardsViewPager';
+import SubSectionNavButton from '../components/SubSectionNavButton';
 
 const TypesOfHazards = () => {
   return (

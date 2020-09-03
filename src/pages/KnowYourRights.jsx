@@ -1,139 +1,62 @@
 import React from 'react';
-import { View, StyleSheet, Image, Platform } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Title, Paragraph, Button, Subheading } from 'react-native-paper';
 
-import colors from '../config/colors';
-import sectionIcon from '../../assets/workplace_safety_icon.png';
-import contentImageLeft from '../../assets/workplace_safety.png';
-import contentImageRight from '../../assets/group_392.png';
+import BasicButton from '../components/BasicButton';
+import PageHeader from '../components/PageHeader';
+import SectionDetailsText from '../components/SectionDetailsText';
+import SectionTitleText from '../components/SectionTitleText';
+
+import headerImage from '../../assets/workplace_safety.png';
 
 const KnowYourRights = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.pageContainer}>
-      <View style={styles.pageHeader}>
-        <Image style={styles.sectionIcon} source={sectionIcon} />
+    <ScrollView style={{ flex: 1 }}>
+      <PageHeader source={headerImage} />
+      <View style={{ padding: 24 }}>
+        <SectionTitleText>Know Your Rights</SectionTitleText>
+        <SectionDetailsText>
+          A safe workplace takes your physical, mental, and emotional safety
+          into consideration.
+          {'\n'}
+          {'\n'}
+          Your Safety at work is protected by 3 pieces of legislaton:
+        </SectionDetailsText>
 
-        <View style={styles.sectionIconLabel}>
-          <Title>Know Your Rights</Title>
-          <Subheading>We can add something useful here...</Subheading>
-        </View>
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('Know Your Rights Tabs', {
+              screen: 'Human Rights',
+            });
+          }}
+        >
+          Human Rights
+        </BasicButton>
+
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('Know Your Rights Tabs', {
+              screen: 'OHS',
+            });
+          }}
+        >
+          Occupational Health and Safety
+        </BasicButton>
+
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('Know Your Rights Tabs', {
+              screen: 'Employment Standards',
+            });
+          }}
+        >
+          Employment Standards
+        </BasicButton>
       </View>
-
-      <View style={styles.pageMainContent}>
-        <View style={styles.contentDetails}>
-          <Image style={styles.contentImageLeft} source={contentImageLeft} />
-
-          <Paragraph style={styles.contentText}>
-            A safe workplace takes your physical, mental, and emotional safety
-            into consideration.
-            {'\n'}
-            {'\n'}
-            Your Safety at work is protected by 3 pieces of legislatons:
-          </Paragraph>
-          <Image style={styles.contentImageRight} source={contentImageRight} />
-        </View>
-        <View style={styles.BottomNavigation}>
-          <Button
-            style={styles.navigationButton}
-            mode="contained"
-            theme={{ roundness: 5 }}
-            color={colors.primary}
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'OHS',
-              });
-            }}
-          >
-            Occupational Health and Safety
-          </Button>
-          <Button
-            style={styles.navigationButton}
-            mode="contained"
-            theme={{ roundness: 5 }}
-            color={colors.primary}
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'Human Rights',
-              });
-            }}
-          >
-            Human Rights
-          </Button>
-          <Button
-            style={styles.navigationButton}
-            mode="contained"
-            theme={{ roundness: 5 }}
-            color={colors.primary}
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'Employment Standards',
-              });
-            }}
-          >
-            Employment Standards
-          </Button>
-        </View>
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 
 export default KnowYourRights;
-
-const styles = StyleSheet.create({
-  BottomNavigation: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    paddingHorizontal: 32,
-    paddingBottom: 32,
-    paddingTop: 16,
-    position: 'relative',
-  },
-  pageMainContent: {
-    justifyContent: 'space-evenly',
-    position: 'relative',
-    flexGrow: 1,
-  },
-  pageContainer: {
-    flex: 1,
-  },
-  pageHeader: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    padding: 16,
-  },
-  contentImageLeft: {},
-  contentImageRight: {
-    position: 'absolute',
-    bottom: 16,
-    right: 16,
-  },
-  contentDetails: {
-    backgroundColor: colors.pageDetailsBackground,
-    padding: 32,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexGrow: 1,
-  },
-  contentText: {
-    alignSelf: 'center',
-    marginTop: 32,
-  },
-  sectionIcon: {
-    width: 64,
-    height: 64,
-  },
-  sectionIconLabel: {
-    flexDirection: 'column',
-    flexGrow: 1,
-    marginLeft: 16,
-  },
-  navigationButton: {
-    marginTop: 16,
-  },
-});

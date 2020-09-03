@@ -2,12 +2,15 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 
-const FloatingButton = () => (
+import colors from '../config/colors';
+
+const FloatingButton = props => (
   <FAB
     style={styles.fab}
     small
     icon="chat-processing"
-    onPress={() => console.log('Pressed')}
+    color="white"
+    {...props}
   />
 );
 
@@ -17,6 +20,7 @@ const styles = StyleSheet.create({
     margin: 16,
     right: 0,
     bottom: 0,
+    backgroundColor: colors.fabButton,
   },
 });
 
