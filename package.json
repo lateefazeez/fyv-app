@@ -8,7 +8,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.2.1",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/viewpager": "3.3.0",
     "@react-navigation/drawer": "^5.9.0",
     "@react-navigation/material-top-tabs": "^5.2.16",
     "@react-navigation/native": "^5.7.3",
@@ -20,17 +22,26 @@
     "react-is": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-app-intro-slider": "^4.0.4",
+    "react-native-best-viewpager": "^1.0.4",
     "react-native-gesture-handler": "~1.6.0",
+<<<<<<< HEAD
     "react-native-paper": "^4.1.0",
+=======
+    "react-native-paper": "^4.0.1",
+    "react-native-phone-call": "^1.0.9",
+>>>>>>> ef019621c73cbb4c823d4011228b8d48b39480e5
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "~2.9.0",
     "react-native-shadow": "^1.2.2",
     "react-native-splash-screen": "^3.2.0",
+    "react-native-swiper": "^1.6.0",
     "react-native-tab-view": "^2.15.1",
+    "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^7.0.0",
     "react-native-web": "~0.11.7",
+    "rn-viewpager": "^1.2.9",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

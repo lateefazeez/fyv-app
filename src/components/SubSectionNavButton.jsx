@@ -6,22 +6,17 @@ import { RectButton } from 'react-native-gesture-handler';
 import colors from '../config/colors';
 import ButtonText from './ButtonText';
 
-function SubSectionNavButton({ title, navigator }) {
+function SubSectionNavButton({ children, style, title }) {
   const navigation = useNavigation();
 
   return (
     <RectButton
       title={title}
-      style={[styles.button]}
-      onPress={() => {
-        navigation.navigate('Know Your Rights Tabs', {
-          screen: 'Human Rights',
-        });
-        console.log(title);
-      }}
+      style={[styles.button, style]}
+      onPress={() => navigation.navigate(children)}
     >
       <View accessible>
-        <ButtonText style={styles.ButtonText}>{title}</ButtonText>
+        <ButtonText style={styles.ButtonText}>{children}</ButtonText>
       </View>
     </RectButton>
   );
@@ -33,17 +28,10 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: 105,
-    height: 60,
-    shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 2,
-    backgroundColor: 'white',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: colors.primary,
-    borderRadius: 5,
+    borderRadius: 10,
+    backgroundColor: colors.white,
   },
   ButtonText: {
     color: colors.primary,

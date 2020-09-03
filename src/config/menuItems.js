@@ -7,7 +7,7 @@ export default [
     menuCategory: 'section',
   },
   {
-    menuLabel: 'Workplace Safety',
+    menuLabel: 'Know Your Rights',
     menuIconLib: 'Fa5Icon',
     menuIconName: 'hard-hat',
     menuIconSize: 20,
@@ -49,7 +49,7 @@ export default [
     menuCategory: 'section',
   },
   {
-    menuLabel: 'Disclaimers',
+    menuLabel: 'Disclaimer',
     menuIconLib: 'Fa5Icon',
     menuIconName: 'exclamation-circle',
     menuIconSize: 20,

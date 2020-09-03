@@ -1,76 +1,50 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
-import colors from '../../config/colors';
+import PageHeader from '../../components/PageHeader';
+import SectionTitleText from '../../components/SectionTitleText';
+import SectionDetailsText from '../../components/SectionDetailsText';
+import ExternalRefButton from '../../components/ExternalRefButton';
+
+import headerImage from '../../../assets/placeholder.png';
 
 const EmploymentStandards = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Employment Standards Screen</Text>
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+      <PageHeader source={headerImage} />
+      <View style={{ padding: 16 }}>
+        <SectionTitleText>Employment Standards</SectionTitleText>
+
+        <SectionDetailsText>
+          Workers and employers in Alberta must follow the Employment Standards
+          Code and Employment Standards Regulation.
+        </SectionDetailsText>
+
+        <ExternalRefButton icon="web" style={{ marginBottom: 32 }}>
+          Alberta Standards
+        </ExternalRefButton>
+
+        <SectionDetailsText>
+          Employment Standards apply to most workers. People who work in some
+          fields such as live-in workers, truckers, farm workers, and
+          firefighters have their own set of rules.
+        </SectionDetailsText>
+
+        <ExternalRefButton icon="web" style={{ marginBottom: 32 }}>
+          Specific Industries Rules
+        </ExternalRefButton>
+
+        <SectionDetailsText>
+          The Employment Standards Code creates Alberta’s minimum standards of
+          employment in areas outside of health and safety that are related to
+          the workplace. These include wages, hours of work, overtime, vacation
+          and holidays, leaves, and termination of employment. It also
+          establishes the steps to follow in cases where employment standards
+          have not been met, such as wrongful termination of employment.
+        </SectionDetailsText>
+      </View>
+    </ScrollView>
   );
 };
+
 export default EmploymentStandards;
-
-const styles = StyleSheet.create({
-  BottomNavigation: {
-    width: '100%',
-    height: 160,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
-    padding: 5,
-  },
-
-  navButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 105,
-    height: 60,
-    shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 30,
-  },
-  ohsButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 105,
-    height: 60,
-    shadowColor: colors.primary,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 30,
-    backgroundColor: colors.primary,
-  },
-  pageContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  sectionDetails: {
-    width: '100%',
-    height: 230,
-    backgroundColor: colors.pageDetailsBackground,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    padding: 10,
-  },
-  sectionDetailsText: {
-    marginTop: 30,
-    alignSelf: 'flex-start',
-    lineHeight: Platform.OS === 'android' ? 25 : 22,
-  },
-  sectionTitleText: {
-    width: 200,
-    textAlign: 'center',
-  },
-  textContainer: {
-    width: Platform.OS === 'android' ? 265 : 200,
-    alignSelf: 'flex-start',
-    paddingRight: Platform.OS === 'android' ? 20 : 0,
-  },
-});

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.primary,
     marginTop: 8,
+    borderRadius: 10,
   },
   buttonContent: {
     flex: 1,
