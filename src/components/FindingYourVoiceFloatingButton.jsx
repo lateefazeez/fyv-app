@@ -5,12 +5,7 @@ import { FAB } from 'react-native-paper';
 import colors from '../config/colors';
 
 const FloatingButton = props => (
-  <FAB
-    style={styles.fab}
-    icon="chat-processing"
-    color="white"
-    {...props}
-  />
+  <FAB style={styles.fab} icon="chat-processing" color="white" {...props} />
 );
 
 const styles = StyleSheet.create({

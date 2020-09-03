@@ -1,141 +1,95 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Paragraph, Subheading } from 'react-native-paper';
+import { Paragraph, Subheading, Divider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import AppText from '../components/AppText';
+import SectionTitleText from '../components/SectionTitleText';
+import SectionSubtitleText from '../components/SectionSubtitleText';
+import SectionDetailsText from '../components/SectionDetailsText';
+
 import colors from '../config/colors';
 import Bvc from '../../assets/bvc.png';
 import Alberta from '../../assets/alberta.png';
-import Annotation from '../../assets/annotation.png';
+import AWHC from '../../assets/annotation.png';
 import Sodexo from '../../assets/sodexo.png';
 
 const Disclaimer = () => (
-  <ScrollView style={styles.pageContainer}>
-    <View style={{ marginBottom: 30 }}>
-      <View style={styles.disclaimer}>
-        <MaterialCommunityIcons
-          name="information-outline"
-          size={35}
-          color="black"
-        />
-        <Text style={styles.heading}>Disclaimer</Text>
-      </View>
-      <Paragraph>
-        <AppText style={{ fontSize: 17 }}>
-          The purpose of this app is solely to educate workers about workplace
-          health and safety regulations, general advice, guidance on your
-          rights, and the services available to you. None of the information
-          provided is intended to be used for legal purposes.
-        </AppText>
-      </Paragraph>
-    </View>
-    <View style={styles.horizontalLine} />
+  <ScrollView contentContainerStyle={{ padding: 16 }}>
+    <SectionDetailsText>
+      The purpose of this app is solely to educate workers about workplace
+      health and safety regulations, general advice, guidance on your rights,
+      and the services available to you.
+      {'\n'}
+      {'\n'}
+      None of the information provided is intended to be used for legal
+      purposes.
+    </SectionDetailsText>
 
-    <View style={styles.funders}>
-      <Text>Funded by the</Text>
-      <Subheading style={{ fontWeight: 'bold' }}>
+    <View
+      style={{
+        backgroundColor: 'white',
+        alignItems: 'center',
+        padding: 48,
+        borderRadius: 10,
+        elevation: 2,
+      }}
+    >
+      <SectionDetailsText style={{ marginBottom: 8, fontSize: 12 }}>
+        Funded by the
+      </SectionDetailsText>
+      <SectionSubtitleText style={{ marginBottom: 0 }}>
         Government of Alberta
-      </Subheading>
+      </SectionSubtitleText>
       <Image
         style={{
-          width: 150,
-          height: 75,
+          width: 200,
           resizeMode: 'contain',
-          marginBottom: 15,
+          marginTop: 24,
+          marginBottom: 48,
         }}
         source={Alberta}
       />
 
-      <Subheading style={{ marginBottom: 15, fontWeight: 'bold' }}>
+      <SectionDetailsText style={{ marginBottom: 24, fontSize: 12 }}>
         In partnership with:
-      </Subheading>
+      </SectionDetailsText>
       <View
         style={{
-          backgroundColor: colors.black,
-          height: 60,
-          width: 260,
-          justifyContent: 'center',
+          width: 240,
+          backgroundColor: '#004E95',
           alignItems: 'center',
+          padding: 8,
+          marginBottom: 8,
         }}
       >
-        <Image style={{ width: 250, height: 40 }} source={Bvc} />
+        <Image
+          style={{
+            width: 220,
+            resizeMode: 'contain',
+          }}
+          source={Bvc}
+        />
       </View>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'center',
 
-          padding: 30,
-          marginBottom: 50,
+      <Image
+        style={{
+          width: 120,
+          resizeMode: 'contain',
+          marginVertical: 16,
         }}
-      >
-        <View style={{ flex: 1 }}>
-          <Image
-            style={{
-              width: 120,
-              height: 75,
-              resizeMode: 'contain',
-              marginBottom: 15,
-            }}
-            source={Sodexo}
-          />
-        </View>
-        <View style={{ flex: 1, marginRight: 30 }}>
-          <Image
-            style={{
-              width: 180,
-              height: 150,
-              resizeMode: 'contain',
-              marginBottom: 15,
-            }}
-            source={Annotation}
-          />
-        </View>
-      </View>
+        source={Sodexo}
+      />
+      <Image
+        style={{
+          width: 180,
+          resizeMode: 'contain',
+          marginTop: -16,
+        }}
+        source={AWHC}
+      />
     </View>
   </ScrollView>
 );
 
-const styles = StyleSheet.create({
-  alberta: {
-    flex: 1,
-    margin: 10,
-    width: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  disclaimer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    marginLeft: 45,
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  pageContainer: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: colors.white,
-  },
-  heading: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginLeft: 12,
-  },
-  horizontalLine: {
-    borderBottomColor: colors.lightGrey,
-    borderBottomWidth: 2,
-    width: '55%',
-    alignSelf: 'center',
-    marginBottom: 35,
-  },
-  funders: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-});
 export default Disclaimer;

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginBottom: 8,
     padding: 16,
-    elevation: 5,
+    elevation: 3,
   },
   buttonContent: {
     flex: 1,
