@@ -1,7 +1,9 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
 import React from 'react';
 import { View, Linking } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import call from 'react-native-phone-call';
+// import call from 'react-native-phone-call';
 
 import PageHeader from '../components/PageHeader';
 import SectionTitleText from '../components/SectionTitleText';
