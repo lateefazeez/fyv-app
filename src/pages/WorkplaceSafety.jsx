@@ -85,7 +85,7 @@ const WorkplaceSafety = () => {
       </View>
     </View>
   );
-};
+}; export default WorkplaceSafety;
 
 
 const styles = StyleSheet.create({

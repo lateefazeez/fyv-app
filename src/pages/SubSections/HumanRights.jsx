@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, StyleSheet, Platform, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -20,6 +21,7 @@ const HumanRights = () => {
   );
 };
 export default HumanRights;
+/*
 const styles = StyleSheet.create({
   BottomNavigation: {
     width: '100%',
@@ -81,4 +83,4 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     paddingRight: Platform.OS === 'android' ? 20 : 0,
   },
-});
+}); */

@@ -1,4 +1,8 @@
+/* eslint-disable prettier/prettier */
+// eslint-disable-next-line prettier/prettier
+
 /* eslint-disable camelcase */
+
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
