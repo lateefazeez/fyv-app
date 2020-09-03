@@ -6,11 +6,11 @@ import { View } from 'react-native';
 import { Title } from 'react-native-paper';
 
 import Main from '../pages/Main';
-import WorkplaceSafety from '../pages/WorkplaceSafety';
+import KnowYourRights from '../pages/KnowYourRights';
 import Resources from '../pages/Resources';
 import FindingYourVoice from '../pages/FindingYourVoice';
-import Disclaimers from '../pages/Disclaimers';
-import WorkplaceSafetyTabs from '../pages/WorkplaceSafetyTabs';
+import Disclaimer from '../pages/Disclaimer';
+import KnowYourRightsTabs from '../pages/KnowYourRightsTabs';
 
 import colors from '../config/colors';
 
@@ -40,8 +40,8 @@ const RootNavigation = ({ navigation }) => (
       }}
     />
     <App.Screen
-      name="Workplace Safety"
-      component={WorkplaceSafety}
+      name="Know Your Rights"
+      component={KnowYourRights}
       options={{
         headerBackTitle: 'Back',
         headerTitle: () => (
@@ -64,7 +64,7 @@ const RootNavigation = ({ navigation }) => (
                 color: colors.white,
               }}
             >
-              Workplace Safety
+              Know Your Rights
             </Title>
           </View>
         ),
@@ -112,8 +112,8 @@ const RootNavigation = ({ navigation }) => (
       }}
     />
     <App.Screen
-      name="Disclaimers"
-      component={Disclaimers}
+      name="Disclaimer"
+      component={Disclaimer}
       options={{
         headerBackTitle: 'Back',
         headerRight: () => (
@@ -128,8 +128,8 @@ const RootNavigation = ({ navigation }) => (
       }}
     />
     <App.Screen
-      name="Workplace Safety Tabs"
-      component={WorkplaceSafetyTabs}
+      name="Know Your Rights Tabs"
+      component={KnowYourRightsTabs}
       options={{
         headerTitle: () => (
           <View
@@ -151,7 +151,7 @@ const RootNavigation = ({ navigation }) => (
                 color: colors.white,
               }}
             >
-              Workplace Safety
+              Know Your Rights
             </Title>
           </View>
         ),

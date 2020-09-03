@@ -8,7 +8,7 @@ import sectionIcon from '../../assets/workplace_safety_icon.png';
 import contentImageLeft from '../../assets/workplace_safety.png';
 import contentImageRight from '../../assets/group_392.png';
 
-const WorkplaceSafety = () => {
+const KnowYourRights = () => {
   const navigation = useNavigation();
 
   return (
@@ -17,7 +17,7 @@ const WorkplaceSafety = () => {
         <Image style={styles.sectionIcon} source={sectionIcon} />
 
         <View style={styles.sectionIconLabel}>
-          <Title>Workplace Safety</Title>
+          <Title>Know Your Rights</Title>
           <Subheading>We can add something useful here...</Subheading>
         </View>
       </View>
@@ -42,7 +42,7 @@ const WorkplaceSafety = () => {
             theme={{ roundness: 5 }}
             color={colors.primary}
             onPress={() => {
-              navigation.navigate('Workplace Safety Tabs', {
+              navigation.navigate('Know Your Rights Tabs', {
                 screen: 'OHS',
               });
             }}
@@ -55,7 +55,7 @@ const WorkplaceSafety = () => {
             theme={{ roundness: 5 }}
             color={colors.primary}
             onPress={() => {
-              navigation.navigate('Workplace Safety Tabs', {
+              navigation.navigate('Know Your Rights Tabs', {
                 screen: 'Human Rights',
               });
             }}
@@ -68,7 +68,7 @@ const WorkplaceSafety = () => {
             theme={{ roundness: 5 }}
             color={colors.primary}
             onPress={() => {
-              navigation.navigate('Workplace Safety Tabs', {
+              navigation.navigate('Know Your Rights Tabs', {
                 screen: 'Employment Standards',
               });
             }}
@@ -81,7 +81,7 @@ const WorkplaceSafety = () => {
   );
 };
 
-export default WorkplaceSafety;
+export default KnowYourRights;
 
 const styles = StyleSheet.create({
   BottomNavigation: {

@@ -23,7 +23,7 @@ const Main = () => (
         imageLeft={require('../../assets/workplace_safety.png')}
         imageRight={require('../../assets/group_326.png')}
       >
-        Workplace Safety
+        Know Your Rights
       </MainScreenButton>
       <MainScreenButton
         style={{ marginLeft: 90 }}
@@ -56,7 +56,7 @@ const Main = () => (
         imageLeft={require('../../assets/disclaimer.png')}
         imageRight={require('../../assets/rock.png')}
       >
-        Disclaimers
+        Disclaimer
       </MainScreenButton>
     </View>
   </SafeAreaView>

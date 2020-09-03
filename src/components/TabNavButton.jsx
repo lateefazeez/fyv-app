@@ -14,7 +14,7 @@ function SubSectionNavButton({ title, navigator }) {
       title={title}
       style={[styles.button]}
       onPress={() => {
-        navigation.navigate('Workplace Safety Tabs', {
+        navigation.navigate('Know Your Rights Tabs', {
           screen: 'Human Rights',
         });
         console.log(title);
