@@ -16,19 +16,6 @@ const Ohs = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
-        <SectionTitleText>Occupational Health and Safety</SectionTitleText>
-
-        <BasicButton
-          onPress={() => {
-            navigation.navigate('COVID-19 Information');
-          }}
-          icon="alert-circle"
-          iconColor="red"
-          style={{ marginBottom: 24 }}
-        >
-          Important COVID-19 Information
-        </BasicButton>
-
         <SectionDetailsText>
           Most workers in Alberta are protected under the Alberta Health and
           Safety Act, Regulation and Code. Some workers, such as federal
@@ -39,6 +26,16 @@ const Ohs = () => {
           These laws are the minimum standards for protecting workers, and
           involve both workers and employers.
         </SectionDetailsText>
+
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('COVID-19 Information');
+          }}
+          icon="alert-circle"
+          iconColor="red"
+        >
+          Important COVID-19 Information
+        </BasicButton>
 
         <BasicButton
           onPress={() => {
