@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, StyleSheet, Platform, Text } from 'react-native';
+import { View,  Text } from 'react-native';
 
-import colors from '../../config/colors';
+// import colors from '../../config/colors';
 
 const Ohs = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -11,7 +11,7 @@ const Ohs = () => (
 );
 
 export default Ohs;
-
+/*
 const styles = StyleSheet.create({
   BottomNavigation: {
     width: '100%',
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     paddingRight: Platform.OS === 'android' ? 20 : 0,
   },
-});
+}); */
