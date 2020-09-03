@@ -13,7 +13,7 @@ export default function App() {
     <Tab.Navigator
       tabBarOptions={{
         labelStyle: {
-          fontSize: 13,
+          fontSize: 12,
           fontWeight: 'bold',
         },
         activeTintColor: colors.primary,
@@ -26,8 +26,12 @@ export default function App() {
         },
       }}
     >
-      <Tab.Screen name="OHS" component={Ohs} />
       <Tab.Screen name="Human Rights" component={HumanRights} />
+      <Tab.Screen
+        name="OHS"
+        component={Ohs}
+        options={{ tabBarLabel: 'Occupational Health and Safety' }}
+      />
       <Tab.Screen name="Employment Standards" component={EmploymentStandards} />
     </Tab.Navigator>
   );
