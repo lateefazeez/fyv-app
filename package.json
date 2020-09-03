@@ -24,12 +24,8 @@
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-best-viewpager": "^1.0.4",
     "react-native-gesture-handler": "~1.6.0",
-<<<<<<< HEAD
-    "react-native-paper": "^4.1.0",
-=======
     "react-native-paper": "^4.0.1",
     "react-native-phone-call": "^1.0.9",
->>>>>>> ef019621c73cbb4c823d4011228b8d48b39480e5
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-safe-area-view": "^1.1.1",
