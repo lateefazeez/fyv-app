@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Image, StyleSheet, SafeAreaView, Alert } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
+
 import logo from '../../assets/logo_green.png';
 
 const Main = () => (
@@ -44,19 +45,6 @@ const Main = () => (
         imageRight={require('../../assets/rock.png')}
       >
         Finding Your Voice
-      </MainScreenButton>
-      <MainScreenButton
-        style={{
-          marginLeft: 130,
-          width: 30,
-          height: 30,
-          alignSelf: 'flex-end',
-          marginBottom: 10,
-        }}
-        imageLeft={require('../../assets/disclaimer.png')}
-        imageRight={require('../../assets/rock.png')}
-      >
-        Disclaimer
       </MainScreenButton>
     </View>
   </SafeAreaView>
