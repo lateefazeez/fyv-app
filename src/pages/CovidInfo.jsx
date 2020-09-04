@@ -3,6 +3,7 @@ import { View, ScrollView } from 'react-native';
 import Unorderedlist from 'react-native-unordered-list';
 
 import PageHeader from '../components/PageHeader';
+import SectionTitleText from '../components/SectionTitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
 import SectionSubtitleText from '../components/SectionSubtitleText';
 
@@ -13,6 +14,8 @@ const CovidInfo = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
+        <SectionTitleText>COVID-19 Information</SectionTitleText>
+
         <SectionDetailsText>
           Due to COVID-19, there is a pandemic in Canada that can affect
           workers' safety.

@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 
 import PageHeader from '../../components/PageHeader';
+import SectionTitleText from '../../components/SectionTitleText';
 import SectionDetailsText from '../../components/SectionDetailsText';
 import ExternalRefButton from '../../components/ExternalRefButton';
 
@@ -12,6 +13,8 @@ const EmploymentStandards = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
+        <SectionTitleText>Employment Standards</SectionTitleText>
+
         <SectionDetailsText>
           Workers and employers in Alberta must follow the Employment Standards
           Code and Employment Standards Regulation.

@@ -46,7 +46,9 @@ export const Slide03 = () => {
         <Text style={styles.textBold}> REFUSE WORK</Text>
       </View>
       <Text style={styles.textDetail}>
-        that may be dangerous to ourselves or others
+        that may be dangerous to ourselves
+        {'\n'}
+        or others
       </Text>
     </View>
   );

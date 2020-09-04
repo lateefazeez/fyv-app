@@ -22,6 +22,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "Finding Your Voice, Knowing Your Rights responds to the unique needs of newcomer youth by exploring the intersectional vulnerabilities of being young, a newcomer, an English language learner, and a new-to-Canada worker.",
+    "githubUrl": "https://github.com/FindingYourVoice/React-FindingYourVoice"
   }
 }
