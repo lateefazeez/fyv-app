@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line prettier/prettier
 
@@ -5,50 +6,35 @@
 
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import SectionTitleText from '../components/SectionTitleText';
+import PageHeader from '../components/PageHeader';
 import sectionIcon from '../../assets/finding_your_voice_icon.png';
-import contentImage from '../../assets/finding_your_voice.png';
+import SectionDetailsText from '../components/SectionDetailsText';
 
-const FindingYourVoice = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-    <Image
-      style={{ width: 100, height: 100, top: 10 }}
-      source={sectionIcon}
-    />
-    <Text style={{ fontSize: 28, fontWeight: 'bold', marginTop: 20 }}>
-      Finding Your
-    </Text>
-    <Text style={{ fontSize: 28, fontWeight: 'bold', marginLeft: 5 }}>
-      Voice
-    </Text>
-    <View style={styles.mainContainer}>
-      <View style={{ marginTop: 20 }}>
-        <Text style={styles.maintext}>When face with dilemma</Text>
-        <Text style={styles.maintext}>at work,many different</Text>
-        <Text style={styles.maintext}>factors can change</Text>
-        <Text style={styles.maintext}>the way you choose a</Text>
-        <Text style={styles.maintext}>solution</Text>
-      </View>
-      <View style={{ marginStart: 200, marginTop: -140 }}>
-        <Image
-          style={{ width: 200, height: 200, resizeMode: 'contain' }}
-          source={contentImage}
-        />
-      </View>
-    </View>
-  </View>
-);
 
-export default FindingYourVoice;
-const styles = StyleSheet.create({
-  mainContainer: {
-    marginTop: 20,
-    backgroundColor: '#D3D3D3',
-    width: 400,
-    height: 200,
-  },
-  maintext: {
-    fontSize: 16,
-    marginStart: 10,
-  },
-});
+
+const FindingYourVoice = () => {
+  // const navigation = useNavigation();
+
+  return (
+    <ScrollView style={{ flex: 1 }}>
+      <PageHeader source={sectionIcon} />
+      <View style={{ padding: 16 }}>
+      <SectionTitleText>Finding Your Voice</SectionTitleText>
+
+     <SectionDetailsText>The following three examples are based on real life experience of worker's. The options and decisions provided will not apply to every situation you encounter in the work place, but as you work through them, they will show you how knowledge of the correct legislation and protections can help you make choices that work best for you.  </SectionDetailsText>
+    
+        
+    
+      
+       
+      </View>
+    </ScrollView>
+  
+  );
+};
+ export default FindingYourVoice;
+
+
+
