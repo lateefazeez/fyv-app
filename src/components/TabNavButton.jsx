@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -6,7 +7,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import colors from '../config/colors';
 import ButtonText from './ButtonText';
 
-function SubSectionNavButton({ title, navigator }) {
+function SubSectionNavButton({ title }) {
   const navigation = useNavigation();
 
   return (
@@ -17,6 +18,7 @@ function SubSectionNavButton({ title, navigator }) {
         navigation.navigate('Know Your Rights Tabs', {
           screen: 'Human Rights',
         });
+        // eslint-disable-next-line no-console
         console.log(title);
       }}
     >

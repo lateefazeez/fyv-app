@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
 
@@ -10,7 +11,7 @@ function SectionDetailsText({ children, style }) {
 const styles = StyleSheet.create({
   text: {
     color: colors.paragraph,
-    fontSize: Platform.OS === 'android' ? 16 : 13.5,
+    fontSize: Platform.OS === 'android' ? 16 : 14,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
     marginBottom: 24,
     textAlign: 'justify',

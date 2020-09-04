@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StatusBar, View, Text, Image, StyleSheet } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
@@ -61,4 +62,5 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+// eslint-disable-next-line prettier/prettier
 });

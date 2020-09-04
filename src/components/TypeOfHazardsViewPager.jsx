@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   StyleSheet,
@@ -8,13 +9,14 @@ import {
   Image,
 } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
+// eslint-disable-next-line import/no-unresolved
 import ViewPager from '@react-native-community/viewpager';
 
 import colors from '../config/colors';
 import PsychosocialImage from '../../assets/psychosocial_image.png';
 import BiologicalImage from '../../assets/suit.png';
 import PhysicalImage from '../../assets/man.png';
-import ChemicalImage from '../../assets/chemical_image.png';
+// import ChemicalImage from '../../assets/chemical_image.png';
 
 const TypeOfHazardsViewPager = () => {
   return (
@@ -26,7 +28,10 @@ const TypeOfHazardsViewPager = () => {
           </View>
           <Text style={styles.mainDetailsText}>
             Psychosocial
-            {'\n'}Hazards
+            {'\n'}
+            {' '}
+            Hazards
+            {' '}
           </Text>
           <View style={{ padding: 20 }}>
             <Text style={styles.sectionDetailsText}>
@@ -37,6 +42,7 @@ const TypeOfHazardsViewPager = () => {
 
           <TouchableOpacity
             style={styles.legislationLink}
+            // eslint-disable-next-line no-console
             onPress={() => console.log('Link Clicked')}
           >
             <Entypo name="link" size={30} color={colors.white} />
@@ -72,7 +78,8 @@ const TypeOfHazardsViewPager = () => {
           </View>
           <Text style={styles.mainDetailsText}>
             Biological
-            {'\n'}Hazards
+            {'\n'}
+            Hazards
           </Text>
 
           <View style={{ padding: 20 }}>
@@ -123,7 +130,8 @@ const TypeOfHazardsViewPager = () => {
           </View>
           <Text style={styles.mainDetailsText}>
             Physical
-            {'\n'}Hazards
+            {'\n'}
+            Hazards
           </Text>
 
           <View style={{ padding: 20 }}>
@@ -173,7 +181,8 @@ const TypeOfHazardsViewPager = () => {
           </View>
           <Text style={styles.mainDetailsText}>
             Chemical
-            {'\n'}Hazards
+            {'\n'}
+            Hazards
           </Text>
 
           <View style={{ padding: 20 }}>
