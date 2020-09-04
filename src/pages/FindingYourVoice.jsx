@@ -6,16 +6,14 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-
-const newLocal = require("./icons/finding_your_voice_icon.png");
-
-const newLocal_1 = require("./icons/group_253.png");
+import sectionIcon from '../../assets/finding_your_voice_icon.png';
+import contentImage from '../../assets/finding_your_voice.png';
 
 const FindingYourVoice = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
     <Image
       style={{ width: 100, height: 100, top: 10 }}
-      source={newLocal}
+      source={sectionIcon}
     />
     <Text style={{ fontSize: 28, fontWeight: 'bold', marginTop: 20 }}>
       Finding Your
@@ -34,7 +32,7 @@ const FindingYourVoice = () => (
       <View style={{ marginStart: 200, marginTop: -140 }}>
         <Image
           style={{ width: 200, height: 200, resizeMode: 'contain' }}
-          source={newLocal_1}
+          source={contentImage}
         />
       </View>
     </View>
