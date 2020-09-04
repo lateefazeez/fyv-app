@@ -1,14 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Paragraph, Subheading, Divider } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import SectionTitleText from '../components/SectionTitleText';
 import SectionSubtitleText from '../components/SectionSubtitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
 
-import colors from '../config/colors';
 import Bvc from '../../assets/bvc.png';
 import Alberta from '../../assets/alberta.png';
 import AWHC from '../../assets/annotation.png';
@@ -26,15 +22,7 @@ const Disclaimer = () => (
       purposes.
     </SectionDetailsText>
 
-    <View
-      style={{
-        backgroundColor: 'white',
-        alignItems: 'center',
-        padding: 48,
-        borderRadius: 10,
-        elevation: 2,
-      }}
-    >
+    <View style={[styles.card, { marginBottom: 16 }]}>
       <SectionDetailsText style={{ marginBottom: 8, fontSize: 12 }}>
         Funded by the
       </SectionDetailsText>
@@ -45,24 +33,16 @@ const Disclaimer = () => (
         style={{
           width: 200,
           resizeMode: 'contain',
-          marginTop: 24,
-          marginBottom: 48,
+          margin: 16,
         }}
         source={Alberta}
       />
-
+    </View>
+    <View style={styles.card}>
       <SectionDetailsText style={{ marginBottom: 24, fontSize: 12 }}>
         In partnership with:
       </SectionDetailsText>
-      <View
-        style={{
-          width: 240,
-          backgroundColor: '#004E95',
-          alignItems: 'center',
-          padding: 8,
-          marginBottom: 8,
-        }}
-      >
+      <View style={styles.bvc}>
         <Image
           style={{
             width: 220,
@@ -93,3 +73,20 @@ const Disclaimer = () => (
 );
 
 export default Disclaimer;
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: 'white',
+    alignItems: 'center',
+    padding: 32,
+    borderRadius: 10,
+    elevation: 2,
+  },
+  bvc: {
+    width: 240,
+    backgroundColor: '#004E95',
+    alignItems: 'center',
+    padding: 8,
+    marginBottom: 8,
+  },
+});
