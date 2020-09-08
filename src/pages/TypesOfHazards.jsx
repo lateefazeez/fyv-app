@@ -1,73 +1,61 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Text } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
+import Swiper from 'react-native-swiper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import {
+  Slide01,
+  Slide02,
+  Slide03,
+  Slide04,
+  Slide05,
+  Slide06,
+} from './TypesOfHazardsSlides';
+
+import SectionDetailsText from '../components/SectionDetailsText';
+import ExternalRefButton from '../components/ExternalRefButton';
+import PageHeader from '../components/PageHeader';
+import headerImage from '../../assets/placeholder.png';
 
 import colors from '../config/colors';
-import TypeOfHazardsViewPager from '../components/TypeOfHazardsViewPager';
-import SubSectionNavButton from '../components/SubSectionNavButton';
 
-const TypesOfHazards = () => {
-  return (
-    <View style={{ flex: 1, paddingBottom: 30 }}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          backgroundColor: colors.white,
-          padding: 30,
-          paddingBottom: 30,
-        }}
-      >
-        <Text style={styles.sectionDetailsText}>
-          As workers, we have legal responsibility to follow the health and
-          safety rules, to not cause or participate in harassment, bullying, or
-          violence, and to report unsafe work conditions. Although it is not
-          always easy to do so, failure to do so can have serious consequences
-          (such as undocumented injuries, or workplaces that remain unsafe).
-          There are 4 hazards that relate to workplace health and safety:
-        </Text>
-      </View>
-      <View
-        style={{
-          height: 650,
-          backgroundColor: colors.effect,
-        }}
-      >
-        <TypeOfHazardsViewPager />
-      </View>
-      <View
-        style={{
-          backgroundColor: colors.white,
-          padding: 20,
+const TypesOfHazards = () => (
+  <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
+    <PageHeader source={headerImage} />
 
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <SubSectionNavButton
-          style={{ width: 180, height: 40 }}
-          title="Finding Your Voice"
-        >
-          Finding Your Voice
-        </SubSectionNavButton>
-      </View>
+    <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
+      <SectionDetailsText>
+        There are 6 hazards types that relate to workplace health and safety.
+      </SectionDetailsText>
+      <SectionDetailsText>
+        A common way to indentify hazards is by category:
+      </SectionDetailsText>
     </View>
-  );
-};
-export default TypesOfHazards;
+    <Swiper
+      activeDotColor={colors.darkGrey}
+      dotColor="rgba(0,0,0,0.2)"
+      nextButton={
+        <Icon name="chevron-right" size={40} color="rgba(0,0,0,0.2)" />
+      }
+      prevButton={
+        <Icon name="chevron-left" size={40} color="rgba(0,0,0,0.2)" />
+      }
+      showsButtons
+    >
+      <Slide01 />
+      <Slide02 />
+      <Slide03 />
+      <Slide04 />
+      <Slide05 />
+      <Slide06 />
+    </Swiper>
 
-const styles = StyleSheet.create({
-  sectionDetailsText: {
-    flex: 1,
-    alignSelf: 'flex-start',
-    lineHeight: Platform.OS === 'android' ? 25 : 22,
-    fontSize: Platform.OS === 'android' ? 16 : 15,
-  },
-  viewPager: {
-    flex: 1,
-  },
-  page: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+    <View style={{ paddingHorizontal: 16, paddingTop: 0 }}>
+      <ExternalRefButton icon="web" style={{ marginBottom: 16 }}>
+        Health & Safety Rights
+      </ExternalRefButton>
+    </View>
+  </ScrollView>
+);
+
+export default TypesOfHazards;

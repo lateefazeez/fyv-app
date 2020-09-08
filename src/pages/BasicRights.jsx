@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -22,7 +22,6 @@ const BasicRights = () => (
       </SectionDetailsText>
     </View>
     <Swiper
-      style={styles.wrapper}
       activeDotColor={colors.darkGrey}
       dotColor="rgba(0,0,0,0.2)"
       nextButton={
@@ -58,12 +57,3 @@ const BasicRights = () => (
 );
 
 export default BasicRights;
-
-const styles = StyleSheet.create({
-  wrapper: { height: 400 },
-  textDetail: {
-    color: 'rgba(255,255,255,0.5)',
-    fontSize: 24,
-  },
-  buttonText: { color: 'white', fontSize: 80 },
-});
