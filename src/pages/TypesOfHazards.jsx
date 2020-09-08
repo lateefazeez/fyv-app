@@ -32,6 +32,7 @@ const TypesOfHazards = () => (
       </SectionDetailsText>
     </View>
     <Swiper
+      style={{ height: 400 }}
       activeDotColor={colors.darkGrey}
       dotColor="rgba(0,0,0,0.2)"
       nextButton={
