@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Linking } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 import { ScrollView } from 'react-native-gesture-handler';
-import call from 'react-native-phone-call';
 
 import PageHeader from '../components/PageHeader';
 import SectionTitleText from '../components/SectionTitleText';
@@ -11,16 +11,6 @@ import BasicButton from '../components/BasicButton';
 
 import headerImage from '../../assets/placeholder.png';
 import colors from '../config/colors';
-
-const CallAWHC = {
-  number: '+1 780-486-9009',
-  prompt: true,
-};
-
-const CallCWRC = {
-  number: '+1 403-264-8100',
-  prompt: true,
-};
 
 const Resources = () => (
   <ScrollView style={{ flex: 1 }}>
@@ -43,7 +33,7 @@ const Resources = () => (
       </SectionDetailsText>
 
       <BasicButton
-        onPress={() => call(CallAWHC).catch(console.error)}
+        onPress={() => Linking.openURL('tel://+17804869009')}
         icon="phone"
         iconColor={colors.primary}
       >
@@ -52,7 +42,7 @@ const Resources = () => (
 
       <BasicButton
         onPress={() => {
-          Linking.openURL('https://workershealthcentre.ca/');
+          WebBrowser.openBrowserAsync('https://workershealthcentre.ca');
         }}
         icon="web"
         iconColor={colors.primary}
@@ -69,7 +59,7 @@ const Resources = () => (
       </SectionDetailsText>
 
       <BasicButton
-        onPress={() => call(CallCWRC).catch(console.error)}
+        onPress={() => Linking.openURL('tel://+14032648100')}
         icon="phone"
         iconColor={colors.primary}
       >
