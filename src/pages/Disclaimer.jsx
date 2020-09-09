@@ -8,6 +8,8 @@ import { TouchableRipple } from 'react-native-paper';
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import SectionDetailsText from '../components/SectionDetailsText';
 
+import colors from '../config/colors';
+
 import Bvc from '../../assets/bvc_school_of_global_access.png';
 import Alberta from '../../assets/Alberta-Government-Logo.png';
 import AWHC from '../../assets/awhc.png';
@@ -117,7 +119,7 @@ export default Disclaimer;
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     alignItems: 'center',
     padding: 32,
     borderRadius: 10,

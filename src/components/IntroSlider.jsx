@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginVertical: 32,
-    color: 'white',
+    color: colors.white,
     textAlign: 'center',
   },
 });

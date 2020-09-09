@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     lineHeight: Platform.OS === 'android' ? 21 : 22.5,
     fontSize: Platform.OS === 'android' ? 14 : 15,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    marginBottom: 24,
+    marginBottom: 21,
     textAlign: 'justify',
   },
 });
