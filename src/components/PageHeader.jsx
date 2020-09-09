@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 
@@ -16,7 +15,7 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: colors.pageDetailsBackground,
+    backgroundColor: colors.mediumGrey,
     alignItems: 'center',
     padding: 48,
   },

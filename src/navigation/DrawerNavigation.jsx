@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { StatusBar } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import RootNavigation from './RootNavigation';
 import MenuDrawerContent from '../pages/MenuDrawerContent';
 
@@ -17,21 +16,13 @@ const DrawerNavigation = () => {
   return (
     <>
       <NavigationContainer ref={navRef}>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor={colors.statusBar}
-        />
+        <StatusBar style="light" backgroundColor={colors.statusBar} />
         <Drawer.Navigator
           drawerContent={props => <MenuDrawerContent {...props} />}
         >
           <Drawer.Screen name="Root" component={RootNavigation} />
         </Drawer.Navigator>
       </NavigationContainer>
-      <FloatingButton
-        onPress={() =>
-          navRef.current && navRef.current.navigate('Finding Your Voice')
-        }
-      />
     </>
   );
 };

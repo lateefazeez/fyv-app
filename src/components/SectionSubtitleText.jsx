@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
 
@@ -10,8 +9,8 @@ function SectionSubtitleText({ children, style }) {
 
 const styles = StyleSheet.create({
   text: {
-    color: colors.paragraph,
-    fontSize: 16,
+    color: colors.black,
+    fontSize: Platform.OS === 'android' ? 16 : 17,
     fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
     marginBottom: 16,

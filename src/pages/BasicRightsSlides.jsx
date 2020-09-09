@@ -12,9 +12,7 @@ export const Slide01 = () => {
         <Text style={styles.textBold}> KNOW</Text>
       </View>
       <Text style={styles.textDetail}>
-        about the dangers of our jobs
-        {'\n'}
-        and how we are protected
+        about the dangers of our jobs and how we are protected
       </Text>
     </View>
   );
@@ -29,9 +27,7 @@ export const Slide02 = () => {
         <Text style={styles.textBold}> PARTICIPATE</Text>
       </View>
       <Text style={styles.textDetail}>
-        in activities affecting our Health
-        {'\n'}
-        and Safety
+        in activities affecting our Health and Safety
       </Text>
     </View>
   );
@@ -46,9 +42,7 @@ export const Slide03 = () => {
         <Text style={styles.textBold}> REFUSE WORK</Text>
       </View>
       <Text style={styles.textDetail}>
-        that may be dangerous to ourselves
-        {'\n'}
-        or others
+        that may be dangerous to ourselves or others
       </Text>
     </View>
   );
@@ -95,6 +89,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.6)',
     fontSize: 16,
     textAlign: 'justify',
+    width: '75%',
   },
   text: {
     color: 'rgba(255,255,255,0.8)',

@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 
 import MainScreenButton from '../components/MainScreenButton';
+import KnowYourRightsImage from '../../assets/workplace_safety.png';
+import ResourcesImage from '../../assets/resources.png';
+import FindingYourVoiceImage from '../../assets/finding_your_voice.png';
 
 import logo from '../../assets/logo_green.png';
 
@@ -10,32 +13,15 @@ const Main = () => (
     <View style={styles.logoContainer}>
       <Image style={styles.mainPageLogo} source={logo} />
     </View>
+
     <View style={styles.navContainer}>
-      <MainScreenButton
-        style={{ marginLeft: 30 }}
-        imageLeft={require('../../assets/workplace_safety.png')}
-        imageRight={require('../../assets/group_326.png')}
-      >
+      <MainScreenButton imageLeft={KnowYourRightsImage}>
         Know Your Rights
       </MainScreenButton>
-      <MainScreenButton
-        style={{ marginLeft: 90 }}
-        imageLeft={require('../../assets/resources.png')}
-        imageRight={require('../../assets/group_329.png')}
-      >
-        Resources
-      </MainScreenButton>
-      <MainScreenButton
-        style={{
-          marginLeft: 70,
-          width: 30,
-          height: 30,
-          alignSelf: 'flex-end',
-          marginBottom: 10,
-        }}
-        imageLeft={require('../../assets/finding_your_voice.png')}
-        imageRight={require('../../assets/rock.png')}
-      >
+
+      <MainScreenButton imageLeft={ResourcesImage}>Resources</MainScreenButton>
+
+      <MainScreenButton imageLeft={FindingYourVoiceImage}>
         Finding Your Voice
       </MainScreenButton>
     </View>
@@ -58,7 +44,7 @@ const styles = StyleSheet.create({
   navContainer: {
     flex: 1.5,
     paddingHorizontal: 16,
-    paddingBottom: 8,
+    paddingBottom: 16,
     alignItems: 'stretch',
     justifyContent: 'flex-end',
   },
