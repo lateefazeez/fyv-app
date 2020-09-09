@@ -3,7 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import RootNavigation from './RootNavigation';
 import MenuDrawerContent from '../pages/MenuDrawerContent';
 
@@ -27,11 +26,6 @@ const DrawerNavigation = () => {
           <Drawer.Screen name="Root" component={RootNavigation} />
         </Drawer.Navigator>
       </NavigationContainer>
-      <FloatingButton
-        onPress={() =>
-          navRef.current && navRef.current.navigate('Finding Your Voice')
-        }
-      />
     </>
   );
 };
