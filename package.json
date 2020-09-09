@@ -23,17 +23,12 @@
     "react-is": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-app-intro-slider": "^4.0.4",
-<<<<<<< HEAD
     "react-native-best-viewpager": "^1.0.4",
     "react-native-chatbot": "^0.0.1-alpha.12",
-    "react-native-gesture-handler": "~1.6.0",
-    "react-native-paper": "^4.0.1",
     "react-native-phone-call": "^1.0.9",
     "react-native-progress": "4.0.2",
-=======
     "react-native-gesture-handler": "~1.6.0",
     "react-native-paper": "^4.0.1",
->>>>>>> 3bddd47ce3ef3c18fc1e41ee5c585c51607e548a
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-safe-area-view": "^1.1.1",
@@ -45,15 +40,10 @@
     "react-native-swiper": "^1.6.0",
     "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^7.0.0",
-<<<<<<< HEAD
     "react-native-web": "~0.11.7",
     "rn-viewpager": "^1.2.9",
-    "styled-components": "^5.2.0"
-=======
-    "react-native-web": "^0.13.9",
     "react-navigation-tabs": "^2.9.0",
     "styled-components": "^5.1.1"
->>>>>>> 3bddd47ce3ef3c18fc1e41ee5c585c51607e548a
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
