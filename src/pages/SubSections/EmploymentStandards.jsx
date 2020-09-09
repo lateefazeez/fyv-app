@@ -38,9 +38,12 @@ const EmploymentStandards = () => {
           The Employment Standards Code creates Alberta’s minimum standards of
           employment in areas outside of health and safety that are related to
           the workplace. These include wages, hours of work, overtime, vacation
-          and holidays, leaves, and termination of employment. It also
-          establishes the steps to follow in cases where employment standards
-          have not been met, such as wrongful termination of employment.
+          and holidays, leaves, and termination of employment.
+        </SectionDetailsText>
+        <SectionDetailsText>
+          It also establishes the steps to follow in cases where employment
+          standards have not been met, such as wrongful termination of
+          employment.
         </SectionDetailsText>
       </View>
     </ScrollView>

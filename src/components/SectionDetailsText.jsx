@@ -9,10 +9,11 @@ function SectionDetailsText({ children, style }) {
 
 const styles = StyleSheet.create({
   text: {
-    color: colors.paragraph,
-    fontSize: Platform.OS === 'android' ? 16 : 13.5,
+    color: colors.black,
+    lineHeight: Platform.OS === 'android' ? 21 : 22.5,
+    fontSize: Platform.OS === 'android' ? 14 : 15,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    marginBottom: 24,
+    marginBottom: 21,
     textAlign: 'justify',
   },
 });

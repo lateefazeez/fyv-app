@@ -16,14 +16,14 @@ const Ohs = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
-        <SectionTitleText>Occupational Health and Safety</SectionTitleText>
+        <SectionTitleText>Occupational Health & Safety</SectionTitleText>
         <SectionDetailsText>
           Most workers in Alberta are protected under the Alberta Health and
           Safety Act, Regulation and Code. Some workers, such as federal
           workers, live in care-givers, or farm workers may have their own
           separate laws.
-          {'\n'}
-          {'\n'}
+        </SectionDetailsText>
+        <SectionDetailsText>
           These laws are the minimum standards for protecting workers, and
           involve both workers and employers.
         </SectionDetailsText>

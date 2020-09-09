@@ -33,7 +33,11 @@ const KnowYourRightsTabs = () => {
         }}
       >
         <Tab.Screen name="Human Rights" component={HumanRights} />
-        <Tab.Screen name="OHS" component={Ohs} />
+        <Tab.Screen
+          name="OHS"
+          component={Ohs}
+          options={{ title: 'Health & Safety' }}
+        />
         <Tab.Screen
           name="Employment Standards"
           component={EmploymentStandards}
