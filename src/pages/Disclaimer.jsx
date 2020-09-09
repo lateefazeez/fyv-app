@@ -1,24 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-<<<<<<< HEAD
+
 import { View, StyleSheet, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SectionSubtitleText from '../components/SectionSubtitleText';
 import SectionDetailsText from '../components/SectionDetailsText';
 
-=======
-import { View, Image } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-// import { Paragraph, Subheading, Divider } from 'react-native-paper';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-// import SectionTitleText from '../components/SectionTitleText';
-import SectionSubtitleText from '../components/SectionSubtitleText';
-import SectionDetailsText from '../components/SectionDetailsText';
-
-// import colors from '../config/colors';
->>>>>>> 37d7b2258a846b56a582d3a366c4860219859c88
 import Bvc from '../../assets/bvc.png';
 import Alberta from '../../assets/alberta.png';
 import AWHC from '../../assets/annotation.png';
