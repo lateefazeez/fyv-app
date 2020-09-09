@@ -34,6 +34,7 @@
             "react/jsx-props-no-spreading":"off",
             "react/jsx-filename-extension":"off",
             "react/jsx-curly-newline": "off",
+            "react/style-prop-object":"off",
             "prettier/prettier": "error"
     }
 }

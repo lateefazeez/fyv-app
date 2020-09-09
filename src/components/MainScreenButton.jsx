@@ -1,22 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import colors from '../config/colors';
-import ButtonText from './ButtonText';
 
 const MainScreenButton = ({ children, imageLeft, imageRight, style }) => {
   const navigation = useNavigation();
 
   return (
     <RectButton
-      style={styles.button}
+      style={styles.buttonContainer}
       onPress={() => navigation.navigate(children)}
     >
-      <View style={styles.buttonContent} accessible>
+      <View style={styles.buttonContent}>
         <Image source={imageLeft} style={styles.imageLeft} />
-        <ButtonText>{children}</ButtonText>
+        <Text style={styles.text}>{children}</Text>
         <Image source={imageRight} style={[styles.imageRight, style]} />
       </View>
     </RectButton>
@@ -26,29 +25,33 @@ const MainScreenButton = ({ children, imageLeft, imageRight, style }) => {
 export default MainScreenButton;
 
 const styles = StyleSheet.create({
-  button: {
+  buttonContainer: {
     flex: 1,
     backgroundColor: colors.primary,
     marginTop: 8,
     borderRadius: 10,
+    padding: 0,
   },
   buttonContent: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingRight: 5,
+    padding: 24,
   },
   imageLeft: {
-    width: 70,
-    height: 70,
+    width: 72,
+    height: 72,
+    marginRight: 24,
     resizeMode: 'contain',
-    margin: 10,
   },
   imageRight: {
-    marginLeft: 15,
-    width: 80,
-    height: 120,
+    width: 72,
+    height: 72,
     resizeMode: 'contain',
+  },
+  text: {
+    color: colors.white,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });

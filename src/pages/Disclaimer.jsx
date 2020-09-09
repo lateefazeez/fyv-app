@@ -59,7 +59,9 @@ const Disclaimer = () => {
           <TouchableRipple
             style={styles.touchable}
             onPress={() =>
-              WebBrowser.openBrowserAsync('https://bowvalleycollege.ca/')
+              WebBrowser.openBrowserAsync(
+                'https://globalaccess.bowvalleycollege.ca/',
+              )
             }
           >
             <Image
