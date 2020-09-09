@@ -10,11 +10,11 @@ function SectionTitleText({ children, style }) {
 const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
-    color: colors.title,
-    fontSize: 32,
+    color: colors.black,
+    fontSize: Platform.OS === 'android' ? 21 : 22.5,
     fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    marginBottom: 24,
+    marginBottom: 21,
   },
 });
 

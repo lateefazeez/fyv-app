@@ -15,7 +15,7 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: colors.pageDetailsBackground,
+    backgroundColor: colors.mediumGrey,
     alignItems: 'center',
     padding: 48,
   },

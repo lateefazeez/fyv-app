@@ -16,7 +16,7 @@ const Ohs = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
-        <SectionTitleText>Occupational Health and Safety</SectionTitleText>
+        <SectionTitleText>Occupational Health & Safety</SectionTitleText>
         <SectionDetailsText>
           Most workers in Alberta are protected under the Alberta Health and
           Safety Act, Regulation and Code. Some workers, such as federal
