@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -16,7 +17,7 @@ const FindingYourVoice = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={sectionIcon} />
       <View style={{ padding: 16 }}>
-        <Heading>Finding Your Voice</Heading>
+        <Heading>Find Your Voice</Heading>
         <Paragraph>
           The following three examples are based on real life experience of
           workers.
