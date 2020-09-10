@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import Unorderedlist from 'react-native-unordered-list';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import PageHeader from '../components/PageHeader';
@@ -10,6 +11,8 @@ import Paragraph from '../components/Paragraph';
 import Subheading from '../components/Subheading';
 
 import headerImage from '../../assets/placeholder.png';
+import ExternalRefButton from '../components/ExternalRefButton';
+import LinkButtons from '../components/LinkButtons';
 
 const CovidInfo = () => {
   const navigation = useNavigation();
@@ -31,6 +34,17 @@ const CovidInfo = () => {
             workers, such as health care aides, are at more risk because of
             workplace contact and poor safety rules.
           </Paragraph>
+          <ExternalRefButton
+            icon="link-variant"
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html ',
+              )
+            }
+            style={{ marginBottom: 32, width: '40%' }}
+          >
+            Read More
+          </ExternalRefButton>
 
           <Subheading>What if I test positive for COVID-19?</Subheading>
 
@@ -64,6 +78,21 @@ const CovidInfo = () => {
               You cannot lose your job because of COVID-19.
             </Paragraph>
           </Unorderedlist>
+          <Paragraph style={{ marginTop: 20 }}>
+            More information on COVID-19 leave in Alberta and pay can be found
+            below
+          </Paragraph>
+          <ExternalRefButton
+            icon="link-variant"
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://www.alberta.ca/covid-19-leave.aspx ',
+              )
+            }
+            style={{ marginBottom: 32, width: '70%' }}
+          >
+            COVID-19 Leave in Alberta
+          </ExternalRefButton>
         </View>
       </ScrollView>
       <FloatingButton

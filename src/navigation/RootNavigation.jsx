@@ -11,8 +11,11 @@ import KnowYourRightsTabs from '../pages/KnowYourRightsTabs';
 import CovidInfo from '../pages/CovidInfo';
 import TypesOfHazards from '../pages/TypesOfHazards';
 import BasicRights from '../pages/BasicRights';
+import InjuryPrevention from '../pages/InjuryPrevention';
 
 import colors from '../config/colors';
+import ReportingAnInjury from '../pages/ReportingAnInjury';
+import RacistIncident from '../pages/RacistIncident';
 
 const App = createStackNavigator();
 
@@ -157,6 +160,54 @@ const RootNavigation = ({ navigation }) => (
     <App.Screen
       name="Basic Rights"
       component={BasicRights}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="Injury Prevention & Training"
+      component={InjuryPrevention}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="Racist Incident"
+      component={RacistIncident}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="Reporting & Filing An Injury"
+      component={ReportingAnInjury}
       options={{
         headerBackTitle: 'Back',
         headerRight: () => (

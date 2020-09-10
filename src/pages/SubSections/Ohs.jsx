@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
 
 import Paragraph from '../../components/Paragraph';
 import Heading from '../../components/Heading';
@@ -8,6 +9,8 @@ import BasicButton from '../../components/BasicButton';
 import ExternalRefButton from '../../components/ExternalRefButton';
 import PageHeader from '../../components/PageHeader';
 import headerImage from '../../../assets/placeholder.png';
+import LinkButtons from '../../components/LinkButtons';
+import colors from '../../config/colors';
 
 const Ohs = () => {
   const navigation = useNavigation();
@@ -28,6 +31,10 @@ const Ohs = () => {
           involve both workers and employers.
         </Paragraph>
 
+        <Paragraph>
+          Workers in Alberta are also covered by the Alberta Workers’
+          Compensation Board (WCB) in the case of injury.
+        </Paragraph>
         <BasicButton
           onPress={() => {
             navigation.navigate('COVID-19 Information');
@@ -56,7 +63,16 @@ const Ohs = () => {
 
         <ExternalRefButton
           icon="link-variant"
-          style={{ marginTop: 32, marginBottom: 0 }}
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/ohs-legislation.aspx',
+            );
+          }}
+          iconColor={colors.primary}
+          style={{
+            marginTop: 32,
+            marginBottom: 0,
+          }}
         >
           Current Legislation
         </ExternalRefButton>
