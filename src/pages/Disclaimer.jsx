@@ -1,16 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-import { View, StyleSheet, Image } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-
-import SectionSubtitleText from '../components/SectionSubtitleText';
-import SectionDetailsText from '../components/SectionDetailsText';
-
-import Bvc from '../../assets/bvc.png';
-import Alberta from '../../assets/alberta.png';
-import AWHC from '../../assets/annotation.png';
-=======
 import { View, StyleSheet, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -25,7 +13,6 @@ import colors from '../config/colors';
 import Bvc from '../../assets/bvc_school_of_global_access.png';
 import Alberta from '../../assets/Alberta-Government-Logo.png';
 import AWHC from '../../assets/awhc.png';
->>>>>>> 3bddd47ce3ef3c18fc1e41ee5c585c51607e548a
 import Sodexo from '../../assets/sodexo.png';
 
 const Disclaimer = () => {
