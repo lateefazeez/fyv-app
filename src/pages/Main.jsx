@@ -19,11 +19,10 @@ const Main = () => (
         Know Your Rights
       </MainScreenButton>
 
-      <MainScreenButton imageLeft={ResourcesImage}>Resources</MainScreenButton>
-
       <MainScreenButton imageLeft={FindingYourVoiceImage}>
         Finding Your Voice
       </MainScreenButton>
+      <MainScreenButton imageLeft={ResourcesImage}>Resources</MainScreenButton>
     </View>
   </SafeAreaView>
 );

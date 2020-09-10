@@ -24,18 +24,8 @@ const KnowYourRights = () => {
             into consideration.
           </Paragraph>
           <Paragraph>
-            Your Safety at work is protected by 3 pieces of legislaton:
+            Your safety at work is protected by 3 pieces of legislation (laws):
           </Paragraph>
-
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'Human Rights',
-              });
-            }}
-          >
-            Human Rights
-          </BasicButton>
 
           <BasicButton
             onPress={() => {
@@ -55,6 +45,24 @@ const KnowYourRights = () => {
             }}
           >
             Employment Standards
+          </BasicButton>
+          <BasicButton
+            onPress={() => {
+              navigation.navigate('Know Your Rights Tabs', {
+                screen: 'Human Rights',
+              });
+            }}
+          >
+            Human Rights
+          </BasicButton>
+          <BasicButton
+            onPress={() => {
+              navigation.navigate('Know Your Rights Tabs', {
+                screen: "Worker's Compensation",
+              });
+            }}
+          >
+            Workers' Compensation Board
           </BasicButton>
         </View>
       </ScrollView>

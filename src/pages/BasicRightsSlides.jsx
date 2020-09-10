@@ -6,13 +6,13 @@ import placeholder from '../../assets/placeholder.png';
 export const Slide01 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#0084BE' }]}>
-      <Image style={styles.image} source={placeholder} />
+      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
         <Text style={styles.textBold}> KNOW</Text>
       </View>
       <Text style={styles.textDetail}>
-        about the dangers of our jobs and how we are protected
+        about the dangers of our jobs and how we are protected.
       </Text>
     </View>
   );
@@ -21,13 +21,13 @@ export const Slide01 = () => {
 export const Slide02 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#5770BA' }]}>
-      <Image style={styles.image} source={placeholder} />
+      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
         <Text style={styles.textBold}> PARTICIPATE</Text>
       </View>
       <Text style={styles.textDetail}>
-        in activities affecting our Health and Safety
+        in activities affecting our Health and Safety.
       </Text>
     </View>
   );
@@ -36,13 +36,13 @@ export const Slide02 = () => {
 export const Slide03 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#8C569F' }]}>
-      <Image style={styles.image} source={placeholder} />
+      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
         <Text style={styles.textBold}> REFUSE WORK</Text>
       </View>
       <Text style={styles.textDetail}>
-        that may be dangerous to ourselves or others
+        that may be dangerous to ourselves or others.
       </Text>
     </View>
   );
@@ -51,13 +51,13 @@ export const Slide03 = () => {
 export const Slide04 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#A63B71' }]}>
-      <Image style={styles.image} source={placeholder} />
+      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headlineLonger}>
         <Text style={styles.text}>Right to be</Text>
         <Text style={styles.textBold}>FREE FROM REPRISAL</Text>
       </View>
       <Text style={styles.textDetail}>
-        for using our Health and Safety rights
+        for using our Health and Safety rights.
       </Text>
     </View>
   );
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   textDetail: {
     color: 'rgba(255,255,255,0.6)',
     fontSize: 16,
-    textAlign: 'justify',
+    textAlign: 'center',
     width: '75%',
   },
   text: {

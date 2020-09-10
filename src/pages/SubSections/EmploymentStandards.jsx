@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Linking } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 
 import PageHeader from '../../components/PageHeader';
 import Heading from '../../components/Heading';
@@ -19,8 +20,22 @@ const EmploymentStandards = () => {
           Workers and employers in Alberta must follow the Employment Standards
           Code and Employment Standards Regulation.
         </Paragraph>
+        <Paragraph>
+          Employment standards can be complicated. If you are confused about
+          things like being wrongfully fired, or issues vacation time, call
+          Alberta Employment Standards to find out more. If they don’t know the
+          answer, they will point you in the right direction.
+        </Paragraph>
 
-        <ExternalRefButton icon="web" style={{ marginBottom: 32 }}>
+        <ExternalRefButton
+          icon="web"
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/employment-standards.aspx',
+            )
+          }
+          style={{ marginBottom: 32 }}
+        >
           Alberta Standards
         </ExternalRefButton>
 
@@ -30,7 +45,15 @@ const EmploymentStandards = () => {
           firefighters have their own set of rules.
         </Paragraph>
 
-        <ExternalRefButton icon="web" style={{ marginBottom: 32 }}>
+        <ExternalRefButton
+          icon="web"
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/exceptions-for-specific-industries.aspx',
+            )
+          }
+          style={{ marginBottom: 32 }}
+        >
           Specific Industries Rules
         </ExternalRefButton>
 
@@ -45,6 +68,13 @@ const EmploymentStandards = () => {
           standards have not been met, such as wrongful termination of
           employment.
         </Paragraph>
+        <ExternalRefButton
+          onPress={() => Linking.openURL('tel://+18774273731')}
+          icon="phone"
+          style={{ marginBottom: 32 }}
+        >
+          +1-877-427-3731
+        </ExternalRefButton>
       </View>
     </ScrollView>
   );

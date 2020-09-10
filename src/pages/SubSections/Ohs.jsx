@@ -8,6 +8,8 @@ import BasicButton from '../../components/BasicButton';
 import ExternalRefButton from '../../components/ExternalRefButton';
 import PageHeader from '../../components/PageHeader';
 import headerImage from '../../../assets/placeholder.png';
+import LinkButtons from '../../components/LinkButtons';
+import colors from '../../config/colors';
 
 const Ohs = () => {
   const navigation = useNavigation();
@@ -28,6 +30,10 @@ const Ohs = () => {
           involve both workers and employers.
         </Paragraph>
 
+        <Paragraph>
+          Workers in Alberta are also covered by the Alberta Workers’
+          Compensation Board (WCB) in the case of injury.
+        </Paragraph>
         <BasicButton
           onPress={() => {
             navigation.navigate('COVID-19 Information');
@@ -56,7 +62,10 @@ const Ohs = () => {
 
         <ExternalRefButton
           icon="link-variant"
-          style={{ marginTop: 32, marginBottom: 0 }}
+          style={{
+            marginTop: 32,
+            marginBottom: 0,
+          }}
         >
           Current Legislation
         </ExternalRefButton>

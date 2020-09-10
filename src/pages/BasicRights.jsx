@@ -3,6 +3,7 @@ import { View, ScrollView, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 
@@ -14,6 +15,7 @@ import PageHeader from '../components/PageHeader';
 import headerImage from '../../assets/placeholder.png';
 
 import colors from '../config/colors';
+import LinkButtons from '../components/LinkButtons';
 
 const BasicRights = () => {
   const navigation = useNavigation();
@@ -56,9 +58,17 @@ const BasicRights = () => {
           <Paragraph>
             It is not always easy to do so, but if we do not follow these rules
             there can be serious consequences (such as undocumented injuries, or
-            workplaces that remain unsafe)
+            workplaces that remain unsafe).
           </Paragraph>
-          <ExternalRefButton icon="web" style={{ marginBottom: 16 }}>
+          <ExternalRefButton
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://workershealthcentre.ca/4-health-and-safety-rights/',
+              )
+            }
+            icon="web"
+            style={{ marginBottom: 16 }}
+          >
             Health & Safety Rights
           </ExternalRefButton>
         </View>

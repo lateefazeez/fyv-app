@@ -8,6 +8,7 @@ import Ohs from './SubSections/Ohs';
 import HumanRights from './SubSections/HumanRights';
 import EmploymentStandards from './SubSections/EmploymentStandards';
 import colors from '../config/colors';
+import WorkersCompensation from './SubSections/WorkersCompensation';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,7 +20,7 @@ const KnowYourRightsTabs = () => {
       <Tab.Navigator
         tabBarOptions={{
           labelStyle: {
-            fontSize: 12,
+            fontSize: 10,
             fontWeight: 'bold',
           },
           activeTintColor: colors.primary,
@@ -32,7 +33,6 @@ const KnowYourRightsTabs = () => {
           },
         }}
       >
-        <Tab.Screen name="Human Rights" component={HumanRights} />
         <Tab.Screen
           name="OHS"
           component={Ohs}
@@ -41,6 +41,11 @@ const KnowYourRightsTabs = () => {
         <Tab.Screen
           name="Employment Standards"
           component={EmploymentStandards}
+        />
+        <Tab.Screen name="Human Rights" component={HumanRights} />
+        <Tab.Screen
+          name="Worker's Compensation"
+          component={WorkersCompensation}
         />
       </Tab.Navigator>
       <FloatingButton

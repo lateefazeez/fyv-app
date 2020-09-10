@@ -43,7 +43,7 @@ const Resources = () => {
             icon="phone"
             iconColor={colors.primary}
           >
-            +1 780-486-9009
+            +1 780-486-9009 (Toll-free)
           </BasicButton>
 
           <BasicButton
@@ -68,8 +68,41 @@ const Resources = () => {
             onPress={() => Linking.openURL('tel://+14032648100')}
             icon="phone"
             iconColor={colors.primary}
+            style={{ marginBottom: 32 }}
           >
-            +1 403-264-8100
+            +1 403-264-8100 (Toll-free)
+          </BasicButton>
+          <Subheading>Employment Standards Contact Centre</Subheading>
+          <Paragraph>
+            Hours: 8:15 am to 4:30 pm MT (Monday to Friday, closed statutory
+            holidays)
+          </Paragraph>
+          <BasicButton
+            onPress={() => Linking.openURL('tel://+18774273731')}
+            icon="phone"
+            iconColor={colors.primary}
+            style={{ marginBottom: 32 }}
+          >
+            +1-877-427-3731 (Toll-free)
+          </BasicButton>
+          <Subheading>Workers' Compensation Board</Subheading>
+          <Paragraph>Contact the WCB</Paragraph>
+          <BasicButton
+            onPress={() => {
+              WebBrowser.openBrowserAsync('https://www.wcb.ab.ca/ ');
+            }}
+            icon="web"
+            iconColor={colors.primary}
+          >
+            https://www.wcb.ab.ca/
+          </BasicButton>
+          <BasicButton
+            onPress={() => Linking.openURL('tel://+18669229221')}
+            icon="phone"
+            iconColor={colors.primary}
+            style={{ marginBottom: 32 }}
+          >
+            +1-866-922-9221 (Toll-free)
           </BasicButton>
         </View>
       </ScrollView>

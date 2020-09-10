@@ -58,8 +58,8 @@ export const Slide04 = () => {
         <Text style={styles.textBold}>Physical</Text>
       </View>
       <Text style={styles.textDetail}>
-        radiation, magnetic fields, temperature extremes, pressure extremes
-        (high pressure or vacuum), noise, etc.
+        Physical hazards are common in places such as nursing homes and
+        construction sites.
       </Text>
     </View>
   );

@@ -38,7 +38,7 @@ export default [
     menuLabel: 'Finding Your Voice',
     menuIconLib: 'MaterialIcon',
     menuIconName: 'chat-processing',
-    menuIconSize: 24,
+    menuIconSize: 20,
     menuCategory: 'section',
   },
   {
