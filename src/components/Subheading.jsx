@@ -3,7 +3,7 @@ import { Text, Platform, StyleSheet } from 'react-native';
 
 import colors from '../config/colors';
 
-function SectionSubtitleText({ children, style }) {
+function Subheading({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SectionSubtitleText;
+export default Subheading;

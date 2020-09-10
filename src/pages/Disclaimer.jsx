@@ -6,7 +6,8 @@ import * as WebBrowser from 'expo-web-browser';
 import { TouchableRipple } from 'react-native-paper';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
-import SectionDetailsText from '../components/SectionDetailsText';
+import Paragraph from '../components/Paragraph';
+import Subheading from '../components/Subheading';
 
 import colors from '../config/colors';
 
@@ -21,21 +22,23 @@ const Disclaimer = () => {
   return (
     <>
       <ScrollView contentContainerStyle={{ padding: 16 }}>
-        <SectionDetailsText>
+        <Paragraph>
           The purpose of this app is solely to educate workers about workplace
           health and safety regulations, general advice, guidance on your
           rights, and the services available to you.
-        </SectionDetailsText>
+        </Paragraph>
 
-        <SectionDetailsText>
+        <Paragraph>
           None of the information provided is intended to be used for legal
           purposes.
-        </SectionDetailsText>
+        </Paragraph>
+
+        <Subheading>This app is only available in English.</Subheading>
 
         <View style={[styles.card, { marginBottom: 16 }]}>
-          <SectionDetailsText style={{ marginBottom: 8, fontSize: 12 }}>
+          <Paragraph style={{ marginBottom: 8, fontSize: 12 }}>
             Funded by
-          </SectionDetailsText>
+          </Paragraph>
           <TouchableRipple
             onPress={() =>
               WebBrowser.openBrowserAsync('https://www.alberta.ca/')
@@ -55,9 +58,9 @@ const Disclaimer = () => {
         </View>
 
         <View style={styles.card}>
-          <SectionDetailsText style={{ marginBottom: 24, fontSize: 12 }}>
+          <Paragraph style={{ marginBottom: 24, fontSize: 12 }}>
             In partnership with:
-          </SectionDetailsText>
+          </Paragraph>
           <TouchableRipple
             style={styles.touchable}
             onPress={() =>

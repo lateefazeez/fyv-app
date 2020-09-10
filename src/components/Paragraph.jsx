@@ -3,19 +3,19 @@ import { Text, Platform, StyleSheet } from 'react-native';
 
 import colors from '../config/colors';
 
-function SectionTitleText({ children, style }) {
+function Paragraph({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
 const styles = StyleSheet.create({
   text: {
-    textAlign: 'center',
     color: colors.black,
-    fontSize: Platform.OS === 'android' ? 21 : 22.5,
-    fontWeight: 'bold',
+    lineHeight: Platform.OS === 'android' ? 21 : 22.5,
+    fontSize: Platform.OS === 'android' ? 14 : 15,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
     marginBottom: 21,
+    textAlign: 'justify',
   },
 });
 
-export default SectionTitleText;
+export default Paragraph;

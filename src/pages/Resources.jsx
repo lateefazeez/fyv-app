@@ -6,9 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import PageHeader from '../components/PageHeader';
-import SectionTitleText from '../components/SectionTitleText';
-import SectionSubtitleText from '../components/SectionSubtitleText';
-import SectionDetailsText from '../components/SectionDetailsText';
+import Heading from '../components/Heading';
+import Subheading from '../components/Subheading';
+import Paragraph from '../components/Paragraph';
 import BasicButton from '../components/BasicButton';
 
 import headerImage from '../../assets/placeholder.png';
@@ -22,23 +22,21 @@ const Resources = () => {
       <ScrollView style={{ flex: 1 }}>
         <PageHeader source={headerImage} />
         <View style={{ padding: 16 }}>
-          <SectionTitleText>Resources</SectionTitleText>
+          <Heading>Resources</Heading>
 
-          <SectionDetailsText>
+          <Paragraph>
             The Alberta Worker’s Health Centre and Calgary Workers Resource
             Centre provide free help for people who have issues with health and
             safety and worker rights:
-          </SectionDetailsText>
+          </Paragraph>
 
-          <SectionSubtitleText>
-            Alberta Workers Health Centre
-          </SectionSubtitleText>
+          <Subheading>Alberta Workers Health Centre</Subheading>
 
-          <SectionDetailsText>
+          <Paragraph>
             Services are free. They provide a first point of contact for workers
             with occupational health and safety issues in their workplace. They
             will provide support, public legal education, and referrals.
-          </SectionDetailsText>
+          </Paragraph>
 
           <BasicButton
             onPress={() => Linking.openURL('tel://+17804869009')}
@@ -59,14 +57,12 @@ const Resources = () => {
             https://workershealthcentre.ca/
           </BasicButton>
 
-          <SectionSubtitleText>
-            Calgary Workers Resource Centre
-          </SectionSubtitleText>
+          <Subheading>Calgary Workers Resource Centre</Subheading>
 
-          <SectionDetailsText>
+          <Paragraph>
             They provide free case work and a public legal education program if
             you are having issues understanding your rights in your workplace.
-          </SectionDetailsText>
+          </Paragraph>
 
           <BasicButton
             onPress={() => Linking.openURL('tel://+14032648100')}

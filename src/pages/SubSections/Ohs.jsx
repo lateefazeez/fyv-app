@@ -2,8 +2,8 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import SectionDetailsText from '../../components/SectionDetailsText';
-import SectionTitleText from '../../components/SectionTitleText';
+import Paragraph from '../../components/Paragraph';
+import Heading from '../../components/Heading';
 import BasicButton from '../../components/BasicButton';
 import ExternalRefButton from '../../components/ExternalRefButton';
 import PageHeader from '../../components/PageHeader';
@@ -16,17 +16,17 @@ const Ohs = () => {
     <ScrollView style={{ flex: 1 }}>
       <PageHeader source={headerImage} />
       <View style={{ padding: 16 }}>
-        <SectionTitleText>Occupational Health & Safety</SectionTitleText>
-        <SectionDetailsText>
+        <Heading>Occupational Health & Safety</Heading>
+        <Paragraph>
           Most workers in Alberta are protected under the Alberta Health and
           Safety Act, Regulation and Code. Some workers, such as federal
           workers, live in care-givers, or farm workers may have their own
           separate laws.
-        </SectionDetailsText>
-        <SectionDetailsText>
+        </Paragraph>
+        <Paragraph>
           These laws are the minimum standards for protecting workers, and
           involve both workers and employers.
-        </SectionDetailsText>
+        </Paragraph>
 
         <BasicButton
           onPress={() => {

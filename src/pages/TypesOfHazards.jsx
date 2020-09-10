@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
-import SectionDetailsText from '../components/SectionDetailsText';
+import Paragraph from '../components/Paragraph';
 import ExternalRefButton from '../components/ExternalRefButton';
 import PageHeader from '../components/PageHeader';
 
@@ -30,13 +30,13 @@ const TypesOfHazards = () => {
         <PageHeader source={headerImage} />
 
         <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
-          <SectionDetailsText>
+          <Paragraph>
             There are 6 hazards types that relate to workplace health and
             safety.
-          </SectionDetailsText>
-          <SectionDetailsText>
+          </Paragraph>
+          <Paragraph>
             A common way to indentify hazards is by category:
-          </SectionDetailsText>
+          </Paragraph>
         </View>
         <Swiper
           style={{ height: 400 }}

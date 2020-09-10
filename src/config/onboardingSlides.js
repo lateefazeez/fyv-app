@@ -5,9 +5,9 @@ const slides = [
     key: 'one',
     title: 'Welcome',
     text:
-      'Find your voice and know your rights with easy access to information and resources about your safety and labour rights in the workplace.',
+      'Gain confidence to speak up and know your rights with easy access to information and resources about your safety, rights, and employment standards in the workplace.',
     image: placeholder,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#3A5991',
   },
   {
     key: 'two',
@@ -15,23 +15,23 @@ const slides = [
     text:
       'Trouble understanding difficult terms?\nSimply tap a word for its definition or look it up inside our glossary.',
     image: placeholder,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#8C569F',
   },
   {
     key: 'three',
     title: 'Interactive Learning',
     text:
-      'Be guided through different workplace scenarios to learn your options when faced with a problem, and be able to take an informed decision.',
+      'Be guided through different workplace scenarios to learn your options when faced with a problem, and be able to make an informed decision.',
     image: placeholder,
-    backgroundColor: '#febe29',
+    backgroundColor: '#B80072',
   },
   {
     key: 'four',
     title: 'Disclaimer',
     text:
-      'The purpose of this app is solely to educate workers about workplace health and safety regulations, general advice, guidance on your rights, and the services available to you.\nNone of the information provided is intended to be used in a legal way.',
+      'The purpose of this app is solely to educate workers about workplace health and safety regulations, general advice, guidance on your rights, and the services available to you.\n\nConfused about the English here? Talk to someone you trust who can help you translate.\n\nNone of the information provided is intended to be used in a legal way.',
     image: placeholder,
-    backgroundColor: '#22bcb5',
+    backgroundColor: '#129C96',
   },
 ];
 
