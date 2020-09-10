@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import colors from '../config/colors';
 import slides from '../config/onboardingSlides';
@@ -41,35 +41,45 @@ export default App;
 
 const doneButton = () => {
   return (
-    <Icon
-      name="checkcircle"
-      size={32}
-      style={{ paddingRight: 16, paddingTop: 8 }}
-      color={colors.white}
-    />
+    <View style={styles.doneButton}>
+      <Icon name="md-checkmark" color={colors.black} size={24} />
+    </View>
   );
 };
 
 const nextButton = () => {
   return (
-    <Icon
-      name="arrowright"
-      size={32}
-      style={{ paddingRight: 16, paddingTop: 8 }}
-      color={colors.white}
-    />
+    <View style={styles.nextButton}>
+      <Icon
+        name="md-arrow-round-forward"
+        color="rgba(255, 255, 255, .9)"
+        size={24}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   doneButton: {
-    borderColor: colors.white,
-    borderStyle: 'solid',
-    borderRadius: 5,
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgba(255, 255, 255, .8)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 8,
   },
-  doneButtonText: {
-    color: colors.white,
+  nextButton: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, .2)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 8,
+    flexDirection: 'row',
   },
+
   slide: {
     flex: 1,
     alignItems: 'stretch',
@@ -84,7 +94,7 @@ const styles = StyleSheet.create({
   },
   slideLowerSection: {
     flex: 1,
-    padding: 32,
+    padding: 24,
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -96,7 +106,8 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'justify',
     width: '100%',
-    lineHeight: 20,
+    lineHeight: 18,
+    fontSize: 16,
   },
   title: {
     fontSize: 22,

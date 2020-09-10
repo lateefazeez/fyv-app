@@ -13,7 +13,7 @@ const slides = [
     key: 'two',
     title: 'Learn Faster and Easier',
     text:
-      'Trouble understanding difficult terms?\nSimply tap a word for its definition or look it up inside our glossary.',
+      'Trouble understanding difficult terms?\n\nSimply tap a word for its definition or look it up inside our glossary.',
     image: placeholder,
     backgroundColor: '#8C569F',
   },
