@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
 
 import Paragraph from '../../components/Paragraph';
 import Heading from '../../components/Heading';
@@ -62,6 +63,12 @@ const Ohs = () => {
 
         <ExternalRefButton
           icon="link-variant"
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/ohs-legislation.aspx',
+            );
+          }}
+          iconColor={colors.primary}
           style={{
             marginTop: 32,
             marginBottom: 0,
