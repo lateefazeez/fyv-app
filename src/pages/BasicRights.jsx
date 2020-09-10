@@ -8,7 +8,7 @@ import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 
 import { Slide01, Slide02, Slide03, Slide04 } from './BasicRightsSlides';
 
-import SectionDetailsText from '../components/SectionDetailsText';
+import Paragraph from '../components/Paragraph';
 import ExternalRefButton from '../components/ExternalRefButton';
 import PageHeader from '../components/PageHeader';
 import headerImage from '../../assets/placeholder.png';
@@ -24,10 +24,10 @@ const BasicRights = () => {
         <PageHeader source={headerImage} />
 
         <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
-          <SectionDetailsText>
+          <Paragraph>
             In Alberta, workers have 4 basic rights that relate to health
             safety:
-          </SectionDetailsText>
+          </Paragraph>
         </View>
         <Swiper
           style={{ height: 400 }}
@@ -48,16 +48,16 @@ const BasicRights = () => {
         </Swiper>
 
         <View style={{ paddingHorizontal: 16, paddingTop: 0 }}>
-          <SectionDetailsText>
+          <Paragraph>
             As workers, we must follow the health and safety rules. We must not
             cause or participate in harassment, bullying, or violence, and we
             must report unsafe work conditions. This is part of Canadian law.
-          </SectionDetailsText>
-          <SectionDetailsText>
+          </Paragraph>
+          <Paragraph>
             It is not always easy to do so, but if we do not follow these rules
             there can be serious consequences (such as undocumented injuries, or
             workplaces that remain unsafe)
-          </SectionDetailsText>
+          </Paragraph>
           <ExternalRefButton icon="web" style={{ marginBottom: 16 }}>
             Health & Safety Rights
           </ExternalRefButton>

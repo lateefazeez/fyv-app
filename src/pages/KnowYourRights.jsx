@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
 import BasicButton from '../components/BasicButton';
 import PageHeader from '../components/PageHeader';
-import SectionDetailsText from '../components/SectionDetailsText';
-import SectionTitleText from '../components/SectionTitleText';
+import Paragraph from '../components/Paragraph';
+import Heading from '../components/Heading';
 
 import headerImage from '../../assets/workplace_safety.png';
 
@@ -18,14 +18,14 @@ const KnowYourRights = () => {
       <ScrollView style={{ flex: 1 }}>
         <PageHeader source={headerImage} />
         <View style={{ padding: 24 }}>
-          <SectionTitleText>Know Your Rights</SectionTitleText>
-          <SectionDetailsText>
+          <Heading>Know Your Rights</Heading>
+          <Paragraph>
             A safe workplace takes your physical, mental, and emotional safety
             into consideration.
-          </SectionDetailsText>
-          <SectionDetailsText>
+          </Paragraph>
+          <Paragraph>
             Your Safety at work is protected by 3 pieces of legislaton:
-          </SectionDetailsText>
+          </Paragraph>
 
           <BasicButton
             onPress={() => {
