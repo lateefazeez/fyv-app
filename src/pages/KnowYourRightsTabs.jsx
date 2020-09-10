@@ -24,7 +24,7 @@ const KnowYourRightsTabs = () => {
             fontWeight: 'bold',
           },
           activeTintColor: colors.primary,
-          inactiveTintColor: '#a6a8ab',
+          inactiveTintColor: colors.darkGrey,
           indicatorStyle: {
             backgroundColor: colors.primary,
           },

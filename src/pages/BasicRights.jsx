@@ -1,21 +1,18 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
 import FloatingButton from '../components/FindingYourVoiceFloatingButton';
-
-import { Slide01, Slide02, Slide03, Slide04 } from './BasicRightsSlides';
-
 import Paragraph from '../components/Paragraph';
 import ExternalRefButton from '../components/ExternalRefButton';
 import PageHeader from '../components/PageHeader';
-import headerImage from '../../assets/placeholder.png';
 
+import { Slide01, Slide02, Slide03, Slide04 } from './BasicRightsSlides';
+import headerImage from '../../assets/placeholder.png';
 import colors from '../config/colors';
-import LinkButtons from '../components/LinkButtons';
 
 const BasicRights = () => {
   const navigation = useNavigation();
