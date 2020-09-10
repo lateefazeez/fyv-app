@@ -22,11 +22,17 @@ const WorkersCompensation = () => {
 
         <Paragraph>
           If you are injured at work, it is your right to report the injury. If
-          this happens to you, follow these steps: 1. Tell your employer 2.
-          Apply any First Aid and tell your health care provider 3. Tell the
-          Workers’ Compensation Board (you can file a report online by clicking
-          the link below or in paper and fax it
+          this happens to you, follow these steps:
         </Paragraph>
+        <Paragraph>1. Tell your employer</Paragraph>
+        <Paragraph>
+          2. Apply any First Aid and tell your health care provider
+        </Paragraph>
+        <Paragraph>
+          3. Tell the Workers’ Compensation Board (you can file a report online
+          by clicking the link below or in paper and fax it
+        </Paragraph>
+
         <ExternalRefButton
           icon="format-list-checkbox"
           onPress={() =>
