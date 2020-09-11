@@ -270,8 +270,53 @@ const InjuryPrevention = () => {
           </Text>
         </View>
       ),
+      trigger: '41',
+    },
+    {
+      id: '41',
+      message:
+        'Unsafe work has to do with 4 hazards outlined in OHS legislation. These are physical hazards, chemical hazards, biological hazards, and psychosocial hazards.',
+      trigger: '42',
+    },
+    {
+      id: '42',
+      message:
+        'However, if you refuse unsafe work, this right has specific steps to be taken.',
+      trigger: '43',
+    },
+    {
+      id: '43',
+      message: 'Please click "OK" to see these steps',
+      trigger: '44',
+    },
+    {
+      id: '44',
+      options: [{ value: 'ok', label: 'OK', trigger: '45' }],
+    },
+    {
+      id: '45',
+      message: 'The steps you need to take as part of this right are: ',
+      trigger: '46',
+    },
+    {
+      id: '46',
+      message:
+        '1. Let your immediate supervisor know that you are uncomfortable and/or unsafe, and clearly explain why. ',
+      trigger: '47',
+    },
+    {
+      id: '47',
+      message:
+        '2. Give your employer/supervisor a chance and a reasonable timeline to provide you with training, and/or make the work safe.',
+      trigger: '48',
+    },
+    {
+      id: '48',
+      message:
+        '3. If you still do not know what to do and/or If the work is still unsafe, you have the right to refuse the work without reprisal (consequences). ',
       trigger: 'end_options',
     },
+
     {
       id: 'end_options',
       options: [{ value: '0', label: 'QUIT', trigger: 'end' }],

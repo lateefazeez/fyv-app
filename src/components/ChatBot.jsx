@@ -1,7 +1,9 @@
 import React from 'react';
-import ChatBot from 'react-native-chatbot';
+import ChatBot from 'react-native-chatbot-expo';
 
 import colors from '../config/colors';
+
+console.disableYellowBox = true;
 
 const FyvChatBot = ({ steps, handleEnd, ...props }) => {
   return (
