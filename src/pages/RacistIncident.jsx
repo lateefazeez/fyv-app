@@ -9,15 +9,7 @@ import BasicButton from '../components/BasicButton';
 import colors from '../config/colors';
 
 const getUniqueId = () => {
-  const S4 = () => {
-    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-  };
-
-  const uniqueId = `${
-    S4() + S4()
-  }-${S4()}-${S4()}-${S4()}-${S4()}${S4()}${S4()}`;
-
-  return uniqueId;
+  return ((1 + Math.random()) * 0x10000).toString(16);
 };
 
 const RacistIncident = () => {
@@ -54,15 +46,25 @@ const RacistIncident = () => {
     {
       id: '1',
       message:
-        'We can help you with 3 educational scenarios. Which one do you pick?',
-      trigger: 'options-1',
+        'This is an educational tool. Please, do not make any decision based only on the content provided here.',
+      trigger: 'description',
     },
     {
-      id: 'options-1',
+      id: 'description',
+      message: 'Here is the scenario description...',
+      trigger: 'question1',
+    },
+    {
+      id: 'question1',
+      message: 'What would you do?',
+      trigger: 'question1_options',
+    },
+    {
+      id: 'question1_options',
       options: [
-        { value: 1, label: 'Scenario 1', trigger: 'Case1' },
-        { value: 2, label: 'Scenario 2', trigger: 'end' },
-        { value: 3, label: 'Scenario 3', trigger: 'end' },
+        { value: 1, label: 'Option 1', trigger: 'Case1' },
+        { value: 2, label: 'Option 2', trigger: 'end' },
+        { value: 3, label: 'Option 3', trigger: 'end' },
       ],
     },
     {
@@ -96,7 +98,7 @@ const RacistIncident = () => {
           icon="phone"
           iconColor={colors.primary}
         >
-          +1 780-486-9009 (Toll-free)
+          Call AWHC (Toll-free)
         </BasicButton>
       ),
       trigger: 'Case1_Question2',
@@ -130,28 +132,25 @@ const RacistIncident = () => {
     <ChatBot
       key={sessionKey}
       steps={steps}
-      botAvatar="https://placeimg.com/640/480/tech"
-      handleEnd={handleEnd}
-      userDelay={0}
-      botDelay={750}
-      customDelay={0}
-      contentStyle={{ paddingTop: 8, backgroundColor: 'none' }}
+      userAvatar="https://i.ibb.co/yVfjxZ1/user-icon.png"
+      botAvatar="https://i.ibb.co/9Nz0rZb/logo-green-icon.png"
+      /* handleEnd={handleEnd} */
+      userDelay={200}
+      botDelay={1000}
+      customDelay={200}
+      contentStyle={{
+        paddingTop: 8,
+        backgroundColor: colors.lightGrey,
+      }}
       scrollViewProps={{}}
       customStyle={{
         backgroundColor: 'none',
         borderWidth: 0,
-        padding: 0,
-        margin: 0,
-        marginLeft: 40,
+        marginLeft: 43,
       }}
       bubbleStyle={{ backgroundColor: colors.primary }}
-      optionElementStyle={{
-        backgroundColor: colors.darkGrey,
-      }}
-      optionStyle={{
-        color: colors.black,
-      }}
-      footerStyle={{ height: 0, position: 'absolute', bottom: -60 }}
+      optionElementStyle={{ backgroundColor: colors.darkGrey }}
+      footerStyle={{ position: 'absolute', bottom: -100 }}
     />
   );
 };
