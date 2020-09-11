@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Linking, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -16,7 +16,7 @@ const getUniqueId = () => {
   const uniqueId = `${
     S4() + S4()
   }-${S4()}-${S4()}-${S4()}-${S4()}${S4()}${S4()}`;
-  console.log('new Id: ', uniqueId);
+
   return uniqueId;
 };
 
@@ -24,10 +24,7 @@ const RacistIncident = () => {
   const [sessionKey, setSessionKey] = useState(getUniqueId());
   const navigation = useNavigation();
 
-  const handleEnd = ({ renderedSteps, steps, values }) => {
-    console.log('steps:\n', steps);
-    console.log('values:\n', values);
-    console.log('rendered:\n', renderedSteps);
+  const handleEnd = () => {
     return Alert.alert(
       'Do you want to try again?',
       'You can start over or go back to app main screen.',
@@ -137,8 +134,23 @@ const RacistIncident = () => {
       handleEnd={handleEnd}
       userDelay={0}
       botDelay={750}
+      customDelay={0}
       contentStyle={{ paddingTop: 8, backgroundColor: 'none' }}
       scrollViewProps={{}}
+      customStyle={{
+        backgroundColor: 'none',
+        borderWidth: 0,
+        padding: 0,
+        margin: 0,
+        marginLeft: 40,
+      }}
+      bubbleStyle={{ backgroundColor: colors.primary }}
+      optionElementStyle={{
+        backgroundColor: colors.darkGrey,
+      }}
+      optionStyle={{
+        color: colors.black,
+      }}
       footerStyle={{ height: 0, position: 'absolute', bottom: -60 }}
     />
   );
