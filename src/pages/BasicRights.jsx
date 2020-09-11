@@ -70,9 +70,7 @@ const BasicRights = () => {
           </ExternalRefButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };

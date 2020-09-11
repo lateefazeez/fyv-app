@@ -20,7 +20,7 @@ const Main = () => (
       </MainScreenButton>
 
       <MainScreenButton imageLeft={FindingYourVoiceImage}>
-        Finding Your Voice
+        Find Your Voice
       </MainScreenButton>
       <MainScreenButton imageLeft={ResourcesImage}>Resources</MainScreenButton>
     </View>

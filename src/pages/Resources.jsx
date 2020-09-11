@@ -106,9 +106,7 @@ const Resources = () => {
           </BasicButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };

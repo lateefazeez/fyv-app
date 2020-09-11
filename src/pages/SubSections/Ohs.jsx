@@ -44,6 +44,13 @@ const Ohs = () => {
         >
           Important COVID-19 Information
         </BasicButton>
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('Types of Hazards');
+          }}
+        >
+          Types of Hazards
+        </BasicButton>
 
         <BasicButton
           onPress={() => {
@@ -55,10 +62,10 @@ const Ohs = () => {
 
         <BasicButton
           onPress={() => {
-            navigation.navigate('Types of Hazards');
+            navigation.navigate("Workers' Compensation");
           }}
         >
-          Types of Hazards
+          Workers' Compensation Board
         </BasicButton>
 
         <ExternalRefButton

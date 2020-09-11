@@ -55,20 +55,9 @@ const KnowYourRights = () => {
           >
             Human Rights
           </BasicButton>
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: "Worker's Compensation",
-              });
-            }}
-          >
-            Workers' Compensation Board
-          </BasicButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };

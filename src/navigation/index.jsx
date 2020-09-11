@@ -37,7 +37,7 @@ const HomeNavigation = ({ navigation }) => (
     />
     <App.Screen name="Workplace Safety" component={WorkplaceSafety} />
     <App.Screen name="Resources" component={Resources} />
-    <App.Screen name="Finding Your Voice" component={FindingYourVoice} />
+    <App.Screen name="Find Your Voice" component={FindingYourVoice} />
     <App.Screen name="Disclaimers" component={Disclaimers} />
   </App.Navigator>
 );

@@ -16,6 +16,7 @@ import InjuryPrevention from '../pages/InjuryPrevention';
 import colors from '../config/colors';
 import ReportingAnInjury from '../pages/ReportingAnInjury';
 import RacistIncident from '../pages/RacistIncident';
+import WorkersCompensation from '../pages/SubSections/WorkersCompensation';
 
 const App = createStackNavigator();
 
@@ -77,7 +78,7 @@ const RootNavigation = ({ navigation }) => (
       }}
     />
     <App.Screen
-      name="Finding Your Voice"
+      name="Find Your Voice"
       component={FindingYourVoice}
       options={{
         headerBackTitle: 'Back',
@@ -128,6 +129,22 @@ const RootNavigation = ({ navigation }) => (
     <App.Screen
       name="COVID-19 Information"
       component={CovidInfo}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="Workers' Compensation"
+      component={WorkersCompensation}
       options={{
         headerBackTitle: 'Back',
         headerRight: () => (
