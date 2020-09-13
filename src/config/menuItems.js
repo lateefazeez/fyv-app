@@ -55,4 +55,11 @@ export default [
     menuIconSize: 20,
     menuCategory: 'section',
   },
+  {
+    menuLabel: 'Glossary',
+    menuIconLib: 'FeatherIcon',
+    menuIconName: 'book',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
 ];

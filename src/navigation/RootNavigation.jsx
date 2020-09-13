@@ -17,6 +17,7 @@ import colors from '../config/colors';
 import ReportingAnInjury from '../pages/ReportingAnInjury';
 import RacistIncident from '../pages/RacistIncident';
 import WorkersCompensation from '../pages/SubSections/WorkersCompensation';
+import Glossary from '../pages/Glossary';
 
 const App = createStackNavigator();
 
@@ -96,6 +97,22 @@ const RootNavigation = ({ navigation }) => (
     <App.Screen
       name="Disclaimer"
       component={Disclaimer}
+      options={{
+        headerBackTitle: 'Back',
+        headerRight: () => (
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        ),
+      }}
+    />
+    <App.Screen
+      name="Glossary"
+      component={Glossary}
       options={{
         headerBackTitle: 'Back',
         headerRight: () => (

@@ -29,8 +29,8 @@ const HumanRights = () => {
 
         <Paragraph>
           Human Rights in Alberta relate to the idea that everyone should be
-          free from discrimination, and apply to employers and workers. In cases
-          of human rights violations specific steps need to be taken.
+          free from discrimination, and applies to employers and workers. In
+          cases of human rights violations specific steps need to be taken.
         </Paragraph>
 
         <ExternalRefButton icon="file-download" style={{ marginBottom: 32 }}>

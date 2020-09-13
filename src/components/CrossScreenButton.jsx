@@ -5,10 +5,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from '../config/colors';
 
-const BasicButton = ({ children, icon, style, ...props }) => {
+const CrossScreenButton = ({ children, icon, style, ...props }) => {
   return (
     <RectButton style={[styles.button, style]} {...props}>
       <View style={styles.buttonContent} accessible>
+        <Text style={styles.text}>{children}</Text>
         {icon && (
           <Icon
             name={icon}
@@ -17,13 +18,12 @@ const BasicButton = ({ children, icon, style, ...props }) => {
             style={styles.icon}
           />
         )}
-        <Text style={styles.text}>{children}</Text>
       </View>
     </RectButton>
   );
 };
 
-export default BasicButton;
+export default CrossScreenButton;
 
 const styles = StyleSheet.create({
   button: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.black,
     fontSize: 14,
-    marginLeft: 8,
+    marginRight: 24,
   },
   icon: {
     padding: 0,
