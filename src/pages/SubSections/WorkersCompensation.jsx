@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Linking } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
 import PageHeader from '../../components/PageHeader';

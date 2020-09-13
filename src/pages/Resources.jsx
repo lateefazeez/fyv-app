@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Linking } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
+
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -14,8 +15,43 @@ import BasicButton from '../components/BasicButton';
 import headerImage from '../../assets/placeholder.png';
 import colors from '../config/colors';
 
+const callAlbertaWHC = () => {
+  const url = 'tel://17804869009';
+  Linking.openURL(url);
+};
+
 const Resources = () => {
   const navigation = useNavigation();
+  const [setResult] = useState(null);
+
+  const handlePressWRCButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.helpwrc.org/',
+    );
+    setResult(result);
+  };
+  const handlePressESCButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.alberta.ca/employment-standards.aspx',
+    );
+    setResult(result);
+  };
+  const handlePressWPHButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.alberta.ca/occupational-health-safety.aspx',
+    );
+    setResult(result);
+  };
+  const handlePressFACButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.alberta.ca/file-complaint-online.aspx',
+    );
+    setResult(result);
+  };
+  const handlePressWCBButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync('https://www.wcb.ab.ca/');
+    setResult(result);
+  };
 
   return (
     <>
@@ -51,7 +87,7 @@ const Resources = () => {
             </Paragraph>
 
             <BasicButton
-              onPress={() => Linking.openURL('tel://+17804869009')}
+              onPress={callAlbertaWHC}
               icon="phone"
               iconColor={colors.primary}
             >
@@ -95,9 +131,7 @@ const Resources = () => {
               +1 403-264-8100 (Toll-free)
             </BasicButton>
             <BasicButton
-              onPress={() => {
-                WebBrowser.openBrowserAsync('https://www.helpwrc.org/ ');
-              }}
+              onPress={handlePressWRCButtonAsync}
               icon="web"
               iconColor={colors.primary}
               style={{ marginBottom: 32 }}
@@ -135,16 +169,11 @@ const Resources = () => {
               +1-877-427-3731 (Toll-free)
             </BasicButton>
             <BasicButton
-              onPress={() => {
-                WebBrowser.openBrowserAsync(
-                  'https://www.alberta.ca/contact-employment-standards.aspx  ',
-                );
-              }}
+              onPress={handlePressESCButtonAsync}
               icon="web"
               iconColor={colors.primary}
-              style={{ marginBottom: 32 }}
             >
-              Website
+              https://www.alberta.ca/emp...
             </BasicButton>
           </View>
           <View
@@ -166,15 +195,11 @@ const Resources = () => {
               online or by phone through OHS.
             </Paragraph>
             <BasicButton
-              onPress={() => {
-                WebBrowser.openBrowserAsync(
-                  'https://www.alberta.ca/workplace-hazards.aspx#ohs-contact  ',
-                );
-              }}
+              onPress={handlePressWPHButtonAsync}
               icon="web"
               iconColor={colors.primary}
             >
-              https://www.alberta.ca/...
+              https://www.alberta.ca/occu...
             </BasicButton>
             <BasicButton
               onPress={() => Linking.openURL('tel://+18664158690')}
@@ -188,11 +213,7 @@ const Resources = () => {
               File a complaint,
             </Paragraph>
             <BasicButton
-              onPress={() => {
-                WebBrowser.openBrowserAsync(
-                  'https://www.alberta.ca/file-complaint-online.aspx  ',
-                );
-              }}
+              onPress={handlePressFACButtonAsync}
               icon="web"
               iconColor={colors.primary}
             >
@@ -225,9 +246,7 @@ const Resources = () => {
               workplace injury through WCB
             </Paragraph>
             <BasicButton
-              onPress={() => {
-                WebBrowser.openBrowserAsync('https://www.wcb.ab.ca/ ');
-              }}
+              onPress={handlePressWCBButtonAsync}
               icon="web"
               iconColor={colors.primary}
             >
