@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
 
 import PageHeader from '../../components/PageHeader';
 import Heading from '../../components/Heading';
@@ -23,17 +24,34 @@ const HumanRights = () => {
           orientation, or immigration status:
         </Paragraph>
 
-        <ExternalRefButton icon="file-download" style={{ marginBottom: 32 }}>
+        <ExternalRefButton
+          icon="file-download"
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
+            )
+          }
+          style={{ marginBottom: 32 }}
+        >
           Alberta Human Rights
         </ExternalRefButton>
 
         <Paragraph>
           Human Rights in Alberta relate to the idea that everyone should be
-          free from discrimination, and apply to employers and workers. In cases
-          of human rights violations specific steps need to be taken.
+          free from discrimination, and applies to employers and workers. In
+          cases of human rights violations specific steps need to be taken.
         </Paragraph>
 
-        <ExternalRefButton icon="file-download" style={{ marginBottom: 32 }}>
+        <ExternalRefButton
+          icon="file-download"
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.albertahumanrights.ab.ca/Documents/GuideProcess_Complainants.pdf',
+            )
+          }
+          style={{ marginBottom: 32 }}
+          style={{ marginBottom: 32 }}
+        >
           Complainants Guide
         </ExternalRefButton>
       </View>

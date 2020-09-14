@@ -29,6 +29,7 @@ const App = ({ onDone, ...props }) => {
         renderItem={renderItem}
         renderDoneButton={doneButton}
         renderNextButton={nextButton}
+        showSkipButton
         data={slides}
         onDone={onDone}
         {...props}

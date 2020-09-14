@@ -35,7 +35,7 @@ export default [
   //   menuCategory: 'subSection',
   // },
   {
-    menuLabel: 'Finding Your Voice',
+    menuLabel: 'Find Your Voice',
     menuIconLib: 'MaterialIcon',
     menuIconName: 'chat-processing',
     menuIconSize: 20,
@@ -52,6 +52,13 @@ export default [
     menuLabel: 'Disclaimer',
     menuIconLib: 'Fa5Icon',
     menuIconName: 'exclamation-circle',
+    menuIconSize: 20,
+    menuCategory: 'section',
+  },
+  {
+    menuLabel: 'Glossary',
+    menuIconLib: 'FeatherIcon',
+    menuIconName: 'book',
     menuIconSize: 20,
     menuCategory: 'section',
   },

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 import { TouchableRipple } from 'react-native-paper';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import Paragraph from '../components/Paragraph';
 import Subheading from '../components/Subheading';
 
@@ -111,9 +111,7 @@ const Disclaimer = () => {
           </TouchableRipple>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };

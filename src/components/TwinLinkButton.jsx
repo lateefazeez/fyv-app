@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.black,
-    fontSize: 14,
+    fontSize: 12,
     marginLeft: 8,
   },
   icon: {

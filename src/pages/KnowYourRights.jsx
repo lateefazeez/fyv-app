@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import BasicButton from '../components/BasicButton';
 import PageHeader from '../components/PageHeader';
 import Paragraph from '../components/Paragraph';
@@ -55,20 +55,9 @@ const KnowYourRights = () => {
           >
             Human Rights
           </BasicButton>
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: "Worker's Compensation",
-              });
-            }}
-          >
-            Workers' Compensation Board
-          </BasicButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };

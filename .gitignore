@@ -10,8 +10,8 @@ npm-debug.*
 web-build/
 
 yarn.lock
-yarn-error.log
 zshrc
 
 # macOS
 .DS_Store
+yarn-error.log

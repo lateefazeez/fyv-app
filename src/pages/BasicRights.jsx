@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, StyleSheet, Linking } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import Paragraph from '../components/Paragraph';
 import ExternalRefButton from '../components/ExternalRefButton';
 import PageHeader from '../components/PageHeader';
@@ -46,6 +46,17 @@ const BasicRights = () => {
           <Slide04 />
         </Swiper>
 
+        <ExternalRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://workershealthcentre.ca/4-health-and-safety-rights/',
+            )
+          }
+          icon="web"
+          style={{ marginBottom: 16 }}
+        >
+          Health & Safety Rights
+        </ExternalRefButton>
         <View style={{ paddingHorizontal: 16, paddingTop: 0 }}>
           <Paragraph>
             As workers, we must follow the health and safety rules. We must not
@@ -57,24 +68,54 @@ const BasicRights = () => {
             there can be serious consequences (such as undocumented injuries, or
             workplaces that remain unsafe).
           </Paragraph>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingBottom: 24,
+            backgroundColor: colors.darkerGrey,
+            padding: 10,
+            marginBottom: 20,
+          }}
+        >
+          <Icon
+            name="alert-circle"
+            size={30}
+            color={colors.red}
+            style={styles.icon}
+          />
+          <Paragraph style={{ color: colors.white }}>
+            Workplaces in Alberta have been affected by COVID-19. This has left
+            many workers wondering how they can protect themselves from the
+            virus. Workers continue to have the Rights to refuse dangerous work
+            and be free from reprisal, but it is important to follow the correct
+            process under OHS law
+          </Paragraph>
           <ExternalRefButton
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
-                'https://workershealthcentre.ca/4-health-and-safety-rights/',
-              )
-            }
             icon="web"
-            style={{ marginBottom: 16 }}
+            onPress={() => {
+              WebBrowser.openBrowserAsync(
+                'https://workershealthcentre.ca/right-to-refuse/',
+              );
+            }}
+            style={{ marginBottom: 16, width: '70%' }}
           >
-            Health & Safety Rights
+            Click Here for the proces
           </ExternalRefButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  icon: {
+    padding: 0,
+    margin: 0,
+  },
+});
 
 export default BasicRights;
