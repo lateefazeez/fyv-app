@@ -12,7 +12,7 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
       steps={steps}
       userAvatar="https://i.ibb.co/yVfjxZ1/user-icon.png"
       botAvatar="https://i.ibb.co/9Nz0rZb/logo-green-icon.png"
-      handleEnd={handleEnd}
+      // handleEnd={handleEnd}
       userDelay={200}
       botDelay={1000}
       customDelay={200}

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import BasicButton from '../components/BasicButton';
 import PageHeader from '../components/PageHeader';
 import Paragraph from '../components/Paragraph';

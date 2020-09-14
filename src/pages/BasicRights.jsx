@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import Paragraph from '../components/Paragraph';
 import ExternalRefButton from '../components/ExternalRefButton';
 import PageHeader from '../components/PageHeader';

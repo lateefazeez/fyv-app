@@ -4,7 +4,7 @@ import Unorderedlist from 'react-native-unordered-list';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import PageHeader from '../components/PageHeader';
 import Heading from '../components/Heading';
 import Paragraph from '../components/Paragraph';

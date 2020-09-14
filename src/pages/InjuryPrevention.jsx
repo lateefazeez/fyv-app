@@ -1,12 +1,9 @@
 import React from 'react';
-import { Linking, Alert, View, Text } from 'react-native';
+import { Alert, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import FyvChatBot from '../components/ChatBot';
 import BasicButton from '../components/BasicButton';
-
-//LogBox.ignoreLogs(['Animated: ]);
-console.disableYellowBox = ['Animated: ...'];
 
 const InjuryPrevention = () => {
   const navigation = useNavigation();

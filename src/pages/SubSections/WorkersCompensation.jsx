@@ -6,7 +6,7 @@ import PageHeader from '../../components/PageHeader';
 import Heading from '../../components/Heading';
 import Paragraph from '../../components/Paragraph';
 import BasicButton from '../../components/BasicButton';
-import FloatingButton from '../../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../../components/FloatingButton';
 
 import headerImage from '../../../assets/placeholder.png';
 import ExternalRefButton from '../../components/ExternalRefButton';

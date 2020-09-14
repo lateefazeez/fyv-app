@@ -5,7 +5,7 @@ import * as WebBrowser from 'expo-web-browser';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
-import FloatingButton from '../components/FindingYourVoiceFloatingButton';
+import FloatingButton from '../components/FloatingButton';
 import PageHeader from '../components/PageHeader';
 import Heading from '../components/Heading';
 import Subheading from '../components/Subheading';
