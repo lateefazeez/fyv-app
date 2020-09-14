@@ -5,6 +5,9 @@ import { useNavigation } from '@react-navigation/native';
 import FyvChatBot from '../components/ChatBot';
 import BasicButton from '../components/BasicButton';
 
+//LogBox.ignoreLogs(['Animated: ]);
+console.disableYellowBox = ['Animated: ...'];
+
 const InjuryPrevention = () => {
   const navigation = useNavigation();
 
@@ -114,7 +117,20 @@ const InjuryPrevention = () => {
     {
       id: '14',
       message:
-        'Please read more about this from the alberta government website at: https://abcd.ca',
+        'Please read more about Basic Rights by clicking the button below',
+      trigger: 'read more',
+    },
+    {
+      id: 'read more',
+      component: (
+        <BasicButton
+          onPress={() => {
+            navigation.navigate('Basic Rights');
+          }}
+        >
+          Basic Rights
+        </BasicButton>
+      ),
       trigger: 'end_options',
     },
     {

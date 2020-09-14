@@ -8,7 +8,7 @@ import PhysicalImage from '../../assets/man.png';
 import ChemicalImage from '../../assets/chemical_image.png';
 import colors from '../config/colors';
 
-export const Slide01 = () => {
+export const Slide02 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={BiologicalImage} />
@@ -16,13 +16,14 @@ export const Slide01 = () => {
         <Text style={styles.textBold}>Biological</Text>
       </View>
       <Text style={styles.textDetail}>
-        bacteria, viruses, insects, plants, birds, animals, and humans, etc.
+        Includes insect stings, allergic reactions, and being in contact with
+        viruses.
       </Text>
     </View>
   );
 };
 
-export const Slide02 = () => {
+export const Slide03 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={ChemicalImage} />
@@ -30,13 +31,13 @@ export const Slide02 = () => {
         <Text style={styles.textBold}>Chemical</Text>
       </View>
       <Text style={styles.textDetail}>
-        depends on the physical, chemical and toxic properties of the chemical.
+        Includes cleaning products, paint materials, and toxic chemicals.
       </Text>
     </View>
   );
 };
 
-export const Slide03 = () => {
+export const Slide05 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={placeholder} />
@@ -50,7 +51,7 @@ export const Slide03 = () => {
   );
 };
 
-export const Slide04 = () => {
+export const Slide01 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={PhysicalImage} />
@@ -58,21 +59,24 @@ export const Slide04 = () => {
         <Text style={styles.textBold}>Physical</Text>
       </View>
       <Text style={styles.textDetail}>
-        Physical hazards are common in places such as nursing homes and
-        construction sites.
+        Includes using tools all day long, fatigue, being hurt by tools,
+        falling, and being burned.
       </Text>
     </View>
   );
 };
 
-export const Slide05 = () => {
+export const Slide04 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={PsychosocialImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Psychosocial</Text>
       </View>
-      <Text style={styles.textDetail}>stress, violence, etc.</Text>
+      <Text style={styles.textDetail}>
+        Includes bullying, intimidation, abuse, chronic stress, rotating shift
+        work, and working long hours.
+      </Text>
     </View>
   );
 };

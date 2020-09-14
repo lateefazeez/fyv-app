@@ -10,6 +10,7 @@ import WorkplaceSafety from '../pages/WorkplaceSafety';
 import Resources from '../pages/Resources';
 import FindingYourVoice from '../pages/FindingYourVoice';
 import Disclaimers from '../pages/Disclaimers';
+import Glossary from '../pages/Glossary';
 
 const App = createStackNavigator();
 
@@ -37,8 +38,9 @@ const HomeNavigation = ({ navigation }) => (
     />
     <App.Screen name="Workplace Safety" component={WorkplaceSafety} />
     <App.Screen name="Resources" component={Resources} />
-    <App.Screen name="Finding Your Voice" component={FindingYourVoice} />
+    <App.Screen name="Find Your Voice" component={FindingYourVoice} />
     <App.Screen name="Disclaimers" component={Disclaimers} />
+    <App.Screen name="Glossary" component={Glossary} />
   </App.Navigator>
 );
 

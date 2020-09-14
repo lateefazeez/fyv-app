@@ -6,6 +6,7 @@ import PageHeader from '../../components/PageHeader';
 import Heading from '../../components/Heading';
 import Paragraph from '../../components/Paragraph';
 import ExternalRefButton from '../../components/ExternalRefButton';
+import TwinLinkButton from '../../components/TwinLinkButton';
 
 import headerImage from '../../../assets/placeholder.png';
 
@@ -22,23 +23,46 @@ const EmploymentStandards = () => {
         </Paragraph>
         <Paragraph>
           Employment standards can be complicated. If you are confused about
-          things like being wrongfully fired, or issues vacation time, call
-          Alberta Employment Standards to find out more. If they don’t know the
-          answer, they will point you in the right direction.
+          things like being wrongfully fired, or are not being paid correctly,
+          call Alberta Employment Standards to find out more.
         </Paragraph>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <TwinLinkButton
+            onPress={() => Linking.openURL('tel://+18774273731')}
+            icon="phone"
+            style={{ flex: 1, marginBottom: 32, marginRight: 2 }}
+          >
+            +1-877-427-3731
+          </TwinLinkButton>
 
-        <ExternalRefButton
-          icon="web"
-          onPress={() =>
-            WebBrowser.openBrowserAsync(
-              'https://www.alberta.ca/employment-standards.aspx',
-            )
-          }
-          style={{ marginBottom: 32 }}
-        >
-          Alberta Standards
-        </ExternalRefButton>
-
+          <TwinLinkButton
+            icon="web"
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://www.alberta.ca/employment-standards.aspx',
+              )
+            }
+            style={{
+              flex: 1,
+              marginBottom: 32,
+              marginLeft: 2,
+              paddingRight: 2,
+            }}
+          >
+            Alberta Employment Standards
+          </TwinLinkButton>
+        </View>
+        <Paragraph>
+          The Employment Standards Code creates Alberta’s minimum standards of
+          employment in areas outside of health and safety that are related to
+          the workplace. These include wages, hours of work, overtime, vacation
+          and holidays, leaves, and termination of employment.
+        </Paragraph>
+        <Paragraph>
+          It also establishes the steps to follow in cases where employment
+          standards have not been met, such as wrongful termination of
+          employment.
+        </Paragraph>
         <Paragraph>
           Employment Standards apply to most workers. People who work in some
           fields such as live-in workers, truckers, farm workers, and
@@ -55,25 +79,6 @@ const EmploymentStandards = () => {
           style={{ marginBottom: 32 }}
         >
           Specific Industries Rules
-        </ExternalRefButton>
-
-        <Paragraph>
-          The Employment Standards Code creates Alberta’s minimum standards of
-          employment in areas outside of health and safety that are related to
-          the workplace. These include wages, hours of work, overtime, vacation
-          and holidays, leaves, and termination of employment.
-        </Paragraph>
-        <Paragraph>
-          It also establishes the steps to follow in cases where employment
-          standards have not been met, such as wrongful termination of
-          employment.
-        </Paragraph>
-        <ExternalRefButton
-          onPress={() => Linking.openURL('tel://+18774273731')}
-          icon="phone"
-          style={{ marginBottom: 32 }}
-        >
-          +1-877-427-3731
         </ExternalRefButton>
       </View>
     </ScrollView>

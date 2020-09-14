@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import Unorderedlist from 'react-native-unordered-list';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,26 @@ import LinkButtons from '../components/LinkButtons';
 
 const CovidInfo = () => {
   const navigation = useNavigation();
+  const [setResult] = useState(null);
+
+  const handlePressCovidButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html',
+    );
+    setResult(result);
+  };
+  const handlePressCovidLeaveButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.alberta.ca/covid-19-leave.aspx',
+    );
+    setResult(result);
+  };
+  const handlePressCovidFactSheetButtonAsync = async () => {
+    const result = await WebBrowser.openBrowserAsync(
+      'https://www.wcb.ab.ca/assets/pdfs/workers/WFS_COVID-19.pdf',
+    );
+    setResult(result);
+  };
 
   return (
     <>
@@ -36,11 +56,7 @@ const CovidInfo = () => {
           </Paragraph>
           <ExternalRefButton
             icon="link-variant"
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
-                'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html ',
-              )
-            }
+            onPress={handlePressCovidButtonAsync}
             style={{ marginBottom: 32, width: '40%' }}
           >
             Read More
@@ -78,26 +94,31 @@ const CovidInfo = () => {
               You cannot lose your job because of COVID-19.
             </Paragraph>
           </Unorderedlist>
-          <Paragraph style={{ marginTop: 20 }}>
-            More information on COVID-19 leave in Alberta and pay can be found
-            below
+          <Paragraph>
+            If you are exposed to COVID-19 while at work, please refer this fact
+            sheet.
           </Paragraph>
           <ExternalRefButton
             icon="link-variant"
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
-                'https://www.alberta.ca/covid-19-leave.aspx ',
-              )
-            }
+            onPress={handlePressCovidFactSheetButtonAsync}
+            style={{ marginBottom: 32, width: '70%' }}
+          >
+            COVID-19 Fact Sheet
+          </ExternalRefButton>
+          <Paragraph style={{ marginTop: 20 }}>
+            More information on COVID-19 leave in Alberta and pay can be found
+            below.
+          </Paragraph>
+          <ExternalRefButton
+            icon="link-variant"
+            onPress={handlePressCovidLeaveButtonAsync}
             style={{ marginBottom: 32, width: '70%' }}
           >
             COVID-19 Leave in Alberta
           </ExternalRefButton>
         </View>
       </ScrollView>
-      <FloatingButton
-        onPress={() => navigation.navigate('Finding Your Voice')}
-      />
+      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
     </>
   );
 };
