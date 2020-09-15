@@ -94,7 +94,7 @@ const CovidInfo = () => {
               You cannot lose your job because of COVID-19.
             </Paragraph>
           </Unorderedlist>
-          <Paragraph>
+          <Paragraph style={{ marginTop: 20 }}>
             If you are exposed to COVID-19 while at work, please refer this fact
             sheet.
           </Paragraph>

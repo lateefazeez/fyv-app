@@ -18,8 +18,19 @@ const EmploymentStandards = () => {
         <Heading>Employment Standards</Heading>
 
         <Paragraph>
-          Workers and employers in Alberta must follow the Employment Standards
-          Code and Employment Standards Regulation.
+          Workers and employers in Alberta must follow Employment Standards
+          rules.
+        </Paragraph>
+        <Paragraph>
+          The Employment Standards Code creates Alberta’s minimum standards of
+          employment in areas outside of health and safety that are related to
+          the workplace. These include wages, hours of work, overtime, vacation
+          and holidays, leaves, and termination of employment.
+        </Paragraph>
+        <Paragraph>
+          It also establishes the steps to follow in cases where employment
+          standards have not been met, such as wrongful termination of
+          employment.
         </Paragraph>
         <Paragraph>
           Employment standards can be complicated. If you are confused about
@@ -52,17 +63,7 @@ const EmploymentStandards = () => {
             Alberta Employment Standards
           </TwinLinkButton>
         </View>
-        <Paragraph>
-          The Employment Standards Code creates Alberta’s minimum standards of
-          employment in areas outside of health and safety that are related to
-          the workplace. These include wages, hours of work, overtime, vacation
-          and holidays, leaves, and termination of employment.
-        </Paragraph>
-        <Paragraph>
-          It also establishes the steps to follow in cases where employment
-          standards have not been met, such as wrongful termination of
-          employment.
-        </Paragraph>
+
         <Paragraph>
           Employment Standards apply to most workers. People who work in some
           fields such as live-in workers, truckers, farm workers, and

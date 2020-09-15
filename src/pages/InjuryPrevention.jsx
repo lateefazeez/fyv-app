@@ -32,13 +32,13 @@ const InjuryPrevention = () => {
   const steps = [
     {
       id: '0',
-      message: 'Welcome to Finding Your Voice',
+      message: 'Welcome to Find Your Voice.',
       trigger: '1',
     },
     {
       id: '1',
       message:
-        'Please provide your answers to the following Educational Scenarios',
+        'Please provide your answers to the following Educational Scenarios.',
       trigger: '2',
     },
     {
@@ -56,7 +56,7 @@ const InjuryPrevention = () => {
     {
       id: '4',
       message:
-        'One day, you come into work and when you arrive,  your supervisor asks you to do a task you were not trained to do.',
+        'One day, you come into work and when you arrive, your supervisor asks you to do a task you were not trained to do.',
       trigger: '6',
     },
     {
@@ -90,7 +90,7 @@ const InjuryPrevention = () => {
     {
       id: '10',
       message:
-        "Workers are protected by this OHS legislation. If you are asked to do something you weren't trained to do at work, you do not have to do it immediately and you have a right to receive training and right to know what dangers you may face.",
+        "Workers are protected by OHS legislation. If you are asked to do something you weren't trained to do at work, you do not have to do it immediately and you have a right to receive training and right to know what dangers you may face.",
       trigger: '11',
     },
     {
@@ -101,7 +101,7 @@ const InjuryPrevention = () => {
     },
     {
       id: '12',
-      message: 'Are you cleared with this?',
+      message: 'Is this clear?',
       trigger: '13',
     },
     {

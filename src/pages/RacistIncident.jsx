@@ -15,7 +15,7 @@ const InjuryPrevention = () => {
       [
         {
           text: 'Cancel',
-          onPress: () => { },
+          onPress: () => {},
           style: 'cancel',
         },
         {
@@ -32,13 +32,13 @@ const InjuryPrevention = () => {
   const steps = [
     {
       id: '0',
-      message: 'Welcome to Finding Your Voice',
+      message: 'Welcome to Find Your Voice.',
       trigger: '1',
     },
     {
       id: '1',
       message:
-        'Please provide your answers to the following Educational Scenarios',
+        'Please provide your answers to the following Educational Scenarios.',
       trigger: '2',
     },
     {
@@ -72,8 +72,16 @@ const InjuryPrevention = () => {
     {
       id: '7',
       options: [
-        { value: 'Yes, I report it.', label: 'Yes, I report it.', trigger: '8' },
-        { value: 'No, I don\'t report it.', label: 'No, I don\'t report it.', trigger: '9' },
+        {
+          value: 'Yes, I report it.',
+          label: 'Yes, I report it.',
+          trigger: '8',
+        },
+        {
+          value: "No, I don't report it.",
+          label: "No, I don't report it.",
+          trigger: '9',
+        },
       ],
     },
     {
@@ -90,7 +98,7 @@ const InjuryPrevention = () => {
     {
       id: '10',
       message:
-        "According to OHS legislation and most workplace policies, you should report it to your direct supervisor.",
+        'According to OHS legislation and most workplace policies, you should report it to your direct supervisor.',
       trigger: '11',
     },
     {
@@ -101,18 +109,18 @@ const InjuryPrevention = () => {
     },
     {
       id: '12',
-      message: 'This is another step you can take, as experiencing this alone can be hard and isolating.',
+      message:
+        'This is another step you can take, as experiencing this alone can be hard and isolating.',
       trigger: '13',
     },
     {
       id: '13',
-      options: [
-        { value: 'Got it', label: 'Got it', trigger: '14' },
-      ],
+      options: [{ value: 'Got it', label: 'Got it', trigger: '14' }],
     },
     {
       id: '14',
-      message: 'Now that you reported the incident, was there an action taken by management afterwards?',
+      message:
+        'Now that you reported the incident, was there an action taken by management afterwards?',
       trigger: 'end_options',
     },
 

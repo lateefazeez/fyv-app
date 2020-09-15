@@ -34,7 +34,7 @@ const TypesOfHazards = () => {
         <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
           <Paragraph>
             In Alberta, there are 4 hazards that relate to workplace health and
-            safety
+            safety.
           </Paragraph>
           <Paragraph>
             A common way to indentify hazards is by category:
@@ -111,7 +111,7 @@ const TypesOfHazards = () => {
           </ExternalRefButton>
           <Paragraph style={{ color: colors.white }}>
             You can also make an anonymous health and safety complaints to
-            Alberta OHS online or by phone
+            Alberta OHS online or by phone.
           </Paragraph>
           <CrossScreenButton
             icon="chevron-right"

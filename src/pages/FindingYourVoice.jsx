@@ -21,6 +21,7 @@ const FindingYourVoice = () => {
           The following three examples are based on real life experience of
           workers.
         </Paragraph>
+        <Paragraph>These examples are for educational purposes.</Paragraph>
         <Paragraph>
           The options and decisions provided will not apply to every situation
           you encounter in the work place, but as you work through them, they

@@ -91,7 +91,7 @@ const BasicRights = () => {
             many workers wondering how they can protect themselves from the
             virus. Workers continue to have the Rights to refuse dangerous work
             and be free from reprisal, but it is important to follow the correct
-            process under OHS law
+            process under OHS law.
           </Paragraph>
           <ExternalRefButton
             icon="web"
@@ -102,7 +102,7 @@ const BasicRights = () => {
             }}
             style={{ marginBottom: 16, width: '70%' }}
           >
-            Click Here for the proces
+            Click Here for the process
           </ExternalRefButton>
         </View>
       </ScrollView>

@@ -152,9 +152,9 @@ const Resources = () => {
               Employment Standards Contact Centre
             </Subheading>
             <Paragraph style={{ color: colors.white }}>
-              Calling is free. Employment Standards can answer questions related
-              to wages, overtime, vacation pay, hours or form, and termination
-              of employment.
+              Employment Standards can answer questions related to wages,
+              overtime, vacation pay, hours or form, and termination of
+              employment.
             </Paragraph>
             <Paragraph style={{ color: colors.white }}>
               Hours: 8:15 am to 4:30 pm MT (Monday to Friday, closed statutory
@@ -186,7 +186,7 @@ const Resources = () => {
             }}
           >
             <Subheading style={{ color: colors.white }}>
-              Alberta Occupational Health and Safety
+              Occupational Health and Safety
             </Subheading>
             <Paragraph style={{ color: colors.white }}>
               Alberta Occupational Health and Safety can answer questions
@@ -210,7 +210,7 @@ const Resources = () => {
               +1-866-415-8690 (Toll-free)
             </BasicButton>
             <Paragraph style={{ color: colors.white }}>
-              File a complaint,
+              File a complaint:
             </Paragraph>
             <BasicButton
               onPress={handlePressFACButtonAsync}
@@ -243,7 +243,7 @@ const Resources = () => {
             <Paragraph style={{ color: colors.white }}>
               The Alberta Workers’ Compensation Board can answer questions
               related to workplace injuries and benefits. You may also report a
-              workplace injury through WCB
+              workplace injury through WCB.
             </Paragraph>
             <BasicButton
               onPress={handlePressWCBButtonAsync}
