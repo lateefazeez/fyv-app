@@ -1,30 +1,31 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View,
   SafeAreaView,
-  SectionList
-} from "react-native";
-import Constants from "expo-constants";
+  SectionList,
+} from 'react-native';
+
+import colors from '../config/colors';
 
 const DATA = [
   {
-    title: "A",
-    data: ["List", "Is", "Empty"]
+    title: 'A',
+    data: ['List', 'Is', 'Empty'],
   },
   {
-    title: "B",
-    data: ["List", "Is", "Empty"]
+    title: 'B',
+    data: ['List', 'Is', 'Empty'],
   },
   {
-    title: "C",
-    data: ["List", "Is", "Empty"]
+    title: 'C',
+    data: ['List', 'Is', 'Empty'],
   },
   {
-    title: "D",
-    data: ["List", "Is", "Empty"]
-  }
+    title: 'D',
+    data: ['List', 'Is', 'Empty'],
+  },
 ];
 
 const Item = ({ title }) => (
@@ -49,23 +50,25 @@ const Glossary = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Constants.statusBarHeight,
-    marginHorizontal: 16
   },
   item: {
-    backgroundColor: "#fff",
-    padding: 20,
-    marginVertical: 8
+    backgroundColor: '#fff',
+    borderColor: colors.mediumGrey,
+    borderStyle: 'solid',
+    borderWidth: 0.5,
+    padding: 16,
+    paddingLeft: 24,
   },
   header: {
     color: '#fff',
-    fontSize: 32,
-    backgroundColor: "#000000"
+    fontSize: 16,
+    backgroundColor: colors.darkerGrey,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
   },
   title: {
-    fontSize: 24
-  }
+    fontSize: 16,
+  },
 });
 
 export default Glossary;
-
