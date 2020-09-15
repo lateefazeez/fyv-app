@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-indent */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {Alert, Button,View } from 'react-native';
+import {Alert, Button, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import FyvChatBot from '../components/ChatBot';
-
-
-
+// import BasicButton from '../components/BasicButton';
 
 
 const ReportingAnInjury = () => {
@@ -192,7 +190,7 @@ const ReportingAnInjury = () => {
     {
       id: '29',
       message: 'Great job! You have completed this section of Injury prevention & Training.', // add  restart button
-      trigger: 'end'
+      trigger: '68'
 
 
     },
@@ -273,7 +271,7 @@ const ReportingAnInjury = () => {
       id: '42',
       options: [
         { value: 'yes', label: 'YES', trigger: '43' }, // check for yes
-        { value: 'no', label: 'NO', trigger:'43' },
+        { value: 'no', label: 'NO', trigger:'29' },
       ],
     },
       {
@@ -409,6 +407,45 @@ const ReportingAnInjury = () => {
         ],
         
       },
+      {
+        id:'68',
+        message:'Restart this example if you\'d like to see the different options available to you, choose another topic, or quit.',
+        trigger:'69'
+      },
+    {
+      id:'69',
+      component:(
+        <View>
+        <Button
+          onPress={() => {
+            navigation.navigate('Reporting & Filing An Injury'
+      );
+          }
+        }
+          title="Restart"
+        />
+        <Button 
+          onPress={() => {
+          navigation.navigate('Racist Incident');
+        }}
+          title="Racist Incident"
+        />
+        <Button 
+          onPress={() => {
+          navigation.navigate('Injury Prevention & Training');
+        }}
+          title="Injury Prevention & Training"
+        />
+        <Button
+          onPress={() => {
+          navigation.navigate('Find Your Voice');
+        }}
+          title="Quit"
+        />
+        </View> 
+      ),
+      end: true
+    },
       
     
     {
