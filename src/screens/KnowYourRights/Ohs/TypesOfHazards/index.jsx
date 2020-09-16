@@ -1,27 +1,27 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, Linking } from 'react-native';
+import { View, ScrollView, Linking } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FloatingButton';
-import Paragraph from '../components/Paragraph';
-import ExternalRefButton from '../components/ExternalRefButton';
-import PageHeader from '../components/PageHeader';
-import CrossScreenButton from '../components/CrossScreenButton';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import Paragraph from 'components/Paragraph';
+import ExternalRefButton from 'components/ExternalRefButton';
+import PageHeader from 'components/PageHeader';
+import CrossScreenButton from 'components/CrossScreenButton';
 
+import headerImage from 'assets/placeholder.png';
+
+import colors from 'config/colors';
 import {
   Slide01,
   Slide02,
   Slide03,
   Slide04,
-  //Slide05,
-  //Slide06,
-} from './TypesOfHazardsSlides';
-import headerImage from '../../assets/placeholder.png';
-
-import colors from '../config/colors';
+  // Slide05,
+  // Slide06,
+} from './slides';
 
 const TypesOfHazards = () => {
   const navigation = useNavigation();
@@ -127,7 +127,7 @@ const TypesOfHazards = () => {
           </Paragraph>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

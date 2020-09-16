@@ -1,12 +1,12 @@
 import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
 
-import placeholder from '../../assets/placeholder.png';
-import PsychosocialImage from '../../assets/psy_hazard.png';
-import BiologicalImage from '../../assets/bio_hazard.png';
-import PhysicalImage from '../../assets/phy_hazard.png';
-import ChemicalImage from '../../assets/chem_hazard.png';
-import colors from '../config/colors';
+import placeholder from 'assets/placeholder.png';
+import PsychosocialImage from 'assets/psy_hazard.png';
+import BiologicalImage from 'assets/bio_hazard.png';
+import PhysicalImage from 'assets/phy_hazard.png';
+import ChemicalImage from 'assets/chem_hazard.png';
+import colors from 'config/colors';
 
 export const Slide02 = () => {
   return (

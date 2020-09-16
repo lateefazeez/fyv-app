@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import colors from '../config/colors';
+import colors from 'config/colors';
 
 const BasicButton = ({ children, icon, style, ...props }) => {
   return (

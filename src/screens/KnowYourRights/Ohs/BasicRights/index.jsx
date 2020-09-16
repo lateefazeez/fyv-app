@@ -1,22 +1,19 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, Linking } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FloatingButton';
-import Paragraph from '../components/Paragraph';
-import ExternalRefButton from '../components/ExternalRefButton';
-import PageHeader from '../components/PageHeader';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import Paragraph from 'components/Paragraph';
+import ExternalRefButton from 'components/ExternalRefButton';
+import PageHeader from 'components/PageHeader';
 
-import { Slide01, Slide02, Slide03, Slide04 } from './BasicRightsSlides';
-import headerImage from '../../assets/placeholder.png';
-import colors from '../config/colors';
+import { Slide01, Slide02, Slide03, Slide04 } from './slides';
+import headerImage from 'assets/placeholder.png';
+import colors from 'config/colors';
 
 const BasicRights = () => {
-  const navigation = useNavigation();
-
   return (
     <>
       <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
@@ -106,7 +103,7 @@ const BasicRights = () => {
           </ExternalRefButton>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

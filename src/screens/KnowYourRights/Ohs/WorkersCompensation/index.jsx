@@ -2,17 +2,16 @@ import React from 'react';
 import { View, ScrollView, Linking } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-import PageHeader from '../../components/PageHeader';
-import Heading from '../../components/Heading';
-import Paragraph from '../../components/Paragraph';
-import BasicButton from '../../components/BasicButton';
-import FloatingButton from '../../components/FloatingButton';
+import PageHeader from 'components/PageHeader';
+import Heading from 'components/Heading';
+import Paragraph from 'components/Paragraph';
+import BasicButton from 'components/BasicButton';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
 
-import headerImage from '../../../assets/placeholder.png';
-import ExternalRefButton from '../../components/ExternalRefButton';
-import LinkButtons from '../../components/LinkButtons';
+import headerImage from 'assets/placeholder.png';
+import ExternalRefButton from 'components/ExternalRefButton';
 
-import colors from '../../config/colors';
+import colors from 'config/colors';
 
 const WorkersCompensation = () => {
   return (
@@ -84,7 +83,7 @@ const WorkersCompensation = () => {
           </BasicButton>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

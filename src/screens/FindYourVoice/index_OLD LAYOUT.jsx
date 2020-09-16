@@ -2,14 +2,14 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Heading from '../components/Heading';
+import Heading from 'components/Heading';
+import PageHeader from 'components/PageHeader';
+import Paragraph from 'components/Paragraph';
+import BasicButton from 'components/BasicButton';
 
-import PageHeader from '../components/PageHeader';
-import sectionIcon from '../../assets/finding_your_voice_icon.png';
-import Paragraph from '../components/Paragraph';
-import BasicButton from '../components/BasicButton';
+import sectionIcon from 'assets/finding_your_voice_icon.png';
 
-const FindingYourVoice = () => {
+const FindYourVoice = () => {
   const navigation = useNavigation();
 
   return (
@@ -61,4 +61,4 @@ const FindingYourVoice = () => {
     </ScrollView>
   );
 };
-export default FindingYourVoice;
+export default FindYourVoice;

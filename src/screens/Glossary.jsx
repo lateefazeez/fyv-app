@@ -6,10 +6,12 @@ import {
   SafeAreaView,
   SectionList,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Searchbar } from 'react-native-paper';
+import { RectButton } from 'react-native-gesture-handler';
 
-import FloatingButton from '../components/FloatingButton';
-import colors from '../config/colors';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import { testAlert } from 'utils';
+import colors from 'config/colors';
 
 const listData = [
   {
@@ -36,17 +38,17 @@ const sortedData = listData.map(item => ({
 }));
 
 const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
+  <RectButton onPress={testAlert}>
+    <View accessible style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  </RectButton>
 );
 
 const Glossary = () => {
-  const navigation = useNavigation();
-
   return (
     <>
-      <View style={styles.container}>
+      <SafeAreaView style={{ flex: 1 }}>
         <SectionList
           sections={sortedData}
           keyExtractor={(item, index) => item + index}
@@ -55,16 +57,13 @@ const Glossary = () => {
             <Text style={styles.header}>{title}</Text>
           )}
         />
-      </View>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      </SafeAreaView>
+      <FloatingButtonFYV />
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   item: {
     backgroundColor: '#fff',
     borderColor: colors.mediumGrey,

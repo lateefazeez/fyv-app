@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-import IntroSlider from './src/components/IntroSlider';
 
-import DrawerNavigation from './src/navigation/DrawerNavigation';
+import IntroSlider from 'components/IntroSlider';
+import DrawerNavigation from 'navigation/DrawerNavigation';
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);

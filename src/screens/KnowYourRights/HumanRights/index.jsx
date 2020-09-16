@@ -2,12 +2,12 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-import PageHeader from '../../components/PageHeader';
-import Heading from '../../components/Heading';
-import Paragraph from '../../components/Paragraph';
-import ExternalRefButton from '../../components/ExternalRefButton';
+import PageHeader from 'components/PageHeader';
+import Heading from 'components/Heading';
+import Paragraph from 'components/Paragraph';
+import ExternalRefButton from 'components/ExternalRefButton';
 
-import headerImage from '../../../assets/placeholder.png';
+import headerImage from 'assets/placeholder.png';
 
 const HumanRights = () => {
   return (

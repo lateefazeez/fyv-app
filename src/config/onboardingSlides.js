@@ -1,6 +1,6 @@
-import placeholder from '../../assets/placeholder.png';
-import WelcomeImage from '../../assets/intro1_img.png';
 import colors from '../config/colors';
+import placeholder from 'assets/placeholder.png';
+import imgIntro01 from 'assets/intro1_img.png';
 
 const slides = [
   {
@@ -8,7 +8,7 @@ const slides = [
     title: 'Welcome',
     text:
       'Gain confidence to speak up and know your rights with easy access to information and resources about your safety, rights, and employment standards in the workplace.',
-    image: WelcomeImage,
+    image: imgIntro01,
     backgroundColor: colors.white,
   },
   {

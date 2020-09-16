@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
-import { View, Linking } from 'react-native';
+import { View, Linking, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-import { ScrollView } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import PageHeader from 'components/PageHeader';
+import Heading from 'components/Heading';
+import Subheading from 'components/Subheading';
+import Paragraph from 'components/Paragraph';
+import BasicButton from 'components/BasicButton';
 
-import FloatingButton from '../components/FloatingButton';
-import PageHeader from '../components/PageHeader';
-import Heading from '../components/Heading';
-import Subheading from '../components/Subheading';
-import Paragraph from '../components/Paragraph';
-import BasicButton from '../components/BasicButton';
-
-import headerImage from '../../assets/placeholder.png';
-import colors from '../config/colors';
-
-const callAlbertaWHC = () => {
-  const url = 'tel://17804869009';
-  Linking.openURL(url);
-};
+import headerImage from 'assets/placeholder.png';
+import colors from 'config/colors';
 
 const Resources = () => {
-  const navigation = useNavigation();
   const [setResult] = useState(null);
 
   const handlePressWRCButtonAsync = async () => {
@@ -87,7 +78,7 @@ const Resources = () => {
             </Paragraph>
 
             <BasicButton
-              onPress={callAlbertaWHC}
+              onPress={() => Linking.openURL('tel://+17804869009')}
               icon="phone"
               iconColor={colors.primary}
             >
@@ -263,7 +254,7 @@ const Resources = () => {
           </View>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

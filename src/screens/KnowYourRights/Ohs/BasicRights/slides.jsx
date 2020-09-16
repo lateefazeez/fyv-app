@@ -1,7 +1,5 @@
 import React from 'react';
-import { Image, View, Text, StyleSheet } from 'react-native';
-
-import placeholder from '../../assets/placeholder.png';
+import { View, Text, StyleSheet } from 'react-native';
 
 export const Slide01 = () => {
   return (

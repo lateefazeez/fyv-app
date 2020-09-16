@@ -1,24 +1,21 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 import { TouchableRipple } from 'react-native-paper';
 
-import FloatingButton from '../components/FloatingButton';
-import Paragraph from '../components/Paragraph';
-import Subheading from '../components/Subheading';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import Paragraph from 'components/Paragraph';
+import Subheading from 'components/Subheading';
 
-import colors from '../config/colors';
+import colors from 'config/colors';
 
-import Bvc from '../../assets/bvc_school_of_global_access.png';
-import Alberta from '../../assets/Alberta-Government-Logo.png';
-import AWHC from '../../assets/awhc.png';
-import Sodexo from '../../assets/sodexo.png';
+import Bvc from 'assets/bvc_school_of_global_access.png';
+import Alberta from 'assets/Alberta-Government-Logo.png';
+import AWHC from 'assets/awhc.png';
+import Sodexo from 'assets/sodexo.png';
 
 const Disclaimer = () => {
-  const navigation = useNavigation();
-
   return (
     <>
       <ScrollView contentContainerStyle={{ padding: 16 }}>
@@ -111,7 +108,7 @@ const Disclaimer = () => {
           </TouchableRipple>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

@@ -3,14 +3,14 @@ import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import Paragraph from '../../components/Paragraph';
-import Heading from '../../components/Heading';
-import BasicButton from '../../components/BasicButton';
-import ExternalRefButton from '../../components/ExternalRefButton';
-import PageHeader from '../../components/PageHeader';
-import headerImage from '../../../assets/placeholder.png';
-import LinkButtons from '../../components/LinkButtons';
-import colors from '../../config/colors';
+import Paragraph from 'components/Paragraph';
+import Heading from 'components/Heading';
+import BasicButton from 'components/BasicButton';
+import ExternalRefButton from 'components/ExternalRefButton';
+import PageHeader from 'components/PageHeader';
+
+import headerImage from 'assets/placeholder.png';
+import colors from 'config/colors';
 
 const Ohs = () => {
   const navigation = useNavigation();

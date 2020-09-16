@@ -2,13 +2,13 @@ import React from 'react';
 import { View, ScrollView, Linking } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-import PageHeader from '../../components/PageHeader';
-import Heading from '../../components/Heading';
-import Paragraph from '../../components/Paragraph';
-import ExternalRefButton from '../../components/ExternalRefButton';
-import TwinLinkButton from '../../components/TwinLinkButton';
+import PageHeader from 'components/PageHeader';
+import Heading from 'components/Heading';
+import Paragraph from 'components/Paragraph';
+import ExternalRefButton from 'components/ExternalRefButton';
+import TwinLinkButton from 'components/TwinLinkButton';
 
-import headerImage from '../../../assets/placeholder.png';
+import headerImage from 'assets/placeholder.png';
 
 const EmploymentStandards = () => {
   return (

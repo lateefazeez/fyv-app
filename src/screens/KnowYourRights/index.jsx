@@ -2,13 +2,13 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import FloatingButton from '../components/FloatingButton';
-import BasicButton from '../components/BasicButton';
-import PageHeader from '../components/PageHeader';
-import Paragraph from '../components/Paragraph';
-import Heading from '../components/Heading';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
+import BasicButton from 'components/BasicButton';
+import PageHeader from 'components/PageHeader';
+import Paragraph from 'components/Paragraph';
+import Heading from 'components/Heading';
 
-import headerImage from '../../assets/workplace_safety.png';
+import headerImage from 'assets/workplace_safety.png';
 
 const KnowYourRights = () => {
   const navigation = useNavigation();
@@ -57,7 +57,7 @@ const KnowYourRights = () => {
           </BasicButton>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

@@ -6,11 +6,11 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
-import colors from '../config/colors';
-import menuItems from '../config/menuItems';
-import menuLogo from '../../assets/logo_white.png';
+import colors from 'config/colors';
+import menuItems from 'config/menuItems';
+import menuLogo from 'assets/logo_white.png';
 
-const MenuDrawerContent = ({ navigation }) => {
+const MenuDrawer = ({ navigation }) => {
   return (
     <View style={styles.menuContainer}>
       <View style={styles.menuContainerUpperSection}>
@@ -69,7 +69,7 @@ const MenuDrawerContent = ({ navigation }) => {
   );
 };
 
-export default MenuDrawerContent;
+export default MenuDrawer;
 
 const styles = StyleSheet.create({
   menuContainer: {

@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import Unorderedlist from 'react-native-unordered-list';
-import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
-import FloatingButton from '../components/FloatingButton';
-import PageHeader from '../components/PageHeader';
-import Heading from '../components/Heading';
-import Paragraph from '../components/Paragraph';
-import Subheading from '../components/Subheading';
+import PageHeader from 'components/PageHeader';
+import Heading from 'components/Heading';
+import Paragraph from 'components/Paragraph';
+import Subheading from 'components/Subheading';
+import ExternalRefButton from 'components/ExternalRefButton';
+import FloatingButtonFYV from 'components/FloatingButtonFYV';
 
-import headerImage from '../../assets/placeholder.png';
-import ExternalRefButton from '../components/ExternalRefButton';
-import LinkButtons from '../components/LinkButtons';
+import headerImage from 'assets/placeholder.png';
 
 const CovidInfo = () => {
-  const navigation = useNavigation();
   const [setResult] = useState(null);
 
   const handlePressCovidButtonAsync = async () => {
@@ -118,7 +115,7 @@ const CovidInfo = () => {
           </ExternalRefButton>
         </View>
       </ScrollView>
-      <FloatingButton onPress={() => navigation.navigate('Find Your Voice')} />
+      <FloatingButtonFYV />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 
-import colors from '../config/colors';
+import colors from 'config/colors';
 
 function PageHeader({ source }) {
   return (

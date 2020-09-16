@@ -1,40 +1,28 @@
 import React, { useState } from 'react';
-import { View, Alert } from 'react-native';
+import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Main from '../pages/Main';
-import KnowYourRights from '../pages/KnowYourRights';
-import Resources from '../pages/Resources';
-import FindingYourVoice from '../pages/FindingYourVoice';
-import Disclaimer from '../pages/Disclaimer';
-import KnowYourRightsTabs from '../pages/KnowYourRightsTabs';
-import CovidInfo from '../pages/CovidInfo';
-import TypesOfHazards from '../pages/TypesOfHazards';
-import BasicRights from '../pages/BasicRights';
-import InjuryPrevention from '../pages/FindYourVoice';
-import Glossary from '../pages/Glossary';
+import Main from 'screens/Main';
 
-import colors from '../config/colors';
-import ReportingAnInjury from '../pages/ReportingAnInjury';
-import RacistIncident from '../pages/RacistIncident';
-import WorkersCompensation from '../pages/SubSections/WorkersCompensation';
-import FindYourVoice from '../pages/FindYourVoice';
+import KnowYourRights from 'screens/KnowYourRights';
+import KnowYourRightsTabs from 'screens/KnowYourRights/tabs';
+import FindYourVoice from 'screens/FindYourVoice';
+import Resources from 'screens/Resources';
+import Disclaimer from 'screens/Disclaimer';
+import Glossary from 'screens/Glossary';
 
-const TestAlert = () => {
-  Alert.alert(
-    'Alert Test',
-    'Testing Alert Msg',
-    [
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
-        style: 'cancel',
-      },
-    ],
-    { cancelable: false },
-  );
-};
+import CovidInfo from 'screens/KnowYourRights/Ohs/CovidInfo';
+import BasicRights from 'screens/KnowYourRights/Ohs/BasicRights';
+import TypesOfHazards from 'screens/KnowYourRights/Ohs/TypesOfHazards';
+import WorkersCompensation from 'screens/KnowYourRights/Ohs/WorkersCompensation';
+
+// import InjuryPrevention from 'screens/FindYourVoice/InjuryPrevention';
+// import RacistIncident from 'screens/FindYourVoice/RacistIncident';
+// import ReportingAnInjury from 'screens/FindYourVoice/ReportingAnInjury';
+
+import colors from 'config/colors';
+import { testAlert } from 'utils';
 
 const App = createStackNavigator();
 
@@ -152,7 +140,7 @@ const RootNavigation = ({ navigation }) => {
                 name="magnify"
                 size={24}
                 color={colors.white}
-                onPress={() => TestAlert()}
+                onPress={() => testAlert()}
                 style={{ marginRight: 16 }}
               />
               <Icon
@@ -247,7 +235,7 @@ const RootNavigation = ({ navigation }) => {
           ),
         }}
       />
-      <App.Screen
+{/*       <App.Screen
         name="Injury Prevention & Training"
         component={InjuryPrevention}
         options={{
@@ -291,7 +279,7 @@ const RootNavigation = ({ navigation }) => {
               color={colors.white}
               onPress={() => navigation.toggleDrawer()}
               style={{ marginRight: 16 }}
-            />
+            /> */}
           ),
         }}
       />

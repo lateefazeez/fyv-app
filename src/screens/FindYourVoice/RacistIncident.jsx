@@ -2,8 +2,8 @@ import React from 'react';
 import { Linking, Alert, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import FyvChatBot from '../components/ChatBot';
-import BasicButton from '../components/BasicButton';
+import FyvChatBot from 'components/ChatBot';
+import BasicButton from 'components/BasicButton';
 
 const InjuryPrevention = () => {
   const navigation = useNavigation();

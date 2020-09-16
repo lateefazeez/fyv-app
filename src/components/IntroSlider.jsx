@@ -4,8 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import colors from '../config/colors';
-import slides from '../config/onboardingSlides';
+import colors from 'config/colors';
+import slides from 'config/onboardingSlides';
 
 const App = ({ onDone, ...props }) => {
   const renderItem = ({ item }) => {

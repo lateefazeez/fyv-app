@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 
-import MainScreenButton from '../components/MainScreenButton';
-import KnowYourRightsImage from '../../assets/workplace_safety.png';
-import ResourcesImage from '../../assets/resources.png';
-import FindingYourVoiceImage from '../../assets/finding_your_voice.png';
+import MainScreenButton from 'components/MainScreenButton';
+import KnowYourRightsImage from 'assets/workplace_safety.png';
+import ResourcesImage from 'assets/resources.png';
+import FindingYourVoiceImage from 'assets/finding_your_voice.png';
 
-import logo from '../../assets/logo_green.png';
+import logo from 'assets/logo_green.png';
 
 const Main = () => (
   <SafeAreaView style={{ flex: 1 }}>
