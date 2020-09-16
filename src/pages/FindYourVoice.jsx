@@ -490,7 +490,7 @@ const FindYourVoice = () => {
       id: '19a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: 'restart option b',
+      trigger: '40a',
     },
     {
       id: '20a',
