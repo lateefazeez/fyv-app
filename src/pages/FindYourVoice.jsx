@@ -2,10 +2,12 @@ import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import InChatCard from '../components/InChatCard';
 import FyvChatBot from '../components/ChatBot';
 import BasicButton from '../components/BasicButton';
+import RacistIncident from './RacistIncident';
 
-const InjuryPrevention = () => {
+const FindYourVoice = () => {
   const navigation = useNavigation();
 
   const handleEnd = () => {
@@ -38,20 +40,48 @@ const InjuryPrevention = () => {
     {
       id: '1',
       message:
-        'Please provide your answers to the following Educational Scenarios.',
+        'The following three examples are based on real life experience of workers.',
       trigger: '2',
     },
     {
       id: '2',
-      message: 'Are you ready to begin?',
+      message: 'These examples are meant to be used for educational purposes.',
       trigger: '3',
     },
     {
       id: '3',
+
+      component: <InChatCard />,
+      trigger: 'Injury Prevention Options',
+    },
+    {
+      id: 'Injury Prevention Options',
       options: [
-        { value: 'yes', label: 'YES', trigger: '4' },
-        { value: 'no', label: 'NO', trigger: '5' },
+        { value: 'A', label: 'A', trigger: 'injury prevention' },
+        { value: 'B', label: 'B', trigger: 'racist incident' },
+        { value: 'C', label: 'C', trigger: 'reporting injury' },
       ],
+    },
+    {
+      id: 'injury prevention',
+      message: 'Great!',
+      trigger: '4',
+    },
+
+    {
+      id: 'racist incident',
+      message: 'Great!',
+      trigger: 'begin racist incident',
+    },
+    {
+      id: 'begin racist incident',
+      message: "Let's begin.",
+      trigger: 'start racist incident',
+    },
+    {
+      id: 'reporting injury',
+      message: 'Great!',
+      trigger: '4',
     },
     {
       id: '4',
@@ -339,9 +369,262 @@ const InjuryPrevention = () => {
       message: 'Bye!',
       end: true,
     },
+    {
+      id: 'start racist incident',
+      message:
+        'A co-worker has made inappropriate jokes about your religion and this bothers you.',
+      trigger: '6',
+    },
+    {
+      id: '5a',
+      message: 'Thank you and have a great day',
+      trigger: 'end_options',
+    },
+    {
+      id: '6a',
+      message: 'Do you report it?',
+      trigger: '7a',
+    },
+    {
+      id: '7a',
+      options: [
+        {
+          value: 'Yes, I report it.',
+          label: 'Yes, I report it.',
+          trigger: '8a',
+        },
+        {
+          value: "No, I don't report it.",
+          label: "No, I don't report it.",
+          trigger: '31a',
+        },
+      ],
+    },
+    {
+      id: '8a',
+      message:
+        'Who do you report to? Who you should report an incident like this to is complicated.',
+      trigger: '10a',
+    },
+    {
+      id: '9a',
+      message: 'To be added',
+      trigger: 'end_options',
+    },
+    {
+      id: '10a',
+      message:
+        'According to OHS legislation and most workplace policies, you should report it to your direct supervisor.',
+      trigger: '11a',
+    },
+    {
+      id: '11a',
+      message:
+        'However, sometimes you may feel that you need to talk to a colleague for advice, or to share your experience with someone who is going through similar things.',
+      trigger: '12a',
+    },
+    {
+      id: '12a',
+      message:
+        'This is another step you can take, as experiencing this alone can be hard and isolating.',
+      trigger: '13a',
+    },
+    {
+      id: '13a',
+      message:
+        'Now that you reported the incident, was there an action taken by management afterwards?',
+      trigger: '14a',
+    },
+    {
+      id: '14a',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '15a' },
+        { value: 'no', label: 'NO', trigger: '20a' },
+      ],
+    },
+    {
+      id: '15a',
+      message: 'Did the result make you feel safer?',
+      trigger: '16',
+    },
+    {
+      id: '16a',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '17' },
+        { value: 'no', label: 'NO', trigger: '20' },
+      ],
+    },
+    {
+      id: '17a',
+      message: "That's great! ",
+      trigger: '18a',
+    },
+    {
+      id: '18a',
+      message:
+        'You have completed this section of Injury prevention & Training.',
+      trigger: '19a',
+    },
+    {
+      id: '19a',
+      message:
+        "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
+      trigger: 'end',
+    },
+    {
+      id: '20a',
+      message: 'Sorry to hear about that.',
+      trigger: '18a',
+    },
+    {
+      id: '21',
+      message:
+        'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
+      trigger: '19a',
+    },
+    {
+      id: '22a',
+      message:
+        "In other cases, unfortunately sometimes workplaces don't do anything about racism.",
+      trigger: '18a',
+    },
+    {
+      id: '23a',
+      message:
+        'For example, you may report something to your supervisor and your supervisor may just brush it off.',
+      trigger: '19a',
+    },
+    {
+      id: '24a',
+      message:
+        'There have been cases where racism is reported and nothing changes, or the actions taken are insufficient when you report racism. ',
+      trigger: '18a',
+    },
+    {
+      id: '25a',
+      message:
+        'For example, Flora works on an assembly line in a meat packing plant which is male dominated. As the only woman of colour there, she has politely brought up numerous racist and mysoginist incidents to Human Resources hoping for change. Although the Human Resources manager listened and promised to look into it, nothing changed and continues to hear the same things at work. She struggles because she needs the job even though it is toxic to her wellbeing.',
+      trigger: '26a',
+    },
+
+    {
+      id: '26a',
+      options: [
+        {
+          value: 'What should I do if this happens to me?',
+          label: 'What should I do if this happens to me?',
+          trigger: '27a',
+        },
+      ],
+    },
+    {
+      id: '27a',
+      message:
+        'If you reported it and nothing changes, some last resorts may be making a human rights complaint and a health and safety complaint. ',
+      trigger: '28a',
+    },
+    {
+      id: '28a',
+      message:
+        ' Human rights and racism relates to someone experiencing discrimination due to ethnocultural background, and OHS and racism relates to someone experiencing psychosocial hazards at work.',
+      trigger: '29a',
+    },
+    {
+      id: '29a',
+      message:
+        'Great job! You have completed this section of Injury prevention & Training.',
+      trigger: '30a',
+    },
+    {
+      id: '30a',
+      message:
+        "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
+      trigger: 'end_options',
+    },
+    {
+      id: '31a',
+      message:
+        "You might be scared you'll get fired for complaining and that could happen. There can be serious consequences for reporting something.",
+      trigger: '32a',
+    },
+    {
+      id: '32a',
+      message:
+        'If you are unsure what to do, check and see if your company has a respect in the workplace policy, and anti-bullying policy, a discrimination policy, or any policy that relates to racism.',
+      trigger: '33a',
+    },
+    {
+      id: '33a',
+      message:
+        'You can also ask someone from Human Resources (if your workplace has this department) to learn about workplace policies.',
+      trigger: '34a',
+    },
+    {
+      id: '34a',
+      message:
+        'Human rights and racism relates to someone experiencing discrimination due to ethnocultural background and relates to someone experiencing psychosocial hazards at work.',
+      trigger: '35a',
+    },
+    {
+      id: '35a',
+      message:
+        'If you do not feel comfortable reporting this with your supervisor, you may also want to talk to a trusted colleague and not report it. ',
+      trigger: '36a',
+    },
+    {
+      id: '36a',
+      message:
+        'It may be worth talking to someone in Human Resources if you feel you can trust them.',
+      trigger: '37a',
+    },
+    {
+      id: '37a',
+      message:
+        'Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal and a health and safety complaint to the Government of Alberta.',
+      trigger: 'do you understand',
+    },
+    {
+      id: 'do you understand',
+      message: 'Do you understand?',
+      trigger: 'checkpoint',
+    },
+    {
+      id: 'checkpoint',
+      options: [
+        { value: 'yes', label: 'Yes I do', trigger: '38a' },
+        { value: 'no', label: "No I don't", trigger: 'repeat racist incident' },
+      ],
+    },
+    {
+      id: 'repeat racist incident',
+      message: "Okay let's go over this again",
+      trigger: 'start racist incident',
+    },
+    {
+      id: '38a',
+      message:
+        'Great job! You have completed this section of Injury prevention & Training.',
+      trigger: '39a',
+    },
+    {
+      id: '39a',
+      message:
+        "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
+      trigger: 'end',
+    },
+
+    {
+      id: 'end_options',
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
+    },
+    {
+      id: 'end',
+      message: 'Bye!',
+      end: true,
+    },
   ];
 
   return <FyvChatBot steps={steps} handleEnd={handleEnd} />;
 };
 
-export default InjuryPrevention;
+export default FindYourVoice;

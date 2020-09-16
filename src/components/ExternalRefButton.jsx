@@ -28,7 +28,7 @@ export default BasicButton;
 const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
     marginBottom: 8,
     width: 220,
     padding: 12,
@@ -39,12 +39,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: colors.black,
+    color: colors.white,
     fontSize: 14,
     marginLeft: 8,
   },
   icon: {
     padding: 0,
     margin: 0,
+    color: colors.white,
   },
 });

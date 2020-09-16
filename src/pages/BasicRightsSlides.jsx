@@ -5,7 +5,7 @@ import placeholder from '../../assets/placeholder.png';
 
 export const Slide01 = () => {
   return (
-    <View style={[styles.container, { backgroundColor: '#569384' }]}>
+    <View style={[styles.container, { backgroundColor: '#0970ac' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -20,7 +20,7 @@ export const Slide01 = () => {
 
 export const Slide02 = () => {
   return (
-    <View style={[styles.container, { backgroundColor: '#691668' }]}>
+    <View style={[styles.container, { backgroundColor: '#abcc4c' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -35,7 +35,7 @@ export const Slide02 = () => {
 
 export const Slide03 = () => {
   return (
-    <View style={[styles.container, { backgroundColor: '#a02129' }]}>
+    <View style={[styles.container, { backgroundColor: '#535996' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -50,7 +50,7 @@ export const Slide03 = () => {
 
 export const Slide04 = () => {
   return (
-    <View style={[styles.container, { backgroundColor: '#076285' }]}>
+    <View style={[styles.container, { backgroundColor: '#69924f' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headlineLonger}>
         <Text style={styles.text}>Right to be</Text>
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
   container: {
     elevation: 5,
     flex: 1,
+
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     width: '75%',
+    marginTop: 20,
   },
   text: {
     color: 'rgba(255,255,255,0.8)',

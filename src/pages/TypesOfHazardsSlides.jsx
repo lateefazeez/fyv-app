@@ -2,10 +2,10 @@ import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
 
 import placeholder from '../../assets/placeholder.png';
-import PsychosocialImage from '../../assets/psychosocial_image.png';
-import BiologicalImage from '../../assets/suit.png';
-import PhysicalImage from '../../assets/man.png';
-import ChemicalImage from '../../assets/chemical_image.png';
+import PsychosocialImage from '../../assets/psy_hazard.png';
+import BiologicalImage from '../../assets/bio_hazard.png';
+import PhysicalImage from '../../assets/phy_hazard.png';
+import ChemicalImage from '../../assets/chem_hazard.png';
 import colors from '../config/colors';
 
 export const Slide02 = () => {
@@ -100,7 +100,7 @@ export const Slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06];
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.darkGrey,
+    backgroundColor: colors.white,
     elevation: 5,
     flex: 1,
     justifyContent: 'center',
@@ -126,12 +126,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   textBold: {
-    color: 'rgba(255,255,255,1)',
+    color: colors.black,
     fontSize: 24,
     fontWeight: 'bold',
   },
   textDetail: {
-    color: 'rgba(255,255,255,0.6)',
+    color: colors.darkGrey,
     fontSize: 16,
     textAlign: 'center',
     marginTop: 16,

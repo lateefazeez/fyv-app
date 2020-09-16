@@ -12,13 +12,14 @@ import KnowYourRightsTabs from '../pages/KnowYourRightsTabs';
 import CovidInfo from '../pages/CovidInfo';
 import TypesOfHazards from '../pages/TypesOfHazards';
 import BasicRights from '../pages/BasicRights';
-import InjuryPrevention from '../pages/InjuryPrevention';
+import InjuryPrevention from '../pages/FindYourVoice';
 import Glossary from '../pages/Glossary';
 
 import colors from '../config/colors';
 import ReportingAnInjury from '../pages/ReportingAnInjury';
 import RacistIncident from '../pages/RacistIncident';
 import WorkersCompensation from '../pages/SubSections/WorkersCompensation';
+import FindYourVoice from '../pages/FindYourVoice';
 
 const TestAlert = () => {
   Alert.alert(
@@ -99,7 +100,7 @@ const RootNavigation = ({ navigation }) => {
       />
       <App.Screen
         name="Find Your Voice"
-        component={FindingYourVoice}
+        component={FindYourVoice}
         options={{
           headerBackTitle: 'Back',
           headerRight: () => (
