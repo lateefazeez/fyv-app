@@ -1,4 +1,4 @@
-import colors from '../config/colors';
+import colors from 'config/colors';
 import placeholder from 'assets/placeholder.png';
 import imgIntro01 from 'assets/intro1_img.png';
 

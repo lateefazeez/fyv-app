@@ -15,7 +15,7 @@ const InjuryPrevention = () => {
       [
         {
           text: 'Cancel',
-          onPress: () => { },
+          onPress: () => {},
           style: 'cancel',
         },
         {
@@ -121,9 +121,9 @@ const InjuryPrevention = () => {
       id: 'read more',
       component: (
         <BasicButton
-          onPress={ () => {
-            navigation.navigate( 'Basic Rights' );
-          } }
+          onPress={() => {
+            navigation.navigate('Basic Rights');
+          }}
         >
           Basic Rights
         </BasicButton>
@@ -304,7 +304,7 @@ const InjuryPrevention = () => {
     },
     {
       id: '44',
-      options: [ { value: 'ok', label: 'OK', trigger: '45' } ],
+      options: [{ value: 'ok', label: 'OK', trigger: '45' }],
     },
     {
       id: '45',
@@ -332,7 +332,7 @@ const InjuryPrevention = () => {
 
     {
       id: 'end_options',
-      options: [ { value: '0', label: 'QUIT', trigger: 'end' } ],
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
     },
     {
       id: 'end',
@@ -341,7 +341,7 @@ const InjuryPrevention = () => {
     },
   ];
 
-  return <FyvChatBot steps={ steps } handleEnd={ handleEnd } />;
+  return <FyvChatBot steps={steps} handleEnd={handleEnd} />;
 };
 
 export default InjuryPrevention;

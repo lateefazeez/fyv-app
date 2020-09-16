@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   menuContainerUpperSection: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 32
+    paddingTop: 32,
   },
   menuLogo: {
     height: 128,

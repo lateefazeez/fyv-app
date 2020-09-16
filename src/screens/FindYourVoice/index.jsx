@@ -19,7 +19,7 @@ const FindYourVoice = () => {
       [
         {
           text: 'Cancel',
-          onPress: () => { },
+          onPress: () => {},
           style: 'cancel',
         },
         {
@@ -153,9 +153,9 @@ const FindYourVoice = () => {
       id: 'read more',
       component: (
         <BasicButton
-          onPress={ () => {
-            navigation.navigate( 'Basic Rights' );
-          } }
+          onPress={() => {
+            navigation.navigate('Basic Rights');
+          }}
         >
           Basic Rights
         </BasicButton>
@@ -336,7 +336,7 @@ const FindYourVoice = () => {
     },
     {
       id: '44',
-      options: [ { value: 'ok', label: 'OK', trigger: '45' } ],
+      options: [{ value: 'ok', label: 'OK', trigger: '45' }],
     },
     {
       id: '45',
@@ -383,7 +383,7 @@ const FindYourVoice = () => {
     },
     {
       id: 'end_options',
-      options: [ { value: '0', label: 'QUIT', trigger: 'end' } ],
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
     },
     {
       id: 'end',
@@ -650,7 +650,7 @@ const FindYourVoice = () => {
 
     {
       id: 'end_options',
-      options: [ { value: '0', label: 'QUIT', trigger: 'end' } ],
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
     },
     {
       id: 'end',
@@ -1112,7 +1112,7 @@ const FindYourVoice = () => {
 
     {
       id: 'end_options',
-      options: [ { value: '0', label: 'QUIT', trigger: 'end' } ],
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
     },
     {
       id: 'end',
@@ -1121,7 +1121,7 @@ const FindYourVoice = () => {
     },
   ];
 
-  return <FyvChatBot steps={ steps } handleEnd={ handleEnd } />;
+  return <FyvChatBot steps={steps} handleEnd={handleEnd} />;
 };
 
 export default FindYourVoice;

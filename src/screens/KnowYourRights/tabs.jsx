@@ -3,10 +3,11 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 
+import colors from 'config/colors';
+
 import Ohs from './Ohs';
 import HumanRights from './HumanRights';
 import EmploymentStandards from './EmploymentStandards';
-import colors from 'config/colors';
 
 const Tab = createMaterialTopTabNavigator();
 

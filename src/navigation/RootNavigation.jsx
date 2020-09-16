@@ -235,7 +235,7 @@ const RootNavigation = ({ navigation }) => {
           ),
         }}
       />
-{/*       <App.Screen
+      {/*       <App.Screen
         name="Injury Prevention & Training"
         component={InjuryPrevention}
         options={{
@@ -282,7 +282,7 @@ const RootNavigation = ({ navigation }) => {
             />
           ),
         }}
-      />*/}
+      /> */}
     </App.Navigator>
   );
 };

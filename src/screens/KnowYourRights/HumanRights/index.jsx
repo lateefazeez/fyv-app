@@ -50,7 +50,6 @@ const HumanRights = () => {
             )
           }
           style={{ marginBottom: 32 }}
-          style={{ marginBottom: 32 }}
         >
           Complainants Guide
         </ExternalRefButton>
