@@ -6,6 +6,7 @@ import InChatCard from '../components/InChatCard';
 import FyvChatBot from '../components/ChatBot';
 import BasicButton from '../components/BasicButton';
 import EndChatReportingCard from '../components/EndChatReportingCard';
+import EndChatInjuryCard from '../components/EndChatInjuryCard';
 import EndChatRacistCard from '../components/EndChatRacistCard';
 
 const FindYourVoice = () => {
@@ -368,7 +369,7 @@ const FindYourVoice = () => {
     },
     {
       id: '50',
-      component: <EndChatRacistCard />,
+      component: <EndChatInjuryCard />,
       trigger: 'restart option a',
     },
     {
