@@ -3,7 +3,7 @@
 import React from 'react';
 import {Alert, Button, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import FyvChatBot from '../components/ChatBot';
+import FyvChatBot from 'components/ChatBot';
 // import BasicButton from '../components/BasicButton';
 
 
