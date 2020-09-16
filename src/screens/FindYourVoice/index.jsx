@@ -1,6 +1,10 @@
 import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
+import { Card } from 'react-native-paper';
+import Swiper from 'react-native-swiper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import InChatCard from 'components/InChatCard';
 import FyvChatBot from 'components/ChatBot';
@@ -8,6 +12,14 @@ import BasicButton from 'components/BasicButton';
 import EndChatReportingCard from 'components/EndChatReportingCard';
 import EndChatInjuryCard from 'components/EndChatInjuryCard';
 import EndChatRacistCard from 'components/EndChatRacistCard';
+import InChatRefButton from 'components/InChatRefButton';
+import {
+  InChatRightsSlide01,
+  InChatRightsSlide02,
+  InChatRightsSlide03,
+} from './slides';
+
+import colors from 'config/colors';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();
@@ -112,11 +124,28 @@ const FindYourVoice = () => {
       id: '8',
       message:
         'According to the Government of Alberta, workers have the right to know about the dangers of our jobs and how we are protected.',
+      trigger: 'learn more - right to know',
+    },
+    {
+      id: 'learn more - right to know',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://workershealthcentre.ca/4-health-and-safety-rights/',
+            )
+          }
+          icon="web"
+          style={{ marginBottom: 16 }}
+        >
+          Learn More
+        </InChatRefButton>
+      ),
       trigger: '10',
     },
     {
       id: '9',
-      message: 'You should ask for additional information.',
+      message: 'You should ask your supervisor for additional information.',
       trigger: '15',
     },
     {
@@ -139,9 +168,15 @@ const FindYourVoice = () => {
     {
       id: '13',
       options: [
-        { value: 'yes', label: 'YES', trigger: '5' },
+        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
         { value: 'no', label: 'NO', trigger: '14' },
       ],
+    },
+    {
+      id: 'end injury prevention',
+      message:
+        'Great job! You have completed this section of Injury prevention & Training.',
+      trigger: '49',
     },
     {
       id: '14',
@@ -233,7 +268,17 @@ const FindYourVoice = () => {
     {
       id: '27',
       message: 'Information can come from a variety of sources. ',
-      trigger: '28',
+      trigger: 'information sources',
+    },
+    {
+      id: 'information sources',
+      options: [
+        {
+          value: 'What are some sources?',
+          label: 'What are some sources?',
+          trigger: '28',
+        },
+      ],
     },
     {
       id: '28',
@@ -261,7 +306,7 @@ const FindYourVoice = () => {
     {
       id: '32',
       options: [
-        { value: 'yes', label: 'YES', trigger: '33' },
+        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
         { value: 'no', label: 'NO', trigger: '34' },
       ],
     },
@@ -294,33 +339,135 @@ const FindYourVoice = () => {
         'However, all workers should feel safe when expressing their lack of training or lack of safety. ',
       trigger: '38',
     },
+
     {
       id: '38',
-      message:
-        'According to Alberta OHS legislation, you have the right to refuse unsafe work (Right #3).',
+      component: (
+        <Card style={{ flex: 1, borderRadius: 17, width: '95%' }}>
+          <View style={{ flex: 1 }}>
+            <View style={{ padding: 14 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                According to Alberta OHS legislation, you have the right to
+                refuse unsafe work (Right #3).
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 10,
+                alignItems: 'center',
+                borderTopWidth: 1,
+                borderTopColor: colors.primary,
+              }}
+            >
+              <Text
+                style={{ fontSize: 13, lineHeight: 17, color: colors.primary }}
+              >
+                What is this Right?
+              </Text>
+            </View>
+          </View>
+        </Card>
+      ),
       trigger: '39',
     },
     {
       id: '39',
-      message: 'This right is: ',
+      component: (
+        <Card
+          style={{
+            flex: 1,
+            borderRadius: 17,
+            width: '95%',
+            overflow: 'hidden',
+          }}
+        >
+          <View>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                Thats right! This right is:
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 12,
+                alignItems: 'center',
+                backgroundColor: colors.effectOne,
+                resizeMode: 'contain',
+              }}
+            >
+              <View style={{ alignItems: 'center' }}>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,0.8)',
+                    fontSize: 12,
+                    textAlign: 'center',
+                  }}
+                >
+                  Right to
+                </Text>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,1)',
+                    fontSize: 24,
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                  }}
+                >
+                  {' '}
+                  KNOW
+                </Text>
+              </View>
+              <Text
+                style={{
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: 12,
+                  textAlign: 'center',
+                  width: '75%',
+                  marginTop: 20,
+                  marginBottom: 20,
+                }}
+              >
+                about the dangers of our jobs and how we are protected.
+              </Text>
+            </View>
+          </View>
+        </Card>
+      ),
       trigger: '40',
     },
+    // {
+    //   id: '40',
+    //   component: (
+    //     <View>
+    //       <Text>
+    //         III. Right to refuse work we feel may be dangerous to ourselves or
+    //         others.
+    //       </Text>
+    //     </View>
+    //   ),
+    //   trigger: '41',
+    // },
     {
       id: '40',
-      component: (
-        <View>
-          <Text>
-            III. Right to refuse work we feel may be dangerous to ourselves or
-            others.
-          </Text>
-        </View>
-      ),
+      message:
+        'Unsafe work has to do with 4 hazards outlined in OHS legislation. These are physical hazards, chemical hazards, biological hazards, and psychosocial hazards.',
       trigger: '41',
     },
     {
       id: '41',
-      message:
-        'Unsafe work has to do with 4 hazards outlined in OHS legislation. These are physical hazards, chemical hazards, biological hazards, and psychosocial hazards.',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/workplace-hazards.aspx',
+            )
+          }
+          icon="web"
+          style={{ marginBottom: 16 }}
+        >
+          Learn More
+        </InChatRefButton>
+      ),
       trigger: '42',
     },
     {
@@ -340,8 +487,51 @@ const FindYourVoice = () => {
     },
     {
       id: '45',
-      message: 'The steps you need to take as part of this right are: ',
-      trigger: '46',
+      component: (
+        <Card
+          style={{
+            flex: 1,
+            borderRadius: 17,
+            width: '95%',
+            overflow: 'hidden',
+          }}
+        >
+          <View>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                The steps you need to take as part of this right are:
+              </Text>
+            </View>
+            <View
+              style={{
+                alignItems: 'center',
+              }}
+            >
+              <Swiper
+                style={{ height: 220, backgroundColor: colors.effectOne }}
+                activeDotColor={colors.white}
+                dotColor="rgba(0,0,0,0.2)"
+                nextButton={
+                  <Icon
+                    name="chevron-right"
+                    size={26}
+                    color="rgba(0,0,0,0.2)"
+                  />
+                }
+                prevButton={
+                  <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
+                }
+                showsButtons
+              >
+                <InChatRightsSlide01 />
+                <InChatRightsSlide02 />
+                <InChatRightsSlide03 />
+              </Swiper>
+            </View>
+          </View>
+        </Card>
+      ),
+      trigger: 'end injury prevention',
     },
     {
       id: '46',
