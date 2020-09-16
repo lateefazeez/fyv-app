@@ -703,7 +703,7 @@ const FindYourVoice = () => {
       id: '11b',
       message:
         'There are also specific clinics that are part of the Occupational Injury Service in Alberta. Injured workers can expect to see a doctor within 30 minutes at these clinics.',
-      trigger: '12',
+      trigger: '12b',
     },
     {
       id: '12b',
