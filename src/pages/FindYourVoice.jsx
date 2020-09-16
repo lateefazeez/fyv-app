@@ -5,7 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import InChatCard from '../components/InChatCard';
 import FyvChatBot from '../components/ChatBot';
 import BasicButton from '../components/BasicButton';
-import RacistIncident from './RacistIncident';
+import EndChatReportingCard from '../components/EndChatReportingCard';
+import EndChatRacistCard from '../components/EndChatRacistCard';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();
@@ -81,7 +82,7 @@ const FindYourVoice = () => {
     {
       id: 'reporting injury',
       message: 'Great!',
-      trigger: '4',
+      trigger: '4b',
     },
     {
       id: '4',
@@ -92,7 +93,7 @@ const FindYourVoice = () => {
     {
       id: '5',
       message: 'Thank you and have a great day',
-      trigger: 'end_options',
+      trigger: '49',
     },
     {
       id: '6',
@@ -158,7 +159,7 @@ const FindYourVoice = () => {
           Basic Rights
         </BasicButton>
       ),
-      trigger: 'end_options',
+      trigger: '49',
     },
     {
       id: '15',
@@ -266,13 +267,13 @@ const FindYourVoice = () => {
     {
       id: '33',
       message: 'Awesome! Thanks and do have a great day',
-      trigger: 'end_options',
+      trigger: '49',
     },
     {
       id: '34',
       message:
         'Please feel free to start this scenario again! It is important you understand.',
-      trigger: 'end_options',
+      trigger: '49',
     },
     {
       id: '35',
@@ -357,9 +358,28 @@ const FindYourVoice = () => {
       id: '48',
       message:
         '3. If you still do not know what to do and/or If the work is still unsafe, you have the right to refuse the work without reprisal (consequences). ',
-      trigger: 'end_options',
+      trigger: '49',
     },
-
+    {
+      id: '49',
+      message:
+        "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
+      trigger: '50',
+    },
+    {
+      id: '50',
+      component: <EndChatRacistCard />,
+      trigger: 'restart option a',
+    },
+    {
+      id: 'restart option a',
+      options: [
+        { value: 'A', label: 'A', trigger: 'injury prevention' },
+        { value: 'B', label: 'B', trigger: 'racist incident' },
+        { value: 'C', label: 'C', trigger: 'reporting injury' },
+        { value: 'D', label: 'D', trigger: 'end_options' },
+      ],
+    },
     {
       id: 'end_options',
       options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
@@ -373,7 +393,7 @@ const FindYourVoice = () => {
       id: 'start racist incident',
       message:
         'A co-worker has made inappropriate jokes about your religion and this bothers you.',
-      trigger: '6',
+      trigger: '6a',
     },
     {
       id: '5a',
@@ -445,13 +465,13 @@ const FindYourVoice = () => {
     {
       id: '15a',
       message: 'Did the result make you feel safer?',
-      trigger: '16',
+      trigger: '16a',
     },
     {
       id: '16a',
       options: [
-        { value: 'yes', label: 'YES', trigger: '17' },
-        { value: 'no', label: 'NO', trigger: '20' },
+        { value: 'yes', label: 'YES', trigger: '17a' },
+        { value: 'no', label: 'NO', trigger: '20a' },
       ],
     },
     {
@@ -469,7 +489,7 @@ const FindYourVoice = () => {
       id: '19a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: 'end',
+      trigger: 'restart option b',
     },
     {
       id: '20a',
@@ -477,7 +497,7 @@ const FindYourVoice = () => {
       trigger: '18a',
     },
     {
-      id: '21',
+      id: '21a',
       message:
         'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
       trigger: '19a',
@@ -610,7 +630,483 @@ const FindYourVoice = () => {
       id: '39a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: 'end',
+      trigger: '40a',
+    },
+    {
+      id: '40a',
+      component: <EndChatRacistCard />,
+      trigger: 'restart option b',
+    },
+    {
+      id: 'restart option b',
+      options: [
+        { value: 'A', label: 'A', trigger: 'racist incident' },
+        { value: 'B', label: 'B', trigger: 'reporting injury' },
+        { value: 'C', label: 'C', trigger: 'injury prevention' },
+        { value: 'D', label: 'D', trigger: 'end_options' },
+      ],
+    },
+
+    {
+      id: 'end_options',
+      options: [{ value: '0', label: 'QUIT', trigger: 'end' }],
+    },
+    {
+      id: 'end',
+      message: 'Bye!',
+      end: true,
+    },
+
+    {
+      id: '4b',
+      message: 'You slip on a wet floor at work and hurt your wrist.',
+      trigger: '6b',
+    },
+    {
+      id: '5b',
+      message: 'Thank you and have a great day',
+      trigger: '68b',
+    },
+    {
+      id: '6b',
+      message: 'Do you report your injury?',
+      trigger: '7b',
+    },
+    {
+      id: '7b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '8b' },
+        { value: 'no', label: 'NO', trigger: '16b' },
+      ],
+    },
+    {
+      id: '8b',
+      message: 'Do you file WCB claim?',
+      trigger: '9b',
+    },
+    {
+      id: '9b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '10b' },
+        { value: 'no', label: 'NO', trigger: '30b' },
+      ],
+    },
+
+    {
+      id: '10b',
+      message:
+        'Injuries at work need to be confirmed by a doctor in Alberta for a WCB claim to be accepted. All these visits are covered by Alberta Health. ',
+      trigger: '11b',
+    },
+    {
+      id: '11b',
+      message:
+        'There are also specific clinics that are part of the Occupational Injury Service in Alberta. Injured workers can expect to see a doctor within 30 minutes at these clinics.',
+      trigger: '12',
+    },
+    {
+      id: '12b',
+      message: 'You can find a list of these clinics below',
+      trigger: '13b', // replace with learn_more
+    },
+    /* add learn more
+  {
+    id: "learn_more",  
+     Component :(
+       <View>
+         <Button>
+           Learn More
+         </Button> 
+       </View>
+       ),
+          trigger: 11
+  }, */
+    {
+      id: '13b',
+      message:
+        'Although any doctor can fill WCB paperwork, you will often be asked by WCB to go to a specific WCB-Doctor when you make a claim even if you have seen a doctor. ',
+      trigger: '14b',
+    },
+    {
+      id: '14b',
+      message: 'Now that you have filed your WCB claim, is the claim accepted?',
+      trigger: '15b',
+    },
+
+    {
+      id: '16b',
+      message:
+        'In Alberta it is your right to report an injury to your employer and to the Workers Compensation Board.',
+      trigger: '17b',
+    },
+    {
+      id: '17b',
+      message:
+        "However, there are many reasons why a person doesn't want to report an injury to their boss. ",
+      trigger: '18b',
+    },
+    {
+      id: '18b',
+      message:
+        'For example, you may fear losing your job or may not want to admit a problem in front of them. ',
+      trigger: '19b',
+    },
+    {
+      id: '19b',
+      message:
+        "Similarly, not all injuries are the same. For some, a hurt wrist is a small matter if you know it will heal and you don't want to go through the process reporting it.",
+      trigger: '20b',
+    },
+    {
+      id: '20b',
+      message:
+        'Be aware that there are consequences for reporting and not reporting an injury.',
+      trigger: '21b',
+    },
+    {
+      id: '21b',
+      options: [
+        {
+          value: 'What can happen?',
+          label: ' What can happen?',
+          trigger: '22b',
+        },
+      ],
+    },
+    {
+      id: '22b',
+      message:
+        'In an ideal case, if you report an injury an employer will take the correct steps and ensure that you fill out the correct paperwork and receive the appropriate help.',
+      trigger: '23b',
+    },
+    {
+      id: '23b',
+      message:
+        'In the worst case, workers have been fired for not reporting an injury and hiding it because hiding the injury was against their workplace policy. ',
+      trigger: '24b',
+    },
+    {
+      id: '24b',
+      message:
+        'If such policies exist at your work, be sure to become familiar with them so that you know what can happen in the case of an injury.',
+      trigger: '25b',
+    },
+    {
+      id: '25b',
+      message:
+        'According to Alberta Occupational Health and Safety legislation, serious incidents of injury have to be reported to the Alberta government. ',
+      trigger: '27b',
+    },
+    {
+      id: '27b',
+      message:
+        'Unless you are admitted to hospital for more than two days because of the injury, you do not have to report this wrist injury to the Alberta government.',
+      trigger: '28b',
+    },
+    {
+      id: '28b',
+      message:
+        'For more information on what constitutes a serious injury, see below:',
+      trigger: '29b', // add learn more after it
+    },
+    {
+      id: '29b',
+      message:
+        'Great job! You have completed this section of Injury prevention & Training.', // add  restart button
+      trigger: '68b',
+    },
+
+    {
+      id: '30b',
+      message:
+        "Even if you do not feel your injury is serious enough to report, it is recommended to follow your company's policy and notify your manager and fill out any required paper work. ",
+      trigger: '29b',
+    },
+
+    {
+      id: '15b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '31b' },
+        { value: 'no', label: 'NO', trigger: '32b' },
+      ],
+    },
+
+    {
+      id: '31b',
+      message: 'Now you will enter the rehabilitation period. ',
+      trigger: '33b',
+    },
+
+    {
+      id: '32b',
+      message: 'Let us explore your options.',
+      trigger: '37b',
+    },
+    {
+      id: '33b',
+      options: [
+        {
+          value: 'rehabilitation',
+          label: 'Rehabilitation period?',
+          trigger: '34b',
+        },
+      ],
+    },
+    {
+      id: '34b',
+      message:
+        'Rehabilitation is a process that involves you, your employer, WCB and any third-party health providers such as physiotherapists.',
+      trigger: '35b',
+    },
+    {
+      id: '35b',
+      message:
+        'According to the Workers Compensation Act, employers are required to get workers back to their regular work duties prior to the injury during rehabilitation.',
+      trigger: '36b',
+    },
+    {
+      id: '36b',
+      message:
+        'For more information, see page 49 from the Workers Compensation Act below:',
+      trigger: '44b', // add learn more after it
+    },
+    {
+      id: '37b',
+      message:
+        'WCB is an insurance company and this means that they may look for reasons to not accept your claim.',
+      trigger: '38b',
+    },
+    {
+      id: '38b',
+      message:
+        'Common reasons that claims are rejected are due to missed paperwork or paperwork that was not completed in time. ',
+      trigger: '39b',
+    },
+    {
+      id: '39b',
+      message:
+        'This means that it is important to fill out the correct paperwork within the 72 hour window if you want to receive WCB help.',
+      trigger: '40b',
+    },
+    {
+      id: '40b',
+      message:
+        'If your claim was rejected despite you being injured at work, you can contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help.',
+      trigger: '41b',
+    },
+    {
+      id: '41b',
+      message:
+        'Would you like to know the contact information of these organizations?',
+      trigger: '42b',
+    },
+
+    {
+      id: '42b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '43b' }, // check for yes
+        { value: 'no', label: 'NO', trigger: '29b' },
+      ],
+    },
+    {
+      id: '43b',
+      message:
+        'Okay, you can find their contact info in our resources page anytime you may need it.',
+      trigger: '29b',
+    },
+
+    {
+      id: '44b',
+      message:
+        'Rehabilitation will include a mix of time off, therapy and accommodated duties at work. ',
+      trigger: '45b',
+    },
+    {
+      id: '45b',
+      message:
+        'Considering your wrist injury, you will likely be able to have accommodated work. ',
+      trigger: '46b',
+    },
+    {
+      id: '46b',
+      message:
+        'During rehabilitation workers receive a wage replacement from WCB if they are unable to work because of their injury. This wage replacement is not taxed and is 90% of your regular wage. ',
+      trigger: '47b',
+    },
+    {
+      id: '47b',
+      message:
+        'WCB also covers health expense costs that are related to the injury, such as medication and physiotherapy.',
+      trigger: '48b',
+    },
+    {
+      id: '48b',
+      message:
+        'Be aware that due to the costs involved, WCB only looks at one issue at a time even in the case of complex injuries. ',
+      trigger: '49b',
+    },
+    {
+      id: '49b',
+      message:
+        'Accommodated duties means being provided work at your regular wage and work that you can do with your injury.',
+      trigger: '50b',
+    },
+    {
+      id: '50b',
+      message:
+        'Employers may not be able to provide this work and if they cannot, then you will still be compensated by WCB.',
+      trigger: '51b',
+    },
+    {
+      id: '51b',
+      message:
+        'It is also illegal for employers you to lay you off while you are on injury or fire you because of your injury, and employers can face a heavy fine if they do!',
+      trigger: '52b',
+    },
+    {
+      id: '52b',
+      message:
+        'For more information, see page 82 from the Workers Compensation Act below:',
+      trigger: '53b', // add learn more
+    },
+    {
+      id: '53b',
+      message:
+        'Now that the rehabilitation period is over, are you able to return to work?',
+      trigger: '54b',
+    },
+    {
+      id: '54b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '55b' },
+        { value: 'no', label: 'NO', trigger: '57b' },
+      ],
+    },
+    {
+      id: '55b',
+      message:
+        'As rehabilitation will include a mix of time off, therapy and accommodated duties at work, you may return to work in a limited or different capacity until you are healed and able to go back to your regular duties.',
+      trigger: '56b',
+    },
+    {
+      id: '56b',
+      message:
+        ' If this is the case, then your WCB claim will be closed and you can go back to your job.',
+      trigger: '29b',
+    },
+    {
+      id: '57b',
+      message: "Let's explore your options.",
+      trigger: '58b',
+    },
+    {
+      id: '58b',
+      message:
+        'Going through the WCB process can be long, expensive, and can be physically and emotionally draining. ',
+      trigger: '59b',
+    },
+    {
+      id: '59b',
+      message:
+        'According to the Workers Compensation Act, you need to go through this process if an injury took place at work and your injury claim was accepted. ',
+      trigger: '60b', // add learn more
+    },
+    {
+      id: '60b',
+      message:
+        'Due to the costs of rehabilitating workers, employers have been known to bully workers to the point where they want to quit. ',
+      trigger: '61b',
+    },
+    {
+      id: '61b',
+      message:
+        'WCB has also been known to push workers back to work even if they are at risk of re-injuring or not able to work. ',
+      trigger: '62b',
+    },
+    {
+      id: '62b',
+      message:
+        'Furthermore, there are cases where employers try to find reasons to fire employees while you are on workers compensation. ',
+      trigger: '63b',
+    },
+    {
+      id: '63b',
+      message:
+        'As the Workers Compensation Act clearly states that employees cannot be fired due to their injury, there have been cases where employers look for reasons to fire a worker that is non-injury related. ',
+      trigger: '64b',
+    },
+    {
+      id: '64b',
+      message:
+        'For example, they may look for reasons for firing you. Even though this is illegal, this may happen.',
+      trigger: '65b',
+    },
+    {
+      id: '65b',
+      message:
+        'Should this happen, you can always contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help regarding wrongful termination.',
+      trigger: '66b',
+    },
+    {
+      id: '66b',
+      message:
+        'Would you like to know the contact information of these organizations?',
+      trigger: '67b',
+    },
+    {
+      id: '67b',
+      options: [
+        { value: 'yes', label: 'YES', trigger: '43b' },
+        { value: 'no', label: 'NO', trigger: '29b' },
+      ],
+    },
+    {
+      id: '68b',
+      message:
+        "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
+      trigger: '69b',
+    },
+    {
+      id: '69b',
+      component: (
+        //   <View>
+        //     <Button
+        //       onPress={() => {
+        //         navigation.navigate('Reporting & Filing An Injury');
+        //       }}
+        //       title="Restart"
+        //     />
+        //     <Button
+        //       onPress={() => {
+        //         navigation.navigate('Racist Incident');
+        //       }}
+        //       title="Racist Incident"
+        //     />
+        //     <Button
+        //       onPress={() => {
+        //         navigation.navigate('Injury Prevention & Training');
+        //       }}
+        //       title="Injury Prevention & Training"
+        //     />
+        //     <Button
+        //       onPress={() => {
+        //         navigation.navigate('Find Your Voice');
+        //       }}
+        //       title="Quit"
+        //     />
+        //   </View>
+        <EndChatReportingCard />
+      ),
+      trigger: 'restart option c',
+    },
+    {
+      id: 'restart option c',
+      options: [
+        { value: 'A', label: 'A', trigger: 'reporting injury' },
+        { value: 'B', label: 'B', trigger: 'injury prevention' },
+        { value: 'C', label: 'C', trigger: 'racist incident' },
+        { value: 'D', label: 'D', trigger: 'end_options' },
+      ],
     },
 
     {
