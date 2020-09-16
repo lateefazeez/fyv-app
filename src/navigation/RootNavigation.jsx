@@ -7,19 +7,19 @@ import Main from 'screens/Main';
 
 import KnowYourRights from 'screens/KnowYourRights';
 import KnowYourRightsTabs from 'screens/KnowYourRights/tabs';
-import FindYourVoice from 'screens/FindYourVoice';
-import Resources from 'screens/Resources';
-import Disclaimer from 'screens/Disclaimer';
-import Glossary from 'screens/Glossary';
-
 import CovidInfo from 'screens/KnowYourRights/Ohs/CovidInfo';
 import BasicRights from 'screens/KnowYourRights/Ohs/BasicRights';
 import TypesOfHazards from 'screens/KnowYourRights/Ohs/TypesOfHazards';
 import WorkersCompensation from 'screens/KnowYourRights/Ohs/WorkersCompensation';
 
+import FindYourVoice from 'screens/FindYourVoice';
 // import InjuryPrevention from 'screens/FindYourVoice/InjuryPrevention';
 // import RacistIncident from 'screens/FindYourVoice/RacistIncident';
 // import ReportingAnInjury from 'screens/FindYourVoice/ReportingAnInjury';
+
+import Resources from 'screens/Resources';
+import Disclaimer from 'screens/Disclaimer';
+import Glossary from 'screens/Glossary';
 
 import colors from 'config/colors';
 import { testAlert } from 'utils';
@@ -279,10 +279,10 @@ const RootNavigation = ({ navigation }) => {
               color={colors.white}
               onPress={() => navigation.toggleDrawer()}
               style={{ marginRight: 16 }}
-            /> */}
+            />
           ),
         }}
-      />
+      />*/}
     </App.Navigator>
   );
 };

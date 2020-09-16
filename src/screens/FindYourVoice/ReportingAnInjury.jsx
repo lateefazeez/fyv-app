@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-indent */
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {Alert, Button, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
