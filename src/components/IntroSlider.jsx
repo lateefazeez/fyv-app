@@ -4,8 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import colors from '../config/colors';
-import slides from '../config/onboardingSlides';
+import colors from 'config/colors';
+import slides from 'config/onboardingSlides';
 
 const App = ({ onDone, ...props }) => {
   const renderItem = ({ item }) => {
@@ -51,11 +51,7 @@ const doneButton = () => {
 const nextButton = () => {
   return (
     <View style={styles.nextButton}>
-      <Icon
-        name="md-arrow-round-forward"
-        color="rgba(255, 255, 255, .9)"
-        size={24}
-      />
+      <Icon name="md-arrow-round-forward" color={colors.white} size={24} />
     </View>
   );
 };
@@ -73,7 +69,7 @@ const styles = StyleSheet.create({
   nextButton: {
     width: 40,
     height: 40,
-    backgroundColor: 'rgba(0, 0, 0, .2)',
+    backgroundColor: colors.primary,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -104,8 +100,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   text: {
-    color: 'rgba(255, 255, 255, 0.8)',
-    textAlign: 'justify',
+    color: colors.black,
+    textAlign: 'center',
     width: '100%',
     lineHeight: 18,
     fontSize: 16,
@@ -114,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginVertical: 32,
-    color: colors.white,
+    color: colors.black,
     textAlign: 'center',
   },
 });

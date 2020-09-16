@@ -3,14 +3,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Feather';
 
-import MenuDrawerContent from '../pages/MenuDrawerContent';
+import MenuDrawer from 'screens/MenuDrawer';
 
-import Main from '../pages/Main';
-import WorkplaceSafety from '../pages/WorkplaceSafety';
-import Resources from '../pages/Resources';
-import FindingYourVoice from '../pages/FindingYourVoice';
-import Disclaimers from '../pages/Disclaimers';
-import Glossary from '../pages/Glossary';
+import Main from 'screens/Main';
+import KnowYourRights from 'screens/KnowYourRights';
+import Resources from 'screens/Resources';
+import FindYourVoice from 'screens/FindYourVoice';
+import Disclaimer from 'screens/Disclaimer';
+import Glossary from 'screens/Glossary';
 
 const App = createStackNavigator();
 
@@ -36,10 +36,10 @@ const HomeNavigation = ({ navigation }) => (
         ),
       }}
     />
-    <App.Screen name="Workplace Safety" component={WorkplaceSafety} />
+    <App.Screen name="KnowYourRights" component={KnowYourRights} />
     <App.Screen name="Resources" component={Resources} />
-    <App.Screen name="Find Your Voice" component={FindingYourVoice} />
-    <App.Screen name="Disclaimers" component={Disclaimers} />
+    <App.Screen name="Find Your Voice" component={FindYourVoice} />
+    <App.Screen name="Disclaimer" component={Disclaimer} />
     <App.Screen name="Glossary" component={Glossary} />
   </App.Navigator>
 );
@@ -47,7 +47,7 @@ const HomeNavigation = ({ navigation }) => (
 const Drawer = createDrawerNavigator();
 
 const MenuNavigation = () => (
-  <Drawer.Navigator drawerContent={props => <MenuDrawerContent {...props} />}>
+  <Drawer.Navigator drawerContent={props => <MenuDrawer {...props} />}>
     <Drawer.Screen name="Home" component={HomeNavigation} />
   </Drawer.Navigator>
   // <Drawer.Navigator
@@ -57,7 +57,7 @@ const MenuNavigation = () => (
   //   <Drawer.Screen name="Home" component={HomeNavigation} />
   //   <Drawer.Screen name="Workplace Safety" component={WorkplaceSafety} />
   //   <Drawer.Screen name="Resources" component={Resources} />
-  //   <Drawer.Screen name="Finding Your Voice" component={FindingYourVoice} />
+  //   <Drawer.Screen name="Finding Your Voice" component={FindYourVoice} />
   //   <Drawer.Screen name="Disclaimers" component={Disclaimers} />
   // </Drawer.Navigator>
 );

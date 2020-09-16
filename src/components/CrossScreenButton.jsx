@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import colors from '../config/colors';
+import colors from 'config/colors';
 
 const CrossScreenButton = ({ children, icon, style, ...props }) => {
   return (
@@ -28,7 +28,7 @@ export default CrossScreenButton;
 const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
     marginBottom: 8,
     width: 220,
     padding: 12,
@@ -39,12 +39,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: colors.black,
+    color: colors.white,
     fontSize: 14,
     marginRight: 24,
   },
   icon: {
     padding: 0,
     margin: 0,
+    color: colors.white,
   },
 });
