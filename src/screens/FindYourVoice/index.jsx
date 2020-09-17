@@ -685,31 +685,31 @@ const FindYourVoice = () => {
     {
       id: '20a',
       message: 'Sorry to hear about that.',
-      trigger: '18a',
+      trigger: '21a',
     },
     {
       id: '21a',
       message:
         'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
-      trigger: '19a',
+      trigger: '22a',
     },
     {
       id: '22a',
       message:
         "In other cases, unfortunately sometimes workplaces don't do anything about racism.",
-      trigger: '18a',
+      trigger: '23a',
     },
     {
       id: '23a',
       message:
         'For example, you may report something to your supervisor and your supervisor may just brush it off.',
-      trigger: '19a',
+      trigger: '24a',
     },
     {
       id: '24a',
       message:
         'There have been cases where racism is reported and nothing changes, or the actions taken are insufficient when you report racism. ',
-      trigger: '18a',
+      trigger: '25a',
     },
     {
       id: '25a',
@@ -732,12 +732,42 @@ const FindYourVoice = () => {
       id: '27a',
       message:
         'If you reported it and nothing changes, some last resorts may be making a human rights complaint and a health and safety complaint. ',
+      trigger: 'human rights complaint',
+    },
+    {
+      id: 'human rights complaint',
+      component: (
+        <View>
+          <InChatRefButton
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://workershealthcentre.ca/4-health-and-safety-rights/',
+              )
+            }
+            icon="web"
+            style={{ marginBottom: 8, width: '80%' }}
+          >
+            AB Human Rights Complaint
+          </InChatRefButton>
+          <InChatRefButton
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://www.alberta.ca/file-complaint-online.aspx',
+              )
+            }
+            icon="web"
+            style={{ width: '80%' }}
+          >
+            OHS File a Complaint
+          </InChatRefButton>
+        </View>
+      ),
       trigger: '28a',
     },
     {
       id: '28a',
       message:
-        ' Human rights and racism relates to someone experiencing discrimination due to ethnocultural background, and OHS and racism relates to someone experiencing psychosocial hazards at work.',
+        'Human rights and racism relates to someone experiencing discrimination due to ethnocultural background, and OHS and racism relates to someone experiencing psychosocial hazards at work.',
       trigger: '29a',
     },
     {
@@ -750,7 +780,7 @@ const FindYourVoice = () => {
       id: '30a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: 'end_options',
+      trigger: '40a',
     },
     {
       id: '31a',
@@ -786,7 +816,7 @@ const FindYourVoice = () => {
       id: '36a',
       message:
         'It may be worth talking to someone in Human Resources if you feel you can trust them.',
-      trigger: '37a',
+      trigger: 'human rights complaint',
     },
     {
       id: '37a',
