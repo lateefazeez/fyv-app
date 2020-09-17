@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,18 +13,18 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
 import colors from 'config/colors';
 
-const MyComponent = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
+const Search = () => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const onChangeSearch = query => setSearchQuery(query);
+  const onSearch = query => setSearchQuery(query);
 
   return (
-    <Searchbar placeholder="Search"
-    onChangeText={onChangeSearch}
-    value={searchQuery}
+    <Searchbar
+      placeholder="Search"
+      onChangeText={onSearch}
+      value={searchQuery}
     />
-    );
-    
+  );
 };
 
 const listData = [
@@ -46,7 +46,6 @@ const listData = [
   },
 ];
 
-
 const sortedData = listData.map(item => ({
   title: item.title,
   data: item.data.sort(),
@@ -63,10 +62,8 @@ const Item = ({ title }) => (
 const Glossary = () => {
   return (
     <>
-   
-
       <SafeAreaView style={{ flex: 1 }}>
-        <MyComponent></MyComponent>
+        <Search />
         <SectionList
           sections={sortedData}
           keyExtractor={(item, index) => item + index}
@@ -102,5 +99,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-
