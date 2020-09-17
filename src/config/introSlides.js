@@ -1,4 +1,3 @@
-import placeholder from 'assets/placeholder.png';
 import imgIntro01 from 'assets/intro1_img.png';
 import imgIntro02 from 'assets/intro2_img.png';
 import imgIntro03 from 'assets/intro3_img.png';
