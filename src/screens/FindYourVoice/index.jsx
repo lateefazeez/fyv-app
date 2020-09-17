@@ -927,21 +927,25 @@ const FindYourVoice = () => {
     },
     {
       id: '12b',
-      message: 'You can find a list of these clinics below',
-      trigger: '13b', // replace with learn_more
+      message: 'You can find a list of these clinics below:',
+      trigger: 'wcb clinics', // replace with learn_more
     },
-    /* add learn more
-  {
-    id: "learn_more",
-     Component :(
-       <View>
-         <Button>
-           Learn More
-         </Button>
-       </View>
-       ),
-          trigger: 11
-  }, */
+    {
+      id: 'wcb clinics',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.wcb.ab.ca/treatment-and-recovery/get-treatment/occupational-injury-service-clinics-and-doctors/',
+            )
+          }
+          icon="web"
+        >
+          OIS Clinics & Doctors
+        </InChatRefButton>
+      ),
+      trigger: '13b',
+    },
     {
       id: '13b',
       message:
@@ -1028,7 +1032,23 @@ const FindYourVoice = () => {
       id: '28b',
       message:
         'For more information on what constitutes a serious injury, see below:',
-      trigger: '29b', // add learn more after it
+      trigger: 'serious injury', // add learn more after it
+    },
+    {
+      id: 'serious injury',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/report-potentially-serious-incidents.aspx#:~:text=An%20injury%20is%20considered%20serious,to%20hospital%20as%20an%20inpatient',
+            )
+          }
+          icon="web"
+        >
+          Serious Injuries
+        </InChatRefButton>
+      ),
+      trigger: '29b',
     },
     {
       id: '29b',
@@ -1089,7 +1109,24 @@ const FindYourVoice = () => {
       id: '36b',
       message:
         'For more information, see page 49 from the Workers Compensation Act below:',
-      trigger: '44b', // add learn more after it
+      trigger: 'workers compensation act', // add learn more after it
+    },
+    {
+      id: 'workers compensation act',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '44b',
     },
     {
       id: '37b',
@@ -1119,14 +1156,14 @@ const FindYourVoice = () => {
       id: '41b',
       message:
         'Would you like to know the contact information of these organizations?',
-      trigger: '42b',
+      trigger: '67b',
     },
 
     {
       id: '42b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '43b' }, // check for yes
-        { value: 'no', label: 'NO', trigger: '29b' },
+        { value: 'yes', label: 'YES', trigger: 'resource link' }, // check for yes
+        { value: 'no', label: 'NO', trigger: '43b' },
       ],
     },
     {
@@ -1181,14 +1218,31 @@ const FindYourVoice = () => {
     {
       id: '51b',
       message:
-        'It is also illegal for employers you to lay you off while you are on injury or fire you because of your injury, and employers can face a heavy fine if they do!',
+        'It is also illegal for employers to lay you off while you are on injury or fire you because of your injury, and employers can face a heavy fine if they do!',
       trigger: '52b',
     },
     {
       id: '52b',
       message:
         'For more information, see page 82 from the Workers Compensation Act below:',
-      trigger: '53b', // add learn more
+      trigger: 'workers compensation act2',
+    },
+    {
+      id: 'workers compensation act2',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '53b',
     },
     {
       id: '53b',
@@ -1212,7 +1266,7 @@ const FindYourVoice = () => {
     {
       id: '56b',
       message:
-        ' If this is the case, then your WCB claim will be closed and you can go back to your job.',
+        'If this is the case, then your WCB claim will be closed and you can go back to your job.',
       trigger: '29b',
     },
     {
@@ -1230,7 +1284,24 @@ const FindYourVoice = () => {
       id: '59b',
       message:
         'According to the Workers Compensation Act, you need to go through this process if an injury took place at work and your injury claim was accepted. ',
-      trigger: '60b', // add learn more
+      trigger: 'workers compensation act3', // add learn more
+    },
+    {
+      id: 'workers compensation act3',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '60b',
     },
     {
       id: '60b',
@@ -1277,9 +1348,31 @@ const FindYourVoice = () => {
     {
       id: '67b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '43b' },
-        { value: 'no', label: 'NO', trigger: '29b' },
+        { value: 'yes', label: 'YES', trigger: 'resource link' },
+        { value: 'no', label: 'NO', trigger: '43b' },
       ],
+    },
+    {
+      id: 'resource link',
+      message:
+        'You can find them in our resources page by clicking the below link',
+      trigger: 'resources',
+    },
+    {
+      id: 'resources',
+      component: (
+        <InChatRefButton
+          onPress={() => {
+            navigation.navigate('Resources');
+          }}
+          icon="book-open-page-variant"
+          style={{ width: '70%' }}
+        >
+          {' '}
+          Resources Page
+        </InChatRefButton>
+      ),
+      trigger: '29b',
     },
     {
       id: '68b',
