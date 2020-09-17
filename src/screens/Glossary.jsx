@@ -13,6 +13,20 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
 import colors from 'config/colors';
 
+const MyComponent = () => {
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const onChangeSearch = query => setSearchQuery(query);
+
+  return (
+    <Searchbar placeholder="Search"
+    onChangeText={onChangeSearch}
+    value={searchQuery}
+    />
+    );
+    
+};
+
 const listData = [
   {
     title: 'A',
@@ -32,6 +46,7 @@ const listData = [
   },
 ];
 
+
 const sortedData = listData.map(item => ({
   title: item.title,
   data: item.data.sort(),
@@ -48,7 +63,10 @@ const Item = ({ title }) => (
 const Glossary = () => {
   return (
     <>
+   
+
       <SafeAreaView style={{ flex: 1 }}>
+        <MyComponent></MyComponent>
         <SectionList
           sections={sortedData}
           keyExtractor={(item, index) => item + index}
@@ -62,6 +80,7 @@ const Glossary = () => {
     </>
   );
 };
+export default Glossary;
 
 const styles = StyleSheet.create({
   item: {
@@ -84,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Glossary;
+
