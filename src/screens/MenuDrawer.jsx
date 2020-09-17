@@ -10,6 +10,20 @@ import colors from 'config/colors';
 import menuItems from 'config/menuItems';
 import menuLogo from 'assets/logo_white.png';
 
+const getIcon = ({ lib, name, size, color }) => {
+  switch (lib) {
+    case 'MaterialIcon':
+      return <MaterialIcon color={color} name={name} size={size} />;
+    case 'FeatherIcon':
+      return <FeatherIcon color={color} name={name} size={size} />;
+    case 'Fa5Icon':
+      return <Fa5Icon color={color} name={name} size={size} />;
+
+    default:
+      return null;
+  }
+};
+
 const MenuDrawer = ({ navigation }) => {
   return (
     <View style={styles.menuContainer}>
@@ -30,41 +44,25 @@ const MenuDrawer = ({ navigation }) => {
                 : styles.menuItem
             }
             labelStyle={styles.menuItemText}
-            icon={() => {
-              switch (item.menuIconLib) {
-                case 'MaterialIcon':
-                  return (
-                    <MaterialIcon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
-                case 'FeatherIcon':
-                  return (
-                    <FeatherIcon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
-                case 'Fa5Icon':
-                  return (
-                    <Fa5Icon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
-
-                default:
-                  return null;
-              }
-            }}
+            icon={() =>
+              getIcon({
+                lib: item.menuIconLib,
+                name: item.menuIconName,
+                size: item.menuIconSize,
+                color: colors.darkerGrey,
+              })
+            }
             onPress={() => navigation.navigate(item.menuLabel)}
           />
         ))}
       </DrawerContentScrollView>
+      <MaterialIcon
+        color={colors.white}
+        name="close"
+        size={24}
+        onPress={() => navigation.closeDrawer()}
+        style={{ position: 'absolute', top: 16, left: 16 }}
+      />
     </View>
   );
 };
@@ -73,8 +71,8 @@ export default MenuDrawer;
 
 const styles = StyleSheet.create({
   menuContainer: {
-    backgroundColor: '#3B3B3B',
     flex: 1,
+    position: 'relative',
   },
   menuContainerLowerSection: {
     flex: 1,
@@ -82,19 +80,20 @@ const styles = StyleSheet.create({
   },
   menuContainerUpperSection: {
     alignItems: 'center',
+    backgroundColor: colors.darkerGrey,
     justifyContent: 'center',
-    paddingTop: 32,
+    padding: 48,
+    borderTopRightRadius: 32,
   },
   menuLogo: {
     height: 128,
-    marginTop: 64,
     resizeMode: 'contain',
   },
   menuLogoText: {
-    color: '#fff',
+    color: colors.white,
     fontWeight: 'bold',
-    fontSize: 12,
-    marginVertical: 24,
+    fontSize: 14,
+    marginTop: 24,
   },
   menuItem: {
     marginTop: 0,
@@ -103,5 +102,8 @@ const styles = StyleSheet.create({
     marginLeft: 64,
     marginTop: 0,
   },
-  menuItemText: { color: '#fff' },
+  menuItemText: {
+    color: colors.darkerGrey,
+    fontSize: 14,
+  },
 });

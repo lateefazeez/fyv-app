@@ -41,11 +41,13 @@ const RootNavigation = ({ navigation }) => {
         name="Home"
         component={Main}
         options={{
+          headerTitle: '',
+          headerTransparent: true,
           headerRight: () => (
             <Icon
               name="menu"
               size={24}
-              color={colors.white}
+              color={colors.primary}
               onPress={() => navigation.toggleDrawer()}
               style={{ marginRight: 16 }}
             />

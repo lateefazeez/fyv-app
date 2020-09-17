@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
+import Constants from 'expo-constants';
 
 import MenuDrawer from 'screens/MenuDrawer';
 
@@ -16,8 +18,20 @@ const DrawerNavigation = () => {
   return (
     <>
       <NavigationContainer ref={navRef}>
-        <StatusBar style="light" backgroundColor={colors.statusBar} />
-        <Drawer.Navigator drawerContent={props => <MenuDrawer {...props} />}>
+        {Platform.OS === 'android' ? (
+          <StatusBar style="light" backgroundColor={colors.statusBar} />
+        ) : (
+          <StatusBar style="auto" />
+        )}
+        <Drawer.Navigator
+          drawerContent={props => <MenuDrawer {...props} />}
+          drawerStyle={{
+            backgroundColor: colors.white,
+            borderTopRightRadius: 32,
+            borderBottomRightRadius: 32,
+            marginTop: Constants.statusBarHeight,
+          }}
+        >
           <Drawer.Screen name="Root" component={RootNavigation} />
         </Drawer.Navigator>
       </NavigationContainer>

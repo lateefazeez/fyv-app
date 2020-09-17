@@ -7,11 +7,13 @@ import DrawerNavigation from 'navigation/DrawerNavigation';
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
 
-  const onDone = () => setShowIntro(false);
+  // TODO: save this state to AsyncStorage and recover it using useEffect hook to avoid user from seeing the intro every time the app opens.
 
-  if (showIntro) return <IntroSlider onDone={onDone} />;
-
-  return <DrawerNavigation />;
+  return showIntro ? (
+    <IntroSlider onDone={() => setShowIntro(false)} />
+  ) : (
+    <DrawerNavigation />
+  );
 };
 
 export default App;
