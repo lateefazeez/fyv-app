@@ -1,6 +1,10 @@
 import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import * as WebBrowser from 'expo-web-browser';
+import { Card } from 'react-native-paper';
+import Swiper from 'react-native-swiper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import InChatCard from 'components/InChatCard';
 import FyvChatBot from 'components/ChatBot';
@@ -8,6 +12,14 @@ import BasicButton from 'components/BasicButton';
 import EndChatReportingCard from 'components/EndChatReportingCard';
 import EndChatInjuryCard from 'components/EndChatInjuryCard';
 import EndChatRacistCard from 'components/EndChatRacistCard';
+import InChatRefButton from 'components/InChatRefButton';
+import {
+  InChatRightsSlide01,
+  InChatRightsSlide02,
+  InChatRightsSlide03,
+} from './slides';
+
+import colors from 'config/colors';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();
@@ -112,11 +124,28 @@ const FindYourVoice = () => {
       id: '8',
       message:
         'According to the Government of Alberta, workers have the right to know about the dangers of our jobs and how we are protected.',
+      trigger: 'learn more - right to know',
+    },
+    {
+      id: 'learn more - right to know',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://workershealthcentre.ca/4-health-and-safety-rights/',
+            )
+          }
+          icon="web"
+          style={{ marginBottom: 16 }}
+        >
+          Learn More
+        </InChatRefButton>
+      ),
       trigger: '10',
     },
     {
       id: '9',
-      message: 'You should ask for additional information.',
+      message: 'You should ask your supervisor for additional information.',
       trigger: '15',
     },
     {
@@ -139,9 +168,15 @@ const FindYourVoice = () => {
     {
       id: '13',
       options: [
-        { value: 'yes', label: 'YES', trigger: '5' },
+        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
         { value: 'no', label: 'NO', trigger: '14' },
       ],
+    },
+    {
+      id: 'end injury prevention',
+      message:
+        'Great job! You have completed this section of Injury prevention & Training.',
+      trigger: '49',
     },
     {
       id: '14',
@@ -233,7 +268,17 @@ const FindYourVoice = () => {
     {
       id: '27',
       message: 'Information can come from a variety of sources. ',
-      trigger: '28',
+      trigger: 'information sources',
+    },
+    {
+      id: 'information sources',
+      options: [
+        {
+          value: 'What are some sources?',
+          label: 'What are some sources?',
+          trigger: '28',
+        },
+      ],
     },
     {
       id: '28',
@@ -261,7 +306,7 @@ const FindYourVoice = () => {
     {
       id: '32',
       options: [
-        { value: 'yes', label: 'YES', trigger: '33' },
+        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
         { value: 'no', label: 'NO', trigger: '34' },
       ],
     },
@@ -294,33 +339,135 @@ const FindYourVoice = () => {
         'However, all workers should feel safe when expressing their lack of training or lack of safety. ',
       trigger: '38',
     },
+
     {
       id: '38',
-      message:
-        'According to Alberta OHS legislation, you have the right to refuse unsafe work (Right #3).',
+      component: (
+        <Card style={{ flex: 1, borderRadius: 17, width: '95%' }}>
+          <View style={{ flex: 1 }}>
+            <View style={{ padding: 14 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                According to Alberta OHS legislation, you have the right to
+                refuse unsafe work (Right #3).
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 10,
+                alignItems: 'center',
+                borderTopWidth: 1,
+                borderTopColor: colors.primary,
+              }}
+            >
+              <Text
+                style={{ fontSize: 13, lineHeight: 17, color: colors.primary }}
+              >
+                What is this Right?
+              </Text>
+            </View>
+          </View>
+        </Card>
+      ),
       trigger: '39',
     },
     {
       id: '39',
-      message: 'This right is: ',
+      component: (
+        <Card
+          style={{
+            flex: 1,
+            borderRadius: 17,
+            width: '95%',
+            overflow: 'hidden',
+          }}
+        >
+          <View>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                Thats right! This right is:
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 12,
+                alignItems: 'center',
+                backgroundColor: colors.effectOne,
+                resizeMode: 'contain',
+              }}
+            >
+              <View style={{ alignItems: 'center' }}>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,0.8)',
+                    fontSize: 12,
+                    textAlign: 'center',
+                  }}
+                >
+                  Right to
+                </Text>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,1)',
+                    fontSize: 24,
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                  }}
+                >
+                  {' '}
+                  KNOW
+                </Text>
+              </View>
+              <Text
+                style={{
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: 12,
+                  textAlign: 'center',
+                  width: '75%',
+                  marginTop: 20,
+                  marginBottom: 20,
+                }}
+              >
+                about the dangers of our jobs and how we are protected.
+              </Text>
+            </View>
+          </View>
+        </Card>
+      ),
       trigger: '40',
     },
+    // {
+    //   id: '40',
+    //   component: (
+    //     <View>
+    //       <Text>
+    //         III. Right to refuse work we feel may be dangerous to ourselves or
+    //         others.
+    //       </Text>
+    //     </View>
+    //   ),
+    //   trigger: '41',
+    // },
     {
       id: '40',
-      component: (
-        <View>
-          <Text>
-            III. Right to refuse work we feel may be dangerous to ourselves or
-            others.
-          </Text>
-        </View>
-      ),
+      message:
+        'Unsafe work has to do with 4 hazards outlined in OHS legislation. These are physical hazards, chemical hazards, biological hazards, and psychosocial hazards.',
       trigger: '41',
     },
     {
       id: '41',
-      message:
-        'Unsafe work has to do with 4 hazards outlined in OHS legislation. These are physical hazards, chemical hazards, biological hazards, and psychosocial hazards.',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/workplace-hazards.aspx',
+            )
+          }
+          icon="web"
+          style={{ marginBottom: 16 }}
+        >
+          Learn More
+        </InChatRefButton>
+      ),
       trigger: '42',
     },
     {
@@ -340,8 +487,51 @@ const FindYourVoice = () => {
     },
     {
       id: '45',
-      message: 'The steps you need to take as part of this right are: ',
-      trigger: '46',
+      component: (
+        <Card
+          style={{
+            flex: 1,
+            borderRadius: 17,
+            width: '95%',
+            overflow: 'hidden',
+          }}
+        >
+          <View>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                The steps you need to take as part of this right are:
+              </Text>
+            </View>
+            <View
+              style={{
+                alignItems: 'center',
+              }}
+            >
+              <Swiper
+                style={{ height: 220, backgroundColor: colors.effectOne }}
+                activeDotColor={colors.white}
+                dotColor="rgba(0,0,0,0.2)"
+                nextButton={
+                  <Icon
+                    name="chevron-right"
+                    size={26}
+                    color="rgba(0,0,0,0.2)"
+                  />
+                }
+                prevButton={
+                  <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
+                }
+                showsButtons
+              >
+                <InChatRightsSlide01 />
+                <InChatRightsSlide02 />
+                <InChatRightsSlide03 />
+              </Swiper>
+            </View>
+          </View>
+        </Card>
+      ),
+      trigger: 'end injury prevention',
     },
     {
       id: '46',
@@ -495,31 +685,31 @@ const FindYourVoice = () => {
     {
       id: '20a',
       message: 'Sorry to hear about that.',
-      trigger: '18a',
+      trigger: '21a',
     },
     {
       id: '21a',
       message:
         'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
-      trigger: '19a',
+      trigger: '22a',
     },
     {
       id: '22a',
       message:
         "In other cases, unfortunately sometimes workplaces don't do anything about racism.",
-      trigger: '18a',
+      trigger: '23a',
     },
     {
       id: '23a',
       message:
         'For example, you may report something to your supervisor and your supervisor may just brush it off.',
-      trigger: '19a',
+      trigger: '24a',
     },
     {
       id: '24a',
       message:
         'There have been cases where racism is reported and nothing changes, or the actions taken are insufficient when you report racism. ',
-      trigger: '18a',
+      trigger: '25a',
     },
     {
       id: '25a',
@@ -542,12 +732,42 @@ const FindYourVoice = () => {
       id: '27a',
       message:
         'If you reported it and nothing changes, some last resorts may be making a human rights complaint and a health and safety complaint. ',
+      trigger: 'human rights complaint',
+    },
+    {
+      id: 'human rights complaint',
+      component: (
+        <View>
+          <InChatRefButton
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://workershealthcentre.ca/4-health-and-safety-rights/',
+              )
+            }
+            icon="web"
+            style={{ marginBottom: 8, width: '80%' }}
+          >
+            AB Human Rights Complaint
+          </InChatRefButton>
+          <InChatRefButton
+            onPress={() =>
+              WebBrowser.openBrowserAsync(
+                'https://www.alberta.ca/file-complaint-online.aspx',
+              )
+            }
+            icon="web"
+            style={{ width: '80%' }}
+          >
+            OHS File a Complaint
+          </InChatRefButton>
+        </View>
+      ),
       trigger: '28a',
     },
     {
       id: '28a',
       message:
-        ' Human rights and racism relates to someone experiencing discrimination due to ethnocultural background, and OHS and racism relates to someone experiencing psychosocial hazards at work.',
+        'Human rights and racism relates to someone experiencing discrimination due to ethnocultural background, and OHS and racism relates to someone experiencing psychosocial hazards at work.',
       trigger: '29a',
     },
     {
@@ -560,7 +780,7 @@ const FindYourVoice = () => {
       id: '30a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: 'end_options',
+      trigger: '40a',
     },
     {
       id: '31a',
@@ -596,7 +816,7 @@ const FindYourVoice = () => {
       id: '36a',
       message:
         'It may be worth talking to someone in Human Resources if you feel you can trust them.',
-      trigger: '37a',
+      trigger: 'human rights complaint',
     },
     {
       id: '37a',
@@ -707,21 +927,25 @@ const FindYourVoice = () => {
     },
     {
       id: '12b',
-      message: 'You can find a list of these clinics below',
-      trigger: '13b', // replace with learn_more
+      message: 'You can find a list of these clinics below:',
+      trigger: 'wcb clinics', // replace with learn_more
     },
-    /* add learn more
-  {
-    id: "learn_more",
-     Component :(
-       <View>
-         <Button>
-           Learn More
-         </Button>
-       </View>
-       ),
-          trigger: 11
-  }, */
+    {
+      id: 'wcb clinics',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.wcb.ab.ca/treatment-and-recovery/get-treatment/occupational-injury-service-clinics-and-doctors/',
+            )
+          }
+          icon="web"
+        >
+          OIS Clinics & Doctors
+        </InChatRefButton>
+      ),
+      trigger: '13b',
+    },
     {
       id: '13b',
       message:
@@ -808,7 +1032,23 @@ const FindYourVoice = () => {
       id: '28b',
       message:
         'For more information on what constitutes a serious injury, see below:',
-      trigger: '29b', // add learn more after it
+      trigger: 'serious injury', // add learn more after it
+    },
+    {
+      id: 'serious injury',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/report-potentially-serious-incidents.aspx#:~:text=An%20injury%20is%20considered%20serious,to%20hospital%20as%20an%20inpatient',
+            )
+          }
+          icon="web"
+        >
+          Serious Injuries
+        </InChatRefButton>
+      ),
+      trigger: '29b',
     },
     {
       id: '29b',
@@ -869,7 +1109,24 @@ const FindYourVoice = () => {
       id: '36b',
       message:
         'For more information, see page 49 from the Workers Compensation Act below:',
-      trigger: '44b', // add learn more after it
+      trigger: 'workers compensation act', // add learn more after it
+    },
+    {
+      id: 'workers compensation act',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '44b',
     },
     {
       id: '37b',
@@ -899,14 +1156,14 @@ const FindYourVoice = () => {
       id: '41b',
       message:
         'Would you like to know the contact information of these organizations?',
-      trigger: '42b',
+      trigger: '67b',
     },
 
     {
       id: '42b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '43b' }, // check for yes
-        { value: 'no', label: 'NO', trigger: '29b' },
+        { value: 'yes', label: 'YES', trigger: 'resource link' }, // check for yes
+        { value: 'no', label: 'NO', trigger: '43b' },
       ],
     },
     {
@@ -961,14 +1218,31 @@ const FindYourVoice = () => {
     {
       id: '51b',
       message:
-        'It is also illegal for employers you to lay you off while you are on injury or fire you because of your injury, and employers can face a heavy fine if they do!',
+        'It is also illegal for employers to lay you off while you are on injury or fire you because of your injury, and employers can face a heavy fine if they do!',
       trigger: '52b',
     },
     {
       id: '52b',
       message:
         'For more information, see page 82 from the Workers Compensation Act below:',
-      trigger: '53b', // add learn more
+      trigger: 'workers compensation act2',
+    },
+    {
+      id: 'workers compensation act2',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '53b',
     },
     {
       id: '53b',
@@ -992,7 +1266,7 @@ const FindYourVoice = () => {
     {
       id: '56b',
       message:
-        ' If this is the case, then your WCB claim will be closed and you can go back to your job.',
+        'If this is the case, then your WCB claim will be closed and you can go back to your job.',
       trigger: '29b',
     },
     {
@@ -1010,7 +1284,24 @@ const FindYourVoice = () => {
       id: '59b',
       message:
         'According to the Workers Compensation Act, you need to go through this process if an injury took place at work and your injury claim was accepted. ',
-      trigger: '60b', // add learn more
+      trigger: 'workers compensation act3', // add learn more
+    },
+    {
+      id: 'workers compensation act3',
+      component: (
+        <InChatRefButton
+          onPress={() =>
+            WebBrowser.openBrowserAsync(
+              'https://www.qp.alberta.ca/1266.cfm?page=W15.cfm&leg_type=Acts&isbncln=9780779814497',
+            )
+          }
+          icon="web"
+          style={{ width: '85%' }}
+        >
+          Workers' Compensation Act
+        </InChatRefButton>
+      ),
+      trigger: '60b',
     },
     {
       id: '60b',
@@ -1057,9 +1348,31 @@ const FindYourVoice = () => {
     {
       id: '67b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '43b' },
-        { value: 'no', label: 'NO', trigger: '29b' },
+        { value: 'yes', label: 'YES', trigger: 'resource link' },
+        { value: 'no', label: 'NO', trigger: '43b' },
       ],
+    },
+    {
+      id: 'resource link',
+      message:
+        'You can find them in our resources page by clicking the below link',
+      trigger: 'resources',
+    },
+    {
+      id: 'resources',
+      component: (
+        <InChatRefButton
+          onPress={() => {
+            navigation.navigate('Resources');
+          }}
+          icon="book-open-page-variant"
+          style={{ width: '70%' }}
+        >
+          {' '}
+          Resources Page
+        </InChatRefButton>
+      ),
+      trigger: '29b',
     },
     {
       id: '68b',

@@ -7,7 +7,7 @@ export default {
   lightGrey: '#f7f7f7',
   mediumGrey: '#e6e6e6',
   darkGrey: '#909396',
-  darkerGrey: '#3b3b38',
+  darkerGrey: '#3b3b3b',
   red: '#e20a07',
   effectOne: '#0970AC',
   effectTwo: '#abcc4c',

@@ -1,107 +1,117 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { DrawerContentScrollView } from '@react-navigation/drawer';
+import { List } from 'react-native-paper';
+import Constants from 'expo-constants';
 
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
 import colors from 'config/colors';
-import menuItems from 'config/menuItems';
-import menuLogo from 'assets/logo_white.png';
+import items from 'config/menuItems';
+import logo from 'assets/logo_white.png';
+
+const getIcon = ({ lib, name, size, color }) => {
+  switch (lib) {
+    case 'MaterialIcon':
+      return <MaterialIcon color={color} name={name} size={size} />;
+    case 'FeatherIcon':
+      return <FeatherIcon color={color} name={name} size={size} />;
+    case 'Fa5Icon':
+      return <Fa5Icon color={color} name={name} size={size} />;
+
+    default:
+      return null;
+  }
+};
 
 const MenuDrawer = ({ navigation }) => {
-  return (
-    <View style={styles.menuContainer}>
-      <View style={styles.menuContainerUpperSection}>
-        <Image source={menuLogo} style={styles.menuLogo} />
-        <Text style={styles.menuLogoText}>School of Global Access</Text>
-      </View>
-      <DrawerContentScrollView
-        contentContainerStyle={styles.menuContainerLowerSection}
-      >
-        {menuItems.map(item => (
-          <DrawerItem
-            key={item.menuLabel}
-            label={item.menuLabel}
-            style={
-              item.menuCategory === 'subSection'
-                ? styles.menuSubItem
-                : styles.menuItem
-            }
-            labelStyle={styles.menuItemText}
-            icon={() => {
-              switch (item.menuIconLib) {
-                case 'MaterialIcon':
-                  return (
-                    <MaterialIcon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
-                case 'FeatherIcon':
-                  return (
-                    <FeatherIcon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
-                case 'Fa5Icon':
-                  return (
-                    <Fa5Icon
-                      color={colors.white}
-                      name={item.menuIconName}
-                      size={item.menuIconSize}
-                    />
-                  );
+  // const isFocused = useIsFocused();
 
-                default:
-                  return null;
-              }
-            }}
-            onPress={() => navigation.navigate(item.menuLabel)}
+  return (
+    <DrawerContentScrollView
+      contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
+    >
+      <View style={styles.upperSection}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.logoText}>School of Global Access</Text>
+        <MaterialIcon
+          color={colors.white}
+          name="close"
+          size={24}
+          onPress={() => navigation.closeDrawer()}
+          style={{ position: 'absolute', top: 16, left: 16 }}
+        />
+      </View>
+      <View style={styles.lowerSection}>
+        {items.map(item => (
+          <List.Item
+            key={item.label}
+            title={item.label}
+            titleStyle={styles.label}
+            left={() =>
+              getIcon({
+                lib: item.iconLib,
+                name: item.iconName,
+                size: item.iconSize ? item.iconSize : 20,
+                color: colors.darkerGrey,
+              })
+            }
+            onPress={() =>
+              item.parentScreen
+                ? navigation.navigate(item.parentScreen, {
+                    screen: item.label,
+                  })
+                : navigation.navigate(item.label)
+            }
+            style={item.parentScreen ? styles.subItem : styles.item}
           />
         ))}
-      </DrawerContentScrollView>
-    </View>
+      </View>
+    </DrawerContentScrollView>
   );
 };
 
 export default MenuDrawer;
 
 const styles = StyleSheet.create({
-  menuContainer: {
-    backgroundColor: '#3B3B3B',
-    flex: 1,
-  },
-  menuContainerLowerSection: {
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
-  menuContainerUpperSection: {
+  upperSection: {
     alignItems: 'center',
+    backgroundColor: colors.darkerGrey,
     justifyContent: 'center',
-    paddingTop: 32,
+    padding: 40,
+    borderTopRightRadius: 40,
+    position: 'relative',
   },
-  menuLogo: {
+  label: {
+    color: colors.darkerGrey,
+    fontSize: 14,
+  },
+  logo: {
     height: 128,
-    marginTop: 64,
     resizeMode: 'contain',
   },
-  menuLogoText: {
-    color: '#fff',
+  logoText: {
+    color: colors.white,
     fontWeight: 'bold',
-    fontSize: 12,
-    marginVertical: 24,
+    fontSize: 14,
+    marginTop: 24,
   },
-  menuItem: {
-    marginTop: 0,
+  lowerSection: {
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: 16,
+    paddingHorizontal: 8,
+    borderBottomRightRadius: 40,
   },
-  menuSubItem: {
-    marginLeft: 64,
-    marginTop: 0,
+  item: {},
+  subItem: {
+    marginLeft: 32,
   },
-  menuItemText: { color: '#fff' },
+  activeItemText: {
+    color: colors.primary,
+    fontSize: 14,
+  },
 });

@@ -12,7 +12,7 @@ const FloatingButtonFYV = props => {
     <FAB
       onPress={() => navigation.navigate('Find Your Voice')}
       style={styles.fab}
-      icon="chat-processing"
+      icon="comment-processing"
       color="white"
       {...props}
     />
