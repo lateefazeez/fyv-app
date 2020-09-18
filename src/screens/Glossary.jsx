@@ -31,7 +31,7 @@ const Search = () => {
  const listData = [
    {
     title: 'C',
-     data: ['Complaint, 'Conduct', 'Confidentia'],
+     data: ['Complaint', 'Conduct', 'Confidentia'],
    },
   {
      title: 'B',
