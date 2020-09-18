@@ -12,7 +12,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
 import colors from 'config/colors';
-//import { glossary_data } from 'config/Glossary_data';
+// import { glossary_data } from 'config/Glossary_data';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,32 +28,64 @@ const Search = () => {
   );
 };
 
- const listData = [
-   {
-    title: 'C',
-     data: ['Complaint', 'Conduct', 'Confidentia'],
-   },
+const listData = [
   {
-     title: 'B',
-     data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
+    title: 'C',
+    data: ['Complaint', 'Consequence', 'Confidential'],
   },
-  
- {
-        title: 'D',
-    data: ['List', 'Is', 'Empty', 'D', 'Da', 'Dab', 'Dabc'],
- },
- ];
- 
+  {
+    title: 'D',
+    data: ['Discrimination', 'Draining'],
+  },
 
+  {
+    title: 'E',
+    data: ['Ethnocultural'],
+  },
+  {
+    title: 'I',
+    data: ['insufficient', 'Isolating'],
+  },
+  {
+    title: 'L',
+    data: ['Legislation'],
+  },
+  {
+    title: 'M',
+    data: [' Male-dominated', 'Maneuver', 'Manipulation'],
+  },
+  {
+    title: 'O',
+    data: ['Obligation', 'Overwhelming']
+  },
+  {
+    title:'R',
+    data: ['Rehabilitation', 'Reprisal' ]
+  },
+  {
+    title:'S',
+    data: ['Standards']
+  },
+  {
+    title: 'T',
+    data:['Termination', 'Toxic', 'Trusted']
+  },
+  {
+    title:'U',
+    data: ['Undocumented ']
+  },
+  {
+    title:'W',
+    data:['Warrant']
+  }
+];
 
 const sortedData = listData.map(item => ({
   title: item.title,
   data: item.data.sort(),
 }));
 
-
-
-const Data = listData.map(item=>({
+const Data = listData.map(item => ({
   title: item.title,
   content: item.content,
   description: item.description,
