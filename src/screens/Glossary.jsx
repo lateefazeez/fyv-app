@@ -37,10 +37,7 @@ const Search = () => {
      title: 'B',
      data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
   },
-  {
-     title: 'C',
-     data: ['List', 'Is', 'Empty', 'C', 'Ca', 'Cab', 'Cabd'],
-  },
+  
  {
         title: 'D',
     data: ['List', 'Is', 'Empty', 'D', 'Da', 'Dab', 'Dabc'],
