@@ -53,7 +53,7 @@ const sortedData = listData.map(item => ({
 
 
 
-const sortedData = listData.map(item=>({
+const Data = listData.map(item=>({
   title: item.title,
   content: item.content,
   description: item.description,
