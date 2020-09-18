@@ -1,14 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { DrawerContentScrollView } from '@react-navigation/drawer';
+import { List } from 'react-native-paper';
+import Constants from 'expo-constants';
 
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
 import colors from 'config/colors';
-import menuItems from 'config/menuItems';
-import menuLogo from 'assets/logo_white.png';
+import items from 'config/menuItems';
+import logo from 'assets/logo_white.png';
 
 const getIcon = ({ lib, name, size, color }) => {
   switch (lib) {
@@ -25,85 +27,91 @@ const getIcon = ({ lib, name, size, color }) => {
 };
 
 const MenuDrawer = ({ navigation }) => {
+  // const isFocused = useIsFocused();
+
   return (
-    <View style={styles.menuContainer}>
-      <View style={styles.menuContainerUpperSection}>
-        <Image source={menuLogo} style={styles.menuLogo} />
-        <Text style={styles.menuLogoText}>School of Global Access</Text>
+    <DrawerContentScrollView
+      contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
+    >
+      <View style={styles.upperSection}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.logoText}>School of Global Access</Text>
+        <MaterialIcon
+          color={colors.white}
+          name="close"
+          size={24}
+          onPress={() => navigation.closeDrawer()}
+          style={{ position: 'absolute', top: 16, left: 16 }}
+        />
       </View>
-      <DrawerContentScrollView
-        contentContainerStyle={styles.menuContainerLowerSection}
-      >
-        {menuItems.map(item => (
-          <DrawerItem
-            key={item.menuLabel}
-            label={item.menuLabel}
-            style={
-              item.menuCategory === 'subSection'
-                ? styles.menuSubItem
-                : styles.menuItem
-            }
-            labelStyle={styles.menuItemText}
-            icon={() =>
+      <View style={styles.lowerSection}>
+        {items.map(item => (
+          <List.Item
+            key={item.label}
+            title={item.label}
+            titleStyle={styles.label}
+            left={() =>
               getIcon({
-                lib: item.menuIconLib,
-                name: item.menuIconName,
-                size: item.menuIconSize,
+                lib: item.iconLib,
+                name: item.iconName,
+                size: item.iconSize ? item.iconSize : 20,
                 color: colors.darkerGrey,
               })
             }
-            onPress={() => navigation.navigate(item.menuLabel)}
+            onPress={() =>
+              item.parentScreen
+                ? navigation.navigate(item.parentScreen, {
+                    screen: item.label,
+                  })
+                : navigation.navigate(item.label)
+            }
+            style={item.parentScreen ? styles.subItem : styles.item}
           />
         ))}
-      </DrawerContentScrollView>
-      <MaterialIcon
-        color={colors.white}
-        name="close"
-        size={24}
-        onPress={() => navigation.closeDrawer()}
-        style={{ position: 'absolute', top: 16, left: 16 }}
-      />
-    </View>
+      </View>
+    </DrawerContentScrollView>
   );
 };
 
 export default MenuDrawer;
 
 const styles = StyleSheet.create({
-  menuContainer: {
-    flex: 1,
-    position: 'relative',
-  },
-  menuContainerLowerSection: {
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
-  menuContainerUpperSection: {
+  upperSection: {
     alignItems: 'center',
     backgroundColor: colors.darkerGrey,
     justifyContent: 'center',
-    padding: 48,
-    borderTopRightRadius: 32,
+    padding: 40,
+    borderTopRightRadius: 40,
+    position: 'relative',
   },
-  menuLogo: {
+  label: {
+    color: colors.darkerGrey,
+    fontSize: 14,
+  },
+  logo: {
     height: 128,
     resizeMode: 'contain',
   },
-  menuLogoText: {
+  logoText: {
     color: colors.white,
     fontWeight: 'bold',
     fontSize: 14,
     marginTop: 24,
   },
-  menuItem: {
-    marginTop: 0,
+  lowerSection: {
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: 16,
+    paddingHorizontal: 8,
+    borderBottomRightRadius: 40,
   },
-  menuSubItem: {
-    marginLeft: 64,
-    marginTop: 0,
+  item: {},
+  subItem: {
+    marginLeft: 32,
   },
-  menuItemText: {
-    color: colors.darkerGrey,
+  activeItemText: {
+    color: colors.primary,
     fontSize: 14,
   },
 });

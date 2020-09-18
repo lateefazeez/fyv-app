@@ -13,9 +13,6 @@ import TypesOfHazards from 'screens/KnowYourRights/Ohs/TypesOfHazards';
 import WorkersCompensation from 'screens/KnowYourRights/Ohs/WorkersCompensation';
 
 import FindYourVoice from 'screens/FindYourVoice';
-// import InjuryPrevention from 'screens/FindYourVoice/InjuryPrevention';
-// import RacistIncident from 'screens/FindYourVoice/RacistIncident';
-// import ReportingAnInjury from 'screens/FindYourVoice/ReportingAnInjury';
 
 import Resources from 'screens/Resources';
 import Disclaimer from 'screens/Disclaimer';

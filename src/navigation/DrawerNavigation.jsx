@@ -3,7 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
-import Constants from 'expo-constants';
 
 import MenuDrawer from 'screens/MenuDrawer';
 
@@ -24,13 +23,12 @@ const DrawerNavigation = () => {
           <StatusBar style="auto" />
         )}
         <Drawer.Navigator
-          drawerContent={props => <MenuDrawer {...props} />}
           drawerStyle={{
-            backgroundColor: colors.white,
-            borderTopRightRadius: 32,
-            borderBottomRightRadius: 32,
-            marginTop: Constants.statusBarHeight,
+            backgroundColor: undefined,
+            width: '80%',
+            maxWidth: 320,
           }}
+          drawerContent={props => <MenuDrawer {...props} />}
         >
           <Drawer.Screen name="Root" component={RootNavigation} />
         </Drawer.Navigator>
