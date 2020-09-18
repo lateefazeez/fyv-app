@@ -12,6 +12,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
 import colors from 'config/colors';
+//import  Glossary_data  from 'config/Glossary_data';
 
 const MyComponent = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -27,24 +28,25 @@ const MyComponent = () => {
     
 };
 
-const listData = [
-  {
+ const listData = [
+   {
     title: 'A',
-    data: ['List', 'Is', 'Empty', 'A', 'Ab', 'Abc', 'Abcd'],
+     data: ['List', 'Is', 'Empty', 'A', 'Ab', 'Abc', 'Abcd'],
+   },
+  {
+     title: 'B',
+     data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
   },
   {
-    title: 'B',
-    data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
+     title: 'C',
+     data: ['List', 'Is', 'Empty', 'C', 'Ca', 'Cab', 'Cabd'],
   },
-  {
-    title: 'C',
-    data: ['List', 'Is', 'Empty', 'C', 'Ca', 'Cab', 'Cabd'],
-  },
-  {
-    title: 'D',
+ {
+        title: 'D',
     data: ['List', 'Is', 'Empty', 'D', 'Da', 'Dab', 'Dabc'],
-  },
-];
+ },
+ ];
+
 
 
 const sortedData = listData.map(item => ({

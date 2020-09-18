@@ -186,7 +186,7 @@ const InjuryPrevention = () => {
     {
       id: '25',
       message:
-        'For example, Flora works on an assembly line in a meat packing plant which is male dominated. As the only woman of colour there, she has politely brought up numerous racist and mysoginist incidents to Human Resources hoping for change. Although the Human Resources manager listened and promised to look into it, nothing changed and continues to hear the same things at work. She struggles because she needs the job even though it is toxic to her wellbeing.',
+        'For example, Flora works on an assembly line in a meat packing plant which is male-dominated. As the only woman of colour there, she has politely brought up numerous racist and mysoginist incidents to Human Resources hoping for change. Although the Human Resources manager listened and promised to look into it, nothing changed and continues to hear the same things at work. She struggles because she needs the job even though it is toxic to her wellbeing.',
       trigger: '26',
     },
 
