@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { RectButton } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
@@ -59,11 +60,49 @@ const Item = ({ title }) => (
   </RectButton>
 );
 
-const Glossary = () => {
+const Glossary = ({ navigation }) => {
+  const [filterBookmarks, setFilterBookmarks] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: 'Back',
+      headerRight: () => (
+        <View style={{ flexDirection: 'row' }}>
+          <Icon
+            name={
+              filterBookmarks
+                ? 'bookmark-multiple'
+                : 'bookmark-multiple-outline'
+            }
+            size={24}
+            color={colors.white}
+            onPress={() => setFilterBookmarks(!filterBookmarks)}
+            style={{ marginRight: 16 }}
+          />
+          <Icon
+            name="magnify"
+            size={24}
+            color={colors.white}
+            onPress={() => setShowSearch(!showSearch)}
+            style={{ marginRight: 16 }}
+          />
+          <Icon
+            name="menu"
+            size={24}
+            color={colors.white}
+            onPress={() => navigation.toggleDrawer()}
+            style={{ marginRight: 16 }}
+          />
+        </View>
+      ),
+    });
+  }, [navigation, filterBookmarks, showSearch]);
+
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        <Search />
+        {showSearch && <Search />}
         <SectionList
           sections={sortedData}
           keyExtractor={(item, index) => item + index}
