@@ -13,44 +13,28 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
 import colors from 'config/colors';
+import rawData from 'config/glossary.json';
 
-const Search = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+/* const sortedData = () => {
+  const sections = [];
 
-  const onSearch = query => setSearchQuery(query);
+  const preSortedData = rawData.map(
+    ({ word, category, description, isBookmarked }) => {
+      const title = word.slice(0).toUpperCase();
 
-  return (
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onSearch}
-      value={searchQuery}
-    />
+      sections.push({
+        title,
+        data: { word, category, description, isBookmarked },
+      });
+    },
   );
-};
 
-const listData = [
-  {
-    title: 'A',
-    data: ['List', 'Is', 'Empty', 'A', 'Ab', 'Abc', 'Abcd'],
-  },
-  {
-    title: 'B',
-    data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
-  },
-  {
-    title: 'C',
-    data: ['List', 'Is', 'Empty', 'C', 'Ca', 'Cab', 'Cabd'],
-  },
-  {
-    title: 'D',
-    data: ['List', 'Is', 'Empty', 'D', 'Da', 'Dab', 'Dabc'],
-  },
-];
+  // const sectionsTitles = preSortedData.filter(
+  //   ({ title }, index, self) => self.indexOf(title) === index,
+  // );
 
-const sortedData = listData.map(item => ({
-  title: item.title,
-  data: item.data.sort(),
-}));
+  return preSortedData;
+}; */
 
 const Item = ({ title }) => (
   <RectButton onPress={testAlert}>
@@ -61,8 +45,70 @@ const Item = ({ title }) => (
 );
 
 const Glossary = ({ navigation }) => {
+  const sections = [];
+  const titles = [];
+  const words = [];
+
+  (() => {
+    rawData.map(({ word, category, description, isBookmarked }) => {
+      const title = word.slice(0, 1).toUpperCase();
+      !titles.includes(title) && titles.push(title);
+
+      const sortedWord = { title, word, description, isBookmarked };
+      words.push(sortedWord);
+    });
+
+    titles.map(item => {
+      words.map(obj => {
+        if (item === obj.title) {
+          const index = titles.indexOf(item);
+          const { word, category, description, isBookmarked } = obj;
+          if (!sections[index]) {
+            sections[index] = {
+              title: item,
+              data: [word],
+            };
+          } else {
+            sections[index] = {
+              ...sections[index],
+              data: [word],
+            };
+          }
+        }
+      });
+    });
+  })();
+
+  // console.log(titles);
+  // console.log(words);
+  console.log(sections);
+
+  const sortedData = sections;
+
   const [filterBookmarks, setFilterBookmarks] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [shownData, setShownData] = useState(sortedData);
+
+  const onSearch = query => {
+    const results = [];
+
+    if (query === '') {
+      setIsSearching(false);
+      setShownData(sortedData);
+    } else {
+      shownData.map(item =>
+        item.data.map(
+          word =>
+            word.includes(query) &&
+            results.push({ title: item.title, data: { ...word } }),
+        ),
+      );
+
+      setIsSearching(true);
+      if (results[0]) setShownData(results);
+    }
+  };
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -102,9 +148,11 @@ const Glossary = ({ navigation }) => {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        {showSearch && <Search />}
+        {showSearch && (
+          <Searchbar placeholder="Search" onChangeText={onSearch} />
+        )}
         <SectionList
-          sections={sortedData}
+          sections={shownData}
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (
