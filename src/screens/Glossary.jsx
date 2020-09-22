@@ -6,14 +6,13 @@ import {
   SafeAreaView,
   SectionList,
 } from 'react-native';
-ininimport * as Speech from 'expo-speech';
-import { Searchbar, List } from 'react-native-paper';
+import * as Speech from 'expo-speech';
+import { Searchbar } from 'react-native-paper';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-import { testAlert } from 'utils';
 import colors from 'config/colors.json';
 
 const Search = () => {
