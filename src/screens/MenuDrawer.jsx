@@ -8,7 +8,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 import items from 'config/menuItems.json';
 import logo from 'assets/logo_white.png';
 

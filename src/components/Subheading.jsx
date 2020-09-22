@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 function Subheading({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;

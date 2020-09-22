@@ -11,7 +11,7 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import headerImage from 'assets/placeholder.png';
 import ExternalRefButton from 'components/ExternalRefButton';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const WorkersCompensation = () => {
   return (

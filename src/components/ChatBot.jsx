@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatBot from 'react-native-chatbot-expo';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 console.disableYellowBox = true;
 

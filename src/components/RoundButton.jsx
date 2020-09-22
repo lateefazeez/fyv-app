@@ -3,7 +3,7 @@ import { IconButton } from 'react-native-paper';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const RoundButton = ({ type, target, ...props }) => {
   const handlePress = async () => {

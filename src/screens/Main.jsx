@@ -7,7 +7,7 @@ import KnowYourRightsImage from 'assets/workplace_safety.png';
 import ResourcesImage from 'assets/resources.png';
 import FindingYourVoiceImage from 'assets/finding_your_voice.png';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 import logo from 'assets/logo_green.png';
 
 const Main = () => (

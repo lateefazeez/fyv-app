@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import { testAlert } from 'utils';
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');

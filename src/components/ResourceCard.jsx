@@ -6,7 +6,7 @@ import Paragraph from 'components/Paragraph';
 
 import RoundButton from 'components/RoundButton';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const ResourceCard = ({ title, content }) => {
   return (

@@ -6,7 +6,7 @@ import PsychosocialImage from 'assets/psy_hazard.png';
 import BiologicalImage from 'assets/bio_hazard.png';
 import PhysicalImage from 'assets/phy_hazard.png';
 import ChemicalImage from 'assets/chem_hazard.png';
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 export const Slide02 = () => {
   return (
