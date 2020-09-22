@@ -6,12 +6,13 @@ import {
   SafeAreaView,
   SectionList,
 } from 'react-native';
+import * as Speech from 'expo-speech';
 import { Searchbar } from 'react-native-paper';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-import { testAlert } from 'utils';
 import colors from 'config/colors.json';
 
 const Search = () => {
@@ -52,13 +53,40 @@ const sortedData = listData.map(item => ({
   data: item.data.sort(),
 }));
 
-const Item = ({ title }) => (
-  <RectButton onPress={testAlert}>
-    <View accessible style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+const Item = ({ title }) => {
+  const [hiddenDescription, setHiddenDescription] = useState(false);
+
+  return (
+    <View>
+      <View style={styles.item}>
+        <RectButton
+          style={styles.itemTitle}
+          onPress={() => {
+            console.log('click');
+            setHiddenDescription(!hiddenDescription);
+          }}
+        >
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.title}>{title}</Text>
+            <Icon
+              name="volume-high"
+              size={24}
+              color={colors.darkGrey}
+              onPress={() => Speech.speak(title)}
+            />
+          </View>
+          <Icon name="chevron-down" size={24} color={colors.darkGrey} />
+        </RectButton>
+
+        {hiddenDescription && (
+          <View style={{ flexDirection: 'row' }}>
+            <Paragraph style={{ marginTop: 16 }}>Test description</Paragraph>
+          </View>
+        )}
+      </View>
     </View>
-  </RectButton>
-);
+  );
+};
 
 const Glossary = ({ navigation }) => {
   const [filterBookmarks, setFilterBookmarks] = useState(false);
@@ -120,12 +148,15 @@ export default Glossary;
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#fff',
     borderColor: colors.mediumGrey,
     borderStyle: 'solid',
     borderWidth: 0.5,
     padding: 16,
     paddingLeft: 24,
+  },
+  itemTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   header: {
     color: '#fff',
@@ -136,5 +167,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
+    marginRight: 8,
   },
 });

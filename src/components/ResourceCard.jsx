@@ -32,10 +32,13 @@ const ResourceCard = ({ title, content }) => {
         {title}
       </Subheading>
 
-      {content.map(item => {
+      {content.map((item, index) => {
         return (
-          <View key={item.description}>
-            <Paragraph style={{ color: colors.black, marginTop: 16 }}>
+          <>
+            <Paragraph
+              key={index}
+              style={{ color: colors.black, marginTop: 16 }}
+            >
               {item.description}
             </Paragraph>
 
@@ -72,7 +75,7 @@ const ResourceCard = ({ title, content }) => {
                 />
               )}
             </View>
-          </View>
+          </>
         );
       })}
     </View>
