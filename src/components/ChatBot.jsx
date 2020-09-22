@@ -18,7 +18,7 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
       customDelay={200}
       contentStyle={{
         paddingTop: 8,
-        backgroundColor: colors.lightGrey,
+        backgroundColor: '#eee',
       }}
       scrollViewProps={{}}
       customStyle={{
@@ -26,8 +26,19 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
         borderWidth: 0,
         marginLeft: 43,
       }}
-      bubbleStyle={{ backgroundColor: colors.primary }}
-      optionElementStyle={{ backgroundColor: colors.darkGrey }}
+      bubbleStyle={{ backgroundColor: colors.white }}
+      optionElementStyle={{
+        backgroundColor: colors.white,
+        borderWidth: 1,
+        borderColor: colors.primary,
+        padding: 20,
+        marginLeft: 50,
+
+        borderRadius: 10,
+        width: 250,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
       footerStyle={{ position: 'absolute', bottom: -100 }}
     />
   );

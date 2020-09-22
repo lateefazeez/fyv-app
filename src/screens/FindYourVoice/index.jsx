@@ -65,15 +65,28 @@ const FindYourVoice = () => {
     {
       id: '3',
 
-      component: <InChatCard />,
+      message:
+        'Which topic would you like to know more about: Injury Prevention &  Training, Racist Incident, or Reporting & Filing an Injury?',
       trigger: 'Injury Prevention Options',
     },
     {
       id: 'Injury Prevention Options',
       options: [
-        { value: 'A', label: 'A', trigger: 'injury prevention' },
-        { value: 'B', label: 'B', trigger: 'racist incident' },
-        { value: 'C', label: 'C', trigger: 'reporting injury' },
+        {
+          value: 'injury',
+          label: 'Injury Prevention & Training',
+          trigger: 'injury prevention',
+        },
+        {
+          value: 'racist incident',
+          label: 'Racist Incident',
+          trigger: 'racist incident',
+        },
+        {
+          value: 'reporting',
+          label: 'Reporting & Filing an Injury',
+          trigger: 'reporting injury',
+        },
       ],
     },
     {
@@ -116,8 +129,8 @@ const FindYourVoice = () => {
     {
       id: '7',
       options: [
-        { value: 'yes', label: 'YES', trigger: '8' },
-        { value: 'no', label: 'NO', trigger: '9' },
+        { value: 'yes', label: 'YES, I did', trigger: '8' },
+        { value: 'no', label: 'NO, I did not', trigger: '9' },
       ],
     },
     {
@@ -168,8 +181,12 @@ const FindYourVoice = () => {
     {
       id: '13',
       options: [
-        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
-        { value: 'no', label: 'NO', trigger: '14' },
+        {
+          value: 'yes',
+          label: 'YES, It is',
+          trigger: 'end injury prevention',
+        },
+        { value: 'no', label: "NO, It's not", trigger: '14' },
       ],
     },
     {
@@ -205,8 +222,8 @@ const FindYourVoice = () => {
     {
       id: '16',
       options: [
-        { value: 'yes', label: 'YES', trigger: '17' },
-        { value: 'no', label: 'NO', trigger: '18' },
+        { value: 'yes', label: 'YES, I feel comfortable', trigger: '17' },
+        { value: 'no', label: "NO, I don't feel comfortable", trigger: '18' },
       ],
     },
     {
@@ -251,8 +268,8 @@ const FindYourVoice = () => {
     {
       id: '24',
       options: [
-        { value: 'yes', label: 'YES', trigger: '25' },
-        { value: 'no', label: 'NO', trigger: '26' },
+        { value: 'yes', label: 'YES, I am', trigger: '25' },
+        { value: 'no', label: 'NO, I am lost', trigger: '26' },
       ],
     },
     {
@@ -306,8 +323,8 @@ const FindYourVoice = () => {
     {
       id: '32',
       options: [
-        { value: 'yes', label: 'YES', trigger: 'end injury prevention' },
-        { value: 'no', label: 'NO', trigger: '34' },
+        { value: 'yes', label: 'YES, I am', trigger: 'end injury prevention' },
+        { value: 'no', label: 'NO, I am not', trigger: '34' },
       ],
     },
     {
@@ -555,7 +572,7 @@ const FindYourVoice = () => {
       id: '49',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: '50',
+      trigger: 'restart option a',
     },
     {
       id: '50',
@@ -565,10 +582,14 @@ const FindYourVoice = () => {
     {
       id: 'restart option a',
       options: [
-        { value: 'A', label: 'A', trigger: 'injury prevention' },
-        { value: 'B', label: 'B', trigger: 'racist incident' },
-        { value: 'C', label: 'C', trigger: 'reporting injury' },
-        { value: 'D', label: 'D', trigger: 'end_options' },
+        { value: 'A', label: 'Restart', trigger: 'injury prevention' },
+        { value: 'B', label: 'Racist Incident', trigger: 'racist incident' },
+        {
+          value: 'C',
+          label: 'Reporting & Filing an Injury',
+          trigger: 'reporting injury',
+        },
+        { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },
     {
@@ -649,8 +670,8 @@ const FindYourVoice = () => {
     {
       id: '14a',
       options: [
-        { value: 'yes', label: 'YES', trigger: '15a' },
-        { value: 'no', label: 'NO', trigger: '20a' },
+        { value: 'yes', label: 'YES, an action was taken', trigger: '15a' },
+        { value: 'no', label: 'No Action was taken', trigger: '20a' },
       ],
     },
     {
@@ -661,8 +682,8 @@ const FindYourVoice = () => {
     {
       id: '16a',
       options: [
-        { value: 'yes', label: 'YES', trigger: '17a' },
-        { value: 'no', label: 'NO', trigger: '20a' },
+        { value: 'yes', label: 'YES, It made me feel better', trigger: '17a' },
+        { value: 'no', label: 'NO, It does not', trigger: '20a' },
       ],
     },
     {
@@ -680,7 +701,7 @@ const FindYourVoice = () => {
       id: '19a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: '40a',
+      trigger: 'restart option b',
     },
     {
       id: '20a',
@@ -762,7 +783,17 @@ const FindYourVoice = () => {
           </InChatRefButton>
         </View>
       ),
-      trigger: '28a',
+      trigger: 'continue',
+    },
+    {
+      id: 'continue',
+      options: [
+        {
+          value: 'Continue',
+          label: 'Continue',
+          trigger: '28a',
+        },
+      ],
     },
     {
       id: '28a',
@@ -780,7 +811,7 @@ const FindYourVoice = () => {
       id: '30a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: '40a',
+      trigger: 'restart option b',
     },
     {
       id: '31a',
@@ -851,7 +882,7 @@ const FindYourVoice = () => {
       id: '39a',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: '40a',
+      trigger: 'restart option b',
     },
     {
       id: '40a',
@@ -861,10 +892,18 @@ const FindYourVoice = () => {
     {
       id: 'restart option b',
       options: [
-        { value: 'A', label: 'A', trigger: 'racist incident' },
-        { value: 'B', label: 'B', trigger: 'reporting injury' },
-        { value: 'C', label: 'C', trigger: 'injury prevention' },
-        { value: 'D', label: 'D', trigger: 'end_options' },
+        { value: 'A', label: 'Restart', trigger: 'racist incident' },
+        {
+          value: 'B',
+          label: 'Reporting & Filing an Injury',
+          trigger: 'reporting injury',
+        },
+        {
+          value: 'C',
+          label: 'Injury Prevention & Training',
+          trigger: 'injury prevention',
+        },
+        { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },
 
@@ -896,8 +935,8 @@ const FindYourVoice = () => {
     {
       id: '7b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '8b' },
-        { value: 'no', label: 'NO', trigger: '16b' },
+        { value: 'yes', label: 'YES, I report it', trigger: '8b' },
+        { value: 'no', label: "NO, I don't report it", trigger: '16b' },
       ],
     },
     {
@@ -908,8 +947,8 @@ const FindYourVoice = () => {
     {
       id: '9b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '10b' },
-        { value: 'no', label: 'NO', trigger: '30b' },
+        { value: 'yes', label: 'YES, I did', trigger: '10b' },
+        { value: 'no', label: 'NO, I did not', trigger: '30b' },
       ],
     },
 
@@ -944,7 +983,17 @@ const FindYourVoice = () => {
           OIS Clinics & Doctors
         </InChatRefButton>
       ),
-      trigger: '13b',
+      trigger: 'continue1',
+    },
+    {
+      id: 'continue1',
+      options: [
+        {
+          value: 'Continue',
+          label: 'Continue',
+          trigger: '13b',
+        },
+      ],
     },
     {
       id: '13b',
@@ -1048,7 +1097,17 @@ const FindYourVoice = () => {
           Serious Injuries
         </InChatRefButton>
       ),
-      trigger: '29b',
+      trigger: 'continue4',
+    },
+    {
+      id: 'continue4',
+      options: [
+        {
+          value: 'Continue',
+          label: 'Continue',
+          trigger: '29b',
+        },
+      ],
     },
     {
       id: '29b',
@@ -1067,8 +1126,8 @@ const FindYourVoice = () => {
     {
       id: '15b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '31b' },
-        { value: 'no', label: 'NO', trigger: '32b' },
+        { value: 'yes', label: 'YES, it was accepted', trigger: '31b' },
+        { value: 'no', label: 'NO, it was not', trigger: '32b' },
       ],
     },
 
@@ -1126,7 +1185,17 @@ const FindYourVoice = () => {
           Workers' Compensation Act
         </InChatRefButton>
       ),
-      trigger: '44b',
+      trigger: 'continue2',
+    },
+    {
+      id: 'continue2',
+      options: [
+        {
+          value: 'Continue',
+          label: 'Continue',
+          trigger: '44b',
+        },
+      ],
     },
     {
       id: '37b',
@@ -1201,7 +1270,17 @@ const FindYourVoice = () => {
       id: '48b',
       message:
         'Be aware that due to the costs involved, WCB only looks at one issue at a time even in the case of complex injuries. ',
-      trigger: '49b',
+      trigger: 'continue3',
+    },
+    {
+      id: 'continue3',
+      options: [
+        {
+          value: 'Continue',
+          label: 'Continue',
+          trigger: '49b',
+        },
+      ],
     },
     {
       id: '49b',
@@ -1253,8 +1332,8 @@ const FindYourVoice = () => {
     {
       id: '54b',
       options: [
-        { value: 'yes', label: 'YES', trigger: '55b' },
-        { value: 'no', label: 'NO', trigger: '57b' },
+        { value: 'yes', label: 'YES, I am', trigger: '55b' },
+        { value: 'no', label: 'NO, I am not', trigger: '57b' },
       ],
     },
     {
@@ -1348,8 +1427,12 @@ const FindYourVoice = () => {
     {
       id: '67b',
       options: [
-        { value: 'yes', label: 'YES', trigger: 'resource link' },
-        { value: 'no', label: 'NO', trigger: '43b' },
+        {
+          value: 'yes',
+          label: 'YES, I would like to know',
+          trigger: 'resource link',
+        },
+        { value: 'no', label: 'NO, I would not', trigger: '43b' },
       ],
     },
     {
@@ -1378,7 +1461,7 @@ const FindYourVoice = () => {
       id: '68b',
       message:
         "Restart this example if you'd like to see the different options available to you, choose another topic, or quit.",
-      trigger: '69b',
+      trigger: 'restart option c',
     },
     {
       id: '69b',
@@ -1416,10 +1499,14 @@ const FindYourVoice = () => {
     {
       id: 'restart option c',
       options: [
-        { value: 'A', label: 'A', trigger: 'reporting injury' },
-        { value: 'B', label: 'B', trigger: 'injury prevention' },
-        { value: 'C', label: 'C', trigger: 'racist incident' },
-        { value: 'D', label: 'D', trigger: 'end_options' },
+        { value: 'A', label: 'Restart', trigger: 'reporting injury' },
+        {
+          value: 'B',
+          label: 'Injury Prevention & Training',
+          trigger: 'injury prevention',
+        },
+        { value: 'C', label: 'Racist Incident', trigger: 'racist incident' },
+        { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },
 
