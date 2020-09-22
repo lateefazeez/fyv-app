@@ -1,4 +1,14 @@
 [
+    {
+      "name": "Test Card",
+      "content": [
+        {
+          "description": "This is just a test card.",
+          "phone": "+1 780-486-9009",
+          "toll-free": "true",
+        }
+      ]
+    },
   {
     "name": "Alberta Workers Health Centre",
     "content": [
