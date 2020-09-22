@@ -72,7 +72,7 @@ const Item = ({ title }) => {
               name="volume-high"
               size={24}
               color={colors.darkGrey}
-              onPress={() => Speech.speak(title)}
+              onPress={() => Speech.speak(title, { pitch: 0.5, rate: 0.5 })}
             />
           </View>
           <Icon name="chevron-down" size={24} color={colors.darkGrey} />
