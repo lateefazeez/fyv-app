@@ -26,7 +26,7 @@ const RootNavigation = ({ navigation }) => {
     <App.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
+        headerStyle: { backgroundColor: colors.titleBar },
         headerTintColor: colors.white,
       }}
     >

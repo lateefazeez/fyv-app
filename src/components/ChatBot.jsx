@@ -26,16 +26,17 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
         borderWidth: 0,
         marginLeft: 43,
       }}
-      bubbleStyle={{ backgroundColor: colors.primary }}
+      bubbleStyle={{ backgroundColor: colors.white }}
       optionElementStyle={{
-        backgroundColor: colors.fabButton,
+        backgroundColor: colors.white,
         padding: 20,
         marginLeft: 50,
-
         borderRadius: 10,
         width: 250,
         justifyContent: 'center',
         alignItems: 'center',
+        borderWidth: 1,
+        borderColor: colors.primary,
       }}
       footerStyle={{ position: 'absolute', bottom: -100 }}
     />

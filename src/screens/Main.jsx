@@ -3,12 +3,12 @@ import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 import Constants from 'expo-constants';
 
 import MainScreenButton from 'components/MainScreenButton';
-import KnowYourRightsImage from 'assets/workplace_safety.png';
-import ResourcesImage from 'assets/resources.png';
-import FindingYourVoiceImage from 'assets/finding_your_voice.png';
+import KnowYourRightsImage from 'assets/kny_image_3x.png';
+import ResourcesImage from 'assets/res_image_3x.png';
+import FindingYourVoiceImage from 'assets/fyv_image_3x.png';
 
 import colors from 'config/colors.json';
-import logo from 'assets/logo_green.png';
+import logo from 'assets/logo_white.png';
 
 const Main = () => (
   <SafeAreaView style={styles.container}>
@@ -17,14 +17,19 @@ const Main = () => (
     </View>
 
     <View style={styles.navContainer}>
-      <MainScreenButton imageLeft={KnowYourRightsImage}>
+      <MainScreenButton
+        buttonImage={KnowYourRightsImage}
+        style={{ justifyContent: 'center' }}
+      >
         Know Your Rights
       </MainScreenButton>
 
-      <MainScreenButton imageLeft={FindingYourVoiceImage}>
+      <MainScreenButton buttonImage={FindingYourVoiceImage}>
         Find Your Voice
       </MainScreenButton>
-      <MainScreenButton imageLeft={ResourcesImage}>Resources</MainScreenButton>
+      <MainScreenButton buttonImage={ResourcesImage}>
+        Resources
+      </MainScreenButton>
     </View>
   </SafeAreaView>
 );
@@ -33,25 +38,23 @@ export default Main;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
     flex: 1,
     marginTop: Constants.statusBarHeight,
   },
   logoContainer: {
-    flex: 1,
     alignItems: 'center',
+    backgroundColor: colors.titleBar,
     justifyContent: 'center',
-    padding: '25%',
+    padding: 80,
+    position: 'relative',
   },
-  mainPageLogo: {
-    flex: 1,
-    resizeMode: 'contain',
-  },
+
+  mainPageLogo: { height: 150, resizeMode: 'contain' },
   navContainer: {
-    flex: 1.5,
     paddingHorizontal: 16,
     paddingBottom: 16,
-    alignItems: 'stretch',
-    justifyContent: 'flex-end',
+    position: 'absolute',
+    top: 250,
+    width: '100%',
   },
 });
