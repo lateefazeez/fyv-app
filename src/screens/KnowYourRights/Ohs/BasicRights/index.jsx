@@ -11,7 +11,7 @@ import PageHeader from 'components/PageHeader';
 
 import { Slide01, Slide02, Slide03, Slide04 } from './slides';
 import headerImage from 'assets/placeholder.png';
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const BasicRights = () => {
   return (

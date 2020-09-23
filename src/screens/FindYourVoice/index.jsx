@@ -19,7 +19,7 @@ import {
   InChatRightsSlide03,
 } from './slides';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();

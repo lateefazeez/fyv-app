@@ -10,7 +10,7 @@ import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
 
 import headerImage from 'assets/placeholder.png';
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const Ohs = () => {
   const navigation = useNavigation();

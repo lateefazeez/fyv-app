@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import MenuDrawer from 'screens/MenuDrawer';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 import RootNavigation from './RootNavigation';
 
 const Drawer = createDrawerNavigator();

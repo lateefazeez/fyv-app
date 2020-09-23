@@ -17,6 +17,8 @@
     "@react-navigation/stack": "^5.9.0",
     "expo": "^38.0.8",
     "expo-constants": "^9.1.1",
+    "expo-linking": "^1.0.4",
+    "expo-speech": "~8.2.1",
     "expo-status-bar": "^1.0.2",
     "expo-web-browser": "^8.3.1",
     "react": "~16.11.0",

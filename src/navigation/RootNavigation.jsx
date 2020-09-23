@@ -17,7 +17,7 @@ import Resources from 'screens/Resources';
 import Disclaimer from 'screens/Disclaimer';
 import Glossary from 'screens/Glossary';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const App = createStackNavigator();
 

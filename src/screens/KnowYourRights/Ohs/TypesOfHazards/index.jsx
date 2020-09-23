@@ -13,7 +13,7 @@ import CrossScreenButton from 'components/CrossScreenButton';
 
 import headerImage from 'assets/placeholder.png';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 import {
   Slide01,
   Slide02,
