@@ -33,11 +33,10 @@ export default MainScreenButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    marginTop: 8,
-    borderRadius: 10,
+    borderRadius: 14,
     padding: 0,
     marginBottom: 14,
-    height: 140,
+    height: 150,
   },
   buttonContent: {
     flex: 1,
@@ -49,6 +48,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignSelf: 'flex-start',
+    overflow: 'visible',
   },
 
   text: {
