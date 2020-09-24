@@ -31,20 +31,52 @@ const Search = () => {
 
 const listData = [
   {
-    title: 'A',
-    data: ['List', 'Is', 'Empty', 'A', 'Ab', 'Abc', 'Abcd'],
-  },
-  {
     title: 'B',
-    data: ['List', 'Is', 'Empty', 'B', 'Ba', 'Bac', 'Bacd'],
+    data: ['Breaches'],
   },
   {
     title: 'C',
-    data: ['List', 'Is', 'Empty', 'C', 'Ca', 'Cab', 'Cabd'],
+    data: ['Complaint', 'Conduct', 'Confidential', 'Consequence', 'Constitute'],
   },
   {
     title: 'D',
-    data: ['List', 'Is', 'Empty', 'D', 'Da', 'Dab', 'Dabc'],
+    data: ['Discrimination', 'Draining'],
+  },
+  {
+    title: 'E',
+    data: ['Ethnocultural'],
+  },
+  {
+    title: 'L',
+    data: ['Legislation'],
+  },
+  {
+    title: 'M',
+    data: ['Male-dominated', 'Maneuver', 'Manipulation', 'Misogynist'],
+  },
+  {
+    title: 'O',
+    data: ['Obligation', 'Overwhelming'],
+  },
+  {
+    title: 'R',
+    data: ['Rehabilitation', 'Reprisal'],
+  },
+  {
+    title: 'S',
+    data: ['Standards'],
+  },
+  {
+    title: 'T',
+    data: ['Termination', 'Toxic', 'Trusted'],
+  },
+  {
+    title: 'U',
+    data: ['Undocumented'],
+  },
+  {
+    title: 'W',
+    data: ['Warrant'],
   },
 ];
 
@@ -57,30 +89,70 @@ const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(false);
 
   return (
-    <View>
-      <View style={styles.item}>
+    <View
+      style={{
+        borderColor: colors.mediumGrey,
+        borderStyle: 'solid',
+        borderWidth: 0.5,
+      }}
+    >
+      <View>
         <RectButton
-          style={styles.itemTitle}
+          style={{ backgroundColor: colors.white }}
           onPress={() => {
-            console.log('click');
             setHiddenDescription(!hiddenDescription);
           }}
         >
-          <View style={{ flexDirection: 'row' }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              padding: 16,
+            }}
+          >
             <Text style={styles.title}>{title}</Text>
-            <Icon
-              name="volume-high"
-              size={24}
-              color={colors.darkGrey}
-              onPress={() => Speech.speak(title, { pitch: 0.5, rate: 0.5 })}
-            />
+            <Icon name="chevron-down" size={24} color={colors.darkGrey} />
           </View>
-          <Icon name="chevron-down" size={24} color={colors.darkGrey} />
         </RectButton>
 
         {hiddenDescription && (
-          <View style={{ flexDirection: 'row' }}>
-            <Paragraph style={{ marginTop: 16 }}>Test description</Paragraph>
+          <View
+            style={{
+              padding: 16,
+              backgroundColor: colors.lightGrey,
+              borderColor: colors.mediumGrey,
+              borderStyle: 'solid',
+              borderWidth: 0.5,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'flex-start',
+              }}
+            >
+              <Paragraph
+                style={{
+                  margin: 0,
+                  padding: 0,
+                  color: colors.darkGrey,
+                  fontStyle: 'italic',
+                }}
+              >
+                dəˈskripSH(ə)n
+              </Paragraph>
+              <Icon
+                style={{ marginLeft: 8 }}
+                name="volume-high"
+                size={24}
+                color={colors.darkGrey}
+                onPress={() => Speech.speak(title, { pitch: 0.5, rate: 0.5 })}
+              />
+            </View>
+            <Paragraph style={{ marginTop: 4, marginBottom: 0 }}>
+              a spoken or written representation or account of a person, object,
+              or event.
+            </Paragraph>
           </View>
         )}
       </View>
@@ -147,17 +219,6 @@ const Glossary = ({ navigation }) => {
 export default Glossary;
 
 const styles = StyleSheet.create({
-  item: {
-    borderColor: colors.mediumGrey,
-    borderStyle: 'solid',
-    borderWidth: 0.5,
-    padding: 16,
-    paddingLeft: 24,
-  },
-  itemTitle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   header: {
     color: '#fff',
     fontSize: 16,

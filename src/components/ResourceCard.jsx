@@ -8,9 +8,10 @@ import RoundButton from 'components/RoundButton';
 
 import colors from 'config/colors.json';
 
-const ResourceCard = ({ title, content }) => {
+const ResourceCard = ({ title, content, key }) => {
   return (
     <View
+      key={key}
       style={{
         flex: 1,
         backgroundColor: colors.white,
