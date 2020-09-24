@@ -1,6 +1,7 @@
 import imgIntro01 from 'assets/intro1_img.png';
 import imgIntro02 from 'assets/intro2_img.png';
 import imgIntro03 from 'assets/intro3_img.png';
+import imgIntro04 from 'assets/intro04.png';
 
 const slides = [
   {
@@ -29,6 +30,7 @@ const slides = [
     title: 'Disclaimer',
     text:
       'The purpose of this app is solely to educate workers about workplace health and safety regulations, general advice, guidance on your rights, and the services available to you.\n\nConfused about the English here? Talk to someone you trust who can help you translate.\n\nNone of the information provided is intended to be used in a legal way.',
+    image: imgIntro04,
   },
 ];
 

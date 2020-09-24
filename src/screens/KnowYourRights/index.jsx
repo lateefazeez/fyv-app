@@ -17,12 +17,11 @@ const KnowYourRights = () => {
 
   return (
     <>
-      <View style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }}>
         <PageHeader source={headerImage} />
-        <View style={{ flex: 1.5, backgroundColor: colors.black }}>
+        <View style={{ height: 400 }}>
           <View
             style={{
-              flex: 1,
               paddingTop: 25,
               borderTopLeftRadius: 30,
               borderTopRightRadius: 30,
@@ -32,7 +31,7 @@ const KnowYourRights = () => {
             }}
           >
             <Heading>Know Your Rights</Heading>
-            <ScrollView style={{ padding: 24 }}>
+            <View style={{ padding: 24 }}>
               <Paragraph>
                 A safe workplace takes your physical, mental, and emotional
                 safety into consideration.
@@ -70,10 +69,10 @@ const KnowYourRights = () => {
               >
                 Human Rights
               </BasicButton>
-            </ScrollView>
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
       <FloatingButtonFYV />
     </>
   );

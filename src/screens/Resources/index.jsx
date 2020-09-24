@@ -6,7 +6,7 @@ import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 
-import headerImage from 'assets/placeholder.png';
+import headerImage from 'assets/resources_main_3x.png';
 import data from 'config/resources.json';
 
 const Resources = () => {
@@ -14,6 +14,7 @@ const Resources = () => {
     <>
       <ScrollView style={{ flex: 1 }}>
         <PageHeader source={headerImage} />
+
         <View style={{ padding: 16 }}>
           <Heading>Resources</Heading>
 

@@ -15,12 +15,14 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
-    backgroundColor: colors.mediumGrey,
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+
+    position: 'relative',
   },
   image: {
-    flex: 1,
-
-    width: '100%',
+    height: 250,
+    resizeMode: 'contain',
   },
 });
