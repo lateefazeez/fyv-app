@@ -13,13 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-<<<<<<< HEAD
-import { testAlert } from 'utils';
-import colors from 'config/colors';
-// import { glossary_data } from 'config/Glossary_data';
-=======
 import colors from 'config/colors.json';
->>>>>>> 01d431e71771873c4987ea5d4b95a544f89cf7ab
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -37,28 +31,11 @@ const Search = () => {
 
 const listData = [
   {
-<<<<<<< HEAD
-    title: 'C',
-    data: ['Complaint', 'Consequence', 'Confidential'],
-  },
-  {
-    title: 'D',
-    data: ['Discrimination', 'Draining'],
-=======
     title: 'B',
     data: ['Breaches'],
->>>>>>> 01d431e71771873c4987ea5d4b95a544f89cf7ab
   },
 
   {
-<<<<<<< HEAD
-    title: 'E',
-    data: ['Ethnocultural'],
-  },
-  {
-    title: 'I',
-    data: ['insufficient', 'Isolating'],
-=======
     title: 'C',
     data: ['Complaint', 'Conduct', 'Confidential', 'Consequence', 'Constitute'],
   },
@@ -69,7 +46,6 @@ const listData = [
   {
     title: 'E',
     data: ['Ethnocultural'],
->>>>>>> 01d431e71771873c4987ea5d4b95a544f89cf7ab
   },
   {
     title: 'L',
@@ -77,9 +53,6 @@ const listData = [
   },
   {
     title: 'M',
-<<<<<<< HEAD
-    data: [' Male-dominated', 'Maneuver', 'Manipulation'],
-=======
     data: ['Male-dominated', 'Maneuver', 'Manipulation', 'Misogynist'],
   },
   {
@@ -105,7 +78,6 @@ const listData = [
   {
     title: 'W',
     data: ['Warrant'],
->>>>>>> 01d431e71771873c4987ea5d4b95a544f89cf7ab
   },
   {
     title: 'O',
@@ -138,18 +110,6 @@ const sortedData = listData.map(item => ({
   data: item.data.sort(),
 }));
 
-<<<<<<< HEAD
-const Data = listData.map(item => ({
-  title: item.title,
-  content: item.content,
-  description: item.description,
-}));
-
-const Item = ({ title }) => (
-  <RectButton onPress={testAlert}>
-    <View accessible style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-=======
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(false);
 
@@ -221,7 +181,6 @@ const Item = ({ title }) => {
           </View>
         )}
       </View>
->>>>>>> 01d431e71771873c4987ea5d4b95a544f89cf7ab
     </View>
   );
 };
