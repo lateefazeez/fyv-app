@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 const FloatingButtonFYV = props => {
   const navigation = useNavigation();

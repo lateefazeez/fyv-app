@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 function PageHeader({ source }) {
   return (
@@ -15,12 +15,14 @@ export default PageHeader;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: colors.mediumGrey,
     alignItems: 'center',
-    padding: 48,
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+
+    position: 'relative',
   },
   image: {
-    height: 120,
+    height: 250,
     resizeMode: 'contain',
   },
 });

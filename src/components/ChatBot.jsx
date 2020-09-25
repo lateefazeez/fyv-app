@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatBot from 'react-native-chatbot-expo';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 console.disableYellowBox = true;
 
@@ -18,7 +18,7 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
       customDelay={200}
       contentStyle={{
         paddingTop: 8,
-        backgroundColor: colors.lightGrey,
+        backgroundColor: '#eee',
       }}
       scrollViewProps={{}}
       customStyle={{
@@ -27,7 +27,17 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
         marginLeft: 43,
       }}
       bubbleStyle={{ backgroundColor: colors.primary }}
-      optionElementStyle={{ backgroundColor: colors.darkGrey }}
+      optionElementStyle={{
+        backgroundColor: colors.fabButton,
+        padding: 20,
+        marginLeft: 50,
+        borderRadius: 10,
+        width: 250,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // borderWidth: 1,
+        // borderColor: colors.primary,
+      }}
       footerStyle={{ position: 'absolute', bottom: -100 }}
     />
   );

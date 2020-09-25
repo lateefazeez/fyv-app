@@ -6,7 +6,7 @@ import PsychosocialImage from 'assets/psy_hazard.png';
 import BiologicalImage from 'assets/bio_hazard.png';
 import PhysicalImage from 'assets/phy_hazard.png';
 import ChemicalImage from 'assets/chem_hazard.png';
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 export const Slide02 = () => {
   return (
@@ -100,7 +100,7 @@ export const Slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06];
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.effectOne,
     elevation: 5,
     flex: 1,
     justifyContent: 'center',
@@ -126,12 +126,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   textBold: {
-    color: colors.black,
+    color: colors.white,
     fontSize: 24,
     fontWeight: 'bold',
   },
   textDetail: {
-    color: colors.darkGrey,
+    color: colors.white,
     fontSize: 16,
     textAlign: 'center',
     marginTop: 16,

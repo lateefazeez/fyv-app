@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { View } from 'react-native';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -18,19 +17,16 @@ import Resources from 'screens/Resources';
 import Disclaimer from 'screens/Disclaimer';
 import Glossary from 'screens/Glossary';
 
-import colors from 'config/colors';
-import { testAlert } from 'utils';
+import colors from 'config/colors.json';
 
 const App = createStackNavigator();
 
 const RootNavigation = ({ navigation }) => {
-  const [filterBookmarks, setFilterBookmarks] = useState(false);
-
   return (
     <App.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: { backgroundColor: colors.primary },
+        headerStyle: { backgroundColor: colors.titleBar },
         headerTintColor: colors.white,
       }}
     >
@@ -117,42 +113,7 @@ const RootNavigation = ({ navigation }) => {
           ),
         }}
       />
-      <App.Screen
-        name="Glossary"
-        component={Glossary}
-        options={{
-          headerBackTitle: 'Back',
-          headerRight: () => (
-            <View style={{ flexDirection: 'row' }}>
-              <Icon
-                name={
-                  filterBookmarks
-                    ? 'bookmark-multiple'
-                    : 'bookmark-multiple-outline'
-                }
-                size={24}
-                color={colors.white}
-                onPress={() => setFilterBookmarks(!filterBookmarks)}
-                style={{ marginRight: 16 }}
-              />
-              <Icon
-                name="magnify"
-                size={24}
-                color={colors.white}
-                onPress={() => testAlert()}
-                style={{ marginRight: 16 }}
-              />
-              <Icon
-                name="menu"
-                size={24}
-                color={colors.white}
-                onPress={() => navigation.toggleDrawer()}
-                style={{ marginRight: 16 }}
-              />
-            </View>
-          ),
-        }}
-      />
+      <App.Screen name="Glossary" component={Glossary} />
       <App.Screen
         name="Know Your Rights Tabs"
         component={KnowYourRightsTabs}
@@ -234,54 +195,6 @@ const RootNavigation = ({ navigation }) => {
           ),
         }}
       />
-      {/*       <App.Screen
-        name="Injury Prevention & Training"
-        component={InjuryPrevention}
-        options={{
-          headerBackTitle: 'Back',
-          headerRight: () => (
-            <Icon
-              name="menu"
-              size={24}
-              color={colors.white}
-              onPress={() => navigation.toggleDrawer()}
-              style={{ marginRight: 16 }}
-            />
-          ),
-        }}
-      />
-      <App.Screen
-        name="Racist Incident"
-        component={RacistIncident}
-        options={{
-          headerBackTitle: 'Back',
-          headerRight: () => (
-            <Icon
-              name="menu"
-              size={24}
-              color={colors.white}
-              onPress={() => navigation.toggleDrawer()}
-              style={{ marginRight: 16 }}
-            />
-          ),
-        }}
-      />
-      <App.Screen
-        name="Reporting & Filing An Injury"
-        component={ReportingAnInjury}
-        options={{
-          headerBackTitle: 'Back',
-          headerRight: () => (
-            <Icon
-              name="menu"
-              size={24}
-              color={colors.white}
-              onPress={() => navigation.toggleDrawer()}
-              style={{ marginRight: 16 }}
-            />
-          ),
-        }}
-      /> */}
     </App.Navigator>
   );
 };

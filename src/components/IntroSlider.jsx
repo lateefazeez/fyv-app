@@ -5,7 +5,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Constants from 'expo-constants';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 import slides from 'config/introSlides';
 
 const doneButton = () => {

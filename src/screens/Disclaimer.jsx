@@ -8,7 +8,7 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
 import Subheading from 'components/Subheading';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
 import Bvc from 'assets/bvc_school_of_global_access.png';
 import Alberta from 'assets/Alberta-Government-Logo.png';

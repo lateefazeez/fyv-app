@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text, Platform } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  Platform,
+  ImageBackground,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import colors from 'config/colors';
+import colors from 'config/colors.json';
 
-const MainScreenButton = ({ children, imageLeft, imageRight, style }) => {
+const MainScreenButton = ({ children, buttonImage, style }) => {
   const navigation = useNavigation();
 
   return (
@@ -13,11 +20,11 @@ const MainScreenButton = ({ children, imageLeft, imageRight, style }) => {
       style={styles.buttonContainer}
       onPress={() => navigation.navigate(children)}
     >
-      <View style={styles.buttonContent}>
-        <Image source={imageLeft} style={styles.imageLeft} />
-        <Text style={styles.text}>{children}</Text>
-        <Image source={imageRight} style={[styles.imageRight, style]} />
-      </View>
+      <ImageBackground source={buttonImage} style={styles.buttonImage}>
+        <View style={{ marginLeft: 30, width: 100 }}>
+          <Text style={styles.text}>{children}</Text>
+        </View>
+      </ImageBackground>
     </RectButton>
   );
 };
@@ -26,29 +33,24 @@ export default MainScreenButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flex: 1,
-    backgroundColor: colors.primary,
-    marginTop: 8,
-    borderRadius: 10,
+    borderRadius: 14,
     padding: 0,
+    marginBottom: 14,
+    height: 150,
   },
   buttonContent: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 24,
   },
-  imageLeft: {
-    width: 72,
-    height: 72,
-    marginRight: 24,
-    resizeMode: 'contain',
+  buttonImage: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignSelf: 'flex-start',
+    overflow: 'visible',
   },
-  imageRight: {
-    width: 72,
-    height: 72,
-    resizeMode: 'contain',
-  },
+
   text: {
     color: colors.white,
     fontSize: 18,

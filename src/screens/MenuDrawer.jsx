@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { List } from 'react-native-paper';
 import Constants from 'expo-constants';
@@ -8,8 +8,8 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Fa5Icon from 'react-native-vector-icons/FontAwesome5';
 
-import colors from 'config/colors';
-import items from 'config/menuItems';
+import colors from 'config/colors.json';
+import items from 'config/menuItems.json';
 import logo from 'assets/logo_white.png';
 
 const getIcon = ({ lib, name, size, color }) => {
@@ -44,7 +44,7 @@ const MenuDrawer = ({ navigation }) => {
           style={{ position: 'absolute', top: 16, left: 16 }}
         />
       </View>
-      <View style={styles.lowerSection}>
+      <ScrollView contentContainerStyle={styles.lowerSection}>
         {items.map(item => (
           <List.Item
             key={item.label}
@@ -68,7 +68,7 @@ const MenuDrawer = ({ navigation }) => {
             style={item.parentScreen ? styles.subItem : styles.item}
           />
         ))}
-      </View>
+      </ScrollView>
     </DrawerContentScrollView>
   );
 };
@@ -78,10 +78,9 @@ export default MenuDrawer;
 const styles = StyleSheet.create({
   upperSection: {
     alignItems: 'center',
-    backgroundColor: colors.darkerGrey,
+    backgroundColor: colors.primary,
     justifyContent: 'center',
     padding: 40,
-    borderTopRightRadius: 40,
     position: 'relative',
   },
   label: {
@@ -100,11 +99,10 @@ const styles = StyleSheet.create({
   },
   lowerSection: {
     backgroundColor: 'white',
-    flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 16,
     paddingHorizontal: 8,
-    borderBottomRightRadius: 40,
+    flexGrow: 1,
   },
   item: {},
   subItem: {
