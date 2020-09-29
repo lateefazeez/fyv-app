@@ -286,7 +286,7 @@ const ReportingAnInjury = () => {
     {
       id: '40',
       message:
-        'If your claim was rejected despite you being injured at work, you can contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help.',
+        'If your claim was rejected despite you being injured at work, you can contact the Calgary Workers' Resource Centre and Alberta Employment Standards for free help.',
       trigger: '41',
     },
     {
@@ -439,7 +439,7 @@ const ReportingAnInjury = () => {
     {
       id: '65',
       message:
-        'Should this happen, you can always contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help regarding wrongful termination.',
+        'Should this happen, you can always contact the Calgary Workers' Resource Centre and Alberta Employment Standards for free help regarding wrongful termination.',
       trigger: '66',
     },
     {

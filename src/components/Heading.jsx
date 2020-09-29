@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     color: colors.black,
-    fontSize: Platform.OS === 'android' ? 21 : 22.5,
+    fontSize: 22,
     fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    marginBottom: 21,
+    marginVertical: 24,
   },
 });
 

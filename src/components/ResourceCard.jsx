@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Subheading from 'components/Subheading';
 import Paragraph from 'components/Paragraph';
@@ -7,59 +7,20 @@ import Paragraph from 'components/Paragraph';
 import RoundButton from 'components/RoundButton';
 
 import colors from 'config/colors.json';
+import { uuidv4 } from 'utils';
 
 const ResourceCard = ({ title, content, key }) => {
   return (
-    <View
-      key={key}
-      style={{
-        flex: 1,
-        backgroundColor: colors.white,
-        padding: 16,
-        borderRadius: 16,
-        marginBottom: 16,
-        shadowColor: colors.black,
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
+    <View key={uuidv4()} style={styles.container}>
+      <Subheading>{title}</Subheading>
 
-        elevation: 3,
-      }}
-    >
-      <Subheading style={{ color: colors.black, marginBottom: 0 }}>
-        {title}
-      </Subheading>
-
-      {content.map((item, index) => {
+      {content.map(item => {
         return (
           <>
-            <Paragraph
-              key={index}
-              style={{ color: colors.black, marginTop: 16 }}
-            >
-              {item.description}
-            </Paragraph>
+            <Paragraph key={uuidv4()}>{item.description}</Paragraph>
 
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                paddingTop: 16,
-                borderTopColor: colors.mediumGrey,
-                borderTopWidth: 1,
-                borderStyle: 'solid',
-              }}
-            >
-              {item.website && (
-                <RoundButton
-                  type="web"
-                  target={item.website}
-                  disabled={!item.website}
-                />
-              )}
+            <View style={styles.buttonsContainer}>
+              {item.website && <RoundButton type="web" target={item.website} />}
               {item.website && item.phone && (
                 <View
                   style={{
@@ -68,13 +29,7 @@ const ResourceCard = ({ title, content, key }) => {
                   }}
                 />
               )}
-              {item.phone && (
-                <RoundButton
-                  type="phone"
-                  target={item.phone}
-                  disabled={!item.phone}
-                />
-              )}
+              {item.phone && <RoundButton type="phone" target={item.phone} />}
             </View>
           </>
         );
@@ -84,3 +39,32 @@ const ResourceCard = ({ title, content, key }) => {
 };
 
 export default ResourceCard;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+    padding: 24,
+    borderRadius: 16,
+    marginBottom: 16,
+    width: '100%',
+
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingTop: 16,
+    borderTopColor: colors.mediumGrey,
+    borderTopWidth: 1,
+    borderStyle: 'solid',
+  },
+});

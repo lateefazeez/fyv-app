@@ -63,7 +63,6 @@ export const Slide04 = () => {
 
 const styles = StyleSheet.create({
   container: {
-    elevation: 5,
     flex: 1,
 
     justifyContent: 'center',

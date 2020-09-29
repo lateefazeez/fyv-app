@@ -8,7 +8,7 @@ import PageHeader from 'components/PageHeader';
 import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
 
-import headerImage from 'assets/kyr_3x.png';
+import headerImage from 'assets/kyr.png';
 
 import colors from 'config/colors.json';
 
@@ -17,60 +17,57 @@ const KnowYourRights = () => {
 
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView
+        style={{
+          flex: 1,
+          backgroundColor: colors.lightGrey,
+        }}
+      >
         <PageHeader source={headerImage} />
-        <View style={{ height: 400 }}>
-          <View
-            style={{
-              paddingTop: 25,
-              borderTopLeftRadius: 30,
-              borderTopRightRadius: 30,
-              backgroundColor: colors.lightGrey,
-              position: 'absolute',
-              top: -32,
+        <View
+          style={{
+            backgroundColor: colors.lightGrey,
+            paddingHorizontal: 24,
+            paddingBottom: 80,
+          }}
+        >
+          <Heading>Know Your Rights</Heading>
+          <Paragraph>
+            A safe workplace takes your physical, mental, and emotional safety
+            into consideration.
+          </Paragraph>
+          <Paragraph>
+            Your safety at work is protected by 3 pieces of legislation (laws):
+          </Paragraph>
+
+          <BasicButton
+            onPress={() => {
+              navigation.navigate('Know Your Rights Tabs', {
+                screen: 'OHS',
+              });
             }}
           >
-            <Heading>Know Your Rights</Heading>
-            <View style={{ padding: 24 }}>
-              <Paragraph>
-                A safe workplace takes your physical, mental, and emotional
-                safety into consideration.
-              </Paragraph>
-              <Paragraph>
-                Your safety at work is protected by 3 pieces of legislation
-                (laws):
-              </Paragraph>
+            Occupational Health and Safety
+          </BasicButton>
 
-              <BasicButton
-                onPress={() => {
-                  navigation.navigate('Know Your Rights Tabs', {
-                    screen: 'OHS',
-                  });
-                }}
-              >
-                Occupational Health and Safety
-              </BasicButton>
-
-              <BasicButton
-                onPress={() => {
-                  navigation.navigate('Know Your Rights Tabs', {
-                    screen: 'Employment Standards',
-                  });
-                }}
-              >
-                Employment Standards
-              </BasicButton>
-              <BasicButton
-                onPress={() => {
-                  navigation.navigate('Know Your Rights Tabs', {
-                    screen: 'Human Rights',
-                  });
-                }}
-              >
-                Human Rights
-              </BasicButton>
-            </View>
-          </View>
+          <BasicButton
+            onPress={() => {
+              navigation.navigate('Know Your Rights Tabs', {
+                screen: 'Employment Standards',
+              });
+            }}
+          >
+            Employment Standards
+          </BasicButton>
+          <BasicButton
+            onPress={() => {
+              navigation.navigate('Know Your Rights Tabs', {
+                screen: 'Human Rights',
+              });
+            }}
+          >
+            Human Rights
+          </BasicButton>
         </View>
       </ScrollView>
       <FloatingButtonFYV />

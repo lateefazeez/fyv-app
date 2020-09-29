@@ -18,7 +18,7 @@ import Sodexo from 'assets/sodexo.png';
 const Disclaimer = () => {
   return (
     <>
-      <ScrollView contentContainerStyle={{ padding: 16 }}>
+      <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 88 }}>
         <Paragraph>
           The purpose of this app is solely to educate workers about workplace
           health and safety regulations, general advice, guidance on your
@@ -33,13 +33,11 @@ const Disclaimer = () => {
         <Subheading>This app is only available in English.</Subheading>
 
         <View style={[styles.card, { marginBottom: 16 }]}>
-          <Paragraph style={{ marginBottom: 8, fontSize: 12 }}>
-            Funded by
-          </Paragraph>
+          <Paragraph style={{ fontSize: 12 }}>Funded by</Paragraph>
           <TouchableRipple
-            onPress={() =>
-              WebBrowser.openBrowserAsync('https://www.alberta.ca/')
-            }
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync('https://www.alberta.ca/');
+            }}
           >
             <Image
               style={{
@@ -55,16 +53,14 @@ const Disclaimer = () => {
         </View>
 
         <View style={styles.card}>
-          <Paragraph style={{ marginBottom: 24, fontSize: 12 }}>
-            In partnership with:
-          </Paragraph>
+          <Paragraph style={{ fontSize: 12 }}>In partnership with:</Paragraph>
           <TouchableRipple
             style={styles.touchable}
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync(
                 'https://globalaccess.bowvalleycollege.ca/',
-              )
-            }
+              );
+            }}
           >
             <Image
               style={{
@@ -78,9 +74,9 @@ const Disclaimer = () => {
 
           <TouchableRipple
             style={styles.touchable}
-            onPress={() =>
-              WebBrowser.openBrowserAsync('https://ca.sodexo.com/')
-            }
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync('https://ca.sodexo.com/');
+            }}
           >
             <Image
               style={{
@@ -93,9 +89,11 @@ const Disclaimer = () => {
           </TouchableRipple>
           <TouchableRipple
             style={styles.touchable}
-            onPress={() =>
-              WebBrowser.openBrowserAsync('https://workershealthcentre.ca/')
-            }
+            onPress={async () => {
+              await WebBrowser.openBrowserAsync(
+                'https://workershealthcentre.ca/',
+              );
+            }}
           >
             <Image
               style={{
@@ -121,7 +119,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 32,
     borderRadius: 10,
-    elevation: 2,
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
   },
   touchable: {
     alignItems: 'center',

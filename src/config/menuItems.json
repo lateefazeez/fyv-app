@@ -1,7 +1,7 @@
 [
   {
     "label": "Home",
-    "iconLib": "MaterialIcon",
+    "iconLib": "MaterialCommunity",
     "iconName": "home-variant"
   },
   {
@@ -17,35 +17,35 @@
     "parentScreen": "Know Your Rights Tabs"
   },
   {
-    "label": "Human Rights",
-    "iconLib": "MaterialIcon",
-    "iconName": "scale-balance",
-    "parentScreen": "Know Your Rights Tabs"
-  },
-  {
     "label": "Employment Standards",
-    "iconLib": "MaterialIcon",
+    "iconLib": "MaterialCommunity",
     "iconName": "clock-check-outline",
     "parentScreen": "Know Your Rights Tabs"
   },
   {
+    "label": "Human Rights",
+    "iconLib": "MaterialCommunity",
+    "iconName": "scale-balance",
+    "parentScreen": "Know Your Rights Tabs"
+  },
+  {
     "label": "Find Your Voice",
-    "iconLib": "MaterialIcon",
+    "iconLib": "MaterialCommunity",
     "iconName": "comment-processing"
   },
   {
     "label": "Resources",
     "iconLib": "MaterialIcon",
-    "iconName": "help-network"
+    "iconName": "contact-phone"
   },
   {
     "label": "Glossary",
-    "iconLib": "MaterialIcon",
+    "iconLib": "MaterialCommunity",
     "iconName": "book-search"
   },
   {
     "label": "Disclaimer",
-    "iconLib": "Fa5Icon",
-    "iconName": "exclamation-circle"
+    "iconLib": "Ionicons",
+    "iconName": "ios-warning"
   }
 ]

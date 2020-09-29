@@ -28,11 +28,11 @@ const App = ({ onDone, ...props }) => {
   const renderItem = ({ item }) => {
     return (
       <View style={[styles.slide, { backgroundColor: item.backgroundColor }]}>
-        {item.image ? (
+        {item.image && (
           <View style={styles.slideUpperSection}>
             <Image source={item.image} />
           </View>
-        ) : null}
+        )}
         <View
           style={
             item.image ? styles.slideLowerSection : styles.slideSingleSection

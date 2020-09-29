@@ -8,12 +8,24 @@ import Paragraph from 'components/Paragraph';
 import ExternalRefButton from 'components/ExternalRefButton';
 
 import headerImage from 'assets/placeholder.png';
+import colors from 'config/colors.json';
 
 const HumanRights = () => {
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView
+      style={{
+        flex: 1,
+        backgroundColor: colors.lightGrey,
+      }}
+    >
       <PageHeader source={headerImage} />
-      <View style={{ padding: 16 }}>
+      <View
+        style={{
+          backgroundColor: colors.lightGrey,
+          paddingHorizontal: 24,
+          paddingBottom: 80,
+        }}
+      >
         <Heading>Human Rights</Heading>
 
         <Paragraph>
@@ -31,7 +43,7 @@ const HumanRights = () => {
               'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
             )
           }
-          style={{ marginBottom: 32 }}
+          style={{ marginBottom: 24 }}
         >
           Alberta Human Rights
         </ExternalRefButton>
@@ -49,7 +61,6 @@ const HumanRights = () => {
               'https://www.albertahumanrights.ab.ca/Documents/GuideProcess_Complainants.pdf',
             )
           }
-          style={{ marginBottom: 32 }}
         >
           Complainants Guide
         </ExternalRefButton>

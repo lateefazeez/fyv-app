@@ -13,13 +13,12 @@ import EndChatReportingCard from 'components/EndChatReportingCard';
 import EndChatInjuryCard from 'components/EndChatInjuryCard';
 import EndChatRacistCard from 'components/EndChatRacistCard';
 import InChatRefButton from 'components/InChatRefButton';
+import colors from 'config/colors.json';
 import {
   InChatRightsSlide01,
   InChatRightsSlide02,
   InChatRightsSlide03,
 } from './slides';
-
-import colors from 'config/colors.json';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();
@@ -528,13 +527,13 @@ const FindYourVoice = () => {
                 style={{ height: 220, backgroundColor: colors.effectOne }}
                 activeDotColor={colors.white}
                 dotColor="rgba(0,0,0,0.2)"
-                nextButton={
+                nextButton={(
                   <Icon
                     name="chevron-right"
                     size={26}
                     color="rgba(0,0,0,0.2)"
                   />
-                }
+                )}
                 prevButton={
                   <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
                 }
@@ -760,8 +759,8 @@ const FindYourVoice = () => {
       component: (
         <View>
           <InChatRefButton
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
                 'https://workershealthcentre.ca/4-health-and-safety-rights/',
               )
             }
@@ -771,8 +770,8 @@ const FindYourVoice = () => {
             AB Human Rights Complaint
           </InChatRefButton>
           <InChatRefButton
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
                 'https://www.alberta.ca/file-complaint-online.aspx',
               )
             }
@@ -1218,7 +1217,7 @@ const FindYourVoice = () => {
     {
       id: '40b',
       message:
-        'If your claim was rejected despite you being injured at work, you can contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help.',
+        "If your claim was rejected despite you being injured at work, you can contact the Calgary Workers' Resource Centre and Alberta Employment Standards for free help.",
       trigger: '41b',
     },
     {
@@ -1415,7 +1414,7 @@ const FindYourVoice = () => {
     {
       id: '65b',
       message:
-        'Should this happen, you can always contact the Calgary Workers Resource Centre and Alberta Employment Standards for free help regarding wrongful termination.',
+        "Should this happen, you can always contact the Calgary Workers' Resource Centre and Alberta Employment Standards for free help regarding wrongful termination.",
       trigger: '66b',
     },
     {

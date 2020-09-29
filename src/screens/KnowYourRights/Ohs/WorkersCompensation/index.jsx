@@ -6,6 +6,7 @@ import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import Paragraph from 'components/Paragraph';
 import BasicButton from 'components/BasicButton';
+import ResourceCard from 'components/ResourceCard';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 
 import headerImage from 'assets/placeholder.png';
@@ -18,7 +19,7 @@ const WorkersCompensation = () => {
     <>
       <ScrollView style={{ flex: 1 }}>
         <PageHeader source={headerImage} />
-        <View style={{ padding: 16 }}>
+        <View style={{ paddingHorizontal: 24, paddingBottom:80 }}>
           <Heading>Workers' Compensation Board</Heading>
 
           <Paragraph>
@@ -36,12 +37,12 @@ const WorkersCompensation = () => {
 
           <ExternalRefButton
             icon="format-list-checkbox"
-            onPress={() =>
-              WebBrowser.openBrowserAsync(
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
                 'https://www.wcb.ab.ca/claims/report-an-injury/for-workers.html',
               )
             }
-            style={{ marginBottom: 32 }}
+            style={ { marginBottom: 24 } }
           >
             File a WCB Report
           </ExternalRefButton>
@@ -64,23 +65,16 @@ const WorkersCompensation = () => {
             answer, they can point you in the right direction.
           </Paragraph>
 
-          <BasicButton
-            onPress={() => {
-              WebBrowser.openBrowserAsync('https://www.wcb.ab.ca/');
-            }}
-            icon="web"
-            iconColor={colors.primary}
-            style={{ marginBottom: 32 }}
-          >
-            https://www.wcb.ab.ca/
-          </BasicButton>
-          <BasicButton
-            onPress={() => Linking.openURL('tel://+14032648100')}
-            icon="phone"
-            iconColor={colors.primary}
-          >
-            +1 866-922-9221 (Toll-Free)
-          </BasicButton>
+          <ResourceCard
+            title="Workers’ Compensation Board"
+            content={[
+              {
+                description: 'Services are free.',
+                phone: '+1 866-922-9221',
+                website: 'https://www.wcb.ab.ca/',
+              },
+            ]}
+          />
         </View>
       </ScrollView>
       <FloatingButtonFYV />

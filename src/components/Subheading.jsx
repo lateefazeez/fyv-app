@@ -10,7 +10,7 @@ function Subheading({ children, style }) {
 const styles = StyleSheet.create({
   text: {
     color: colors.black,
-    fontSize: Platform.OS === 'android' ? 16 : 17,
+    fontSize: 18,
     fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
     marginBottom: 16,

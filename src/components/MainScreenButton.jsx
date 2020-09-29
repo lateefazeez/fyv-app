@@ -2,7 +2,6 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Image,
   Text,
   Platform,
   ImageBackground,
@@ -16,16 +15,25 @@ const MainScreenButton = ({ children, buttonImage, style }) => {
   const navigation = useNavigation();
 
   return (
-    <RectButton
-      style={styles.buttonContainer}
-      onPress={() => navigation.navigate(children)}
-    >
-      <ImageBackground source={buttonImage} style={styles.buttonImage}>
-        <View style={{ marginLeft: 30, width: 100 }}>
-          <Text style={styles.text}>{children}</Text>
-        </View>
-      </ImageBackground>
-    </RectButton>
+    <View style={[styles.buttonContainer, style]}>
+      <View style={styles.buttonContent}>
+        <ImageBackground
+          source={buttonImage}
+          style={styles.background}
+          imageStyle={{
+            borderRadius: 16,
+          }}
+        >
+          <Text numberOfLines={2} style={styles.text}>
+            {children}
+          </Text>
+        </ImageBackground>
+      </View>
+      <RectButton
+        style={styles.ripple}
+        onPress={() => navigation.navigate(children)}
+      />
+    </View>
   );
 };
 
@@ -33,28 +41,48 @@ export default MainScreenButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    borderRadius: 14,
-    padding: 0,
-    marginBottom: 14,
-    height: 150,
+    flexGrow: 1,
+    justifyContent: 'center',
+    marginBottom: 16,
+
+    backgroundColor: colors.lightPrimary,
+    borderRadius: 16,
+    position: 'relative',
+
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
   },
   buttonContent: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+    height: 100,
+    flexGrow: 1,
   },
-  buttonImage: {
+  background: {
     width: '100%',
     height: '100%',
     justifyContent: 'center',
-    alignSelf: 'flex-start',
-    overflow: 'visible',
+    resizeMode: 'contain',
   },
-
   text: {
     color: colors.white,
-    fontSize: 18,
-    fontWeight: 'bold',
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: 24,
+    width: '40%',
+  },
+  ripple: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 1,
   },
 });

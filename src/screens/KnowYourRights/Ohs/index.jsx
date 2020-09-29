@@ -16,9 +16,20 @@ const Ohs = () => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView
+      style={{
+        flex: 1,
+        backgroundColor: colors.lightGrey,
+      }}
+    >
       <PageHeader source={headerImage} />
-      <View style={{ padding: 16 }}>
+      <View
+        style={{
+          backgroundColor: colors.lightGrey,
+          paddingHorizontal: 24,
+          paddingBottom: 80,
+        }}
+      >
         <Heading>Occupational Health & Safety</Heading>
         <Paragraph>
           Most workers in Alberta are protected under the Alberta Health and
@@ -69,7 +80,7 @@ const Ohs = () => {
         </BasicButton>
 
         <ExternalRefButton
-          icon="link-variant"
+          icon="web"
           onPress={() => {
             WebBrowser.openBrowserAsync(
               'https://www.alberta.ca/ohs-legislation.aspx',
@@ -78,7 +89,6 @@ const Ohs = () => {
           iconColor={colors.primary}
           style={{
             marginTop: 32,
-            marginBottom: 0,
           }}
         >
           Current Legislation

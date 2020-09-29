@@ -107,10 +107,11 @@ const Item = ({ title }) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              padding: 16,
+              paddingHorizontal: 24,
+              paddingVertical: 16,
             }}
           >
-            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.itemTitle}>{title}</Text>
             <Icon name="chevron-down" size={24} color={colors.darkGrey} />
           </View>
         </RectButton>
@@ -118,7 +119,7 @@ const Item = ({ title }) => {
         {hiddenDescription && (
           <View
             style={{
-              padding: 16,
+              padding: 24,
               backgroundColor: colors.lightGrey,
               borderColor: colors.mediumGrey,
               borderStyle: 'solid',
@@ -133,8 +134,6 @@ const Item = ({ title }) => {
             >
               <Paragraph
                 style={{
-                  margin: 0,
-                  padding: 0,
                   color: colors.darkGrey,
                   fontStyle: 'italic',
                 }}
@@ -149,7 +148,7 @@ const Item = ({ title }) => {
                 onPress={() => Speech.speak(title, { pitch: 0.5, rate: 0.5 })}
               />
             </View>
-            <Paragraph style={{ marginTop: 4, marginBottom: 0 }}>
+            <Paragraph style={{ fontSize: 14 }}>
               a spoken or written representation or account of a person, object,
               or event.
             </Paragraph>
@@ -208,7 +207,7 @@ const Glossary = ({ navigation }) => {
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (
-            <Text style={styles.header}>{title}</Text>
+            <Text style={styles.sectionHeader}>{title}</Text>
           )}
         />
       </SafeAreaView>
@@ -219,15 +218,16 @@ const Glossary = ({ navigation }) => {
 export default Glossary;
 
 const styles = StyleSheet.create({
-  header: {
+  sectionHeader: {
     color: '#fff',
     fontSize: 16,
-    backgroundColor: colors.darkerGrey,
+    fontWeight: 'bold',
+    backgroundColor: colors.primary,
     paddingVertical: 4,
-    paddingHorizontal: 8,
+    paddingHorizontal: 24,
   },
-  title: {
+  itemTitle: {
     fontSize: 16,
-    marginRight: 8,
+    fontWeight: 'bold',
   },
 });

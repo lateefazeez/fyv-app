@@ -3,9 +3,9 @@ import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 import Constants from 'expo-constants';
 
 import MainScreenButton from 'components/MainScreenButton';
-import KnowYourRightsImage from 'assets/kny_image_3x.png';
-import ResourcesImage from 'assets/res_image_3x.png';
-import FindingYourVoiceImage from 'assets/fyv_image_3x.png';
+import KnowYourRightsImage from 'assets/kny_image.png';
+import ResourcesImage from 'assets/res_image.png';
+import FindingYourVoiceImage from 'assets/fyv_image.png';
 
 import colors from 'config/colors.json';
 import logo from 'assets/logo_white.png';
@@ -17,16 +17,18 @@ const Main = () => (
     </View>
 
     <View style={styles.navContainer}>
-      <MainScreenButton
-        buttonImage={KnowYourRightsImage}
-        style={{ justifyContent: 'center' }}
-      >
-        Know Your Rights
+      <MainScreenButton buttonImage={KnowYourRightsImage}>
+        Know Your
+        {'\n'}
+        Rights
       </MainScreenButton>
 
       <MainScreenButton buttonImage={FindingYourVoiceImage}>
-        Find Your Voice
+        Find Your
+        {'\n'}
+        Voice
       </MainScreenButton>
+
       <MainScreenButton buttonImage={ResourcesImage}>
         Resources
       </MainScreenButton>
@@ -44,17 +46,18 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     backgroundColor: colors.titleBar,
+    flex: 2,
     justifyContent: 'center',
-    padding: 80,
-    position: 'relative',
   },
-
-  mainPageLogo: { height: 150, resizeMode: 'contain' },
+  mainPageLogo: {
+    height: '50%',
+    resizeMode: 'contain',
+  },
   navContainer: {
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-    position: 'absolute',
-    top: 250,
-    width: '100%',
+    flex: 2.5,
+    marginBottom: 8,
+    marginTop: -32,
+    paddingHorizontal: 24,
+    justifyContent: 'space-around',
   },
 });

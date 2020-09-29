@@ -40,7 +40,7 @@ const RootNavigation = ({ navigation }) => {
             <Icon
               name="menu"
               size={24}
-              color={colors.primary}
+              color={colors.white}
               onPress={() => navigation.toggleDrawer()}
               style={{ marginRight: 16 }}
             />

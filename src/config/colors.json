@@ -1,6 +1,6 @@
 {
-  "statusBar": "#334B49",
   "primary": "#129C96",
+  "lightPrimary": "#80C2BF",
   "fabButton": "#508BE9",
   "black": "#1f1f1f",
   "white": "#fff",
@@ -14,5 +14,8 @@
   "effectThree": "#535996",
   "effectFour": "#69924f",
   "effectFive": "#c168d4",
-  "titleBar": "#3b3b3b"
+  "titleBar": "#3b3b3b",
+  "statusBar": "#3b3b3b",
+  "transpGrey": "rgba(0,0,0,0.2)",
+  "transpWhite": "rgba(255,255,255,0.2)"
 }

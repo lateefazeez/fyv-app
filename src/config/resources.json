@@ -1,22 +1,20 @@
 [
   {
-    "name": "Alberta Workers Health Centre",
+    "name": "Alberta Workers' Health Centre",
     "content": [
       {
-        "description": "Services are free.\n\nAlberta Workers Health Centre provides a first point of contact for workers with occupational health and safety issues in their workplace. They will provide support, public legal education, and referrals.",
+        "description": "Services are free.\n\nAlberta Workers' Health Centre provides a first point of contact for workers with occupational health and safety issues in their workplace. They will provide support, public legal education, and referrals.",
         "phone": "+1 780-486-9009",
-        "toll-free": "true",
         "website": "https://workershealthcentre.ca"
       }
     ]
   },
   {
-    "name": "Calgary Workers Resource Centre",
+    "name": "Calgary Workers' Resource Centre",
     "content": [
       {
-        "description": "Calgary Workers Resource Centre provides free case work and a public legal education program if you are having issues understanding your rights in your workplace.",
+        "description": "Calgary Workers' Resource Centre provides free case work and a public legal education program if you are having issues understanding your rights in your workplace.",
         "phone": "+1 403-264-8100",
-        "toll-free": "true",
         "website": "https://www.helpwrc.org/"
       }
     ]
@@ -27,7 +25,6 @@
       {
         "description": "Employment Standards Contact Centre can answer questions related to wages, overtime, vacation pay, hours or form, and termination of employment.\n\nHours: 8:15 am to 4:30 pm MT (Monday to Friday, closed statutory holidays).",
         "phone": "+1 877-427-3731",
-        "toll-free": "true",
         "website": "https://www.alberta.ca/employment-standards.aspx"
       }
     ]
@@ -38,7 +35,6 @@
       {
         "description": "The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury.\n\nIMPORTANT: You may also file an anonymous complaint through AOHS.",
         "phone": "+1 866-415-8690",
-        "toll-free": "true",
         "website": "https://www.alberta.ca/occupational-health-safety.aspx"
       }
     ]
@@ -49,7 +45,6 @@
       {
         "description": "The Workers’ Compensation Board Alberta can answer questions related to workplace injuries and benefits.\n\nIMPORTANT: You may also report a workplace injury through WCB.",
         "phone": "+1 866-922-9221",
-        "toll-free": "true",
         "website": "https://www.wcb.ab.ca"
       }
     ]

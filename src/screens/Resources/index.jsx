@@ -6,27 +6,33 @@ import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 
-import headerImage from 'assets/resources_main_3x.png';
+import headerImage from 'assets/resources_main.png';
 import data from 'config/resources.json';
+
+import colors from 'config/colors.json';
 
 const Resources = () => {
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView
+        style={{
+          flex: 1,
+          backgroundColor: colors.lightGrey,
+        }}
+      >
         <PageHeader source={headerImage} />
 
-        <View style={{ padding: 16 }}>
+        <View
+          style={{
+            paddingHorizontal: 24,
+            paddingBottom: 80,
+          }}
+        >
           <Heading>Resources</Heading>
 
-          {data.map((object, index) => {
-            return (
-              <ResourceCard
-                key={index}
-                title={object.name}
-                content={object.content}
-              />
-            );
-          })}
+          {data.map(object => (
+            <ResourceCard title={object.name} content={object.content} />
+          ))}
         </View>
       </ScrollView>
       <FloatingButtonFYV />

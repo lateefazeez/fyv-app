@@ -1,57 +1,13 @@
 import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
 
-import placeholder from 'assets/placeholder.png';
 import PsychosocialImage from 'assets/psy_hazard.png';
 import BiologicalImage from 'assets/bio_hazard.png';
 import PhysicalImage from 'assets/phy_hazard.png';
 import ChemicalImage from 'assets/chem_hazard.png';
 import colors from 'config/colors.json';
 
-export const Slide02 = () => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={BiologicalImage} />
-      <View style={styles.headline}>
-        <Text style={styles.textBold}>Biological</Text>
-      </View>
-      <Text style={styles.textDetail}>
-        Includes insect stings, allergic reactions, and being in contact with
-        viruses.
-      </Text>
-    </View>
-  );
-};
-
-export const Slide03 = () => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={ChemicalImage} />
-      <View style={styles.headline}>
-        <Text style={styles.textBold}>Chemical</Text>
-      </View>
-      <Text style={styles.textDetail}>
-        Includes cleaning products, paint materials, and toxic chemicals.
-      </Text>
-    </View>
-  );
-};
-
-export const Slide05 = () => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={placeholder} />
-      <View style={styles.headline}>
-        <Text style={styles.textBold}>Ergonomic</Text>
-      </View>
-      <Text style={styles.textDetail}>
-        repetitive movements, improper set up of workstation, etc..
-      </Text>
-    </View>
-  );
-};
-
-export const Slide01 = () => {
+const slide01 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={PhysicalImage} />
@@ -66,7 +22,36 @@ export const Slide01 = () => {
   );
 };
 
-export const Slide04 = () => {
+const slide02 = () => {
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={BiologicalImage} />
+      <View style={styles.headline}>
+        <Text style={styles.textBold}>Biological</Text>
+      </View>
+      <Text style={styles.textDetail}>
+        Includes insect stings, allergic reactions, and being in contact with
+        viruses.
+      </Text>
+    </View>
+  );
+};
+
+const slide03 = () => {
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={ChemicalImage} />
+      <View style={styles.headline}>
+        <Text style={styles.textBold}>Chemical</Text>
+      </View>
+      <Text style={styles.textDetail}>
+        Includes cleaning products, paint materials, and toxic chemicals.
+      </Text>
+    </View>
+  );
+};
+
+const slide04 = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={PsychosocialImage} />
@@ -81,27 +66,13 @@ export const Slide04 = () => {
   );
 };
 
-export const Slide06 = () => {
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={placeholder} />
-      <View style={styles.headline}>
-        <Text style={styles.textBold}>Safety</Text>
-      </View>
-      <Text style={styles.textDetail}>
-        slipping/tripping hazards, inappropriate machine guarding, equipment
-        malfunctions or breakdowns.
-      </Text>
-    </View>
-  );
-};
+const slides = [slide01, slide02, slide03, slide04];
 
-export const Slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06];
+export default slides;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.effectOne,
-    elevation: 5,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

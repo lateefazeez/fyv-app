@@ -1,142 +1,129 @@
 import React from 'react';
-import { View, ScrollView, Linking } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
 import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
-import CrossScreenButton from 'components/CrossScreenButton';
 import Heading from 'components/Heading';
+import ResourceCard from 'components/ResourceCard';
 
-import headerImage from 'assets/hazards_3x.png';
+import headerImage from 'assets/hazards.png';
 
 import colors from 'config/colors.json';
-import {
-  Slide01,
-  Slide02,
-  Slide03,
-  Slide04,
-  // Slide05,
-  // Slide06,
-} from './slides';
+import slides from './slides';
 
 const TypesOfHazards = () => {
-  const navigation = useNavigation();
-
   return (
     <>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView
+        style={{
+          flex: 1,
+        }}
+      >
         <PageHeader source={headerImage} />
-        <View style={{ height: 1100 }}>
+
+        <View
+          style={ {
+            backgroundColor: colors.lightGrey,
+          }}
+        >
+          <View style={ {
+            paddingHorizontal: 24,
+          } }>
+            <Heading>Types of Hazards</Heading>
+            <Paragraph>
+              In Alberta, there are 4 hazards that relate to workplace health
+              and safety.
+            </Paragraph>
+            <Paragraph>
+              A common way to indentify hazards is by category:
+            </Paragraph>
+          </View>
+          <Swiper
+            style={{ height: 400 }}
+            activeDotColor={colors.darkGrey}
+            dotColor="rgba(0,0,0,0.2)"
+            nextButton={
+              <Icon name="chevron-right" size={40} color={colors.transpWhite} />
+            }
+            prevButton={
+              <Icon name="chevron-left" size={40} color={colors.transpWhite} />
+            }
+            showsButtons
+          >
+            {slides.map(slide => slide())}
+          </Swiper>
+
           <View
             style={{
-              position: 'absolute',
-              top: -32,
-              borderTopLeftRadius: 30,
-              borderTopRightRadius: 30,
-              backgroundColor: colors.white,
+              paddingHorizontal: 24,
             }}
           >
-            <View style={{ paddingHorizontal: 16, paddingTop: 24 }}>
-              <Heading>Basic Rights</Heading>
-              <Paragraph>
-                In Alberta, there are 4 hazards that relate to workplace health
-                and safety.
-              </Paragraph>
-              <Paragraph>
-                A common way to indentify hazards is by category:
-              </Paragraph>
-            </View>
-            <Swiper
-              style={{ height: 400 }}
-              activeDotColor={colors.darkGrey}
-              dotColor="rgba(0,0,0,0.2)"
-              nextButton={
-                <Icon name="chevron-right" size={40} color="rgba(0,0,0,0.2)" />
-              }
-              prevButton={
-                <Icon name="chevron-left" size={40} color="rgba(0,0,0,0.2)" />
-              }
-              showsButtons
-            >
-              <Slide01 />
-              <Slide02 />
-              <Slide03 />
-              <Slide04 />
-            </Swiper>
-
-            <View style={{ paddingHorizontal: 16, paddingTop: 0 }}>
-              <ExternalRefButton
-                icon="web"
-                onPress={() => {
-                  WebBrowser.openBrowserAsync(
-                    'https://www.alberta.ca/workplace-hazards.aspx',
-                  );
-                }}
-                style={{ marginBottom: 16, width: '95%' }}
-              >
-                Alberta Workplace Hazards
-              </ExternalRefButton>
-            </View>
-            <View style={{ paddingHorizontal: 16 }}>
-              <Paragraph>
-                Employers must make workplaces safe from these hazards.
-              </Paragraph>
-            </View>
-            <View
-              style={{
-                flex: 1,
-                alignItems: 'center',
-                paddingHorizontal: 16,
-                paddingBottom: 24,
-                backgroundColor: colors.darkerGrey,
-                padding: 10,
-                marginBottom: 20,
+            <ExternalRefButton
+              icon="web"
+              onPress={async () => {
+                await WebBrowser.openBrowserAsync(
+                  'https://www.alberta.ca/workplace-hazards.aspx',
+                );
               }}
             >
-              <Paragraph style={{ color: colors.white }}>
-                Question about Hazards? Contact Alberta OHS. If they don’t know
-                the answer, they will point you in the right direction.
-              </Paragraph>
-              <ExternalRefButton
-                icon="web"
-                onPress={() => {
-                  WebBrowser.openBrowserAsync(
-                    'https://www.alberta.ca/ask-expert.aspx',
-                  );
-                }}
-                style={{ marginBottom: 16, width: '70%' }}
-              >
-                Ask An Expert
-              </ExternalRefButton>
-              <ExternalRefButton
-                onPress={() => Linking.openURL('tel://+18664158690')}
-                icon="phone"
-                style={{ marginBottom: 16, width: '90%' }}
-              >
-                +1-866-415-8690 Toll-free
-              </ExternalRefButton>
-              <Paragraph style={{ color: colors.white }}>
-                You can also make an anonymous health and safety complaints to
-                Alberta OHS online or by phone.
-              </Paragraph>
-              <CrossScreenButton
-                icon="chevron-right"
-                onPress={() => {
-                  navigation.navigate('Resources');
-                }}
-                style={{ marginBottom: 16, width: '100%' }}
-              >
-                See Resources
-              </CrossScreenButton>
-              <Paragraph style={{ color: colors.white }}>
-                The complaint can be related to you or another.
-              </Paragraph>
-            </View>
+              Alberta Workplace Hazards
+            </ExternalRefButton>
+
+            <Paragraph>
+              Employers must make workplaces safe from these hazards.
+            </Paragraph>
+          </View>
+
+          <View
+            style={{
+              flex: 1,
+              padding: 24,
+              paddingBottom: 80,
+              backgroundColor: colors.darkerGrey,
+            }}
+          >
+            <Paragraph style={{ color: colors.white }}>
+              Question about Hazards? Contact Alberta OHS. If they don’t know
+              the answer, they will point you in the right direction.
+            </Paragraph>
+
+            <ResourceCard
+              title="Ask An Expert"
+              content={[
+                {
+                  description: 'Services are free.',
+                  phone: '+18664158690',
+                  website: 'https://www.alberta.ca/ask-expert.aspx',
+                },
+              ]}
+            />
+
+            <Paragraph style={{ color: colors.white }}>
+              You can also make an anonymous health and safety complaints to
+              Alberta OHS online or by phone.
+            </Paragraph>
+
+            <Paragraph style={{ color: colors.white }}>
+              The complaint can be related to you or another.
+            </Paragraph>
+
+            <ResourceCard
+              title="Occupational Health & Safety Contact Centre"
+              content={[
+                {
+                  description:
+                    'The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury.\n\nIMPORTANT: You may also file an anonymous complaint through AOHS.',
+                  phone: '+1 866-415-8690',
+                  website:
+                    'https://www.alberta.ca/occupational-health-safety.aspx',
+                },
+              ]}
+            />
           </View>
         </View>
       </ScrollView>
