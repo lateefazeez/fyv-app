@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import MainScreenButton from 'components/MainScreenButton';
 import KnowYourRightsImage from 'assets/kny_image.png';
 import ResourcesImage from 'assets/res_image.png';
-import FindingYourVoiceImage from 'assets/fyv_image.png';
+import FindYourVoiceImage from 'assets/fyv_image.png';
 
 import colors from 'config/colors.json';
 import logo from 'assets/logo_white.png';
@@ -17,13 +17,19 @@ const Main = () => (
     </View>
 
     <View style={styles.navContainer}>
-      <MainScreenButton buttonImage={KnowYourRightsImage}>
+      <MainScreenButton
+        buttonImage={KnowYourRightsImage}
+        target="Know Your Rights"
+      >
         Know Your
         {'\n'}
         Rights
       </MainScreenButton>
 
-      <MainScreenButton buttonImage={FindingYourVoiceImage}>
+      <MainScreenButton
+        buttonImage={FindYourVoiceImage}
+        target="Find Your Voice"
+      >
         Find Your
         {'\n'}
         Voice

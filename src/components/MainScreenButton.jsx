@@ -11,7 +11,7 @@ import { RectButton } from 'react-native-gesture-handler';
 
 import colors from 'config/colors.json';
 
-const MainScreenButton = ({ children, buttonImage, style }) => {
+const MainScreenButton = ({ children, buttonImage, target, style }) => {
   const navigation = useNavigation();
 
   return (
@@ -31,7 +31,7 @@ const MainScreenButton = ({ children, buttonImage, style }) => {
       </View>
       <RectButton
         style={styles.ripple}
-        onPress={() => navigation.navigate(children)}
+        onPress={() => navigation.navigate(target || children)}
       />
     </View>
   );
