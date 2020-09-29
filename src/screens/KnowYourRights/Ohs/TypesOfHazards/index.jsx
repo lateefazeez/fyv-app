@@ -1,7 +1,5 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import Swiper from 'react-native-swiper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as WebBrowser from 'expo-web-browser';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
@@ -10,6 +8,7 @@ import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
+import ContentSlider from 'components/ContentSlider';
 
 import headerImage from 'assets/hazards.png';
 
@@ -26,14 +25,8 @@ const TypesOfHazards = () => {
       >
         <PageHeader source={headerImage} />
 
-        <View
-          style={ {
-            backgroundColor: colors.lightGrey,
-          }}
-        >
-          <View style={ {
-            paddingHorizontal: 24,
-          } }>
+        <View style={{ backgroundColor: colors.lightGrey }}>
+          <View style={{ paddingHorizontal: 24 }}>
             <Heading>Types of Hazards</Heading>
             <Paragraph>
               In Alberta, there are 4 hazards that relate to workplace health
@@ -43,20 +36,8 @@ const TypesOfHazards = () => {
               A common way to indentify hazards is by category:
             </Paragraph>
           </View>
-          <Swiper
-            style={{ height: 400 }}
-            activeDotColor={colors.darkGrey}
-            dotColor="rgba(0,0,0,0.2)"
-            nextButton={
-              <Icon name="chevron-right" size={40} color={colors.transpWhite} />
-            }
-            prevButton={
-              <Icon name="chevron-left" size={40} color={colors.transpWhite} />
-            }
-            showsButtons
-          >
-            {slides.map(slide => slide())}
-          </Swiper>
+
+          <ContentSlider slides={slides} />
 
           <View
             style={{

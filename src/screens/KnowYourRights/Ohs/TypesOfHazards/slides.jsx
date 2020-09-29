@@ -67,7 +67,6 @@ const slide04 = () => {
 };
 
 const slides = [slide01, slide02, slide03, slide04];
-
 export default slides;
 
 const styles = StyleSheet.create({

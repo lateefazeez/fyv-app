@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export const Slide01 = () => {
+import colors from 'config/colors.json';
+
+const slide01 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#0970ac' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
@@ -16,9 +18,9 @@ export const Slide01 = () => {
   );
 };
 
-export const Slide02 = () => {
+const slide02 = () => {
   return (
-    <View style={[styles.container, { backgroundColor: '#abcc4c' }]}>
+    <View style={[styles.container, { backgroundColor: '#80A21F' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -31,7 +33,7 @@ export const Slide02 = () => {
   );
 };
 
-export const Slide03 = () => {
+const slide03 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#535996' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
@@ -46,7 +48,7 @@ export const Slide03 = () => {
   );
 };
 
-export const Slide04 = () => {
+const slide04 = () => {
   return (
     <View style={[styles.container, { backgroundColor: '#69924f' }]}>
       {/* <Image style={styles.image} source={placeholder} /> */}
@@ -60,6 +62,9 @@ export const Slide04 = () => {
     </View>
   );
 };
+
+const slides = [slide01, slide02, slide03, slide04];
+export default slides;
 
 const styles = StyleSheet.create({
   container: {
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textBold: {
-    color: 'rgba(255,255,255,1)',
+    color: colors.white,
     fontSize: 24,
     fontWeight: 'bold',
   },

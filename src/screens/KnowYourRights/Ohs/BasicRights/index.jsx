@@ -9,10 +9,11 @@ import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
 import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
+import ContentSlider from 'components/ContentSlider';
 
 import headerImage from 'assets/basic_right.png';
 import colors from 'config/colors.json';
-import { Slide01, Slide02, Slide03, Slide04 } from './slides';
+import slides from './slides';
 
 const BasicRights = () => {
   return (
@@ -26,31 +27,17 @@ const BasicRights = () => {
             safety:
           </Paragraph>
         </View>
-        <Swiper
-          style={{ height: 400 }}
-          activeDotColor={colors.darkGrey}
-          dotColor="rgba(0,0,0,0.2)"
-          nextButton={
-            <Icon name="chevron-right" size={40} color="rgba(0,0,0,0.2)" />
-          }
-          prevButton={
-            <Icon name="chevron-left" size={40} color="rgba(0,0,0,0.2)" />
-          }
-          showsButtons
-        >
-          <Slide01 />
-          <Slide02 />
-          <Slide03 />
-          <Slide04 />
-        </Swiper>
+
+        <ContentSlider slides={slides} />
+
         <View style={{ paddingHorizontal: 24 }}>
           <ExternalRefButton
             icon="web"
-            onPress={async () =>
+            onPress={async () => {
               await WebBrowser.openBrowserAsync(
                 'https://workershealthcentre.ca/4-health-and-safety-rights/',
-              )
-            }
+              );
+            }}
             style={{ marginBottom: 24 }}
           >
             Health & Safety Rights
