@@ -53,14 +53,12 @@ const EmploymentStandards = () => {
 
         <ResourceCard
           title="Employment Standards Contact Centre"
-          content={[
-            {
-              description:
-                'Employment Standards Contact Centre can answer questions related to wages, overtime, vacation pay, hours or form, and termination of employment.\n\nHours: 8:15 am to 4:30 pm MT (Monday to Friday, closed statutory holidays).',
-              phone: '+1 877-427-3731',
-              website: 'https://www.alberta.ca/employment-standards.aspx',
-            },
-          ]}
+          content={{
+            description:
+              'Employment Standards Contact Centre can answer questions related to wages, overtime, vacation pay, hours or form, and termination of employment.\n\nHours: 8:15 am to 4:30 pm MT (Monday to Friday, closed statutory holidays).',
+            phone: '+1 877-427-3731',
+            website: 'https://www.alberta.ca/employment-standards.aspx',
+          }}
         />
 
         <Paragraph>

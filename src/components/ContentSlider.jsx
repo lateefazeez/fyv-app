@@ -17,7 +17,7 @@ const ContentSlider = ({ slides }) => (
     }
     showsButtons
   >
-    {slides.map(slide => slide())}
+    {slides.map((slide, index) => slide(index))}
   </Swiper>
 );
 

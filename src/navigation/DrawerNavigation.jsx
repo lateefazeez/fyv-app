@@ -12,11 +12,27 @@ import RootNavigation from './RootNavigation';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
-  const navRef = useRef(null);
+  const routeNameRef = useRef(null);
+  const navigationRef = useRef(null);
 
   return (
     <>
-      <NavigationContainer ref={navRef}>
+      <NavigationContainer
+        ref={navigationRef}
+        onReady={() => {
+          routeNameRef.current = navigationRef.current.getCurrentRoute().name;
+        }}
+        onStateChange={() => {
+          const previousRouteName = routeNameRef.current;
+          const currentRouteName = navigationRef.current.getCurrentRoute().name;
+
+          if (previousRouteName !== currentRouteName) {
+            console.log('Current Screen: ', currentRouteName);
+          }
+
+          routeNameRef.current = currentRouteName;
+        }}
+      >
         {Platform.OS === 'android' ? (
           <StatusBar style="light" backgroundColor={colors.statusBar} />
         ) : (

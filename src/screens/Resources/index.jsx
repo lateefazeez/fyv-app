@@ -31,7 +31,11 @@ const Resources = () => {
           <Heading>Resources</Heading>
 
           {data.map(object => (
-            <ResourceCard title={object.name} content={object.content} />
+            <ResourceCard
+              key={object.name}
+              title={object.name}
+              content={object.content}
+            />
           ))}
         </View>
       </ScrollView>

@@ -76,13 +76,12 @@ const WorkersCompensation = () => {
 
             <ResourceCard
               title="Workers’ Compensation Board"
-              content={[
-                {
-                  description: 'Services are free.',
-                  phone: '+1 866-922-9221',
-                  website: 'https://www.wcb.ab.ca/',
-                },
-              ]}
+              content={{
+                description:
+                  'The Workers’ Compensation Board Alberta can answer questions related to workplace injuries and benefits.\n\nIMPORTANT: You may also report a workplace injury through WCB.',
+                phone: '+1 866-922-9221',
+                website: 'https://www.wcb.ab.ca/',
+              }}
             />
           </View>
         </View>

@@ -2,9 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import colors from 'config/colors.json';
 
-export const slide01 = () => {
+export const slide01 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: colors.effectOne }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: colors.effectOne }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>1</Text>
@@ -17,9 +20,12 @@ export const slide01 = () => {
   );
 };
 
-export const slide02 = () => {
+export const slide02 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: colors.effectOne }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: colors.effectOne }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>2</Text>
@@ -32,9 +38,12 @@ export const slide02 = () => {
   );
 };
 
-export const slide03 = () => {
+export const slide03 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: colors.effectOne }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: colors.effectOne }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>3</Text>

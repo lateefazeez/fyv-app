@@ -7,9 +7,9 @@ import PhysicalImage from 'assets/phy_hazard.png';
 import ChemicalImage from 'assets/chem_hazard.png';
 import colors from 'config/colors.json';
 
-const slide01 = () => {
+const slide01 = index => {
   return (
-    <View style={styles.container}>
+    <View key={index} style={styles.container}>
       <Image style={styles.image} source={PhysicalImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Physical</Text>
@@ -22,9 +22,9 @@ const slide01 = () => {
   );
 };
 
-const slide02 = () => {
+const slide02 = index => {
   return (
-    <View style={styles.container}>
+    <View key={index} style={styles.container}>
       <Image style={styles.image} source={BiologicalImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Biological</Text>
@@ -37,9 +37,9 @@ const slide02 = () => {
   );
 };
 
-const slide03 = () => {
+const slide03 = index => {
   return (
-    <View style={styles.container}>
+    <View key={index} style={styles.container}>
       <Image style={styles.image} source={ChemicalImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Chemical</Text>
@@ -51,9 +51,9 @@ const slide03 = () => {
   );
 };
 
-const slide04 = () => {
+const slide04 = index => {
   return (
-    <View style={styles.container}>
+    <View key={index} style={styles.container}>
       <Image style={styles.image} source={PsychosocialImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Psychosocial</Text>

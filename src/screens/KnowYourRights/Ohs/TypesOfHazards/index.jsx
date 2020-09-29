@@ -75,13 +75,11 @@ const TypesOfHazards = () => {
 
             <ResourceCard
               title="Ask An Expert"
-              content={[
-                {
-                  description: 'Services are free.',
-                  phone: '+18664158690',
-                  website: 'https://www.alberta.ca/ask-expert.aspx',
-                },
-              ]}
+              content={{
+                description: 'Services are free.',
+                phone: '+18664158690',
+                website: 'https://www.alberta.ca/ask-expert.aspx',
+              }}
             />
 
             <Paragraph style={{ color: colors.white }}>
@@ -95,15 +93,13 @@ const TypesOfHazards = () => {
 
             <ResourceCard
               title="Occupational Health & Safety Contact Centre"
-              content={[
-                {
-                  description:
-                    'The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury.\n\nIMPORTANT: You may also file an anonymous complaint through AOHS.',
-                  phone: '+1 866-415-8690',
-                  website:
-                    'https://www.alberta.ca/occupational-health-safety.aspx',
-                },
-              ]}
+              content={{
+                description:
+                  'The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury.\n\nIMPORTANT: You may also file an anonymous complaint through AOHS.',
+                phone: '+1 866-415-8690',
+                website:
+                  'https://www.alberta.ca/occupational-health-safety.aspx',
+              }}
             />
           </View>
         </View>

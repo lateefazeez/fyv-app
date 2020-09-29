@@ -56,59 +56,60 @@ const getIcon = ({ lib, name, size, color }) => {
   }
 };
 
-const MenuDrawer = ({ navigation }) => (
-  <DrawerContentScrollView
-    contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
-  >
-    <View style={styles.upperSection}>
-      <Image source={logo} style={styles.logo} />
-      <Text style={styles.logoText}>School of Global Access</Text>
-      <MaterialCommunity
-        color={colors.white}
-        name="close"
-        size={24}
-        onPress={() => navigation.closeDrawer()}
-        style={{ position: 'absolute', top: 16, left: 16 }}
-      />
-    </View>
-    <ScrollView contentContainerStyle={styles.lowerSection}>
-      {items.map(item => (
-        <List.Item
-          key={item.label}
-          title={item.label}
-          titleStyle={styles.label}
-          left={() =>
-            getIcon({
-              lib: item.iconLib,
-              name: item.iconName,
-              size: item.iconSize ? item.iconSize : 20,
-              color: colors.darkerGrey,
-            })
-          }
-          onPress={() =>
-            item.parentScreen
-              ? navigation.navigate(item.parentScreen, {
-                  screen: item.label,
-                })
-              : navigation.navigate(item.label)
-          }
-          style={item.parentScreen ? styles.subItem : styles.item}
+const MenuDrawer = ({ navigation }) => {
+  return (
+    <DrawerContentScrollView
+      contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
+    >
+      <View style={styles.upperSection}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.logoText}>School of Global Access</Text>
+        <MaterialCommunity
+          color={colors.white}
+          name="close"
+          size={24}
+          onPress={() => navigation.closeDrawer()}
+          style={{ position: 'absolute', top: 16, left: 16 }}
         />
-      ))}
-    </ScrollView>
-  </DrawerContentScrollView>
-);
+      </View>
+      <ScrollView contentContainerStyle={styles.lowerSection}>
+        {items.map(item => (
+          <List.Item
+            key={item.label}
+            title={item.label}
+            titleStyle={styles.label}
+            left={() =>
+              getIcon({
+                lib: item.iconLib,
+                name: item.iconName,
+                size: item.iconSize ? item.iconSize : 20,
+                color: colors.darkerGrey,
+              })
+            }
+            onPress={() =>
+              item.parentScreen
+                ? navigation.navigate(item.parentScreen, {
+                    screen: item.label,
+                  })
+                : navigation.navigate(item.label)
+            }
+            style={item.parentScreen ? styles.subItem : styles.item}
+          />
+        ))}
+      </ScrollView>
+    </DrawerContentScrollView>
+  );
+};
 
 export default MenuDrawer;
-
-const itemHeight = 48;
 
 const styles = StyleSheet.create({
   upperSection: {
     alignItems: 'center',
     backgroundColor: colors.primary,
     justifyContent: 'center',
-    padding: 40,
+    paddingTop: 48,
+    paddingBottom: 48,
     position: 'relative',
   },
   label: {
@@ -133,16 +134,14 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   icon: {
-    marginVertical: itemHeight / 2 - 12,
+    marginTop: 4,
     marginRight: 8,
   },
   item: {
-    height: itemHeight,
     justifyContent: 'center',
   },
   subItem: {
     marginLeft: 32,
-    height: itemHeight,
     justifyContent: 'center',
   },
   activeItemText: {

@@ -3,9 +3,12 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import colors from 'config/colors.json';
 
-const slide01 = () => {
+const slide01 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: '#0970ac' }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: '#0970ac' }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -18,9 +21,12 @@ const slide01 = () => {
   );
 };
 
-const slide02 = () => {
+const slide02 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: '#80A21F' }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: '#80A21F' }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -33,9 +39,12 @@ const slide02 = () => {
   );
 };
 
-const slide03 = () => {
+const slide03 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: '#535996' }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: '#535996' }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>Right to</Text>
@@ -48,9 +57,12 @@ const slide03 = () => {
   );
 };
 
-const slide04 = () => {
+const slide04 = index => {
   return (
-    <View style={[styles.container, { backgroundColor: '#69924f' }]}>
+    <View
+      key={index}
+      style={[styles.container, { backgroundColor: '#69924f' }]}
+    >
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headlineLonger}>
         <Text style={styles.text}>Right to be</Text>
