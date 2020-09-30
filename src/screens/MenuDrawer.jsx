@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { List } from 'react-native-paper';
@@ -57,6 +57,7 @@ const getIcon = ({ lib, name, size, color }) => {
 };
 
 const MenuDrawer = ({ navigation }) => {
+  const [dropDown, setDropDown] = useState(false);
   return (
     <DrawerContentScrollView
       contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
@@ -69,33 +70,72 @@ const MenuDrawer = ({ navigation }) => {
           name="close"
           size={24}
           onPress={() => navigation.closeDrawer()}
-          style={{ position: 'absolute', top: 16, left: 16 }}
+          style={styles.closeDrawer}
         />
       </View>
       <ScrollView contentContainerStyle={styles.lowerSection}>
-        {items.map(item => (
-          <List.Item
-            key={item.label}
-            title={item.label}
-            titleStyle={styles.label}
-            left={() =>
-              getIcon({
-                lib: item.iconLib,
-                name: item.iconName,
-                size: item.iconSize ? item.iconSize : 20,
-                color: colors.darkerGrey,
-              })
-            }
-            onPress={() =>
-              item.parentScreen
-                ? navigation.navigate(item.parentScreen, {
+        {items.map(item => {
+          if (!item.parentScreen) {
+            return (
+              <List.Item
+                key={item.label}
+                title={item.label}
+                titleStyle={styles.label}
+                left={() =>
+                  getIcon({
+                    lib: item.iconLib,
+                    name: item.iconName,
+                    size: item.iconSize ? item.iconSize : 20,
+                    color: colors.darkerGrey,
+                  })
+                }
+                right={() =>
+                  item.dropdown && (
+                    <MaterialCommunity
+                      style={{ marginTop: 3 }}
+                      color={colors.black}
+                      name={dropDown ? 'chevron-up' : 'chevron-down'}
+                      size={24}
+                      onPress={() => setDropDown(!dropDown)}
+                    />
+                  )
+                }
+                onPress={() =>
+                  item.parentScreen
+                    ? navigation.navigate(item.parentScreen, {
+                        screen: item.label,
+                      })
+                    : navigation.navigate(item.label)
+                }
+                style={styles.item}
+              />
+            );
+          }
+
+          if (item.parentScreen && dropDown) {
+            return (
+              <List.Item
+                key={item.label}
+                title={item.label}
+                titleStyle={styles.label}
+                left={() =>
+                  getIcon({
+                    lib: item.iconLib,
+                    name: item.iconName,
+                    size: item.iconSize ? item.iconSize : 20,
+                    color: colors.darkerGrey,
+                  })
+                }
+                onPress={() =>
+                  navigation.navigate(item.parentScreen, {
                     screen: item.label,
                   })
-                : navigation.navigate(item.label)
-            }
-            style={item.parentScreen ? styles.subItem : styles.item}
-          />
-        ))}
+                }
+                style={styles.subItem}
+              />
+            );
+          }
+        })}
       </ScrollView>
     </DrawerContentScrollView>
   );
@@ -111,6 +151,11 @@ const styles = StyleSheet.create({
     paddingTop: 48,
     paddingBottom: 48,
     position: 'relative',
+  },
+  closeDrawer: {
+    position: 'absolute',
+    top: 16,
+    left: 16,
   },
   label: {
     color: colors.darkerGrey,
