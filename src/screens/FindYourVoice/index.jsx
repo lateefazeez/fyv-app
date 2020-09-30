@@ -5,6 +5,8 @@ import * as WebBrowser from 'expo-web-browser';
 import { Card } from 'react-native-paper';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import * as StoreReview from 'expo-store-review';
+import * as Linking from 'expo-linking';
 
 import InChatCard from 'components/InChatCard';
 import FyvChatBot from 'components/ChatBot';
@@ -36,7 +38,7 @@ const FindYourVoice = () => {
         {
           text: 'Yes, quit',
           onPress: () => {
-            navigation.goBack();
+            StoreReview.requestReview();
           },
         },
       ],
@@ -65,16 +67,16 @@ const FindYourVoice = () => {
       id: '3',
 
       message:
-        'Which topic would you like to know more about: Injury Prevention &  Training, Racist Incident, or Reporting & Filing an Injury?',
+        'Which topic would you like to know more about: Injury At Work, Racist Incident, or Injury Prevention &  Training?',
       trigger: 'Injury Prevention Options',
     },
     {
       id: 'Injury Prevention Options',
       options: [
         {
-          value: 'injury',
-          label: 'Injury Prevention & Training',
-          trigger: 'injury prevention',
+          value: 'reporting',
+          label: 'Injury At Work',
+          trigger: 'reporting injury',
         },
         {
           value: 'racist incident',
@@ -82,9 +84,9 @@ const FindYourVoice = () => {
           trigger: 'racist incident',
         },
         {
-          value: 'reporting',
-          label: 'Reporting & Filing an Injury',
-          trigger: 'reporting injury',
+          value: 'injury',
+          label: 'Injury Prevention & Training',
+          trigger: 'injury prevention',
         },
       ],
     },
@@ -128,8 +130,8 @@ const FindYourVoice = () => {
     {
       id: '7',
       options: [
-        { value: 'yes', label: 'YES, I did', trigger: '8' },
-        { value: 'no', label: 'NO, I did not', trigger: '9' },
+        { value: 'yes', label: 'YES, I do', trigger: '8' },
+        { value: 'no', label: "NO, I don't", trigger: '9' },
       ],
     },
     {
@@ -527,13 +529,13 @@ const FindYourVoice = () => {
                 style={{ height: 220, backgroundColor: colors.effectOne }}
                 activeDotColor={colors.white}
                 dotColor="rgba(0,0,0,0.2)"
-                nextButton={(
+                nextButton={
                   <Icon
                     name="chevron-right"
                     size={26}
                     color="rgba(0,0,0,0.2)"
                   />
-                )}
+                }
                 prevButton={
                   <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
                 }
@@ -582,12 +584,13 @@ const FindYourVoice = () => {
       id: 'restart option a',
       options: [
         { value: 'A', label: 'Restart', trigger: 'injury prevention' },
-        { value: 'B', label: 'Racist Incident', trigger: 'racist incident' },
         {
-          value: 'C',
-          label: 'Reporting & Filing an Injury',
+          value: 'B',
+          label: 'Injury At Work',
           trigger: 'reporting injury',
         },
+        { value: 'C', label: 'Racist Incident', trigger: 'racist incident' },
+
         { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },
@@ -894,14 +897,15 @@ const FindYourVoice = () => {
         { value: 'A', label: 'Restart', trigger: 'racist incident' },
         {
           value: 'B',
-          label: 'Reporting & Filing an Injury',
-          trigger: 'reporting injury',
-        },
-        {
-          value: 'C',
           label: 'Injury Prevention & Training',
           trigger: 'injury prevention',
         },
+        {
+          value: 'A',
+          label: 'Injury At Work',
+          trigger: 'reporting injury',
+        },
+
         { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },
@@ -946,9 +950,14 @@ const FindYourVoice = () => {
     {
       id: '9b',
       options: [
-        { value: 'yes', label: 'YES, I did', trigger: '10b' },
-        { value: 'no', label: 'NO, I did not', trigger: '30b' },
+        { value: 'yes', label: 'YES, I do', trigger: 'see a doctor' },
+        { value: 'no', label: "NO, I don't", trigger: '30b' },
       ],
+    },
+    {
+      id: 'see a doctor',
+      message: 'If you are hurt at work, you should see a doctor.',
+      trigger: '10b',
     },
 
     {
@@ -1499,12 +1508,13 @@ const FindYourVoice = () => {
       id: 'restart option c',
       options: [
         { value: 'A', label: 'Restart', trigger: 'reporting injury' },
+        { value: 'B', label: 'Racist Incident', trigger: 'racist incident' },
         {
-          value: 'B',
+          value: 'C',
           label: 'Injury Prevention & Training',
           trigger: 'injury prevention',
         },
-        { value: 'C', label: 'Racist Incident', trigger: 'racist incident' },
+
         { value: 'D', label: 'Quit', trigger: 'end_options' },
       ],
     },

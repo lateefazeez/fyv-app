@@ -9,6 +9,7 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
   return (
     <ChatBot
       {...props}
+      handleEnd={handleEnd}
       steps={steps}
       userAvatar="https://i.ibb.co/yVfjxZ1/user-icon.png"
       botAvatar="https://i.ibb.co/9Nz0rZb/logo-green-icon.png"
