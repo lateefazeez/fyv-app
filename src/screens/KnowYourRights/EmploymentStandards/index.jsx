@@ -31,8 +31,8 @@ const EmploymentStandards = () => {
         <Heading>Employment Standards</Heading>
 
         <Paragraph>
-          Workers and employers in Alberta must follow Employment Standards
-          rules.
+          Workers and employers in Alberta must follow the Employment Standards
+          Code and Employment Standards Regulation.
         </Paragraph>
         <Paragraph>
           The Employment Standards Code creates Alberta’s minimum standards of
@@ -48,7 +48,8 @@ const EmploymentStandards = () => {
         <Paragraph>
           Employment standards can be complicated. If you are confused about
           things like being wrongfully fired, or are not being paid correctly,
-          call Alberta Employment Standards to find out more.
+          call Alberta Employment Standards to find out more. If they don’t know
+          the answer, they will point you in the right direction.
         </Paragraph>
 
         <ResourceCard
@@ -61,7 +62,7 @@ const EmploymentStandards = () => {
           }}
         />
 
-        <Paragraph>
+        <Paragraph style={{ marginTop: 16 }}>
           Employment Standards apply to most workers. People who work in some
           fields such as live-in workers, truckers, farm workers, and
           firefighters have their own set of rules.

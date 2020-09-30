@@ -69,7 +69,7 @@ const slide04 = index => {
         <Text style={styles.textBold}>FREE FROM REPRISAL</Text>
       </View>
       <Text style={styles.textDetail}>
-        for using our Health and Safety rights.
+        (disciplined or fired) for using our Health and Safety rights.
       </Text>
     </View>
   );

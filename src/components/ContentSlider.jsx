@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from 'config/colors.json';
 
-const ContentSlider = ({ slides }) => (
+const ContentSlider = ({ slides, style }) => (
   <Swiper
-    style={{ height: 400 }}
+    style={[{ height: 400 }, style]}
     activeDotColor={colors.darkGrey}
     dotColor={colors.transpGrey}
     nextButton={

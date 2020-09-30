@@ -10,21 +10,6 @@ import colors from 'config/colors.json';
 const slide01 = index => {
   return (
     <View key={index} style={styles.container}>
-      <Image style={styles.image} source={PhysicalImage} />
-      <View style={styles.headline}>
-        <Text style={styles.textBold}>Physical</Text>
-      </View>
-      <Text style={styles.textDetail}>
-        Includes using tools all day long, fatigue, being hurt by tools,
-        falling, and being burned.
-      </Text>
-    </View>
-  );
-};
-
-const slide02 = index => {
-  return (
-    <View key={index} style={styles.container}>
       <Image style={styles.image} source={BiologicalImage} />
       <View style={styles.headline}>
         <Text style={styles.textBold}>Biological</Text>
@@ -37,7 +22,7 @@ const slide02 = index => {
   );
 };
 
-const slide03 = index => {
+const slide02 = index => {
   return (
     <View key={index} style={styles.container}>
       <Image style={styles.image} source={ChemicalImage} />
@@ -46,6 +31,21 @@ const slide03 = index => {
       </View>
       <Text style={styles.textDetail}>
         Includes cleaning products, paint materials, and toxic chemicals.
+      </Text>
+    </View>
+  );
+};
+
+const slide03 = index => {
+  return (
+    <View key={index} style={styles.container}>
+      <Image style={styles.image} source={PhysicalImage} />
+      <View style={styles.headline}>
+        <Text style={styles.textBold}>Physical</Text>
+      </View>
+      <Text style={styles.textDetail}>
+        Includes using tools all day long, fatigue, being hurt by tools,
+        falling, and being burned.
       </Text>
     </View>
   );

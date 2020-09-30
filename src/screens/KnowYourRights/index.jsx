@@ -37,7 +37,8 @@ const KnowYourRights = () => {
             into consideration.
           </Paragraph>
           <Paragraph>
-            Your safety at work is protected by 3 pieces of legislation (laws):
+            Your safety at work is protected by three pieces of legislation
+            (laws):
           </Paragraph>
 
           <BasicButton

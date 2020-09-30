@@ -34,11 +34,11 @@ const Ohs = () => {
         <Paragraph>
           Most workers in Alberta are protected under the Alberta Health and
           Safety Act, Regulation and Code. Some workers, such as federal
-          workers, live in care-givers, or farm workers may have their own
+          workers, live in caregivers, or farm workers may have their own
           separate laws.
         </Paragraph>
         <Paragraph>
-          These laws are the minimum standards for protecting workers, and
+          These laws are the minimum standards for protecting workers and
           involve both workers and employers.
         </Paragraph>
 

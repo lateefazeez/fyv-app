@@ -25,35 +25,22 @@ const CovidInfo = () => (
       <View
         style={{
           paddingHorizontal: 24,
+          paddingBottom: 80,
         }}
       >
         <Heading>COVID-19 Information</Heading>
-
         <Paragraph>
-          Due to COVID-19, there is a pandemic in Canada that can affect
-          workers' safety.
+          Due to COVID-19, there is a pandemic in Canada. COVID-19 affects
+          worker safety.
         </Paragraph>
-
         <Paragraph>
           As a workplace hazard, it is called a biological hazard. Although
           employers must make work safe for workers during this time, many
           workers, such as health care aides, are at more risk because of
           workplace contact and poor safety rules.
         </Paragraph>
-        <ExternalRefButton
-          icon="link-variant"
-          onPress={async () => {
-            await WebBrowser.openBrowserAsync(
-              'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html',
-            );
-          }}
-          style={{ marginBottom: 24 }}
-        >
-          Read More
-        </ExternalRefButton>
-
         <Subheading>What if I test positive for COVID-19?</Subheading>
-        <View style={{ paddingHorizontal: 24 }}>
+        <View style={{ paddingLeft: 16 }}>
           <Unorderedlist>
             <Paragraph style={{ fontWeight: 'bold' }}>
               You cannot lose your job because of COVID-19.
@@ -62,19 +49,20 @@ const CovidInfo = () => (
 
           <Unorderedlist>
             <Paragraph>
-              If you have COVID-19, you should tell your manager.
+              If you have COVID-19, you should tell your employer because it
+              affects the safety of other people you work with..
             </Paragraph>
           </Unorderedlist>
 
           <Unorderedlist>
             <Paragraph>
-              You should also stay home and follow the advice of Alberta Health
+              You should stay home and follow the advice of Alberta Health
               Services by calling 811.
             </Paragraph>
           </Unorderedlist>
 
           <Unorderedlist>
-            <Paragraph>You must also isolate for 14 days.</Paragraph>
+            <Paragraph>You must isolate for 14 days.</Paragraph>
           </Unorderedlist>
 
           <Unorderedlist>
@@ -83,10 +71,13 @@ const CovidInfo = () => (
             </Paragraph>
           </Unorderedlist>
         </View>
-
         <Paragraph>
-          If you are exposed to COVID-19 while at work, please refer this fact
-          sheet.
+          If you were exposed to COVID-19 while at work, you may file WCB
+          paperwork and apply for paid leave.
+        </Paragraph>
+        <Paragraph>
+          For more information, please refer to the following fact sheet and
+          additional documentation:
         </Paragraph>
         <ExternalRefButton
           icon="file-download"
@@ -98,10 +89,16 @@ const CovidInfo = () => (
         >
           COVID-19 Fact Sheet
         </ExternalRefButton>
-        <Paragraph style={{ marginTop: 20 }}>
-          More information on COVID-19 leave in Alberta and pay can be found
-          below.
-        </Paragraph>
+        <ExternalRefButton
+          icon="link-variant"
+          onPress={async () => {
+            await WebBrowser.openBrowserAsync(
+              'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html',
+            );
+          }}
+        >
+          Rights and Responsibilities
+        </ExternalRefButton>
         <ExternalRefButton
           icon="link-variant"
           onPress={async () => {
@@ -110,7 +107,7 @@ const CovidInfo = () => (
             );
           }}
         >
-          COVID-19 Leave in Alberta
+          COVID-19 Leave and Pay
         </ExternalRefButton>
       </View>
     </ScrollView>

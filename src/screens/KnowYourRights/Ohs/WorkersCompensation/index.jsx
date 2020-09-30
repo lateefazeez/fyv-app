@@ -61,13 +61,11 @@ const WorkersCompensation = () => {
               insurance that applies to most workplaces.
             </Paragraph>
             <Paragraph>
-              In the case of injury, employers need to file their own report to
-              WCB. Employers also have a responsibility to help you with your
-              paperwork. However, there are cases where employers do not help or
-              discourage workers from filing paperwork. If this is the case, ask
-              a trusted coworker to help you. It is your right to report an
-              injury, and reporting an injury is needed to claim any injury
-              benefits.
+              Employers have a responsibility to help you with your paperwork.
+              However, there are cases where employers do not help or discourage
+              workers from filing paperwork. If this is the case, ask a trusted
+              co-worker to help you. It is your right to report an injury, and
+              reporting an injury is needed to claim any injury benefits.
             </Paragraph>
             <Paragraph>
               Confused? Don’t be afraid to call WCB. If they don’t know the

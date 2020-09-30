@@ -13,23 +13,23 @@ const slides = [
   },
   {
     key: 'two',
-    title: 'Learn Faster and Easier',
+    title: 'Learning Made Easier',
     text:
-      'Trouble understanding difficult terms?\n\nSimply tap a word for its definition or look it up inside our glossary.',
+      'Confused about the English here?\n\nSimply tap a word for its definition or look it up inside our glossary. Talk to someone you trust who can help you translate.',
     image: imgIntro02,
   },
   {
     key: 'three',
     title: 'Interactive Learning',
     text:
-      'Be guided through different workplace scenarios to learn your options when faced with a problem, and be able to make an informed decision.',
+      'Be guided through different workplace scenarios to learn your options when faced with a problem and be able to make an informed decision.',
     image: imgIntro03,
   },
   {
     key: 'four',
     title: 'Disclaimer',
     text:
-      'The purpose of this app is solely to educate workers about workplace health and safety regulations, general advice, guidance on your rights, and the services available to you.\n\nConfused about the English here? Talk to someone you trust who can help you translate.\n\nNone of the information provided is intended to be used in a legal way.',
+      'The purpose of this app is solely to educate workers about workplace health and safety regulations, general advice, guidance on your rights, and the services available to you. None of the information provided is intended to be used for legal purposes. None of the information provided is intended to be used in a legal way.\n\nThis app is only available in English.',
     image: imgIntro04,
   },
 ];

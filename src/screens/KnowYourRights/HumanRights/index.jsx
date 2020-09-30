@@ -28,12 +28,12 @@ const HumanRights = () => {
       >
         <Heading>Human Rights</Heading>
 
-        <Paragraph>
+        <Paragraph style={{ marginBottom: 0 }}>
           In addition to workplace safety, hazards, rights, and standards,
           Alberta has legislation that relates to the rights of all people,
           regardless of background such as ethnocultural group, source of
           income, participation in a labour union, gender, age, sexual
-          orientation, or immigration status:
+          orientation, or immigration status.
         </Paragraph>
 
         <ExternalRefButton
@@ -43,12 +43,12 @@ const HumanRights = () => {
               'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
             )
           }
-          style={{ marginBottom: 24 }}
+          style={{ marginBottom: 36 }}
         >
           Alberta Human Rights
         </ExternalRefButton>
 
-        <Paragraph>
+        <Paragraph style={{ marginBottom: 16 }}>
           Human Rights in Alberta relate to the idea that everyone should be
           free from discrimination, and applies to employers and workers. In
           cases of human rights violations specific steps need to be taken.

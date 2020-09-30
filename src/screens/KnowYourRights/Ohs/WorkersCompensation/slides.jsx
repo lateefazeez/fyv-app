@@ -8,14 +8,10 @@ export const slide01 = index => {
       key={index}
       style={[styles.container, { backgroundColor: colors.effectOne }]}
     >
-      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
-        <Text style={styles.text}>1</Text>
+        <Text style={styles.headlineText}>1</Text>
       </View>
-      <Text style={styles.textDetail}>
-        Let your immediate supervisor know that you are uncomfortable and/or
-        unsafe, and clearly explain why.
-      </Text>
+      <Text style={styles.textDetail}>Tell your employer.</Text>
     </View>
   );
 };
@@ -26,13 +22,11 @@ export const slide02 = index => {
       key={index}
       style={[styles.container, { backgroundColor: colors.effectOne }]}
     >
-      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
-        <Text style={styles.text}>2</Text>
+        <Text style={styles.headlineText}>2</Text>
       </View>
       <Text style={styles.textDetail}>
-        Give your employer/supervisor a chance and a reasonable timeline to
-        provide you with training, and /or make the work safe.
+        Apply any First Aid and tell your health care provider.
       </Text>
     </View>
   );
@@ -44,13 +38,14 @@ export const slide03 = index => {
       key={index}
       style={[styles.container, { backgroundColor: colors.effectOne }]}
     >
-      {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
-        <Text style={styles.text}>3</Text>
+        <Text style={styles.headlineText}>3</Text>
       </View>
       <Text style={styles.textDetail}>
-        If you still do not know what to do and/or if the work is still unsafe,
-        you have the right to refuse the work without reprisal (consequences).
+        Tell the Workers’ Compensation Board.
+      </Text>
+      <Text style={styles.textSmall}>
+        (You can file a report online by clicking the link below)
       </Text>
     </View>
   );
@@ -62,43 +57,39 @@ export default slides;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: 24,
+    paddingTop: 100,
     marginBottom: 48,
   },
   headline: {
-    width: 50,
-    height: 50,
+    width: 48,
+    height: 48,
     borderColor: colors.white,
-    borderWidth: 1,
+    borderWidth: 3,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 50,
+    borderRadius: 24,
+    marginBottom: 16,
   },
-  headlineLonger: {
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  textBold: {
+  headlineText: {
     color: colors.white,
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
+    marginTop: -2,
   },
   textDetail: {
     color: colors.white,
-    fontSize: 16,
+    fontSize: 24,
+    fontWeight: 'bold',
     textAlign: 'center',
     width: '75%',
-    marginTop: 20,
-    paddingBottom: 28,
   },
-  text: {
+  textSmall: {
     color: colors.white,
-    fontSize: 28,
-  },
-  image: {
-    height: 120,
-    resizeMode: 'contain',
+    fontSize: 14,
+    marginTop: 16,
+    textAlign: 'center',
+    width: '50%',
   },
 });
