@@ -52,12 +52,12 @@ const BasicRights = () => (
             color={colors.red}
             style={styles.icon}
           />
-          <Paragraph>
+          <Paragraph style={{ color: colors.white }}>
             Workplaces in Alberta have been affected by COVID-19. This has left
             many workers wondering how they can protect themselves from the
             virus.
           </Paragraph>
-          <Paragraph>
+          <Paragraph style={{ color: colors.white }}>
             Workers continue to have the Rights to refuse dangerous work and be
             free from reprisal, but it is important to follow the correct
             process under OHS law.
@@ -83,7 +83,7 @@ const BasicRights = () => (
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.darkerGrey,
     alignItems: 'center',
     marginBottom: 24,
     paddingHorizontal: 24,

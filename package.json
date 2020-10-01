@@ -28,6 +28,7 @@
     "react-native-chatbot-expo": "https://github.com/jzarca01/react-native-chatbot-expo",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-paper": "^4.0.1",
+    "react-native-parsed-text": "^0.0.22",
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-safe-area-view": "^1.1.1",
