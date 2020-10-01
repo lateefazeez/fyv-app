@@ -19,6 +19,8 @@ import slides from './slides';
 const TypesOfHazards = () => {
   const testParagraph =
     'In Alberta, there are 4 [hazards] categories that relate to Alberta workplace health and safety.';
+  const highlightedComplaint =
+    'The [complaint] can be related to you or another.';
 
   const renderGlossary = (matchingString, matches) => {
     const pattern = /\[(.*?)\]/i;
@@ -50,7 +52,7 @@ const TypesOfHazards = () => {
             parse={[
               {
                 pattern: /\[(.*?)\]/i,
-                style: { fontWeight: 'bold', color: 'red' },
+                style: { fontWeight: 'bold', color: colors.primary },
                 onPress: testAlert,
                 renderText: renderGlossary,
               },
@@ -86,7 +88,26 @@ const TypesOfHazards = () => {
             Alberta OHS online or by phone.
           </Paragraph>
 
-          <Paragraph>The complaint can be related to you or another.</Paragraph>
+          <ParsedText
+            style={{
+              color: colors.darkerGrey,
+              lineHeight: 24,
+              fontSize: 16,
+              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
+              marginBottom: 24,
+              textAlign: 'justify',
+            }}
+            parse={[
+              {
+                pattern: /\[(.*?)\]/i,
+                style: { fontWeight: 'bold', color: colors.primary },
+                onPress: testAlert,
+                renderText: renderGlossary,
+              },
+            ]}
+          >
+            {highlightedComplaint}
+          </ParsedText>
 
           <ResourceCard
             title="Occupational Health & Safety Contact Centre"
