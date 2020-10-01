@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import ParsedText from 'react-native-parsed-text';
-import { testAlert } from 'utils';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import BasicButton from 'components/BasicButton';
@@ -16,15 +14,6 @@ import colors from 'config/colors.json';
 
 const KnowYourRights = () => {
   const navigation = useNavigation();
-
-  const highlighted =
-    'Your safety at work is protected by three pieces of [legislation]:';
-
-  const renderGlossary = (matchingString, matches) => {
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-    return `${match[1]}`;
-  };
 
   return (
     <>
@@ -47,26 +36,9 @@ const KnowYourRights = () => {
             A safe workplace takes your physical, mental, and emotional safety
             into consideration.
           </Paragraph>
-          <ParsedText
-            style={{
-              color: colors.darkerGrey,
-              lineHeight: 24,
-              fontSize: 16,
-              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-              marginBottom: 24,
-              textAlign: 'justify',
-            }}
-            parse={[
-              {
-                pattern: /\[(.*?)\]/i,
-                style: { fontWeight: 'bold', color: colors.primary },
-                onPress: testAlert,
-                renderText: renderGlossary,
-              },
-            ]}
-          >
-            {highlighted}
-          </ParsedText>
+          <Paragraph>
+            Your safety at work is protected by three pieces of [legislation]:
+          </Paragraph>
 
           <BasicButton
             onPress={() => {

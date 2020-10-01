@@ -1,11 +1,32 @@
 import React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
+import ParsedText from 'react-native-parsed-text';
+import { testAlert } from 'utils';
 
 import colors from 'config/colors.json';
 
-function Paragraph({ children, style }) {
-  return <Text style={[styles.text, style]}>{children}</Text>;
-}
+const Paragraph = ({ children, style }) => {
+  const renderGlossary = (matchingString, matches) => {
+    const pattern = /\[(.*?)\]/i;
+    const match = matchingString.match(pattern);
+    return `${match[1]}`;
+  };
+  return (
+    <ParsedText
+      style={[styles.text, style]}
+      parse={[
+        {
+          pattern: /\[(.*?)\]/i,
+          style: { fontWeight: 'bold', color: colors.primary },
+          onPress: testAlert,
+          renderText: renderGlossary,
+        },
+      ]}
+    >
+      {children}
+    </ParsedText>
+  );
+};
 
 const styles = StyleSheet.create({
   text: {

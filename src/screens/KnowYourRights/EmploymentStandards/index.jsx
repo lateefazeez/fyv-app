@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-import ParsedText from 'react-native-parsed-text';
-import { testAlert } from 'utils';
 
 import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
@@ -15,16 +13,6 @@ import colors from 'config/colors.json';
 import headerImage from 'assets/headers/employmentstandards.png';
 
 const EmploymentStandards = () => {
-  const highlightedParagraph1 =
-    'It also establishes the steps to follow in cases where employment standards have not been met, such as wrongful [termination] of employment.';
-
-  const highlightedParagraph2 =
-    'Employment standards can be [complicated]. If you are confused about things like being wrongfully fired, or are not being paid correctly, call Alberta Employment Standards to find out more. If they don’t know the answer, they will point you in the right direction.';
-  const renderGlossary = (matchingString, matches) => {
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-    return `${match[1]}`;
-  };
   return (
     <ScrollView
       style={{
@@ -52,46 +40,17 @@ const EmploymentStandards = () => {
           the workplace. These include wages, hours of work, overtime, vacation
           and holidays, leaves, and termination of employment.
         </Paragraph>
-        <ParsedText
-          style={{
-            color: colors.darkerGrey,
-            lineHeight: 24,
-            fontSize: 16,
-            fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-            marginBottom: 24,
-            textAlign: 'justify',
-          }}
-          parse={[
-            {
-              pattern: /\[(.*?)\]/i,
-              style: { fontWeight: 'bold', color: colors.primary },
-              onPress: testAlert,
-              renderText: renderGlossary,
-            },
-          ]}
-        >
-          {highlightedParagraph1}
-        </ParsedText>
-        <ParsedText
-          style={{
-            color: colors.darkerGrey,
-            lineHeight: 24,
-            fontSize: 16,
-            fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-            marginBottom: 24,
-            textAlign: 'justify',
-          }}
-          parse={[
-            {
-              pattern: /\[(.*?)\]/i,
-              style: { fontWeight: 'bold', color: colors.primary },
-              onPress: testAlert,
-              renderText: renderGlossary,
-            },
-          ]}
-        >
-          {highlightedParagraph2}
-        </ParsedText>
+        <Paragraph>
+          It also establishes the steps to follow in cases where employment
+          standards have not been met, such as wrongful [termination] of
+          employment.
+        </Paragraph>
+        <Paragraph>
+          Employment standards can be [complicated]. If you are confused about
+          things like being wrongfully fired, or are not being paid correctly,
+          call Alberta Employment Standards to find out more. If they don’t know
+          the answer, they will point you in the right direction.
+        </Paragraph>
 
         <ResourceCard
           title="Employment Standards Contact Centre"

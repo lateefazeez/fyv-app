@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
-import ParsedText from 'react-native-parsed-text';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
@@ -11,23 +10,10 @@ import ContentSlider from 'components/ContentSlider';
 
 import headerImage from 'assets/headers/typesofhazards.png';
 
-import { testAlert } from 'utils';
-
 import colors from 'config/colors.json';
 import slides from './slides';
 
 const TypesOfHazards = () => {
-  const testParagraph =
-    'In Alberta, there are 4 [hazards] categories that relate to Alberta workplace health and safety.';
-  const highlightedComplaint =
-    'The [complaint] can be related to you or another.';
-
-  const renderGlossary = (matchingString, matches) => {
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-    return `${match[1]}`;
-  };
-
   return (
     <>
       <ScrollView
@@ -40,26 +26,10 @@ const TypesOfHazards = () => {
 
         <View style={{ paddingHorizontal: 24 }}>
           <Heading>Types of Hazards</Heading>
-          <ParsedText
-            style={{
-              color: colors.darkerGrey,
-              lineHeight: 24,
-              fontSize: 16,
-              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-              marginBottom: 24,
-              textAlign: 'justify',
-            }}
-            parse={[
-              {
-                pattern: /\[(.*?)\]/i,
-                style: { fontWeight: 'bold', color: colors.primary },
-                onPress: testAlert,
-                renderText: renderGlossary,
-              },
-            ]}
-          >
-            {testParagraph}
-          </ParsedText>
+          <Paragraph>
+            In Alberta, there are 4 [hazards] categories that relate to Alberta
+            workplace health and safety.
+          </Paragraph>
           <Paragraph>
             Employers must make workplaces safe from these hazards.
           </Paragraph>
@@ -88,26 +58,9 @@ const TypesOfHazards = () => {
             Alberta OHS online or by phone.
           </Paragraph>
 
-          <ParsedText
-            style={{
-              color: colors.darkerGrey,
-              lineHeight: 24,
-              fontSize: 16,
-              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-              marginBottom: 24,
-              textAlign: 'justify',
-            }}
-            parse={[
-              {
-                pattern: /\[(.*?)\]/i,
-                style: { fontWeight: 'bold', color: colors.primary },
-                onPress: testAlert,
-                renderText: renderGlossary,
-              },
-            ]}
-          >
-            {highlightedComplaint}
-          </ParsedText>
+          <Paragraph>
+            The [complaint] can be related to you or another.
+          </Paragraph>
 
           <ResourceCard
             title="Occupational Health & Safety Contact Centre"
