@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     margin: 24,
-    width: '50%',
+    width: '60%',
   },
   ripple: {
     position: 'absolute',

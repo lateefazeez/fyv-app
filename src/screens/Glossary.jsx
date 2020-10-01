@@ -153,7 +153,7 @@ const Item = ({ title }) => {
                 size={24}
                 color={colors.darkGrey}
                 onPress={() =>
-                  Speech.speak(title.word, { pitch: 0.5, rate: 0.5 })
+                  Speech.speak(title.word, { pitch: 0.9, rate: 0.6 })
                 }
               />
             </View>
