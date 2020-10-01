@@ -1,5 +1,6 @@
 import React from 'react';
 import ChatBot from 'react-native-chatbot-expo';
+import { Asset } from 'expo-asset';
 
 import colors from 'config/colors.json';
 
@@ -11,8 +12,8 @@ const FyvChatBot = ({ steps, handleEnd, ...props }) => {
       {...props}
       handleEnd={handleEnd}
       steps={steps}
-      userAvatar="https://i.ibb.co/yVfjxZ1/user-icon.png"
-      botAvatar="https://i.ibb.co/9Nz0rZb/logo-green-icon.png"
+      userAvatar={Asset.fromModule(require('assets/icons/user.png')).uri}
+      botAvatar={Asset.fromModule(require('assets/icons/bot.png')).uri}
       // handleEnd={handleEnd}
       userDelay={200}
       botDelay={1000}

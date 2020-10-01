@@ -10,7 +10,7 @@ import Subheading from 'components/Subheading';
 import ExternalRefButton from 'components/ExternalRefButton';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 
-import headerImage from 'assets/covid.png';
+import headerImage from 'assets/headers/covid.png';
 import colors from 'config/colors.json';
 
 const CovidInfo = () => (
@@ -90,7 +90,7 @@ const CovidInfo = () => (
           COVID-19 Fact Sheet
         </ExternalRefButton>
         <ExternalRefButton
-          icon="link-variant"
+          icon="web"
           onPress={async () => {
             await WebBrowser.openBrowserAsync(
               'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html',
@@ -100,7 +100,7 @@ const CovidInfo = () => (
           Rights and Responsibilities
         </ExternalRefButton>
         <ExternalRefButton
-          icon="link-variant"
+          icon="web"
           onPress={async () => {
             await WebBrowser.openBrowserAsync(
               'https://www.alberta.ca/covid-19-leave.aspx',

@@ -1,21 +1,31 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
-import * as WebBrowser from 'expo-web-browser';
+import { View, ScrollView, Text } from 'react-native';
+import ParsedText from 'react-native-parsed-text';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
-import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 import ContentSlider from 'components/ContentSlider';
 
-import headerImage from 'assets/hazards.png';
+import headerImage from 'assets/headers/typesofhazards.png';
+
+import { testAlert } from 'utils';
 
 import colors from 'config/colors.json';
 import slides from './slides';
 
 const TypesOfHazards = () => {
+  const testParagraph =
+    'In Alberta, there are 4 [hazards] categories that relate to Alberta workplace health and safety.';
+
+  const renderGlossary = (matchingString, matches) => {
+    const pattern = /\[(.*?)\]/i;
+    const match = matchingString.match(pattern);
+    return `${match[1]}`;
+  };
+
   return (
     <>
       <ScrollView
@@ -28,10 +38,26 @@ const TypesOfHazards = () => {
 
         <View style={{ paddingHorizontal: 24 }}>
           <Heading>Types of Hazards</Heading>
-          <Paragraph>
-            In Alberta, there are 4 hazards categories that relate to workplace
-            health and safety.
-          </Paragraph>
+          <ParsedText
+            style={{
+              color: colors.darkerGrey,
+              lineHeight: 24,
+              fontSize: 16,
+              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
+              marginBottom: 24,
+              textAlign: 'justify',
+            }}
+            parse={[
+              {
+                pattern: /\[(.*?)\]/i,
+                style: { fontWeight: 'bold', color: 'red' },
+                onPress: testAlert,
+                renderText: renderGlossary,
+              },
+            ]}
+          >
+            {testParagraph}
+          </ParsedText>
           <Paragraph>
             Employers must make workplaces safe from these hazards.
           </Paragraph>
@@ -45,15 +71,11 @@ const TypesOfHazards = () => {
             paddingBottom: 80,
           }}
         >
-          <Paragraph>
-            Question about Hazards? Contact Alberta OHS. If they don’t know the
-            answer, they will point you in the right direction.
-          </Paragraph>
-
           <ResourceCard
             title="Ask An Expert"
             content={{
-              description: 'Services are free.',
+              description:
+                'Question about Hazards? Contact Alberta OHS. If they don’t know the answer, they will point you in the right direction.',
               phone: '+18664158690',
               website: 'https://www.alberta.ca/ask-expert.aspx',
             }}

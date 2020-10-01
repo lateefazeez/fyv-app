@@ -1,26 +1,29 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { TouchableRipple } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Icon from 'react-native-vector-icons/Ionicons';
 import Constants from 'expo-constants';
+
+import nextButtonImg from 'assets/intro/nextButton.png';
+import doneButtonImg from 'assets/intro/doneButton.png';
 
 import colors from 'config/colors.json';
 import slides from 'config/introSlides';
 
 const doneButton = () => {
   return (
-    <View style={styles.doneButton}>
-      <Icon name="md-checkmark" color={colors.white} size={24} />
-    </View>
+    <TouchableRipple style={styles.doneButton}>
+      <Image source={doneButtonImg} />
+    </TouchableRipple>
   );
 };
 
 const nextButton = () => {
   return (
-    <View style={styles.nextButton}>
-      <Icon name="md-arrow-round-forward" color={colors.white} size={24} />
-    </View>
+    <TouchableRipple style={styles.nextButton}>
+      <Image source={nextButtonImg} />
+    </TouchableRipple>
   );
 };
 
@@ -65,22 +68,16 @@ export default App;
 
 const styles = StyleSheet.create({
   doneButton: {
-    width: 40,
-    height: 40,
-    backgroundColor: colors.primary,
-    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 8,
+    marginRight: -16,
+    marginTop: -32,
   },
   nextButton: {
-    width: 40,
-    height: 40,
-    backgroundColor: colors.primary,
-    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 8,
+    marginRight: -16,
+    marginTop: -32,
     flexDirection: 'row',
   },
   slide: {
@@ -93,6 +90,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: colors.darkgrey,
   },
   slideLowerSection: {
     flex: 1,

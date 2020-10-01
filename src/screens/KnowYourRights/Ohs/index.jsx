@@ -9,7 +9,7 @@ import BasicButton from 'components/BasicButton';
 import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
 
-import headerImage from 'assets/placeholder.png';
+import headerImage from 'assets/headers/ohs.png';
 import colors from 'config/colors.json';
 
 const Ohs = () => {

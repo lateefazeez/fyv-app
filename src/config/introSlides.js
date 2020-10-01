@@ -1,7 +1,7 @@
-import imgIntro01 from 'assets/intro1_img.png';
-import imgIntro02 from 'assets/intro2_img.png';
-import imgIntro03 from 'assets/intro3_img.png';
-import imgIntro04 from 'assets/intro04.png';
+import imgIntro01 from 'assets/intro/welcome.png';
+import imgIntro02 from 'assets/intro/learnfaster.png';
+import imgIntro03 from 'assets/intro/interactivelearning.png';
+import imgIntro04 from 'assets/intro/disclaimer.png';
 
 const slides = [
   {

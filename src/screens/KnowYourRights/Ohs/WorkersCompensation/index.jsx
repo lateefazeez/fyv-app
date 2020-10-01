@@ -10,7 +10,7 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import ExternalRefButton from 'components/ExternalRefButton';
 import ContentSlider from 'components/ContentSlider';
 
-import headerImage from 'assets/placeholder.png';
+import headerImage from 'assets/headers/wcb.png';
 
 import colors from 'config/colors.json';
 import slides from './slides';

@@ -10,10 +10,10 @@ import Subheading from 'components/Subheading';
 
 import colors from 'config/colors.json';
 
-import Bvc from 'assets/bvc_school_of_global_access.png';
-import Alberta from 'assets/Alberta-Government-Logo.png';
-import AWHC from 'assets/awhc.png';
-import Sodexo from 'assets/sodexo.png';
+import Bvc from 'assets/logos/bvc.png';
+import Alberta from 'assets/logos/alberta.png';
+import AWHC from 'assets/logos/awhc.png';
+import Sodexo from 'assets/logos/sodexo.png';
 
 const Disclaimer = () => {
   return (
