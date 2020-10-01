@@ -36,8 +36,8 @@ const KnowYourRights = () => {
             Your safety at work is protected by three pieces of [legislation]:
           </Paragraph>
         </View>
-        <View style={{ paddingBottom: 64 }}>
-          <ContentSlider autoplay style={{ height: 280 }} slides={slides} />
+        <View style={{ paddingBottom: 40 }}>
+          <ContentSlider autoplay style={{ height: 256 }} slides={slides} />
         </View>
       </ScrollView>
       <FloatingButtonFYV />
