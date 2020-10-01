@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Linking } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
 import PageHeader from 'components/PageHeader';
@@ -10,7 +10,7 @@ import ResourceCard from 'components/ResourceCard';
 
 import colors from 'config/colors.json';
 
-import headerImage from 'assets/es.png';
+import headerImage from 'assets/headers/employmentstandards.png';
 
 const EmploymentStandards = () => {
   return (

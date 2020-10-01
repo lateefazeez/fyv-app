@@ -6,7 +6,7 @@ import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 
-import headerImage from 'assets/resources_main.png';
+import headerImage from 'assets/headers/resources.png';
 import data from 'config/resources.json';
 
 import colors from 'config/colors.json';

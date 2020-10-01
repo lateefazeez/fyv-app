@@ -16,9 +16,8 @@ const RoundButton = ({ type, target, ...props }) => {
 
   return (
     <IconButton
-      color={colors.white}
+      color={colors.primary}
       size={24}
-      style={{ backgroundColor: colors.primary }}
       onPress={handlePress}
       icon={(type === 'web' && 'web') || (type === 'phone' && 'phone')}
       {...props}

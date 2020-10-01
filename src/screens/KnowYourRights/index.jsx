@@ -8,7 +8,7 @@ import PageHeader from 'components/PageHeader';
 import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
 
-import headerImage from 'assets/kyr.png';
+import headerImage from 'assets/headers/knowyourrights.png';
 
 import colors from 'config/colors.json';
 

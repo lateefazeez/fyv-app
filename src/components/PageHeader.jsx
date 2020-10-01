@@ -5,7 +5,7 @@ import colors from 'config/colors.json';
 
 function PageHeader({ source }) {
   return (
-    <View style={styles.header}>
+    <View style={styles.container}>
       <Image source={source} style={styles.image} />
     </View>
   );
@@ -14,13 +14,13 @@ function PageHeader({ source }) {
 export default PageHeader;
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
     backgroundColor: colors.primary,
     height: 240,
   },
   image: {
     width: '100%',
     height: '100%',
-    resizeMode: 'contain',
+    resizeMode: 'cover',
   },
 });

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
 
-import PsychosocialImage from 'assets/psy_hazard.png';
-import BiologicalImage from 'assets/bio_hazard.png';
-import PhysicalImage from 'assets/phy_hazard.png';
-import ChemicalImage from 'assets/chem_hazard.png';
+import PsychosocialImage from 'assets/sliders/psychosocial.png';
+import BiologicalImage from 'assets/sliders/biological.png';
+import PhysicalImage from 'assets/sliders/physical.png';
+import ChemicalImage from 'assets/sliders/chemical.png';
 import colors from 'config/colors.json';
 
 const slide01 = index => {

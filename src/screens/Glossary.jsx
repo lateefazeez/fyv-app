@@ -7,13 +7,15 @@ import {
   SectionList,
 } from 'react-native';
 import * as Speech from 'expo-speech';
-import { Searchbar } from 'react-native-paper';
+import { Searchbar, IconButton } from 'react-native-paper';
 import { RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
+
+import data from 'config/glossary.json';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,7 +31,7 @@ const Search = () => {
   );
 };
 
-const listData = [
+/* const listData = [
   {
     title: 'B',
     data: ['Breaches'],
@@ -78,15 +80,15 @@ const listData = [
     title: 'W',
     data: ['Warrant'],
   },
-];
+]; */
 
-const sortedData = listData.map(item => ({
+/* const sortedData = data.map(item => ({
   title: item.title,
   data: item.data.sort(),
-}));
+})); */
 
 const Item = ({ title }) => {
-  const [hiddenDescription, setHiddenDescription] = useState(false);
+  const [hiddenDescription, setHiddenDescription] = useState(true);
 
   return (
     <View
@@ -111,12 +113,17 @@ const Item = ({ title }) => {
               paddingVertical: 16,
             }}
           >
-            <Text style={styles.itemTitle}>{title}</Text>
-            <Icon name="chevron-down" size={24} color={colors.darkGrey} />
+            <Text style={styles.itemTitle}>{title.word}</Text>
+
+            <Icon
+              name={hiddenDescription ? 'chevron-down' : 'chevron-up'}
+              size={24}
+              color={colors.darkGrey}
+            />
           </View>
         </RectButton>
 
-        {hiddenDescription && (
+        {!hiddenDescription && (
           <View
             style={{
               padding: 24,
@@ -129,28 +136,37 @@ const Item = ({ title }) => {
             <View
               style={{
                 flexDirection: 'row',
-                alignItems: 'flex-start',
+                alignItems: 'center',
               }}
             >
               <Paragraph
                 style={{
-                  color: colors.darkGrey,
                   fontStyle: 'italic',
+                  marginBottom: 0,
                 }}
               >
-                dəˈskripSH(ə)n
+                {title.phonetics}
               </Paragraph>
-              <Icon
+              <IconButton
                 style={{ marginLeft: 8 }}
-                name="volume-high"
+                icon="volume-high"
                 size={24}
                 color={colors.darkGrey}
-                onPress={() => Speech.speak(title, { pitch: 0.5, rate: 0.5 })}
+                onPress={() =>
+                  Speech.speak(title.word, { pitch: 0.5, rate: 0.5 })
+                }
               />
             </View>
-            <Paragraph style={{ fontSize: 14 }}>
-              a spoken or written representation or account of a person, object,
-              or event.
+            <Paragraph
+              style={{
+                fontSize: 14,
+                color: colors.darkGrey,
+              }}
+            >
+              {title.category}
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              {title.description}
             </Paragraph>
           </View>
         )}
@@ -203,7 +219,7 @@ const Glossary = ({ navigation }) => {
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && <Search />}
         <SectionList
-          sections={sortedData}
+          sections={data}
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (

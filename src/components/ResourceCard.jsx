@@ -11,9 +11,11 @@ import colors from 'config/colors.json';
 const ResourceCard = ({ title, content }) => {
   return (
     <View style={styles.container}>
-      <Subheading>{title}</Subheading>
+      <View style={{ paddingHorizontal: 24, paddingTop: 24 }}>
+        <Subheading>{title}</Subheading>
 
-      <Paragraph>{content.description}</Paragraph>
+        <Paragraph>{content.description}</Paragraph>
+      </View>
 
       <View style={styles.buttonsContainer}>
         {content.website && <RoundButton type="web" target={content.website} />}
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    padding: 24,
     borderRadius: 16,
     marginBottom: 16,
     width: '100%',
@@ -54,8 +55,10 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingTop: 16,
+    justifyContent: 'space-evenly',
+    backgroundColor: colors.lightGrey,
+    borderBottomLeftRadius: 16,
+    borderBottomRightRadius: 16,
     borderTopColor: colors.mediumGrey,
     borderTopWidth: 1,
     borderStyle: 'solid',

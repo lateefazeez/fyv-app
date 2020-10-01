@@ -7,7 +7,7 @@ import Heading from 'components/Heading';
 import Paragraph from 'components/Paragraph';
 import ExternalRefButton from 'components/ExternalRefButton';
 
-import headerImage from 'assets/placeholder.png';
+import headerImage from 'assets/headers/humanrights.png';
 import colors from 'config/colors.json';
 
 const HumanRights = () => {

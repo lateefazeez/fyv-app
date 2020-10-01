@@ -3,12 +3,12 @@ import { View, Image, StyleSheet, SafeAreaView } from 'react-native';
 import Constants from 'expo-constants';
 
 import MainScreenButton from 'components/MainScreenButton';
-import KnowYourRightsImage from 'assets/kny_image.png';
-import ResourcesImage from 'assets/res_image.png';
-import FindYourVoiceImage from 'assets/fyv_image.png';
+import KnowYourRightsImage from 'assets/buttons/knowyourrights.png';
+import ResourcesImage from 'assets/buttons/resources.png';
+import FindYourVoiceImage from 'assets/buttons/findyourvoice.png';
 
 import colors from 'config/colors.json';
-import logo from 'assets/logo_white.png';
+import logo from 'assets/logos/white.png';
 
 const Main = () => (
   <SafeAreaView style={styles.container}>

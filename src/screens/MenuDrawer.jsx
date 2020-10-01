@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import colors from 'config/colors.json';
 import items from 'config/menuItems.json';
-import logo from 'assets/logo_white.png';
+import logo from 'assets/logos/white.png';
 
 const getIcon = ({ lib, name, size, color }) => {
   switch (lib) {
