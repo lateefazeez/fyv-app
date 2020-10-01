@@ -38,7 +38,7 @@ const BasicRights = () => {
           </Paragraph>
         </View>
 
-        <ContentSlider slides={slides} />
+        <ContentSlider showsButtons slides={slides} />
 
         <View
           style={{
