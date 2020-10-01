@@ -18,14 +18,6 @@ import colors from 'config/colors.json';
 import slides from './slides';
 
 const BasicRights = () => {
-  const highlighted =
-    'It is not always easy to do so, but if we do not follow these rules there can be serious consequences (such as [undocumented] injuries, or workplaces that remain unsafe).';
-
-  const renderGlossary = (matchingString, matches) => {
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-    return `${match[1]}`;
-  };
   return (
     <>
       <ScrollView style={{ flex: 1, backgroundColor: colors.lightGrey }}>
@@ -51,30 +43,10 @@ const BasicRights = () => {
             cause or participate in harassment, bullying, or violence, and we
             must report unsafe work conditions. This is part of Canadian law.
           </Paragraph>
-          <ParsedText
-            style={{
-              color: colors.darkerGrey,
-              lineHeight: 24,
-              fontSize: 16,
-              fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-              marginBottom: 24,
-              textAlign: 'justify',
-            }}
-            parse={[
-              {
-                pattern: /\[(.*?)\]/i,
-                style: { fontWeight: 'bold', color: colors.primary },
-                onPress: testAlert,
-                renderText: renderGlossary,
-              },
-            ]}
-          >
-            {highlighted}
-          </ParsedText>
           <Paragraph>
             It is not always easy to do so, but if we do not follow these rules
-            there can be serious consequences (such as undocumented injuries, or
-            workplaces that remain unsafe).
+            there can be serious consequences (such as [undocumented] injuries,
+            or workplaces that remain unsafe).
           </Paragraph>
 
           <View style={styles.card}>
