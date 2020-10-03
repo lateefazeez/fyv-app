@@ -1,51 +1,69 @@
 [
   {
     "label": "Home",
-    "iconLib": "MaterialCommunity",
-    "iconName": "home-variant"
+    "icon": {
+      "lib": "MaterialCommunity",
+      "name": "home-variant"
+    }
   },
   {
     "label": "Know Your Rights",
-    "iconLib": "Fa5Icon",
-    "iconName": "hard-hat",
+    "icon": {
+      "lib": "Fa5Icon",
+      "name": "hard-hat"
+    },
     "dropdown": "true"
   },
   {
     "label": "Occupational Health and Safety",
-    "iconLib": "Fa5Icon",
-    "iconName": "hand-holding-heart",
+    "icon": {
+      "lib": "Fa5Icon",
+      "name": "hand-holding-heart"
+    },
     "parentScreen": "Know Your Rights Tabs"
   },
   {
     "label": "Employment Standards",
-    "iconLib": "MaterialCommunity",
-    "iconName": "clock-check-outline",
+    "icon": {
+      "lib": "MaterialCommunity",
+      "name": "clock-check-outline"
+    },
     "parentScreen": "Know Your Rights Tabs"
   },
   {
     "label": "Human Rights",
-    "iconLib": "MaterialCommunity",
-    "iconName": "scale-balance",
+    "icon": {
+      "lib": "MaterialCommunity",
+      "name": "scale-balance"
+    },
     "parentScreen": "Know Your Rights Tabs"
   },
   {
     "label": "Find Your Voice",
-    "iconLib": "MaterialCommunity",
-    "iconName": "comment-processing"
+    "icon": {
+      "lib": "MaterialCommunity",
+      "name": "comment-processing"
+    }
   },
   {
     "label": "Resources",
-    "iconLib": "MaterialIcon",
-    "iconName": "contact-phone"
+    "icon": {
+      "lib": "MaterialIcon",
+      "name": "contact-phone"
+    }
   },
   {
     "label": "Glossary",
-    "iconLib": "MaterialCommunity",
-    "iconName": "book-search"
+    "icon": {
+      "lib": "MaterialCommunity",
+      "name": "book-search"
+    }
   },
   {
     "label": "Disclaimer",
-    "iconLib": "Ionicons",
-    "iconName": "ios-warning"
+    "icon": {
+      "lib": "Ionicons",
+      "name": "ios-warning"
+    }
   }
 ]

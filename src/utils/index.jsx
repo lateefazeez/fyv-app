@@ -9,6 +9,8 @@ export const uuidv4 = () => {
 };
 
 export const testAlert = () => {
+  console.log('Clicked!');
+
   Alert.alert(
     'Clicked!',
     'Clicking OK',
@@ -16,7 +18,7 @@ export const testAlert = () => {
       {
         text: 'Cancel',
         onPress: () => {
-          console.log('Cancel Pressed');
+          console.log('Canceled!');
         },
         style: 'cancel',
       },

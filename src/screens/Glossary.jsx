@@ -141,8 +141,11 @@ const Item = ({ title }) => {
             >
               <Paragraph
                 style={{
+                  color: colors.primary,
                   fontStyle: 'italic',
+                  fontWeight: 'bold',
                   marginBottom: 0,
+                  marginTop: 0,
                 }}
               >
                 {title.phonetics}
@@ -161,6 +164,7 @@ const Item = ({ title }) => {
               style={{
                 fontSize: 14,
                 color: colors.darkGrey,
+                marginTop: 0,
               }}
             >
               {title.category}
