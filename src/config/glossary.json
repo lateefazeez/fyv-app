@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "title": "B",
     "data": [
       {
@@ -219,5 +220,161 @@
         "description": "A legal document that is signed by a judge and gives the police authority to do something"
       }
     ]
+=======
+    "word": "Breaches",
+    "category": "Noun",
+    "description": "A failure to do something that must be done by law",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Complaint",
+    "category": "Noun",
+    "description": "A statement that somebody makes saying that they are not happy about something",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Conduct",
+    "category": "Noun",
+    "description": "A person’s behaviour in a particular place or situation",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Confidential",
+    "category": "Adjective",
+    "description": "Meant to be kept secret and not told to or shared with other people",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Consequence",
+    "category": "Noun",
+    "description": "A result of something that has happened, especially a negative response",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Constitute",
+    "category": "Verb",
+    "description": "To be the parts that together form something.",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Discrimination",
+    "category": "Noun",
+    "description": "The practice of treating a person or a group less fairly than others",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Draining",
+    "category": "Adjective",
+    "description": "Something made weaker/poorer by using up their strength/money",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Ethnocultural",
+    "category": "Adjective",
+    "description": "Relating to a particular ethnic group",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Insufficient",
+    "category": "Adjective",
+    "description": "Not enough",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Isolating",
+    "category": "Adjective",
+    "description": "Separated physically or socially from other people or things",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Legislation",
+    "category": "Noun",
+    "description": "A law or set of laws passed by a parliament",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Male-dominated",
+    "category": "Adjective",
+    "description": "Controlled mainly by or consisting mainly of men",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Maneuver",
+    "category": "Verb",
+    "description": "To control or influence a situation in a way that shows skill",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Manipulation",
+    "category": "Noun",
+    "description": "Behaviour that controls or influences somebody/something, often in a dishonest way so that they do not realize it",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Misogynist",
+    "category": "Adjective",
+    "description": "A person who hates women",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "obligation",
+    "category": "Noun",
+    "description": "The state of being forced to do something because it is your duty, or because of a law",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Overwhelming",
+    "category": "Adjective",
+    "description": "Very great or very strong/powerful",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Rehabilitation",
+    "category": "Noun",
+    "description": "The process of helping someone to have a normal, useful life again after they have been ill",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Reprisal",
+    "category": "Noun",
+    "description": "A violent or aggressive act towards somebody because of something bad that they have done before you",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Standards",
+    "category": "Noun",
+    "description": "A level of quality, especially one that people think is acceptable",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Termination",
+    "category": "Noun",
+    "description": "The act of ending something",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Toxic",
+    "category": "Adjective",
+    "description": "Containing poison; very unpleasant",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Trusted",
+    "category": "Adjective",
+    "description": "Something you can trust",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Undocumented",
+    "category": "Adjective",
+    "description": "Not supported by written evidence",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Warrant",
+    "category": "Noun",
+    "description": "A legal document that is signed by a judge and gives the police authority to do something",
+    "isBookmarked": "false"
+>>>>>>> 16703b4b3f0fac89b56c8df149570e3e6ecaf250
   }
 ]

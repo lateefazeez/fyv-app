@@ -13,171 +13,102 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-import colors from 'config/colors.json';
+import { testAlert } from 'utils';
+import colors from 'config/colors';
+import rawData from 'config/glossary.json';
 
-import data from 'config/glossary.json';
+/* const sortedData = () => {
+  const sections = [];
 
-const Search = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const preSortedData = rawData.map(
+    ({ word, category, description, isBookmarked }) => {
+      const title = word.slice(0).toUpperCase();
 
-  const onSearch = query => setSearchQuery(query);
-
-  return (
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onSearch}
-      value={searchQuery}
-    />
+      sections.push({
+        title,
+        data: { word, category, description, isBookmarked },
+      });
+    },
   );
-};
 
-/* const listData = [
-  {
-    title: 'B',
-    data: ['Breaches'],
-  },
-  {
-    title: 'C',
-    data: ['Complaint', 'Conduct', 'Confidential', 'Consequence', 'Constitute'],
-  },
-  {
-    title: 'D',
-    data: ['Discrimination', 'Draining'],
-  },
-  {
-    title: 'E',
-    data: ['Ethnocultural'],
-  },
-  {
-    title: 'L',
-    data: ['Legislation'],
-  },
-  {
-    title: 'M',
-    data: ['Male-dominated', 'Maneuver', 'Manipulation', 'Misogynist'],
-  },
-  {
-    title: 'O',
-    data: ['Obligation', 'Overwhelming'],
-  },
-  {
-    title: 'R',
-    data: ['Rehabilitation', 'Reprisal'],
-  },
-  {
-    title: 'S',
-    data: ['Standards'],
-  },
-  {
-    title: 'T',
-    data: ['Termination', 'Toxic', 'Trusted'],
-  },
-  {
-    title: 'U',
-    data: ['Undocumented'],
-  },
-  {
-    title: 'W',
-    data: ['Warrant'],
-  },
-]; */
+  // const sectionsTitles = preSortedData.filter(
+  //   ({ title }, index, self) => self.indexOf(title) === index,
+  // );
 
-/* const sortedData = data.map(item => ({
-  title: item.title,
-  data: item.data.sort(),
-})); */
+  return preSortedData;
+}; */
 
-const Item = ({ title }) => {
-  const [hiddenDescription, setHiddenDescription] = useState(true);
-
-  return (
-    <View
-      style={{
-        borderColor: colors.mediumGrey,
-        borderStyle: 'solid',
-        borderWidth: 0.5,
-      }}
-    >
-      <View>
-        <RectButton
-          style={{ backgroundColor: colors.white }}
-          onPress={() => {
-            setHiddenDescription(!hiddenDescription);
-          }}
-        >
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              paddingHorizontal: 24,
-              paddingVertical: 16,
-            }}
-          >
-            <Text style={styles.itemTitle}>{title.word}</Text>
-
-            <Icon
-              name={hiddenDescription ? 'chevron-down' : 'chevron-up'}
-              size={24}
-              color={colors.darkGrey}
-            />
-          </View>
-        </RectButton>
-
-        {!hiddenDescription && (
-          <View
-            style={{
-              padding: 24,
-              backgroundColor: colors.lightGrey,
-              borderColor: colors.mediumGrey,
-              borderStyle: 'solid',
-              borderWidth: 0.5,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-            >
-              <Paragraph
-                style={{
-                  fontStyle: 'italic',
-                  marginBottom: 0,
-                }}
-              >
-                {title.phonetics}
-              </Paragraph>
-              <IconButton
-                style={{ marginLeft: 8 }}
-                icon="volume-high"
-                size={24}
-                color={colors.darkGrey}
-                onPress={() =>
-                  Speech.speak(title.word, { pitch: 0.5, rate: 0.5 })
-                }
-              />
-            </View>
-            <Paragraph
-              style={{
-                fontSize: 14,
-                color: colors.darkGrey,
-              }}
-            >
-              {title.category}
-            </Paragraph>
-            <Paragraph style={{ marginBottom: 0 }}>
-              {title.description}
-            </Paragraph>
-          </View>
-        )}
-      </View>
+const Item = ({ title }) => (
+  <RectButton onPress={testAlert}>
+    <View accessible style={styles.item}>
+      <Text style={styles.title}>{title.word}</Text>
     </View>
   );
 };
 
 const Glossary = ({ navigation }) => {
+  const sections = [];
+  const titles = [];
+  const words = [];
+
+  (() => {
+    rawData.map(({ word, category, description }) => {
+      const title = word.slice(0, 1).toUpperCase();
+      !titles.includes(title) && titles.push(title);
+
+      const sortedWord = { title, word, category, description };
+      words.push(sortedWord);
+    });
+
+    titles.map(item => {
+      words.map(obj => {
+        if (item === obj.title) {
+          const index = titles.indexOf(item);
+          const { word, category, description } = obj;
+          if (!sections[index]) {
+            sections[index] = {
+              title: item,
+              data: [{ word, category, description }],
+            };
+          } else {
+            sections[index] = {
+              ...sections[index],
+              data: [...sections[index].data, { word, category, description }],
+            };
+          }
+        }
+      });
+    });
+  })();
+
+  console.log('sections: ', sections);
+
+  const sortedData = sections;
+
   const [filterBookmarks, setFilterBookmarks] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [shownData, setShownData] = useState(sortedData);
+
+  const onSearch = query => {
+    const results = [];
+
+    if (query === '') {
+      setIsSearching(false);
+      setShownData(sortedData);
+    } else {
+      shownData.map(item =>
+        item.data.map(
+          word =>
+            word.includes(query) &&
+            results.push({ title: item.title, data: { ...word } }),
+        ),
+      );
+
+      setIsSearching(true);
+      if (results[0]) setShownData(results);
+    }
+  };
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -217,9 +148,11 @@ const Glossary = ({ navigation }) => {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        {showSearch && <Search />}
+        {showSearch && (
+          <Searchbar placeholder="Search" onChangeText={onSearch} />
+        )}
         <SectionList
-          sections={data}
+          sections={shownData}
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (
