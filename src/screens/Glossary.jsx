@@ -39,7 +39,7 @@ import rawData from 'config/glossary.json';
 const Item = ({ title }) => (
   <RectButton onPress={testAlert}>
     <View accessible style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{title.word}</Text>
     </View>
   </RectButton>
 );
@@ -50,11 +50,11 @@ const Glossary = ({ navigation }) => {
   const words = [];
 
   (() => {
-    rawData.map(({ word, category, description, isBookmarked }) => {
+    rawData.map(({ word, category, description }) => {
       const title = word.slice(0, 1).toUpperCase();
       !titles.includes(title) && titles.push(title);
 
-      const sortedWord = { title, word, description, isBookmarked };
+      const sortedWord = { title, word, category, description };
       words.push(sortedWord);
     });
 
@@ -62,16 +62,16 @@ const Glossary = ({ navigation }) => {
       words.map(obj => {
         if (item === obj.title) {
           const index = titles.indexOf(item);
-          const { word, category, description, isBookmarked } = obj;
+          const { word, category, description } = obj;
           if (!sections[index]) {
             sections[index] = {
               title: item,
-              data: [word],
+              data: [{ word, category, description }],
             };
           } else {
             sections[index] = {
               ...sections[index],
-              data: [word],
+              data: [...sections[index].data, { word, category, description }],
             };
           }
         }
@@ -79,9 +79,7 @@ const Glossary = ({ navigation }) => {
     });
   })();
 
-  // console.log(titles);
-  // console.log(words);
-  console.log(sections);
+  console.log('sections: ', sections);
 
   const sortedData = sections;
 
