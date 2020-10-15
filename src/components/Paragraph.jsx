@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppRegistry, Platform, StyleSheet, Alert } from 'react-native';
 import ParsedText from 'react-native-parsed-text';
 import Glossary from 'config/glossary.json';
@@ -6,19 +6,26 @@ import Glossary from 'config/glossary.json';
 import colors from 'config/colors.json';
 
 const Paragraph = ({ children, style }) => {
-  const handleWordPress = word => {
-    const cleanedWord = JSON.stringify(
-      word.replace(/[^0-9a-z-A-Z ]/g, '').replace(/ +/, ' '),
-    );
-    Alert.alert(cleanedWord);
-    const foundWord = Glossary.map(item => item.data);
-    console.log(foundWord);
+  const [currentWord, setCurrentWord] = useState('');
+  const [foundWord, setFoundWord] = useState('');
+
+  const handleWordPress = () => {
+    Glossary.map(item => {
+      item.data.map(subitem => {
+        if (subitem.word.toUpperCase() === currentWord.toUpperCase()) {
+          setFoundWord(subitem);
+        }
+      });
+    });
+    console.log('current: ', currentWord);
+    console.log('found: ', foundWord);
   };
 
   const renderGlossary = (matchingString, matches) => {
     const pattern = /\[(.*?)\]/i;
     const match = matchingString.match(pattern);
-    return `${match[1]}`;
+    setCurrentWord(`${match[1]}`);
+    return currentWord;
   };
 
   return (
