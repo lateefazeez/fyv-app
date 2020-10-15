@@ -43,8 +43,8 @@ const Item = ({ title }) => (
     <View accessible style={styles.item}>
       <Text style={styles.title}>{title.word}</Text>
     </View>
-  );
-};
+  </RectButton>
+);
 
 const Glossary = ({ navigation }) => {
   const sections = [];

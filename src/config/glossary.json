@@ -1,226 +1,5 @@
 [
   {
-<<<<<<< HEAD
-    "title": "B",
-    "data": [
-      {
-        "word": "Breaches",
-        "phonetics": "[brEE-chuhz]",
-        "category": "noun",
-        "description": "A failure to do something that must be done by law"
-      }
-    ]
-  },
-  {
-    "title": "C",
-    "data": [
-      {
-        "word": "Complaint",
-        "phonetics": "[kuhm . pleint]",
-        "category": "noun",
-        "description": "A statement that somebody makes saying that they are not happy about something"
-      },
-      {
-        "word": "Conduct",
-        "phonetics": "kaan . duhkt",
-        "category": "noun",
-        "description": "A person’s behaviour in a particular place or situation"
-      },
-      {
-        "word": "Confidential",
-        "phonetics": "kaan · fuh · den · shl",
-        "category": "adjective",
-        "description": "Meant to be kept secret and not told to or shared with other people"
-      },
-      {
-        "word": "Consequence",
-        "phonetics": "kaan · suh · kwns",
-        "category": "noun",
-        "description": "A result of something that has happened, especially a negative response"
-      },
-      {
-        "word": "Constitute",
-        "phonetics": "kaan . stuh . toot",
-        "category": "verb",
-        "description": "To be the parts that together form something."
-      }
-    ]
-  },
-  {
-    "title": "D",
-    "data": [
-      {
-        "word": "Discrimination",
-        "phonetics": "duh . skri . muh . nei . shn",
-        "category": "noun",
-        "description": "The practice of treating a person or a group less fairly than others"
-      },
-      {
-        "word": "Draining",
-        "phonetics": "drei . nuhng",
-        "category": "adjective",
-        "description": "Something made weaker/poorer by using up their strength/money"
-      }
-    ]
-  },
-  {
-    "title": "E",
-    "data": [
-      {
-        "word": "Ethnocultural",
-        "phonetics": "",
-        "category": "adjective",
-        "description": "Relating to a particular ethnic group"
-      }
-    ]
-  },
-  {
-    "title": "I",
-    "data": [
-      {
-        "word": "Insufficient",
-        "phonetics": "in . suh . fi . shnt",
-        "category": "adjective",
-        "description": "Not enough"
-      },
-      {
-        "word": "Isolating",
-        "phonetics": "ai . suh . lei . tuhng",
-        "category": "adjective",
-        "description": "Separated physically or socially from other people or things"
-      }
-    ]
-  },
-  {
-    "title": "L",
-    "data": [
-      {
-        "word": "Legislation",
-        "phonetics": "leh . juh . slei . shn",
-        "category": "noun",
-        "description": "A law or set of laws passed by a parliament"
-      }
-    ]
-  },
-  {
-    "title": "M",
-    "data": [
-      {
-        "word": "Male-dominated",
-        "phonetics": "meil . domi . neitid",
-        "category": "adjective",
-        "description": "Controlled mainly by or consisting mainly of men"
-      },
-      {
-        "word": "Maneuver",
-        "phonetics": "muh . noo . vr",
-        "category": "verb",
-        "description": "To control or influence a situation in a way that shows skill"
-      },
-      {
-        "word": "Manipulation",
-        "phonetics": "muh . ni . pyuh . lei . shn",
-        "category": "noun",
-        "description": "Behaviour that controls or influences somebody/something, often in a dishonest way so that they do not realize it"
-      },
-      {
-        "word": "Misogynist",
-        "phonetics": "muh . saa . juh . nuhst",
-        "category": "noun",
-        "description": "A person who hates women"
-      }
-    ]
-  },
-  {
-    "title": "O",
-    "data": [
-      {
-        "word": "Obligation",
-        "phonetics": "aa . bluh . gei . shn",
-        "category": "noun",
-        "description": "The state of being forced to do something because it is your duty, or because of a law"
-      },
-      {
-        "word": "Overwhelming",
-        "phonetics": "ow . vr . wel . muhng",
-        "category": "adjective",
-        "description": "Very great or very strong/powerful"
-      }
-    ]
-  },
-  {
-    "title": "R",
-    "data": [
-      {
-        "word": "Rehabilitation",
-        "phonetics": "ree . uh . bi . luh . tei . shn",
-        "category": "noun",
-        "description": "The process of helping someone to have a normal, useful life again after they have been ill"
-      },
-      {
-        "word": "Reprisal",
-        "phonetics": "ree . prai . zl",
-        "category": "noun",
-        "description": "A violent or aggressive act towards somebody because of something bad that they have done before you"
-      }
-    ]
-  },
-  {
-    "title": "S",
-    "data": [
-      {
-        "word": "Standards",
-        "phonetics": "stan . drdz",
-        "category": "noun",
-        "description": "A level of quality, especially one that people think is acceptable"
-      }
-    ]
-  },
-  {
-    "title": "T",
-    "data": [
-      {
-        "word": "Termination",
-        "phonetics": "tr . muh . nei . shn",
-        "category": "noun",
-        "description": "The act of ending something"
-      },
-      {
-        "word": "Toxic",
-        "phonetics": "taak . suhk",
-        "category": "adjective",
-        "description": "Containing poison; very unpleasant"
-      },
-      {
-        "word": "Trusted",
-        "phonetics": "truh . stuhd",
-        "category": "adjective",
-        "description": "Something you can trust"
-      }
-    ]
-  },
-  {
-    "title": "U",
-    "data": [
-      {
-        "word": "Undocumented",
-        "phonetics": "uhn . daa . kyuh . men . tuhd",
-        "category": "adjective",
-        "description": "Not supported by written evidence"
-      }
-    ]
-  },
-  {
-    "title": "W",
-    "data": [
-      {
-        "word": "Warrant",
-        "phonetics": "waw . ruhn . tuhd",
-        "category": "noun",
-        "description": "A legal document that is signed by a judge and gives the police authority to do something"
-      }
-    ]
-=======
     "word": "Breaches",
     "category": "Noun",
     "description": "A failure to do something that must be done by law",
@@ -230,6 +9,12 @@
     "word": "Complaint",
     "category": "Noun",
     "description": "A statement that somebody makes saying that they are not happy about something",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Complicated",
+    "category": "Adjective",
+    "description": "Consisting of many interconnecting parts or elements; intricate.",
     "isBookmarked": "false"
   },
   {
@@ -272,6 +57,12 @@
     "word": "Ethnocultural",
     "category": "Adjective",
     "description": "Relating to a particular ethnic group",
+    "isBookmarked": "false"
+  },
+  {
+    "word": "Hazards",
+    "category": "Noun",
+    "description": "A potential source of harm",
     "isBookmarked": "false"
   },
   {
@@ -347,6 +138,12 @@
     "isBookmarked": "false"
   },
   {
+    "word": "Sexual Orientation",
+    "category": "Noun",
+    "description": "An enduring pattern of romantic or sexual attraction (or a combination of these) to persons of the opposite sex or gender, the same sex or gender, or to both sexes or more than one gender",
+    "isBookmarked": "false"
+  },
+  {
     "word": "Termination",
     "category": "Noun",
     "description": "The act of ending something",
@@ -375,6 +172,5 @@
     "category": "Noun",
     "description": "A legal document that is signed by a judge and gives the police authority to do something",
     "isBookmarked": "false"
->>>>>>> 16703b4b3f0fac89b56c8df149570e3e6ecaf250
   }
 ]

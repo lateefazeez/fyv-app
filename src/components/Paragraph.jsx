@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { AppRegistry, Platform, StyleSheet, Alert } from 'react-native';
+import { Alert, Platform, StyleSheet } from 'react-native';
+import { Tooltip, Text } from 'react-native-elements';
+
 import ParsedText from 'react-native-parsed-text';
 import Glossary from 'config/glossary.json';
 
@@ -10,15 +12,26 @@ const Paragraph = ({ children, style }) => {
   const [foundWord, setFoundWord] = useState('');
 
   const handleWordPress = () => {
+    // Glossary.map(item => {
+    //   item.data.map(subitem => {
+    //     if (subitem.word.toUpperCase() === currentWord.toUpperCase()) {
+    //       setFoundWord(subitem);
+    //     }
+    //   });
+    // });
+    // console.log('current: ', currentWord);
+    // console.log('found: ', foundWord);
     Glossary.map(item => {
-      item.data.map(subitem => {
-        if (subitem.word.toUpperCase() === currentWord.toUpperCase()) {
-          setFoundWord(subitem);
-        }
-      });
+      if (item.word.toUpperCase() === currentWord.toUpperCase()) {
+        setFoundWord(item.description);
+        console.log('Current: ', currentWord);
+        console.log('Found: ', foundWord);
+        Alert.alert(foundWord);
+        // return (
+        //   <Tooltip popover={<Text>Info Here</Text>}>{currentWord}</Tooltip>
+        // );
+      }
     });
-    console.log('current: ', currentWord);
-    console.log('found: ', foundWord);
   };
 
   const renderGlossary = (matchingString, matches) => {
@@ -29,6 +42,7 @@ const Paragraph = ({ children, style }) => {
   };
 
   return (
+    //<Tooltip popover={<Text>{foundWord}</Text>}>
     <ParsedText
       style={[styles.text, style]}
       parse={[
@@ -42,6 +56,7 @@ const Paragraph = ({ children, style }) => {
     >
       {children}
     </ParsedText>
+    //</Tooltip>
   );
 };
 
