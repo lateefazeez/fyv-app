@@ -174,7 +174,9 @@ const Glossary = ({ navigation }) => {
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        {showSearch && <Search />}
+        {showSearch && (
+          <Searchbar placeholder="Search" onChangeText={() => {}} />
+        )}
         <SectionList
           sections={shownData}
           keyExtractor={(item, index) => item + index}
