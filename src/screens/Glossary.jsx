@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -15,77 +15,22 @@ import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
-import data from 'config/glossary.json';
+import { getSections } from 'utils';
+import rawGlossaryData from 'config/glossary.json';
 
-const Search = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+// const Search = () => {
+//   const [searchQuery, setSearchQuery] = useState('');
 
-  const onSearch = query => setSearchQuery(query);
+//   const onSearch = query => setSearchQuery(query);
 
-  return (
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onSearch}
-      value={searchQuery}
-    />
-  );
-};
-
-/* const listData = [
-  {
-    title: 'B',
-    data: ['Breaches'],
-  },
-  {
-    title: 'C',
-    data: ['Complaint', 'Conduct', 'Confidential', 'Consequence', 'Constitute'],
-  },
-  {
-    title: 'D',
-    data: ['Discrimination', 'Draining'],
-  },
-  {
-    title: 'E',
-    data: ['Ethnocultural'],
-  },
-  {
-    title: 'L',
-    data: ['Legislation'],
-  },
-  {
-    title: 'M',
-    data: ['Male-dominated', 'Maneuver', 'Manipulation', 'Misogynist'],
-  },
-  {
-    title: 'O',
-    data: ['Obligation', 'Overwhelming'],
-  },
-  {
-    title: 'R',
-    data: ['Rehabilitation', 'Reprisal'],
-  },
-  {
-    title: 'S',
-    data: ['Standards'],
-  },
-  {
-    title: 'T',
-    data: ['Termination', 'Toxic', 'Trusted'],
-  },
-  {
-    title: 'U',
-    data: ['Undocumented'],
-  },
-  {
-    title: 'W',
-    data: ['Warrant'],
-  },
-]; */
-
-/* const sortedData = data.map(item => ({
-  title: item.title,
-  data: item.data.sort(),
-})); */
+//   return (
+//     <Searchbar
+//       placeholder="Search"
+//       onChangeText={onSearch}
+//       value={searchQuery}
+//     />
+//   );
+// };
 
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(true);
@@ -180,9 +125,6 @@ const Item = ({ title }) => {
 };
 
 const Glossary = ({ navigation }) => {
-  const [filterBookmarks, setFilterBookmarks] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackTitle: 'Back',
@@ -218,12 +160,23 @@ const Glossary = ({ navigation }) => {
     });
   }, [navigation, filterBookmarks, showSearch]);
 
+  const [filterBookmarks, setFilterBookmarks] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  // const [isSearching, setIsSearching] = useState(false);
+  const [shownData, setShownData] = useState([]);
+  let glossaryData = [];
+
+  useEffect(() => {
+    glossaryData = getSections(rawGlossaryData);
+    setShownData(glossaryData);
+  }, []);
+
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && <Search />}
         <SectionList
-          sections={data}
+          sections={shownData}
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (
