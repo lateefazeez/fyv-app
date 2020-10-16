@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from 'config/colors.json';
 
-const ContentSlider = ({ slides, style }) => (
+const ContentSlider = ({ slides, style, ...props }) => (
   <Swiper
     style={[{ height: 400 }, style]}
     activeDotColor={colors.darkGrey}
@@ -15,7 +15,7 @@ const ContentSlider = ({ slides, style }) => (
     prevButton={
       <Icon name="chevron-left" size={40} color={colors.transpWhite} />
     }
-    showsButtons
+    {...props}
   >
     {slides.map((slide, index) => slide(index))}
   </Swiper>

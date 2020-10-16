@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import { List } from 'react-native-paper';
 import Constants from 'expo-constants';
@@ -60,7 +60,10 @@ const MenuDrawer = ({ navigation }) => {
   const [dropDown, setDropDown] = useState(false);
   return (
     <DrawerContentScrollView
-      contentContainerStyle={{ flex: 1, paddingTop: Constants.statusBarHeight }}
+      contentContainerStyle={{
+        paddingTop: Constants.statusBarHeight,
+        flexGrow: 1,
+      }}
     >
       <View style={styles.upperSection}>
         <Image source={logo} style={styles.logo} />
@@ -73,7 +76,7 @@ const MenuDrawer = ({ navigation }) => {
           style={styles.closeDrawer}
         />
       </View>
-      <ScrollView contentContainerStyle={styles.lowerSection}>
+      <View style={styles.lowerSection}>
         {items.map(item => {
           if (!item.parentScreen) {
             return (
@@ -83,9 +86,9 @@ const MenuDrawer = ({ navigation }) => {
                 titleStyle={styles.label}
                 left={() =>
                   getIcon({
-                    lib: item.iconLib,
-                    name: item.iconName,
-                    size: item.iconSize ? item.iconSize : 20,
+                    lib: item.icon.lib,
+                    name: item.icon.name,
+                    size: item.icon.size ? item.icon.size : 20,
                     color: colors.darkerGrey,
                   })
                 }
@@ -120,9 +123,9 @@ const MenuDrawer = ({ navigation }) => {
                 titleStyle={styles.label}
                 left={() =>
                   getIcon({
-                    lib: item.iconLib,
-                    name: item.iconName,
-                    size: item.iconSize ? item.iconSize : 20,
+                    lib: item.icon.lib,
+                    name: item.icon.name,
+                    size: item.icon.size ? item.icon.size : 20,
                     color: colors.darkerGrey,
                   })
                 }
@@ -136,7 +139,7 @@ const MenuDrawer = ({ navigation }) => {
             );
           }
         })}
-      </ScrollView>
+      </View>
     </DrawerContentScrollView>
   );
 };

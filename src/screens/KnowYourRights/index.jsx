@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import ContentSlider from 'components/ContentSlider';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-import BasicButton from 'components/BasicButton';
 import PageHeader from 'components/PageHeader';
 import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
@@ -11,10 +10,9 @@ import Heading from 'components/Heading';
 import headerImage from 'assets/headers/knowyourrights.png';
 
 import colors from 'config/colors.json';
+import slides from './slides';
 
 const KnowYourRights = () => {
-  const navigation = useNavigation();
-
   return (
     <>
       <ScrollView
@@ -26,9 +24,7 @@ const KnowYourRights = () => {
         <PageHeader source={headerImage} />
         <View
           style={{
-            backgroundColor: colors.lightGrey,
             paddingHorizontal: 24,
-            paddingBottom: 80,
           }}
         >
           <Heading>Know Your Rights</Heading>
@@ -39,35 +35,9 @@ const KnowYourRights = () => {
           <Paragraph>
             Your safety at work is protected by three pieces of [legislation]:
           </Paragraph>
-
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'OHS',
-              });
-            }}
-          >
-            Occupational Health and Safety
-          </BasicButton>
-
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'Employment Standards',
-              });
-            }}
-          >
-            Employment Standards
-          </BasicButton>
-          <BasicButton
-            onPress={() => {
-              navigation.navigate('Know Your Rights Tabs', {
-                screen: 'Human Rights',
-              });
-            }}
-          >
-            Human Rights
-          </BasicButton>
+        </View>
+        <View style={{ paddingBottom: 40 }}>
+          <ContentSlider autoplay style={{ height: 256 }} slides={slides} />
         </View>
       </ScrollView>
       <FloatingButtonFYV />

@@ -11,14 +11,14 @@ import { RectButton } from 'react-native-gesture-handler';
 
 import colors from 'config/colors.json';
 
-const MainScreenButton = ({ children, buttonImage, target, style }) => {
+const OHSButton = ({ children, background, target, style }) => {
   const navigation = useNavigation();
 
   return (
     <View style={[styles.buttonContainer, style]}>
       <View style={styles.buttonContent}>
         <ImageBackground
-          source={buttonImage}
+          source={background}
           style={styles.background}
           imageStyle={{
             borderRadius: 16,
@@ -37,17 +37,16 @@ const MainScreenButton = ({ children, buttonImage, target, style }) => {
   );
 };
 
-export default MainScreenButton;
+export default OHSButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    marginBottom: 16,
-
     backgroundColor: colors.lightPrimary,
     borderRadius: 16,
+    marginBottom: 16,
     position: 'relative',
+    height: 160,
+    width: '47.5%',
 
     shadowColor: colors.black,
     shadowOffset: {
@@ -60,22 +59,21 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   buttonContent: {
-    height: 100,
-    flexGrow: 1,
+    flex: 1,
   },
   background: {
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
-    resizeMode: 'cover',
+    justifyContent: 'flex-end',
+    alignContent: 'center',
   },
   text: {
     color: colors.white,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold',
-    marginLeft: 24,
-    width: '40%',
+    textAlign: 'center',
+    margin: 8,
   },
   ripple: {
     position: 'absolute',

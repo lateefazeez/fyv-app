@@ -1,20 +1,22 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 
 import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
-import BasicButton from 'components/BasicButton';
+import OHSButton from 'components/OHSButton';
 import ExternalRefButton from 'components/ExternalRefButton';
 import PageHeader from 'components/PageHeader';
 
 import headerImage from 'assets/headers/ohs.png';
+import covidBackground from 'assets/buttons/covid.png';
+import hazardsBackground from 'assets/buttons/hazards.png';
+import basicrightsBackground from 'assets/buttons/basicrights.png';
+import wcbBackground from 'assets/buttons/wcb.png';
+
 import colors from 'config/colors.json';
 
 const Ohs = () => {
-  const navigation = useNavigation();
-
   return (
     <ScrollView
       style={{
@@ -25,9 +27,7 @@ const Ohs = () => {
       <PageHeader source={headerImage} />
       <View
         style={{
-          backgroundColor: colors.lightGrey,
           paddingHorizontal: 24,
-          paddingBottom: 80,
         }}
       >
         <Heading>Occupational Health & Safety</Heading>
@@ -46,39 +46,41 @@ const Ohs = () => {
           Workers in Alberta are also covered by the Alberta Workers’
           Compensation Board (WCB) in the case of injury.
         </Paragraph>
-        <BasicButton
-          onPress={() => {
-            navigation.navigate('COVID-19 Information');
-          }}
-          icon="alert-circle"
-          iconColor="red"
-        >
+      </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          marginHorizontal: 24,
+          justifyContent: 'space-between',
+        }}
+      >
+        <OHSButton target="COVID-19 Information" background={covidBackground}>
           Important COVID-19 Information
-        </BasicButton>
-        <BasicButton
-          onPress={() => {
-            navigation.navigate('Types of Hazards');
-          }}
-        >
-          Types of Hazards
-        </BasicButton>
+        </OHSButton>
+        <OHSButton background={hazardsBackground}>Types of Hazards</OHSButton>
+      </View>
 
-        <BasicButton
-          onPress={() => {
-            navigation.navigate('Basic Rights');
-          }}
-        >
-          Basic Rights
-        </BasicButton>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginHorizontal: 24,
+          justifyContent: 'space-between',
+        }}
+      >
+        <OHSButton background={basicrightsBackground}>Basic Rights</OHSButton>
 
-        <BasicButton
-          onPress={() => {
-            navigation.navigate("Workers' Compensation");
-          }}
-        >
+        <OHSButton target={"Workers' Compensation"} background={wcbBackground}>
           Workers' Compensation Board
-        </BasicButton>
+        </OHSButton>
+      </View>
 
+      <View
+        style={{
+          paddingHorizontal: 24,
+          paddingBottom: 80,
+        }}
+      >
         <ExternalRefButton
           icon="web"
           onPress={() => {

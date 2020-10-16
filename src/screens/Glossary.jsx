@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,103 +13,118 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
-import { testAlert } from 'utils';
-import colors from 'config/colors';
-import rawData from 'config/glossary.json';
+import colors from 'config/colors.json';
 
-/* const sortedData = () => {
-  const sections = [];
+import { getSections } from 'utils';
+import rawGlossaryData from 'config/glossary.json';
 
-  const preSortedData = rawData.map(
-    ({ word, category, description, isBookmarked }) => {
-      const title = word.slice(0).toUpperCase();
+// const Search = () => {
+//   const [searchQuery, setSearchQuery] = useState('');
 
-      sections.push({
-        title,
-        data: { word, category, description, isBookmarked },
-      });
-    },
-  );
+//   const onSearch = query => setSearchQuery(query);
 
-  // const sectionsTitles = preSortedData.filter(
-  //   ({ title }, index, self) => self.indexOf(title) === index,
-  // );
+//   return (
+//     <Searchbar
+//       placeholder="Search"
+//       onChangeText={onSearch}
+//       value={searchQuery}
+//     />
+//   );
+// };
 
-  return preSortedData;
-}; */
+const Item = ({ title }) => {
+  const [hiddenDescription, setHiddenDescription] = useState(true);
 
-const Item = ({ title }) => (
-  <RectButton onPress={testAlert}>
-    <View accessible style={styles.item}>
-      <Text style={styles.title}>{title.word}</Text>
+  return (
+    <View
+      style={{
+        borderColor: colors.mediumGrey,
+        borderStyle: 'solid',
+        borderWidth: 0.5,
+      }}
+    >
+      <View>
+        <RectButton
+          style={{ backgroundColor: colors.white }}
+          onPress={() => {
+            setHiddenDescription(!hiddenDescription);
+          }}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingHorizontal: 24,
+              paddingVertical: 16,
+            }}
+          >
+            <Text style={styles.itemTitle}>{title.word}</Text>
+
+            <Icon
+              name={hiddenDescription ? 'chevron-down' : 'chevron-up'}
+              size={24}
+              color={colors.darkGrey}
+            />
+          </View>
+        </RectButton>
+
+        {!hiddenDescription && (
+          <View
+            style={{
+              padding: 24,
+              backgroundColor: colors.lightGrey,
+              borderColor: colors.mediumGrey,
+              borderStyle: 'solid',
+              borderWidth: 0.5,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <Paragraph
+                style={{
+                  color: colors.primary,
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  marginBottom: 0,
+                  marginTop: 0,
+                }}
+              >
+                {title.phonetics}
+              </Paragraph>
+              <IconButton
+                style={{ marginLeft: 8 }}
+                icon="volume-high"
+                size={24}
+                color={colors.darkGrey}
+                onPress={() =>
+                  Speech.speak(title.word, { pitch: 0.9, rate: 0.6 })
+                }
+              />
+            </View>
+            <Paragraph
+              style={{
+                fontSize: 14,
+                color: colors.darkGrey,
+                marginTop: 0,
+              }}
+            >
+              {title.category}
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              {title.description}
+            </Paragraph>
+          </View>
+        )}
+      </View>
     </View>
-  </RectButton>
-);
+  );
+};
 
 const Glossary = ({ navigation }) => {
-  const sections = [];
-  const titles = [];
-  const words = [];
-
-  (() => {
-    rawData.map(({ word, category, description }) => {
-      const title = word.slice(0, 1).toUpperCase();
-      !titles.includes(title) && titles.push(title);
-
-      const sortedWord = { title, word, category, description };
-      words.push(sortedWord);
-    });
-
-    titles.map(item => {
-      words.map(obj => {
-        if (item === obj.title) {
-          const index = titles.indexOf(item);
-          const { word, category, description } = obj;
-          if (!sections[index]) {
-            sections[index] = {
-              title: item,
-              data: [{ word, category, description }],
-            };
-          } else {
-            sections[index] = {
-              ...sections[index],
-              data: [...sections[index].data, { word, category, description }],
-            };
-          }
-        }
-      });
-    });
-  })();
-
-  console.log('sections: ', sections);
-
-  const sortedData = sections;
-
-  const [filterBookmarks, setFilterBookmarks] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
-  const [shownData, setShownData] = useState(sortedData);
-
-  const onSearch = query => {
-    const results = [];
-
-    if (query === '') {
-      setIsSearching(false);
-      setShownData(sortedData);
-    } else {
-      shownData.map(item =>
-        item.data.map(
-          word =>
-            word.includes(query) &&
-            results.push({ title: item.title, data: { ...word } }),
-        ),
-      );
-
-      setIsSearching(true);
-      if (results[0]) setShownData(results);
-    }
-  };
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackTitle: 'Back',
@@ -145,11 +160,22 @@ const Glossary = ({ navigation }) => {
     });
   }, [navigation, filterBookmarks, showSearch]);
 
+  const [filterBookmarks, setFilterBookmarks] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  // const [isSearching, setIsSearching] = useState(false);
+  const [shownData, setShownData] = useState([]);
+  let glossaryData = [];
+
+  useEffect(() => {
+    glossaryData = getSections(rawGlossaryData);
+    setShownData(glossaryData);
+  }, []);
+
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && (
-          <Searchbar placeholder="Search" onChangeText={onSearch} />
+          <Searchbar placeholder="Search" onChangeText={() => {}} />
         )}
         <SectionList
           sections={shownData}

@@ -9,6 +9,8 @@ export const uuidv4 = () => {
 };
 
 export const testAlert = () => {
+  console.log('Clicked!');
+
   Alert.alert(
     'Clicked!',
     'Clicking OK',
@@ -16,11 +18,49 @@ export const testAlert = () => {
       {
         text: 'Cancel',
         onPress: () => {
-          console.log('Cancel Pressed');
+          console.log('Canceled!');
         },
         style: 'cancel',
       },
     ],
     { cancelable: false },
   );
+};
+
+export const getSections = data => {
+  const sections = [];
+  const titles = [];
+  const words = [];
+
+  data.map(({ word, category, description, phonetics }) => {
+    const title = word.slice(0, 1).toUpperCase();
+    !titles.includes(title) && titles.push(title);
+
+    const sortedWord = { title, word, category, description, phonetics };
+    words.push(sortedWord);
+  });
+
+  titles.map(item => {
+    words.map(obj => {
+      if (item === obj.title) {
+        const index = titles.indexOf(item);
+        const { word, category, description, phonetics } = obj;
+        if (!sections[index]) {
+          sections[index] = {
+            title: item,
+            data: [{ word, category, description, phonetics }],
+          };
+        } else {
+          sections[index] = {
+            ...sections[index],
+            data: [
+              ...sections[index].data,
+              { word, category, description, phonetics },
+            ],
+          };
+        }
+      }
+    });
+  });
+  return sections;
 };
