@@ -1,45 +1,56 @@
 import React, { useState } from 'react';
 import {
+  Alert,
   Text,
   View,
   Platform,
   StyleSheet,
   Modal,
   TouchableOpacity,
+  useWindowDimensions,
 } from 'react-native';
 import ParsedText from 'react-native-parsed-text';
+import Constants from 'expo-constants';
 
 import Glossary from 'config/glossary.json';
 import colors from 'config/colors.json';
 
 const Paragraph = ({ children, style }) => {
+  const [currentWord, setCurrentWord] = useState();
   const [foundWord, setFoundWord] = useState();
+  const windowWidth = useWindowDimensions().width;
 
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
-  const renderGlossary = matchingString => {
+  const parseGlossaryWord = matchingString => {
     const pattern = /\[(.*?)\]/i;
     const match = matchingString.match(pattern);
-    return `${match[1]}`;
+
+    setCurrentWord(match[1].replace(/[[\]']+/g, ''));
+    return currentWord;
   };
 
-  const displayTooltip = event => {
-    const currentWord = event.replace(/[[\]']+/g, '');
-    console.log('currentWord: ', currentWord);
+  const displayTooltip = () => {
+    let foundOnGlossaryWord;
 
     Glossary.forEach(item => {
       if (item.word.toUpperCase() === currentWord.toUpperCase()) {
-        console.log('foundWord: ', item);
-        setFoundWord(() => item);
+        foundOnGlossaryWord = item;
       }
     });
 
-    if (foundWord) setTooltipVisible(true);
+    if (!foundOnGlossaryWord) {
+      Alert.alert('This word was not found in the glossary.');
+      return;
+    }
+    setFoundWord(foundOnGlossaryWord);
+    setTooltipVisible(true);
   };
 
   const hideTooltip = () => {
     setFoundWord();
+    setCurrentWord();
     setTooltipVisible(false);
   };
 
@@ -56,34 +67,28 @@ const Paragraph = ({ children, style }) => {
             style={styles.tooltipContainer}
             onPress={hideTooltip}
           >
-            <TouchableOpacity
-              style={[
-                styles.tooltip,
-                {
-                  position: 'absolute',
-                  left: tooltipPosition.x,
-                  top: tooltipPosition.y - 72,
-                },
-              ]}
-              onPress={hideTooltip}
+            <View
+              style={{
+                position: 'absolute',
+                width: '100%',
+                top: tooltipPosition.y,
+              }}
             >
-              {foundWord && (
-                <>
+              <TouchableOpacity
+                style={
+                  tooltipPosition.x < windowWidth / 2
+                    ? styles.tooltipLeft
+                    : styles.tooltipRight
+                }
+                onPress={hideTooltip}
+              >
+                {foundWord && (
                   <Text style={styles.tooltipText}>
-                    {`Word: ${foundWord.word}`}
+                    {foundWord.description}
                   </Text>
-                  <Text style={styles.tooltipText}>
-                    {`Phonetics: ${foundWord.phonetics}`}
-                  </Text>
-                  <Text style={styles.tooltipText}>
-                    {`Category: ${foundWord.category}`}
-                  </Text>
-                  <Text style={styles.tooltipText}>
-                    {`Description: ${foundWord.description}`}
-                  </Text>
-                </>
-              )}
-            </TouchableOpacity>
+                )}
+              </TouchableOpacity>
+            </View>
           </TouchableOpacity>
         </Modal>
       </View>
@@ -91,7 +96,7 @@ const Paragraph = ({ children, style }) => {
         onTouchStart={event => {
           setTooltipPosition({
             x: event.nativeEvent.pageX,
-            y: event.nativeEvent.pageY + 56,
+            y: event.nativeEvent.pageY - Constants.statusBarHeight + 16,
           });
         }}
       >
@@ -102,7 +107,7 @@ const Paragraph = ({ children, style }) => {
               pattern: /\[(.*?)\]/i,
               style: styles.glossaryText,
               onPress: displayTooltip,
-              renderText: renderGlossary,
+              renderText: parseGlossaryWord,
             },
           ]}
         >
@@ -113,6 +118,8 @@ const Paragraph = ({ children, style }) => {
   );
 };
 
+export default Paragraph;
+
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
@@ -121,14 +128,42 @@ const styles = StyleSheet.create({
   },
   tooltipContainer: {
     flex: 1,
-    backgroundColor: colors.transpWhite,
-    position: 'relative',
   },
-  tooltip: {
+  tooltipLeft: {
     backgroundColor: colors.primary,
     borderRadius: 8,
     padding: 16,
-    maxWidth: 240,
+    marginLeft: 24,
+    width: '50%',
+    alignSelf: 'flex-start',
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 10,
+  },
+  tooltipRight: {
+    backgroundColor: colors.primary,
+    borderRadius: 8,
+    padding: 16,
+    marginRight: 24,
+    width: '50%',
+    alignSelf: 'flex-end',
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 10,
   },
   text: {
     color: colors.darkerGrey,
@@ -144,10 +179,8 @@ const styles = StyleSheet.create({
   },
   tooltipText: {
     color: colors.white,
-    lineHeight: 24,
-    fontSize: 16,
+    lineHeight: 20,
+    fontSize: 14,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
   },
 });
-
-export default Paragraph;
