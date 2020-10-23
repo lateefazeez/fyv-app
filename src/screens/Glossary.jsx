@@ -16,7 +16,8 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
 import { getSections } from 'utils';
-import rawGlossaryData from 'config/glossary.json';
+import glossaryData from 'config/glossary.json';
+import { consolidateStreamedStyles } from 'styled-components';
 
 // const Search = () => {
 //   const [searchQuery, setSearchQuery] = useState('');
@@ -164,18 +165,44 @@ const Glossary = ({ navigation }) => {
   const [showSearch, setShowSearch] = useState(false);
   // const [isSearching, setIsSearching] = useState(false);
   const [shownData, setShownData] = useState([]);
-  let glossaryData = [];
+
+  const [search, setSearch] = useState('');
+  const [rawGlossaryData, setRawGlossaryData] = useState([]);
+  const [filteredGlossaryData, setFilteredGlossaryData] = useState([]);
+
+  let finishedGlossaryData = [];
 
   useEffect(() => {
-    glossaryData = getSections(rawGlossaryData);
-    setShownData(glossaryData);
+    setFilteredGlossaryData(glossaryData);
+    setRawGlossaryData(glossaryData);
+    finishedGlossaryData = getSections(filteredGlossaryData);
+    setShownData(finishedGlossaryData);
   }, []);
+  
+const searchData = (userText) => {
+  if (userText) {
+    const newGlossaryData = rawGlossaryData.filter(item => {
+      const itemData = item.word ? item.word.toUpperCase() : ''.toUpperCase();
+      const userTextData = userText.toUpperCase();
+      return itemData.indexOf(userTextData) > -1;
+    });
+    setShownData(newGlossaryData);
+    setSearch(userText);
+  }
+  setShownData(rawGlossaryData);
+  setSearch(userText);
+};
+
+
 
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && (
-          <Searchbar placeholder="Search" onChangeText={() => {}} />
+          <Searchbar 
+          placeholder="Search" 
+          onChangeText={(userText) => {searchData(userText)}}
+          value={search} />
         )}
         <SectionList
           sections={shownData}
