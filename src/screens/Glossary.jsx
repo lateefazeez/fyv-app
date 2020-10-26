@@ -17,21 +17,6 @@ import colors from 'config/colors.json';
 
 import { getSections } from 'utils';
 import glossaryData from 'config/glossary.json';
-import { consolidateStreamedStyles } from 'styled-components';
-
-// const Search = () => {
-//   const [searchQuery, setSearchQuery] = useState('');
-
-//   const onSearch = query => setSearchQuery(query);
-
-//   return (
-//     <Searchbar
-//       placeholder="Search"
-//       onChangeText={onSearch}
-//       value={searchQuery}
-//     />
-//   );
-// };
 
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(true);
@@ -126,6 +111,11 @@ const Item = ({ title }) => {
 };
 
 const Glossary = ({ navigation }) => {
+  const [filterBookmarks, setFilterBookmarks] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [shownData, setShownData] = useState([]);
+  const [search, setSearch] = useState('');
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackTitle: 'Back',
@@ -146,7 +136,11 @@ const Glossary = ({ navigation }) => {
             name="magnify"
             size={24}
             color={colors.white}
-            onPress={() => setShowSearch(!showSearch)}
+            onPress={() => {
+              setShowSearch(!showSearch);
+              setShownData(getSections(glossaryData));
+              setSearch('');
+            }}
             style={{ marginRight: 16 }}
           />
           <Icon
@@ -161,48 +155,31 @@ const Glossary = ({ navigation }) => {
     });
   }, [navigation, filterBookmarks, showSearch]);
 
-  const [filterBookmarks, setFilterBookmarks] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  // const [isSearching, setIsSearching] = useState(false);
-  const [shownData, setShownData] = useState([]);
-
-  const [search, setSearch] = useState('');
-  const [rawGlossaryData, setRawGlossaryData] = useState([]);
-  const [filteredGlossaryData, setFilteredGlossaryData] = useState([]);
-
-  let finishedGlossaryData = [];
-
   useEffect(() => {
-    setFilteredGlossaryData(glossaryData);
-    setRawGlossaryData(glossaryData);
-    finishedGlossaryData = getSections(filteredGlossaryData);
-    setShownData(finishedGlossaryData);
+    setShownData(getSections(glossaryData));
   }, []);
-  
-const searchData = (userText) => {
-  if (userText) {
-    const newGlossaryData = rawGlossaryData.filter(item => {
-      const itemData = item.word ? item.word.toUpperCase() : ''.toUpperCase();
-      const userTextData = userText.toUpperCase();
-      return itemData.indexOf(userTextData) > -1;
-    });
-    setShownData(newGlossaryData);
+
+  const searchData = userText => {
     setSearch(userText);
-  }
-  setShownData(rawGlossaryData);
-  setSearch(userText);
-};
 
+    const searchWord = userText.trim().toUpperCase();
 
+    const foundWords = glossaryData.filter(item => {
+      return item.word.toUpperCase().match(searchWord);
+    });
+
+    setShownData(getSections(foundWords));
+  };
 
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && (
-          <Searchbar 
-          placeholder="Search" 
-          onChangeText={(userText) => {searchData(userText)}}
-          value={search} />
+          <Searchbar
+            placeholder="Search"
+            onChangeText={userText => searchData(userText)}
+            value={search}
+          />
         )}
         <SectionList
           sections={shownData}
