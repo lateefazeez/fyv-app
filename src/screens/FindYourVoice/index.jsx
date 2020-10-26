@@ -642,36 +642,36 @@ const FindYourVoice = () => {
     {
       id: '8a',
       message:
-        'Who do you report to? Who you should report an incident like this to is complicated.',
-      trigger: '10a',
+        'You reported it.',
+      trigger: '13a',
     },
     {
       id: '9a',
       message: 'To be added',
       trigger: 'end_options',
     },
-    {
-      id: '10a',
-      message:
-        'According to OHS legislation and most workplace policies, you should report it to your direct supervisor.',
-      trigger: '11a',
-    },
-    {
-      id: '11a',
-      message:
-        'However, sometimes you may feel that you need to talk to a colleague for advice, or to share your experience with someone who is going through similar things.',
-      trigger: '12a',
-    },
-    {
-      id: '12a',
-      message:
-        'This is another step you can take, as experiencing this alone can be hard and isolating.',
-      trigger: '13a',
-    },
+    // {
+    //   id: '10a',
+    //   message:
+    //     'According to OHS legislation and most workplace policies, you should report it to your direct supervisor.',
+    //   trigger: '11a',
+    // },
+    // {
+    //   id: '11a',
+    //   message:
+    //     'However, sometimes you may feel that you need to talk to a colleague for advice, or to share your experience with someone who is going through similar things.',
+    //   trigger: '12a',
+    // },
+    // {
+    //   id: '12a',
+    //   message:
+    //     'This is another step you can take, as experiencing this alone can be hard and isolating.',
+    //   trigger: '13a',
+    // },
     {
       id: '13a',
       message:
-        'Now that you reported the incident, was there an action taken by management afterwards?',
+        'Was there an action taken by management afterwards?',
       trigger: '14a',
     },
     {
@@ -689,14 +689,14 @@ const FindYourVoice = () => {
     {
       id: '16a',
       options: [
-        { value: 'yes', label: 'YES, It made me feel better', trigger: '17a' },
+        { value: 'yes', label: 'YES, It makes me feel safer', trigger: '17a' },
         { value: 'no', label: 'NO, It does not', trigger: '20a' },
       ],
     },
     {
       id: '17a',
-      message: "That's great! ",
-      trigger: '18a',
+      message: "That's great! :) ",
+      trigger: '38a',
     },
     {
       id: '18a',
@@ -712,49 +712,106 @@ const FindYourVoice = () => {
     },
     {
       id: '20a',
-      message: 'Sorry to hear about that.',
-      trigger: '21a',
-    },
-    {
-      id: '21a',
-      message:
-        'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
-      trigger: '22a',
-    },
-    {
-      id: '22a',
-      message:
-        "In other cases, unfortunately sometimes workplaces don't do anything about racism.",
-      trigger: '23a',
-    },
-    {
-      id: '23a',
-      message:
-        'For example, you may report something to your supervisor and your supervisor may just brush it off.',
-      trigger: '24a',
-    },
-    {
-      id: '24a',
-      message:
-        'There have been cases where racism is reported and nothing changes, or the actions taken are insufficient when you report racism. ',
+      message: 'Even if still do not feel safe, there are options:',
       trigger: '25a',
     },
+    // {
+    //   id: '21a',
+    //   message:
+    //     'Workers may not always feel safe reporting something to their bosses, because they know there will be consequences. ',
+    //   trigger: '22a',
+    // },
+    // {
+    //   id: '22a',
+    //   message:
+    //     "In other cases, unfortunately sometimes workplaces don't do anything about racism.",
+    //   trigger: '23a',
+    // },
+    // {
+    //   id: '23a',
+    //   message:
+    //     'For example, you may report something to your supervisor and your supervisor may just brush it off.',
+    //   trigger: '24a',
+    // },
+    // {
+    //   id: '24a',
+    //   message:
+    //     'There have been cases where racism is reported and nothing changes, or the actions taken are insufficient when you report racism. ',
+    //   trigger: '25a',
+    // },
     {
       id: '25a',
       message:
-        'For example, Flora works on an assembly line in a meat packing plant which is male dominated. As the only woman of colour there, she has politely brought up numerous racist and mysoginist incidents to Human Resources hoping for change. Although the Human Resources manager listened and promised to look into it, nothing changed and continues to hear the same things at work. She struggles because she needs the job even though it is toxic to her wellbeing.',
+        'For example, Flora works on an assembly line in a meat packing plant which is male dominated. As the only woman of colour there, she has politely brought up numerous racist and mysoginist incidents to Human Resources hoping for change. Although the Human Resources manager listened and promised to look into it, nothing changed and continues to hear the same things at work. She struggles because she needs the job even though it is a toxic workplace.',
       trigger: '26a',
     },
 
     {
       id: '26a',
-      options: [
-        {
-          value: 'What should I do if this happens to me?',
-          label: 'What should I do if this happens to me?',
-          trigger: '27a',
-        },
-      ],
+      message: 'Even if issues are not addressed, workers like Flora have options:',
+      trigger: 'item 1',
+    },
+    {
+      id: 'item 1',
+      message: '1) Talk to a union representative if you are in a union, or talk to a trusted co-worker for support. ',
+      trigger: 'item 2',
+    },
+    {
+      id: 'item 2',
+      message: '2) Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal Human rights and racism relate to someone experiencing discrimination due to race and/or religion. Refer to this Human Rights plain language guide for more information.',
+      trigger: 'plain language guide 2',
+    },
+    {
+      id: 'plain language guide 2',
+      component: (
+        <View>
+          
+          <InChatRefButton
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
+                'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
+              )
+            }
+            style={{ width: '80%' }}
+          >
+            Human Rights Plain Language Guide
+          </InChatRefButton>
+          <InChatRefButton
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
+                'https://www.albertahumanrights.ab.ca/complaints/forms/Pages/complaint_form_and_guide.aspx',
+              )
+            }
+            icon="web"
+            style={{ marginTop: 8, width: '80%' }}
+          >
+            Albreta Human Rights Complaint
+          </InChatRefButton>
+        </View>
+      ),
+      trigger: 'item 3',
+    }, 
+    {
+      id: 'item 3',
+      message: '3) Make a health and safety complaint to the Government of Alberta. Health and safety and racism relates to someone experiencing harassment at work. ',
+      trigger: 'ohs complaint',
+    },
+    {
+      id: 'ohs complaint',
+      component: (
+          <InChatRefButton
+            onPress={async () =>
+              await WebBrowser.openBrowserAsync(
+                'https://www.alberta.ca/file-complaint-online.aspx',
+              )
+            }
+            icon="web"
+            style={{ width: '80%' }}
+          >
+            OHS File a Complaint
+          </InChatRefButton>
+      ),
+      trigger: '38a',
     },
     {
       id: '27a',
