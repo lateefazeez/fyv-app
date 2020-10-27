@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, ScrollView } from 'react-native';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
@@ -7,11 +7,25 @@ import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 
 import headerImage from 'assets/headers/resources.png';
-import data from 'config/resources.json';
+
+//import data from 'config/resources.json';
 
 import colors from 'config/colors.json';
+import client from '../../services/api';
 
 const Resources = () => {
+  const [resourceData, setResourceData] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch('*[_type == "resource"] { name, content } | order(word asc)',)
+      .then(response => {
+        setResourceData(response);
+      });
+  }, []);
+
+  //console.log('Resource: ', resourceData);
+
   return (
     <>
       <ScrollView
@@ -30,7 +44,7 @@ const Resources = () => {
         >
           <Heading>Resources</Heading>
 
-          {data.map(object => (
+          {resourceData.map(object => (
             <ResourceCard
               key={object.name}
               title={object.name}
