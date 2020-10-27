@@ -1,64 +1,42 @@
 [
+
   {
-    "word": "Breaches",
-    "phonetics": "brEE-chuhz",
+    "word": "Collective Agreement",
+    "phonetics": "kuh . lek . tiv   uh . gree . muhnt",
     "category": "noun",
-    "description": "A failure to do something that must be done by law"
-  },
-  {
-    "word": "Complaint",
-    "phonetics": "kuhm . pleint",
-    "category": "noun",
-    "description": "A statement that somebody makes saying that they are not happy about something"
-  },
-  {
-    "word": "Conduct",
-    "phonetics": "kaan . duhkt",
-    "category": "noun",
-    "description": "A person’s behaviour in a particular place or situation"
-  },
-  {
-    "word": "Confidential",
-    "phonetics": "kaan · fuh · den · shl",
-    "category": "adjective",
-    "description": "Meant to be kept secret and not told to or shared with other people"
+    "description": "A formal contract between a Union and employers."
   },
   {
     "word": "Consequence",
     "phonetics": "kaan · suh · kwns",
     "category": "noun",
-    "description": "A result of something that has happened, especially a negative response"
-  },
-  {
-    "word": "Constitute",
-    "phonetics": "kaan . stuh . toot",
-    "category": "verb",
-    "description": "To be the parts that together form something."
+    "description": "A result of something that has happened, especially a negative response."
   },
   {
     "word": "Discrimination",
     "phonetics": "duh . skri . muh . nei . shn",
     "category": "noun",
-    "description": "The practice of treating a person or a group less fairly than others"
+    "description": "The practice of treating a person or a group less fairly than others."
   },
   {
-    "word": "Draining",
-    "phonetics": "drei . nuhng",
+    "word": "Exhausting",
+    "phonetics": "ig . zaw . sting",
     "category": "adjective",
-    "description": "Something made weaker/poorer by using up their strength/money"
+    "description": "Making you feel very tired."
   },
   {
-    "word": "Ethnocultural",
-    "phonetics": "eth . no . cul . tur . al",
-    "category": "adjective",
-    "description": "Relating to a particular ethnic group"
+    "word": "Harassment",
+    "phonetics": "huh . ras . muhnt",
+    "category": "noun",
+    "description": "The act of doing unpleasant thing to another; an act that is against workplace policies."
   },
   {
-    "word": "Insufficient",
-    "phonetics": "in . suh . fi . shnt",
-    "category": "adjective",
-    "description": "Not enough"
+    "word": "Hazard",
+    "phonetics": "haz . erd",
+    "category": "noun",
+    "description": "A possible cause of danger or harm."
   },
+
   {
     "word": "Isolating",
     "phonetics": "ai . suh . lei . tuhng",
@@ -78,28 +56,10 @@
     "description": "Controlled mainly by or consisting mainly of men"
   },
   {
-    "word": "Maneuver",
-    "phonetics": "muh . noo . vr",
-    "category": "verb",
-    "description": "To control or influence a situation in a way that shows skill"
-  },
-  {
-    "word": "Manipulation",
-    "phonetics": "muh . ni . pyuh . lei . shn",
-    "category": "noun",
-    "description": "Behaviour that controls or influences somebody/something, often in a dishonest way so that they do not realize it"
-  },
-  {
     "word": "Misogynist",
     "phonetics": "muh . saa . juh . nuhst",
     "category": "noun",
     "description": "A person who hates women"
-  },
-  {
-    "word": "Obligation",
-    "phonetics": "aa . bluh . gei . shn",
-    "category": "noun",
-    "description": "The state of being forced to do something because it is your duty, or because of a law"
   },
   {
     "word": "Overwhelming",
@@ -108,16 +68,28 @@
     "description": "Very great or very strong/powerful"
   },
   {
+    "word": "Privacy",
+    "phonetics": "prah . vuh . see",
+    "category": "noun",
+    "description": "The state of being free from unwanted or undue intrusion or disturbance in one's private life or affairs; freedom to be let alone."
+  },
+  {
     "word": "Rehabilitation",
     "phonetics": "ree . uh . bi . luh . tei . shn",
     "category": "noun",
-    "description": "The process of helping someone to have a normal, useful life again after they have been ill"
+    "description": "The process of recovering after they have been ill or hurt."
   },
   {
     "word": "Reprisal",
     "phonetics": "ree . prai . zl",
     "category": "noun",
-    "description": "A violent or aggressive act towards somebody because of something bad that they have done before you"
+    "description": "A negative result: an act towards somebody because of something they have done before."
+  },
+  {
+    "word": "Sexual Orientation",
+    "phonetics": "sek . shoo . uh   awr . ee . uhn . tey . shuhn",
+    "category": "noun",
+    "description": "Related to sexual attraction; may refer to heterosexual, bisexual, homosexual, etc."
   },
   {
     "word": "Standards",
@@ -135,7 +107,7 @@
     "word": "Toxic",
     "phonetics": "taak . suhk",
     "category": "adjective",
-    "description": "Containing poison; very unpleasant"
+    "description": "In the context of workplace: unhealthy, hurtful, very unpleasant."
   },
   {
     "word": "Trusted",
@@ -150,9 +122,21 @@
     "description": "Not supported by written evidence"
   },
   {
-    "word": "Warrant",
-    "phonetics": "waw . ruhn . tuhd",
+    "word": "Union",
+    "phonetics": "yoon . yuhn",
     "category": "noun",
-    "description": "A legal document that is signed by a judge and gives the police authority to do something"
+    "description": "An organization of workers, may be referred to as a trade or labour union."
+  },
+  {
+    "word": "Union representative",
+    "phonetics": "yoon . yuhn  rep . ri . zen . tuh . tiv",
+    "category": "noun",
+    "description": "A Union appointed or elected person who helps members."
+  },
+  {
+    "word": "Violation",
+    "phonetics": "vahy . uh . ley . shuhn",
+    "category": "noun",
+    "description": "An  act that does not follpw existing law."
   }
 ]
