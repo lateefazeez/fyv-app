@@ -16,7 +16,8 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
 import { getSections } from 'utils';
-import glossaryData from 'config/glossary.json';
+import client from '../services/api';
+// import glossaryData from 'config/glossary.json';
 
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(true);
@@ -57,7 +58,8 @@ const Item = ({ title }) => {
         {!hiddenDescription && (
           <View
             style={{
-              padding: 24,
+              paddingHorizontal: 24,
+              paddingVertical: 16,
               backgroundColor: colors.lightGrey,
               borderColor: colors.mediumGrey,
               borderStyle: 'solid',
@@ -66,23 +68,15 @@ const Item = ({ title }) => {
           >
             <View
               style={{
-                flexDirection: 'row',
+                // TODO: verify what is happening with this view styling
+                flexDirection: 'row-reverse',
                 alignItems: 'center',
               }}
             >
-              <Paragraph
-                style={{
-                  color: colors.primary,
-                  fontStyle: 'italic',
-                  fontWeight: 'bold',
-                  marginBottom: 0,
-                  marginTop: 0,
-                }}
-              >
-                {title.phonetics}
-              </Paragraph>
               <IconButton
-                style={{ marginLeft: 8 }}
+                style={{
+                  marginLeft: 8,
+                }}
                 icon="volume-high"
                 size={24}
                 color={colors.darkGrey}
@@ -90,16 +84,31 @@ const Item = ({ title }) => {
                   Speech.speak(title.word, { pitch: 0.9, rate: 0.6 })
                 }
               />
+              <Paragraph
+                style={{
+                  color: colors.primary,
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  marginBottom: 0,
+                  marginTop: 0,
+                  paddingLeft: 0,
+                }}
+              >
+                {title.phonetics}
+              </Paragraph>
             </View>
+
             <Paragraph
               style={{
                 fontSize: 14,
                 color: colors.darkGrey,
+                marginBottom: 0,
                 marginTop: 0,
               }}
             >
               {title.category}
             </Paragraph>
+
             <Paragraph style={{ marginBottom: 0 }}>
               {title.description}
             </Paragraph>
@@ -113,6 +122,7 @@ const Item = ({ title }) => {
 const Glossary = ({ navigation }) => {
   const [filterBookmarks, setFilterBookmarks] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [glossaryData, setGlossaryData] = useState([]);
   const [shownData, setShownData] = useState([]);
   const [search, setSearch] = useState('');
 
@@ -137,9 +147,9 @@ const Glossary = ({ navigation }) => {
             size={24}
             color={colors.white}
             onPress={() => {
+              setSearch('');
               setShowSearch(!showSearch);
               setShownData(getSections(glossaryData));
-              setSearch('');
             }}
             style={{ marginRight: 16 }}
           />
@@ -156,7 +166,14 @@ const Glossary = ({ navigation }) => {
   }, [navigation, filterBookmarks, showSearch]);
 
   useEffect(() => {
-    setShownData(getSections(glossaryData));
+    client
+      .fetch(
+        '*[_type == "glossary"] { word, category, description, phonetics} | order(word asc)',
+      )
+      .then(response => {
+        setGlossaryData(response);
+        setShownData(getSections(response));
+      });
   }, []);
 
   const searchData = userText => {
@@ -177,7 +194,7 @@ const Glossary = ({ navigation }) => {
         {showSearch && (
           <Searchbar
             placeholder="Search"
-            onChangeText={userText => searchData(userText)}
+            onChangeText={searchData}
             value={search}
           />
         )}
