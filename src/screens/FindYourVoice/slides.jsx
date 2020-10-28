@@ -52,7 +52,9 @@ export const InChatRightsSlide04 = () => {
       </View>
       <Text style={styles.textDetail}>
         If you still do not know what to do and/or if the work is still unsafe,
-        you have the right to refuse the work without reprisal (consequences).
+        you have the right to refuse the work and call Alberta OHS to make a
+        complaint (+1 866 415-8690) or call directly from the resources section
+        of this app.
       </Text>
     </View>
   );
