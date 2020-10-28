@@ -6,26 +6,25 @@ import { Card } from 'react-native-paper';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as StoreReview from 'expo-store-review';
-import * as Linking from 'expo-linking';
 
-import InChatCard from 'components/InChatCard';
-import ResourceCard from 'components/ResourceCard';
 import FyvChatBot from 'components/ChatBot';
 import BasicButton from 'components/BasicButton';
-import EndChatReportingCard from 'components/EndChatReportingCard';
 import EndChatInjuryCard from 'components/EndChatInjuryCard';
 import EndChatRacistCard from 'components/EndChatRacistCard';
 import InChatRefButton from 'components/InChatRefButton';
 import colors from 'config/colors.json';
-import {
-  InChatRightsSlide01,
-  InChatRightsSlide02,
-  InChatRightsSlide03,
-} from './slides';
 import Subheading from 'components/Subheading';
 import Paragraph from 'components/Paragraph';
 
 import RoundButton from 'components/RoundButton';
+import ContentSlider from 'components/ContentSlider';
+import slides from './rightslides';
+import {
+  InChatRightsSlide01,
+  InChatRightsSlide02,
+  InChatRightsSlide03,
+  InChatRightsSlide04,
+} from './slides';
 
 const FindYourVoice = () => {
   const navigation = useNavigation();
@@ -118,8 +117,7 @@ const FindYourVoice = () => {
     },
     {
       id: '4',
-      message:
-        'One day, you come into work and when you arrive, your supervisor asks you to do a task you were not trained to do.',
+      message: 'You are asked to do something you were not trained to do.',
       trigger: '6',
     },
     {
@@ -135,14 +133,19 @@ const FindYourVoice = () => {
     {
       id: '7',
       options: [
-        { value: 'yes', label: 'YES, I do', trigger: '8' },
+        { value: 'yes', label: 'YES, I do', trigger: 'right to know' },
         { value: 'no', label: "NO, I don't", trigger: '9' },
       ],
     },
     {
+      id: 'right to know',
+      message: 'Right to Know – OHS Legislation',
+      trigger: '8',
+    },
+    {
       id: '8',
       message:
-        'According to the Government of Alberta, workers have the right to know about the dangers of our jobs and how we are protected.',
+        'According to the Government of Alberta, workers have the right to know about workplace dangers and how they are protected from hazards.',
       trigger: 'learn more - right to know',
     },
     {
@@ -164,19 +167,97 @@ const FindYourVoice = () => {
     },
     {
       id: '9',
-      message: 'You should ask your supervisor for additional information.',
+      message:
+        'All workers should feel safe to say they are not trained to do a task or to say a task is not safe.',
       trigger: '15',
     },
     {
       id: '10',
       message:
-        "Workers are protected by OHS legislation. If you are asked to do something you weren't trained to do at work, you do not have to do it immediately and you have a right to receive training and right to know what dangers you may face.",
+        "If you are asked to do something you weren't trained to do at work, you do not have to do it immediately.",
+      trigger: 'you have the right to know',
+    },
+    {
+      id: 'you have the right to know',
+      message:
+        'You have a right to know what hazards you may face and to receive training on how to do the job safely.',
       trigger: '11',
     },
     {
       id: '11',
       message:
         'For example, if you are handed a bottle of cleaner with no label on it, you have a right to ask what is in it, what hazards are associated with it and how you can protect yourself from the hazards. ',
+      trigger: 'all rights',
+    },
+    {
+      id: 'all rights',
+      component: <ContentSlider showsButtons slides={slides} />,
+      trigger: '12',
+    },
+
+    {
+      id: 'right to know card',
+      component: (
+        <Card
+          style={{
+            flex: 1,
+            borderRadius: 17,
+            width: '95%',
+            overflow: 'hidden',
+          }}
+        >
+          <View>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontSize: 13, lineHeight: 17 }}>
+                OHS Legislation
+              </Text>
+            </View>
+            <View
+              style={{
+                padding: 12,
+                alignItems: 'center',
+                backgroundColor: colors.effectOne,
+                resizeMode: 'contain',
+              }}
+            >
+              <View style={{ alignItems: 'center' }}>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,0.8)',
+                    fontSize: 12,
+                    textAlign: 'center',
+                  }}
+                >
+                  Right to
+                </Text>
+                <Text
+                  style={{
+                    color: 'rgba(255,255,255,1)',
+                    fontSize: 24,
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                  }}
+                >
+                  {' '}
+                  KNOW
+                </Text>
+              </View>
+              <Text
+                style={{
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: 12,
+                  textAlign: 'center',
+                  width: '75%',
+                  marginTop: 20,
+                  marginBottom: 20,
+                }}
+              >
+                about the dangers of our jobs and how we are protected.
+              </Text>
+            </View>
+          </View>
+        </Card>
+      ),
       trigger: '12',
     },
     {
@@ -222,20 +303,31 @@ const FindYourVoice = () => {
     },
     {
       id: '15',
-      message: 'Do you feel safe and/or comfortable asking?',
+      message:
+        "Sometimes, it is not as simple as saying no to something you don't think is safe.",
       trigger: '16',
     },
     {
       id: '16',
-      options: [
-        { value: 'yes', label: 'YES, I feel comfortable', trigger: '17' },
-        { value: 'no', label: "NO, I don't feel comfortable", trigger: '18' },
-      ],
+      message:
+        'Refusing to work can be scary, and you may fear consequences, such as fewer shifts, insults, or your manager getting angry.',
+      trigger: '17',
     },
     {
       id: '17',
-      message: "That's great!",
-      trigger: '19',
+      message:
+        'However, it is your right to be trained to do a task and to refuse to do work that is not safe.',
+      trigger: 'all rights 2',
+    },
+    {
+      id: 'all rights 2',
+      component: <ContentSlider showsButtons slides={slides} />,
+      trigger: 'take steps',
+    },
+    {
+      id: 'take steps',
+      message: 'If you refuse unsafe work, the steps you need to take are:',
+      trigger: '45',
     },
     {
       id: '18',
@@ -243,96 +335,96 @@ const FindYourVoice = () => {
         'You have the right to refuse unsafe work - ask for information or actions to be taken.',
       trigger: '35',
     },
-    {
-      id: '19',
-      message:
-        'Information is one of the best tools workers can have, as it helps you maneuver the complicated world of the workplace and health and safety legislation. ',
-      trigger: '20',
-    },
-    {
-      id: '20',
-      message: 'Information can also be overwhelming and/or confusing. ',
-      trigger: '21',
-    },
-    {
-      id: '21',
-      message:
-        "For example, many newcomers who start a new job are assumed to understand their training even when it is too quick or too much. Let's look at another example:",
-      trigger: '22',
-    },
-    {
-      id: '22',
-      message:
-        'Ana, a new worker at Home Depot was given 6 hours to read a large training packet in English. Afterwards, she was asked a few questions and passed a test. However, given the amount of information she read she forgot most of it in a few days and there were no training follow-ups and refreshers. ',
-      trigger: '23',
-    },
-    {
-      id: '23',
-      message: 'Are you following?',
-      trigger: '24',
-    },
-    {
-      id: '24',
-      options: [
-        { value: 'yes', label: 'YES, I am', trigger: '25' },
-        { value: 'no', label: 'NO, I am lost', trigger: '26' },
-      ],
-    },
-    {
-      id: '25',
-      message: 'great',
-      trigger: '27',
-    },
-    {
-      id: '26',
-      message: 'Please scroll up and read these examples again',
-      trigger: '23',
-    },
-    {
-      id: '27',
-      message: 'Information can come from a variety of sources. ',
-      trigger: 'information sources',
-    },
-    {
-      id: 'information sources',
-      options: [
-        {
-          value: 'What are some sources?',
-          label: 'What are some sources?',
-          trigger: '28',
-        },
-      ],
-    },
-    {
-      id: '28',
-      message:
-        'For example, you can get it during training and from your boss. ',
-      trigger: '29',
-    },
-    {
-      id: '29',
-      message:
-        'One of the best sources of information can be from trusted colleagues. These can be people you trust, that have your safety in mind, and share your native language. ',
-      trigger: '30',
-    },
-    {
-      id: '30',
-      message:
-        'For example, workers often go during their lunch break to their native language speaker colleagues to learn more about work matters related to safety and clarify confusing matters.  ',
-      trigger: '31',
-    },
-    {
-      id: '31',
-      message: 'Are you clear on these informations so far?',
-      trigger: '32',
-    },
-    {
-      id: '32',
-      options: [
-        { value: 'yes', label: 'YES, I am', trigger: 'end injury prevention' },
-        { value: 'no', label: 'NO, I am not', trigger: '34' },
-      ],
-    },
+    // {
+    //   id: '19',
+    //   message:
+    //     'Information is one of the best tools workers can have, as it helps you maneuver the complicated world of the workplace and health and safety legislation. ',
+    //   trigger: '20',
+    // },
+    // {
+    //   id: '20',
+    //   message: 'Information can also be overwhelming and/or confusing. ',
+    //   trigger: '21',
+    // },
+    // {
+    //   id: '21',
+    //   message:
+    //     "For example, many newcomers who start a new job are assumed to understand their training even when it is too quick or too much. Let's look at another example:",
+    //   trigger: '22',
+    // },
+    // {
+    //   id: '22',
+    //   message:
+    //     'Ana, a new worker at Home Depot was given 6 hours to read a large training packet in English. Afterwards, she was asked a few questions and passed a test. However, given the amount of information she read she forgot most of it in a few days and there were no training follow-ups and refreshers. ',
+    //   trigger: '23',
+    // },
+    // {
+    //   id: '23',
+    //   message: 'Are you following?',
+    //   trigger: '24',
+    // },
+    // {
+    //   id: '24',
+    //   options: [
+    //     { value: 'yes', label: 'YES, I am', trigger: '25' },
+    //     { value: 'no', label: 'NO, I am lost', trigger: '26' },
+    //   ],
+    // },
+    // {
+    //   id: '25',
+    //   message: 'great',
+    //   trigger: '27',
+    // },
+    // {
+    //   id: '26',
+    //   message: 'Please scroll up and read these examples again',
+    //   trigger: '23',
+    // },
+    // {
+    //   id: '27',
+    //   message: 'Information can come from a variety of sources. ',
+    //   trigger: 'information sources',
+    // },
+    // {
+    //   id: 'information sources',
+    //   options: [
+    //     {
+    //       value: 'What are some sources?',
+    //       label: 'What are some sources?',
+    //       trigger: '28',
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: '28',
+    //   message:
+    //     'For example, you can get it during training and from your boss. ',
+    //   trigger: '29',
+    // },
+    // {
+    //   id: '29',
+    //   message:
+    //     'One of the best sources of information can be from trusted colleagues. These can be people you trust, that have your safety in mind, and share your native language. ',
+    //   trigger: '30',
+    // },
+    // {
+    //   id: '30',
+    //   message:
+    //     'For example, workers often go during their lunch break to their native language speaker colleagues to learn more about work matters related to safety and clarify confusing matters.  ',
+    //   trigger: '31',
+    // },
+    // {
+    //   id: '31',
+    //   message: 'Are you clear on these informations so far?',
+    //   trigger: '32',
+    // },
+    // {
+    //   id: '32',
+    //   options: [
+    //     { value: 'yes', label: 'YES, I am', trigger: 'end injury prevention' },
+    //     { value: 'no', label: 'NO, I am not', trigger: '34' },
+    //   ],
+    // },
     {
       id: '33',
       message: 'Awesome! Thanks and do have a great day',
@@ -534,13 +626,13 @@ const FindYourVoice = () => {
                 style={{ height: 220, backgroundColor: colors.effectOne }}
                 activeDotColor={colors.white}
                 dotColor="rgba(0,0,0,0.2)"
-                nextButton={
+                nextButton={(
                   <Icon
                     name="chevron-right"
                     size={26}
                     color="rgba(0,0,0,0.2)"
                   />
-                }
+                )}
                 prevButton={
                   <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
                 }
@@ -549,6 +641,7 @@ const FindYourVoice = () => {
                 <InChatRightsSlide01 />
                 <InChatRightsSlide02 />
                 <InChatRightsSlide03 />
+                <InChatRightsSlide04 />
               </Swiper>
             </View>
           </View>
@@ -641,8 +734,7 @@ const FindYourVoice = () => {
     },
     {
       id: '8a',
-      message:
-        'You reported it.',
+      message: 'You reported it.',
       trigger: '13a',
     },
     {
@@ -670,8 +762,7 @@ const FindYourVoice = () => {
     // },
     {
       id: '13a',
-      message:
-        'Was there an action taken by management afterwards?',
+      message: 'Was there an action taken by management afterwards?',
       trigger: '14a',
     },
     {
@@ -748,24 +839,26 @@ const FindYourVoice = () => {
 
     {
       id: '26a',
-      message: 'Even if issues are not addressed, workers like Flora have options:',
+      message:
+        'Even if issues are not addressed, workers like Flora have options:',
       trigger: 'item 1',
     },
     {
       id: 'item 1',
-      message: '1) Talk to a union representative if you are in a union, or talk to a trusted co-worker for support. ',
+      message:
+        '1) Talk to a union representative if you are in a union, or talk to a trusted co-worker for support. ',
       trigger: 'item 2',
     },
     {
       id: 'item 2',
-      message: '2) Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal Human rights and racism relate to someone experiencing discrimination due to race and/or religion. Refer to this Human Rights plain language guide for more information.',
+      message:
+        '2) Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal Human rights and racism relate to someone experiencing discrimination due to race and/or religion. Refer to this Human Rights plain language guide for more information.',
       trigger: 'plain language guide 2',
     },
     {
       id: 'plain language guide 2',
       component: (
         <View>
-          
           <InChatRefButton
             onPress={async () =>
               await WebBrowser.openBrowserAsync(
@@ -790,26 +883,27 @@ const FindYourVoice = () => {
         </View>
       ),
       trigger: 'item 3',
-    }, 
+    },
     {
       id: 'item 3',
-      message: '3) Make a health and safety complaint to the Government of Alberta. Health and safety and racism relates to someone experiencing harassment at work. ',
+      message:
+        '3) Make a health and safety complaint to the Government of Alberta. Health and safety and racism relates to someone experiencing harassment at work. ',
       trigger: 'ohs complaint',
     },
     {
       id: 'ohs complaint',
       component: (
-          <InChatRefButton
-            onPress={async () =>
-              await WebBrowser.openBrowserAsync(
-                'https://www.alberta.ca/file-complaint-online.aspx',
-              )
-            }
-            icon="web"
-            style={{ width: '80%' }}
-          >
-            OHS File a Complaint
-          </InChatRefButton>
+        <InChatRefButton
+          onPress={async () =>
+            await WebBrowser.openBrowserAsync(
+              'https://www.alberta.ca/file-complaint-online.aspx',
+            )
+          }
+          icon="web"
+          style={{ width: '80%' }}
+        >
+          OHS File a Complaint
+        </InChatRefButton>
       ),
       trigger: '38a',
     },
@@ -822,16 +916,16 @@ const FindYourVoice = () => {
     {
       id: 'plain language guide',
       component: (
-          <InChatRefButton
-            onPress={async () =>
-              await WebBrowser.openBrowserAsync(
-                'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
-              )
-            }
-            style={{ width: '80%' }}
-          >
-            Human Rights Plain Language Guide
-          </InChatRefButton>
+        <InChatRefButton
+          onPress={async () =>
+            await WebBrowser.openBrowserAsync(
+              'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
+            )
+          }
+          style={{ width: '80%' }}
+        >
+          Human Rights Plain Language Guide
+        </InChatRefButton>
       ),
       trigger: '37a',
     },
@@ -839,7 +933,6 @@ const FindYourVoice = () => {
       id: 'file a complaint',
       component: (
         <View>
-
           <InChatRefButton
             onPress={async () =>
               await WebBrowser.openBrowserAsync(
@@ -897,7 +990,7 @@ const FindYourVoice = () => {
     {
       id: '31a',
       message:
-        "As someone new to Canada, it is normal to be scared or unsure in these cases.",
+        'As someone new to Canada, it is normal to be scared or unsure in these cases.',
       trigger: '32a',
     },
     {
@@ -938,8 +1031,7 @@ const FindYourVoice = () => {
     },
     {
       id: 'complaints',
-      message:
-        'Good! Complaints be accessed by clicking the link below',
+      message: 'Good! Complaints can be accessed by clicking the link below',
       trigger: 'file a complaint',
     },
     {
@@ -961,8 +1053,7 @@ const FindYourVoice = () => {
     },
     {
       id: '38a',
-      message:
-        'Great job! You have completed this section of Racist Incident.',
+      message: 'Great job! You have completed this section of Racist Incident.',
       trigger: '39a',
     },
     {
@@ -1048,7 +1139,7 @@ const FindYourVoice = () => {
     {
       id: '10b',
       message:
-        'Injuries at work need to be confirmed by a doctor in Alberta for a WCB claim to be accepted. All these visits are covered by Alberta Health. Some workers complete their WCB forms at the doctor\'s office because they feel more comfortable there.',
+        "Injuries at work need to be confirmed by a doctor in Alberta for a WCB claim to be accepted. All these visits are covered by Alberta Health. Some workers complete their WCB forms at the doctor's office because they feel more comfortable there.",
       trigger: '14b',
     },
     // {
@@ -1220,8 +1311,7 @@ const FindYourVoice = () => {
     },
     {
       id: '29b',
-      message:
-        'Great job! You have completed this section of Injury at Work.', // add  restart button
+      message: 'Great job! You have completed this section of Injury at Work.', // add  restart button
       trigger: '68b',
     },
 
@@ -1248,47 +1338,70 @@ const FindYourVoice = () => {
 
     {
       id: '32b',
-      message: 'If your claim is not accepted, this is not the end. Common reasons that claims are rejected are because of paperwork that was not completed in time.',
+      message:
+        'If your claim is not accepted, this is not the end. Common reasons that claims are rejected are because of paperwork that was not completed in time.',
       trigger: 'Employer notify',
     },
     {
       id: 'Employer notify',
-      message: 'Employers must notify WCB within 72 hours and workers in Alberta have 24 months to make a claim, but a worker should make a claim as soon as possible.',
+      message:
+        'Employers must notify WCB within 72 hours and workers in Alberta have 24 months to make a claim, but a worker should make a claim as soon as possible.',
       trigger: 'claim not accepted',
     },
     {
       id: 'claim not accepted',
-      message: ' If your claim was not accepted even though you were injured at work, you can contact the Calgary Workers\' Resource Centre for free help.',
+      message:
+        " If your claim was not accepted even though you were injured at work, you can contact the Calgary Workers' Resource Centre for free help.",
       trigger: 'workers resource',
     },
     {
       id: 'workers resource',
-      component: 
-                      <View style={{ flex: 1, backgroundColor: colors.white, borderRadius: 16, marginBottom: 16, width: '100%', shadowColor: colors.black, shadowOffset: {width: 0, height: 1}, shadowOpacity: 0.22, shadowRadius: 2.2, elevation: 3,}}>
-                          <View style={{ paddingHorizontal: 24, paddingTop: 24 }}>
-                              <Subheading>Calgary Workers' Resource Centre</Subheading>
+      component: (
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: colors.white,
+            borderRadius: 16,
+            marginBottom: 16,
+            width: '100%',
+            shadowColor: colors.black,
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.22,
+            shadowRadius: 2.2,
+            elevation: 3,
+          }}
+        >
+          <View style={{ paddingHorizontal: 24, paddingTop: 24 }}>
+            <Subheading>Calgary Workers' Resource Centre</Subheading>
 
-                              <Paragraph>Calgary Workers' Resource Centre provides free case work and a public legal education program if you are having issues understanding your rights in your workplace.</Paragraph>
-                          </View>
-
-                          <View style={{flexDirection: 'row',
-                                        justifyContent: 'space-evenly',
-                                        backgroundColor: colors.lightGrey,
-                                        borderBottomLeftRadius: 16,
-                                        borderBottomRightRadius: 16,
-                                        borderTopColor: colors.mediumGrey,
-                                        borderTopWidth: 1,
-                                        borderStyle: 'solid'}}>
-
-                                        <RoundButton type="web" target={"https://www.helpwrc.org/"} />
-                           
-                                <View style={{
-                                        borderLeftWidth: 1,
-                                        borderLeftColor: colors.mediumGrey}}/>
-                                        <RoundButton type="phone" target={"+1 403-264-8100"} />
-                          </View>
-                    </View>,
-     
+            <Paragraph>
+              Calgary Workers' Resource Centre provides free case work and a
+              public legal education program if you are having issues
+              understanding your rights in your workplace.
+            </Paragraph>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              backgroundColor: colors.lightGrey,
+              borderBottomLeftRadius: 16,
+              borderBottomRightRadius: 16,
+              borderTopColor: colors.mediumGrey,
+              borderTopWidth: 1,
+              borderStyle: 'solid',
+            }}
+          >
+            <RoundButton type="web" target="https://www.helpwrc.org/" />
+            ,
+            <View
+              style={{ borderLeftWidth: 1, borderLeftColor: colors.mediumGrey }}
+            />
+            <RoundButton type="phone" target="+1 403-264-8100" />
+          </View>
+          ,
+        </View>
+      ),
       trigger: 'continue WCB question',
     },
     {
@@ -1408,8 +1521,7 @@ const FindYourVoice = () => {
     // },
     {
       id: 'during rehabilitation',
-      message:
-        'During rehabilitation, can you return to work?',
+      message: 'During rehabilitation, can you return to work?',
       trigger: '54b',
     },
     // {
@@ -1612,37 +1724,59 @@ const FindYourVoice = () => {
     {
       id: '62b',
       message:
-        'If you are ever confused or scared during this process, you can get free help through Calgary Workers\' Resource Centre by clicking below.',
+        "If you are ever confused or scared during this process, you can get free help through Calgary Workers' Resource Centre by clicking below.",
       trigger: 'workers resource end',
     },
     {
       id: 'workers resource end',
-      component: 
-                      <View style={{ flex: 1, backgroundColor: colors.white, borderRadius: 16, marginBottom: 16, width: '100%', shadowColor: colors.black, shadowOffset: {width: 0, height: 1}, shadowOpacity: 0.22, shadowRadius: 2.2, elevation: 3,}}>
-                          <View style={{ paddingHorizontal: 24, paddingTop: 24 }}>
-                              <Subheading>Calgary Workers' Resource Centre</Subheading>
+      component: (
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: colors.white,
+            borderRadius: 16,
+            marginBottom: 16,
+            width: '100%',
+            shadowColor: colors.black,
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.22,
+            shadowRadius: 2.2,
+            elevation: 3,
+          }}
+        >
+          <View style={{ paddingHorizontal: 24, paddingTop: 24 }}>
+            <Subheading>Calgary Workers\' Resource Centre</Subheading>
+            <Paragraph>
+              Calgary Workers\' Resource Centre provides free case work and a
+              public legal education program if you are having issues
+              understanding your rights in your workplace.
+            </Paragraph>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              backgroundColor: colors.lightGrey,
+              borderBottomLeftRadius: 16,
+              borderBottomRightRadius: 16,
+              borderTopColor: colors.mediumGrey,
+              borderTopWidth: 1,
+              borderStyle: 'solid',
+            }}
+          >
+            <RoundButton type="web" target="https://www.helpwrc.org/" />
 
-                              <Paragraph>Calgary Workers' Resource Centre provides free case work and a public legal education program if you are having issues understanding your rights in your workplace.</Paragraph>
-                          </View>
+            <View
+              style={{
+                borderLeftWidth: 1,
+                borderLeftColor: colors.mediumGrey,
+              }}
+            />
+            <RoundButton type="phone" target="+1 403-264-8100" />
+          </View>
+        </View>
+      ),
 
-                          <View style={{flexDirection: 'row',
-                                        justifyContent: 'space-evenly',
-                                        backgroundColor: colors.lightGrey,
-                                        borderBottomLeftRadius: 16,
-                                        borderBottomRightRadius: 16,
-                                        borderTopColor: colors.mediumGrey,
-                                        borderTopWidth: 1,
-                                        borderStyle: 'solid'}}>
-
-                                        <RoundButton type="web" target={"https://www.helpwrc.org/"} />
-                           
-                                <View style={{
-                                        borderLeftWidth: 1,
-                                        borderLeftColor: colors.mediumGrey}}/>
-                                        <RoundButton type="phone" target={"+1 403-264-8100"} />
-                          </View>
-                    </View>,
-     
       trigger: '29b',
     },
     // {

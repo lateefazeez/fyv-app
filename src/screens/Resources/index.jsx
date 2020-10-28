@@ -8,7 +8,7 @@ import ResourceCard from 'components/ResourceCard';
 
 import headerImage from 'assets/headers/resources.png';
 
-//import data from 'config/resources.json';
+// import data from 'config/resources.json';
 
 import colors from 'config/colors.json';
 import client from '../../services/api';
@@ -18,13 +18,13 @@ const Resources = () => {
 
   useEffect(() => {
     client
-      .fetch('*[_type == "resource"] { name, content } | order(word asc)',)
+      .fetch('*[_type == "resource"] { name, content } | order(word asc)')
       .then(response => {
         setResourceData(response);
       });
   }, []);
 
-  //console.log('Resource: ', resourceData);
+  // console.log('Resource: ', resourceData);
 
   return (
     <>

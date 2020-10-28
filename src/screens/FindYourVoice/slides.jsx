@@ -9,14 +9,10 @@ export const InChatRightsSlide01 = () => {
       <View style={styles.headline}>
         <Text style={styles.text}>1</Text>
       </View>
-      <Text style={styles.textDetail}>
-        Let your immediate supervisor know that you are uncomfortable and/or
-        unsafe, and clearly explain why.
-      </Text>
+      <Text style={styles.textDetail}>Don’t do the work.</Text>
     </View>
   );
 };
-
 export const InChatRightsSlide02 = () => {
   return (
     <View style={[styles.container, { backgroundColor: colors.effectOne }]}>
@@ -25,8 +21,8 @@ export const InChatRightsSlide02 = () => {
         <Text style={styles.text}>2</Text>
       </View>
       <Text style={styles.textDetail}>
-        Give your employer/supervisor a chance and a reasonable timeline to
-        provide you with training, and /or make the work safe.
+        Let your immediate supervisor know that you are uncomfortable and/or
+        unsafe, and clearly explain why.
       </Text>
     </View>
   );
@@ -38,6 +34,21 @@ export const InChatRightsSlide03 = () => {
       {/* <Image style={styles.image} source={placeholder} /> */}
       <View style={styles.headline}>
         <Text style={styles.text}>3</Text>
+      </View>
+      <Text style={styles.textDetail}>
+        Give your employer/supervisor a chance and a reasonable timeline to
+        provide you with training, and /or make the work safe.
+      </Text>
+    </View>
+  );
+};
+
+export const InChatRightsSlide04 = () => {
+  return (
+    <View style={[styles.container, { backgroundColor: colors.effectOne }]}>
+      {/* <Image style={styles.image} source={placeholder} /> */}
+      <View style={styles.headline}>
+        <Text style={styles.text}>4</Text>
       </View>
       <Text style={styles.textDetail}>
         If you still do not know what to do and/or if the work is still unsafe,
