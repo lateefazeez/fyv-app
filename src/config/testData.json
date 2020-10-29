@@ -1,0 +1,905 @@
+[
+  {
+    "_createdAt": "2020-10-28T17:52:31Z",
+    "_id": "appSettings",
+    "_rev": "1haU2alT69LyvNrGKxygDm",
+    "_type": "appSettings",
+    "_updatedAt": "2020-10-29T07:51:40Z",
+    "appColors": [
+      {
+        "_key": "3628120042cc",
+        "_type": "appColor",
+        "code": {
+          "_type": "color",
+          "alpha": 1,
+          "hex": "#129c96",
+          "hsl": {
+            "_type": "hslaColor",
+            "a": 1,
+            "h": 177.39130434782606,
+            "l": 0.3411764705882353,
+            "s": 0.7931034482758622
+          },
+          "hsv": {
+            "_type": "hsvaColor",
+            "a": 1,
+            "h": 177.39130434782606,
+            "s": 0.8846153846153847,
+            "v": 0.611764705882353
+          },
+          "rgb": {
+            "_type": "rgbaColor",
+            "a": 1,
+            "b": 150,
+            "g": 156,
+            "r": 18
+          }
+        },
+        "name": "primary"
+      },
+      {
+        "_key": "d0b364ddb2ec",
+        "_type": "appColor",
+        "code": {
+          "_type": "color",
+          "alpha": 1,
+          "hex": "#80c2bf",
+          "hsl": {
+            "_type": "hslaColor",
+            "a": 1,
+            "h": 177.27272727272728,
+            "l": 0.6313725490196078,
+            "s": 0.351063829787234
+          },
+          "hsv": {
+            "_type": "hsvaColor",
+            "a": 1,
+            "h": 177.27272727272728,
+            "s": 0.34020618556701027,
+            "v": 0.7607843137254902
+          },
+          "rgb": {
+            "_type": "rgbaColor",
+            "a": 1,
+            "b": 191,
+            "g": 194,
+            "r": 128
+          }
+        },
+        "name": "lightPrimary"
+      },
+      {
+        "_key": "3bec671283f5",
+        "_type": "appColor",
+        "code": {
+          "_type": "color",
+          "alpha": 0.2,
+          "hex": "#ffffff",
+          "hsl": {
+            "_type": "hslaColor",
+            "a": 0.2,
+            "h": 60,
+            "l": 1,
+            "s": 0
+          },
+          "hsv": {
+            "_type": "hsvaColor",
+            "a": 0.2,
+            "h": 60,
+            "s": 0,
+            "v": 1
+          },
+          "rgb": {
+            "_type": "rgbaColor",
+            "a": 0.2,
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
+        },
+        "name": "transpWhite"
+      },
+      {
+        "_key": "892453517f34",
+        "_type": "appColor",
+        "code": {
+          "_type": "color",
+          "alpha": 0.2,
+          "hex": "#000000",
+          "hsl": {
+            "_type": "hslaColor",
+            "a": 0.2,
+            "h": 240,
+            "l": 0,
+            "s": 0
+          },
+          "hsv": {
+            "_type": "hsvaColor",
+            "a": 0.2,
+            "h": 240,
+            "s": 0,
+            "v": 0
+          },
+          "rgb": {
+            "_type": "rgbaColor",
+            "a": 0.2,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        "name": "transpGrey"
+      }
+    ],
+    "title": "Finding Your Voice App"
+  },
+  {
+    "_createdAt": "2020-10-29T06:10:53Z",
+    "_id": "disclaimer",
+    "_rev": "D7I0B3BKbPY7AcCa93ry0W",
+    "_type": "disclaimer",
+    "_updatedAt": "2020-10-29T15:36:29Z",
+    "availableLanguagesLabel": "This app is only available in English.",
+    "description": "The purpose of this app is solely to educate workers about workplace health and safety [legislation], general advice, guidance on your rights, and the services available to you.\n\nNone of the information provided is intended to be used for legal purposes.",
+    "fundingLabel": "Funded by:",
+    "fundingPartner": {
+      "_type": "partner",
+      "imageWidth": 200,
+      "logo": {
+        "_type": "image",
+        "asset": {
+          "_ref": "image-c99cb9d9a6a9e2b702caa9f5991868435b97f154-900x339-png",
+          "_type": "reference"
+        }
+      },
+      "name": "Government of Alberta",
+      "url": "https://www.alberta.ca/"
+    },
+    "partners": [
+      {
+        "_key": "791ddcfe3550",
+        "_type": "partner",
+        "imageWidth": 280,
+        "logo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-dfb6474fecf8b70658edc424b3e52263af0dfc45-751x126-png",
+            "_type": "reference"
+          }
+        },
+        "name": "School of Global Access - Bow Valley College",
+        "url": "https://globalaccess.bowvalleycollege.ca/"
+      },
+      {
+        "_key": "5e71d0e641e6",
+        "_type": "partner",
+        "imageWidth": 240,
+        "logo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-fd882686787a4e537376b9a98e31476fdcc29da6-520x153-png",
+            "_type": "reference"
+          }
+        },
+        "name": "Alberta's Workers' Health Centre",
+        "url": "https://workershealthcentre.ca/"
+      },
+      {
+        "_key": "6adabd5640c2",
+        "_type": "partner",
+        "imageWidth": 200,
+        "logo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-c4e3778e35bef95be878ac92b9ea306afcbbe3d0-720x244-png",
+            "_type": "reference"
+          }
+        },
+        "name": "Sodexo",
+        "url": "https://ca.sodexo.com/"
+      }
+    ],
+    "partnershipsLabel": "In partnership with:"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:23Z",
+    "_id": "XkXuFUvBO66xPt3te5QUun",
+    "_rev": "XkXuFUvBO66xPt3te5QUq0",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:23Z",
+    "category": "noun",
+    "description": "A person’s behaviour in a particular place or situation",
+    "phonetics": "kaan . duhkt",
+    "word": "Conduct"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:24Z",
+    "_id": "XkXuFUvBO66xPt3te5QVDx",
+    "_rev": "XkXuFUvBO66xPt3te5QV9A",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:24Z",
+    "category": "verb",
+    "description": "To be the parts that together form something.",
+    "phonetics": "kaan . stuh . toot",
+    "word": "Constitute"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:25Z",
+    "_id": "XkXuFUvBO66xPt3te5QVgh",
+    "_rev": "XkXuFUvBO66xPt3te5QVbu",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:25Z",
+    "category": "verb",
+    "description": "To control or influence a situation in a way that shows skill",
+    "phonetics": "muh . noo . vr",
+    "word": "Maneuver"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:26Z",
+    "_id": "XkXuFUvBO66xPt3te5QWJ1",
+    "_rev": "XkXuFUvBO66xPt3te5QWEE",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:26Z",
+    "category": "noun",
+    "description": "The process of helping someone to have a normal, useful life again after they have been ill",
+    "phonetics": "ree . uh . bi . luh . tei . shn",
+    "word": "Rehabilitation"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:26Z",
+    "_id": "XkXuFUvBO66xPt3te5QWXO",
+    "_rev": "XkXuFUvBO66xPt3te5QWSb",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:26Z",
+    "category": "noun",
+    "description": "A violent or aggressive act towards somebody because of something bad that they have done before you",
+    "phonetics": "ree . prai . zl",
+    "word": "Reprisal"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:27Z",
+    "_id": "XkXuFUvBO66xPt3te5QWll",
+    "_rev": "XkXuFUvBO66xPt3te5QWgy",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:27Z",
+    "category": "noun",
+    "description": "A level of quality, especially one that people think is acceptable",
+    "phonetics": "stan . drdz",
+    "word": "Standards"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:28Z",
+    "_id": "XkXuFUvBO66xPt3te5QXO5",
+    "_rev": "XkXuFUvBO66xPt3te5QXJI",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:28Z",
+    "category": "noun",
+    "description": "A legal document that is signed by a judge and gives the police authority to do something",
+    "phonetics": "waw . ruhn . tuhd",
+    "word": "Warrant"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:23Z",
+    "_id": "XoaOTvah7ZFSBIsJKJyroV",
+    "_rev": "XoaOTvah7ZFSBIsJKJyrli",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:23Z",
+    "category": "noun",
+    "description": "A statement that somebody makes saying that they are not happy about something",
+    "phonetics": "kuhm . pleint",
+    "word": "Complaint"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:23Z",
+    "_id": "XoaOTvah7ZFSBIsJKJyru5",
+    "_rev": "XoaOTvah7ZFSBIsJKJyrrI",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:23Z",
+    "category": "noun",
+    "description": "A result of something that has happened, especially a negative response",
+    "phonetics": "kaan · suh · kwns",
+    "word": "Consequence"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:24Z",
+    "_id": "XoaOTvah7ZFSBIsJKJys5F",
+    "_rev": "XoaOTvah7ZFSBIsJKJys2S",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:24Z",
+    "category": "adjective",
+    "description": "Relating to a particular ethnic group",
+    "phonetics": "eth . no . cul . tur . al",
+    "word": "Ethnocultural"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:25Z",
+    "_id": "XoaOTvah7ZFSBIsJKJysOm",
+    "_rev": "XoaOTvah7ZFSBIsJKJysLz",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:25Z",
+    "category": "noun",
+    "description": "A law or set of laws passed by a parliament",
+    "phonetics": "leh . juh . slei . shn",
+    "word": "Legislation"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:25Z",
+    "_id": "XoaOTvah7ZFSBIsJKJysUM",
+    "_rev": "XoaOTvah7ZFSBIsJKJysRZ",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:25Z",
+    "category": "noun",
+    "description": "Behaviour that controls or influences somebody/something, often in a dishonest way so that they do not realize it",
+    "phonetics": "muh . ni . pyuh . lei . shn",
+    "word": "Manipulation"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:26Z",
+    "_id": "XoaOTvah7ZFSBIsJKJysiJ",
+    "_rev": "XoaOTvah7ZFSBIsJKJysfW",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:26Z",
+    "category": "noun",
+    "description": "A person who hates women",
+    "phonetics": "muh . saa . juh . nuhst",
+    "word": "Misogynist"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:27Z",
+    "_id": "XoaOTvah7ZFSBIsJKJysz3",
+    "_rev": "XoaOTvah7ZFSBIsJKJyswG",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:27Z",
+    "category": "noun",
+    "description": "The act of ending something",
+    "phonetics": "tr . muh . nei . shn",
+    "word": "Termination"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:23Z",
+    "_id": "cj9tQX4j7suifBRRaHHeKe",
+    "_rev": "YqriUILjPiXDlYdUgasKXH",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-29T15:17:04Z",
+    "category": "noun",
+    "description": "A failure to do something that must be done by law",
+    "phonetics": "brEE-chuhz",
+    "word": "Breaches"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:23Z",
+    "_id": "cj9tQX4j7suifBRRaHHeLm",
+    "_rev": "cj9tQX4j7suifBRRaHHeLD",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:23Z",
+    "category": "adjective",
+    "description": "Meant to be kept secret and not told to or shared with other people",
+    "phonetics": "kaan · fuh · den · shl",
+    "word": "Confidential"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:24Z",
+    "_id": "cj9tQX4j7suifBRRaHHeOb",
+    "_rev": "cj9tQX4j7suifBRRaHHeNT",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:24Z",
+    "category": "adjective",
+    "description": "Something made weaker/poorer by using up their strength/money",
+    "phonetics": "drei . nuhng",
+    "word": "Draining"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:24Z",
+    "_id": "cj9tQX4j7suifBRRaHHePA",
+    "_rev": "cj9tQX4j7suifBRRaHHeO2",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:24Z",
+    "category": "noun",
+    "description": "The practice of treating a person or a group less fairly than others",
+    "phonetics": "duh . skri . muh . nei . shn",
+    "word": "Discrimination"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:24Z",
+    "_id": "cj9tQX4j7suifBRRaHHeSY",
+    "_rev": "cj9tQX4j7suifBRRaHHeRz",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:24Z",
+    "category": "adjective",
+    "description": "Not enough",
+    "phonetics": "in . suh . fi . shnt",
+    "word": "Insufficient"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:25Z",
+    "_id": "cj9tQX4j7suifBRRaHHeX4",
+    "_rev": "cj9tQX4j7suifBRRaHHeWV",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:25Z",
+    "category": "adjective",
+    "description": "Controlled mainly by or consisting mainly of men",
+    "phonetics": "meil . domi . neitid",
+    "word": "Male-dominated"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:25Z",
+    "_id": "cj9tQX4j7suifBRRaHHeYC",
+    "_rev": "cj9tQX4j7suifBRRaHHeXd",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:25Z",
+    "category": "adjective",
+    "description": "Separated physically or socially from other people or things",
+    "phonetics": "ai . suh . lei . tuhng",
+    "word": "Isolating"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:26Z",
+    "_id": "cj9tQX4j7suifBRRaHHec9",
+    "_rev": "cj9tQX4j7suifBRRaHHeb1",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:26Z",
+    "category": "adjective",
+    "description": "Very great or very strong/powerful",
+    "phonetics": "ow . vr . wel . muhng",
+    "word": "Overwhelming"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:26Z",
+    "_id": "cj9tQX4j7suifBRRaHHeci",
+    "_rev": "cj9tQX4j7suifBRRaHHeba",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:26Z",
+    "category": "noun",
+    "description": "The state of being forced to do something because it is your duty, or because of a law",
+    "phonetics": "aa . bluh . gei . shn",
+    "word": "Obligation"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:27Z",
+    "_id": "cj9tQX4j7suifBRRaHHeey",
+    "_rev": "cj9tQX4j7suifBRRaHHeeP",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:27Z",
+    "category": "adjective",
+    "description": "Containing poison; very unpleasant",
+    "phonetics": "taak . suhk",
+    "word": "Toxic"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:27Z",
+    "_id": "cj9tQX4j7suifBRRaHHeg6",
+    "_rev": "cj9tQX4j7suifBRRaHHefX",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:27Z",
+    "category": "adjective",
+    "description": "Something you can trust",
+    "phonetics": "truh . stuhd",
+    "word": "Trusted"
+  },
+  {
+    "_createdAt": "2020-10-27T07:30:27Z",
+    "_id": "cj9tQX4j7suifBRRaHHelk",
+    "_rev": "cj9tQX4j7suifBRRaHHelB",
+    "_type": "glossary",
+    "_updatedAt": "2020-10-27T07:30:27Z",
+    "category": "adjective",
+    "description": "Not supported by written evidence",
+    "phonetics": "uhn . daa . kyuh . men . tuhd",
+    "word": "Undocumented"
+  },
+  {
+    "_createdAt": "2020-10-26T23:44:15Z",
+    "_id": "d4f95c20-c150-4f4e-b4c5-803db9ab51d8",
+    "_rev": "XoaOTvah7ZFSBIsJKIrUAg",
+    "_type": "post",
+    "_updatedAt": "2020-10-26T23:44:15Z",
+    "body": [
+      {
+        "_key": "dba804214552",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "7c831c9c536e",
+            "_type": "span",
+            "marks": [],
+            "text": "faseasesa ease arewra ewradsfa sfas"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "categories": [],
+    "publishedAt": "2020-10-26T06:00:00.000Z",
+    "slug": {
+      "_type": "slug",
+      "current": "test-post"
+    },
+    "title": "TEsdt post"
+  },
+  {
+    "_createdAt": "2020-10-27T23:14:29Z",
+    "_id": "56a96f5b-a222-40c4-8a09-9966dd8128fe",
+    "_rev": "boYe22rttqLumZjBeHw4mV",
+    "_type": "resource",
+    "_updatedAt": "2020-10-28T22:44:38Z",
+    "content": {
+      "description": "The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury. \n\nIMPORTANT: You may also file an anonymous complaint through AOHS.",
+      "phone": "+1 866-415-8690",
+      "website": "https://www.alberta.ca/occupational-health-safety.aspx"
+    },
+    "name": "Workers’ Compensation Board"
+  },
+  {
+    "_createdAt": "2020-10-27T22:55:52Z",
+    "_id": "5f05cd24-8635-48f0-9a82-ee5ba6361e2d",
+    "_rev": "XkXuFUvBO66xPt3teC5fhp",
+    "_type": "resource",
+    "_updatedAt": "2020-10-27T23:11:28Z",
+    "content": {
+      "description": "Calgary Workers' Resource Centre provides free case work and a public legal education program if you are having issues understanding your rights in your workplace.",
+      "phone": "+1 403-264-8100",
+      "website": "https://www.helpwrc.org/"
+    },
+    "name": "Calgary Workers' Resource Centre"
+  },
+  {
+    "_createdAt": "2020-10-27T22:54:57Z",
+    "_id": "7ad3e1dd-5c8b-41b1-b629-6cf8aca002c5",
+    "_rev": "YqriUILjPiXDlYdUgauTKP",
+    "_type": "resource",
+    "_updatedAt": "2020-10-29T15:28:11Z",
+    "content": {
+      "description": "Services are free.\n\nAlberta Workers' Health Centre provides the first point of contact for workers with occupational health and safety issues in their workplace. They will provide support, public legal education, and referrals.",
+      "phone": "+1 780-486-9009",
+      "website": "https://workershealthcentre.ca"
+    },
+    "name": "Alberta Workers' Health Centre"
+  },
+  {
+    "_createdAt": "2020-10-27T22:57:03Z",
+    "_id": "9eeb4b23-7e73-4c24-9c24-b609fb51a085",
+    "_rev": "hrTFmg9KmVud0hRRRKc56l",
+    "_type": "resource",
+    "_updatedAt": "2020-10-29T07:46:58Z",
+    "content": {
+      "description": "Employment Standards Contact Centre can answer questions related to wages, overtime, vacation pay, hours or form, and termination of employment. \n\nHours: 8:15 am to 4:30 pm MT\n(Monday to Friday, closed statutory holidays)",
+      "phone": "+1 877-427-3731",
+      "website": "https://www.alberta.ca/employment-standards.aspx"
+    },
+    "name": "Employment Standards Contact Centre"
+  },
+  {
+    "_createdAt": "2020-10-27T23:13:41Z",
+    "_id": "e23f8895-a2af-4d39-b96c-b0db2b6cc64c",
+    "_rev": "hrTFmg9KmVud0hRRRIFz6X",
+    "_type": "resource",
+    "_updatedAt": "2020-10-28T22:44:48Z",
+    "content": {
+      "description": "The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury. \n\nIMPORTANT: You may also file an anonymous complaint through AOHS.",
+      "phone": "+1 866-415-8690",
+      "website": "https://www.alberta.ca/occupational-health-safety.aspx"
+    },
+    "name": "Occupational Health & Safety Contact Centre"
+  },
+  {
+    "_createdAt": "2020-10-29T05:56:58Z",
+    "_id": "image-c4e3778e35bef95be878ac92b9ea306afcbbe3d0-720x244-png",
+    "_rev": "hrTFmg9KmVud0hRRRKA6El",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2020-10-29T05:56:58Z",
+    "assetId": "c4e3778e35bef95be878ac92b9ea306afcbbe3d0",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 2.9508196721311477,
+        "height": 244,
+        "width": 720
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVQoz43PXUvCUBgH8KG2iOqqL2ARTrepm1tnbWKGBIJIJoESEzN7Ixc0FbrwQgjCyILA6pjQZV+ly75T/5NH6K4O/DgvO89/zxEUayz8RSZUYONnj3UMMxs6GYWwX8N5FtYhIPxnsIsQVHnwbEjWZEG2xjuKRTuQwTo46yIEIszxeZ4F8KBlYF2EUbCYJC9ixJqIGfMx0FdOl/LGwNbJcwXfknHyKrKwFVBBAwniYIDC92moQwVdOCgkeLJ2nuhKn6tp9Snm2lvmw3bUenPwgjgL1OEILuAQajzgEs74WR9hd+xp6OK4kLptDOSG9xEptbyE30xtjGoyqyHUY4E2L+xB91fIFbSnP6M+Lt+gyM+aw9IwVi+/S/vta7XVw74zraENOGGBOTiAKuyCC3vgQHF6TvMIKyC06Go9/StMojRa3cwZ97hPWXdNzGXcTXwDhHyYcu0eRbYAAAAASUVORK5CYII=",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#323c59",
+          "foreground": "#fff",
+          "population": 0.1,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#0c3c7c",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#ed1a23",
+          "foreground": "#fff",
+          "population": 0.88,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#8d0b10",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f58488",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#4a3a6e",
+          "foreground": "#fff",
+          "population": 0.03,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#ed1a23",
+          "foreground": "#fff",
+          "population": 0.88,
+          "title": "#fff"
+        }
+      }
+    },
+    "mimeType": "image/png",
+    "originalFilename": "sodexo.png",
+    "path": "images/zwem8fyp/app-content/c4e3778e35bef95be878ac92b9ea306afcbbe3d0-720x244.png",
+    "sha1hash": "c4e3778e35bef95be878ac92b9ea306afcbbe3d0",
+    "size": 31775,
+    "uploadId": "RVjPfreYTznNPzhhdvljA7QCQc283Su9",
+    "url": "https://cdn.sanity.io/images/zwem8fyp/app-content/c4e3778e35bef95be878ac92b9ea306afcbbe3d0-720x244.png"
+  },
+  {
+    "_createdAt": "2020-10-29T05:55:03Z",
+    "_id": "image-c99cb9d9a6a9e2b702caa9f5991868435b97f154-900x339-png",
+    "_rev": "boYe22rttqLumZjBeJHxQJ",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2020-10-29T05:55:03Z",
+    "assetId": "c99cb9d9a6a9e2b702caa9f5991868435b97f154",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 2.6548672566371683,
+        "height": 339,
+        "width": 900
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAC4jAAAuIwF4pT92AAABdklEQVQoz22RTUtCQRSGxw9qlX1YoamZqSVBlGjZIghaZEVUQhRU3GvSB/cuBOfui3bRqihoYRDZNje1jChoU/+gfk09R1028HLOnHnnOfOhTNtRpq2VDMN2wqhgWnqWehdqI3cbllbiMyy8zPF7Jar/hhhb0WvYOo25CGDBtJwctQnyHja7mh4twE5igsa9CHDFnbqou9Tjt0fVf7zNk7EB9QHIEw+AbSKD+a6AqUVoFiQPkU8DXAeWA55Cofj1s99X+8r4ap+rAuMKTjeaQUVURjsYOalTIT8CtmU2n2KDuA+wBJCmjZhPnz/kAtW3E//dx4tcNYwyaJGN28RDtIZ5GeAeeYmmUgemC401uYntrOAxiEvzx5dz8aunSv/t+428yziGLEqiGPMsoKlG3XImqY3RSNYSaAgNig/QCMBR+ciCczqQObsfDlZfkwKUR+5AHvlNYD7ERh2T0xvybraOkEephZs1HQUm0ACxvWyW1G/rk/8AVvm6tX3TIv0AAAAASUVORK5CYII=",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#354148",
+          "foreground": "#fff",
+          "population": 0.8,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#1d8c97",
+          "foreground": "#fff",
+          "population": 0.02,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#08a7cf",
+          "foreground": "#fff",
+          "population": 1.64,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#057693",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#7fe1fa",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#5c6480",
+          "foreground": "#fff",
+          "population": 0.04,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#08a7cf",
+          "foreground": "#fff",
+          "population": 1.64,
+          "title": "#fff"
+        }
+      }
+    },
+    "mimeType": "image/png",
+    "originalFilename": "alberta.png",
+    "path": "images/zwem8fyp/app-content/c99cb9d9a6a9e2b702caa9f5991868435b97f154-900x339.png",
+    "sha1hash": "c99cb9d9a6a9e2b702caa9f5991868435b97f154",
+    "size": 22051,
+    "uploadId": "xDudsjgNMm70aHrWt88zJyprmGlSDr6P",
+    "url": "https://cdn.sanity.io/images/zwem8fyp/app-content/c99cb9d9a6a9e2b702caa9f5991868435b97f154-900x339.png"
+  },
+  {
+    "_createdAt": "2020-10-29T05:44:03Z",
+    "_id": "image-dfb6474fecf8b70658edc424b3e52263af0dfc45-751x126-png",
+    "_rev": "hrTFmg9KmVud0hRRRK7ja6",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2020-10-29T05:44:03Z",
+    "assetId": "dfb6474fecf8b70658edc424b3e52263af0dfc45",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 5.9603174603174605,
+        "height": 126,
+        "width": 751
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAjElEQVQI10XOsQ6CMBDG8QsyGSWExNfQB2DStRAXQ2LQxIEQXMENVyeW9o39X6k4/Li7kvtakcKNYlyDC/1VjH1SHzghZz5iL4VNmWOsgvjP6hx5fCYWPtQ3P14ED/Q92hBcc55jR7+mJtSfNNB+i40GdtBXNagIP0Nfe8cNJQ5clM2BfnFeNkvwcvYF6Lg/3DZ876MAAAAASUVORK5CYII=",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#2d3e50",
+          "foreground": "#fff",
+          "population": 0.38,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#043c82",
+          "foreground": "#fff",
+          "population": 0.36,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#0450a8",
+          "foreground": "#fff",
+          "population": 0.68,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#034795",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#7db8fb",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#034795",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#0450a8",
+          "foreground": "#fff",
+          "population": 0.68,
+          "title": "#fff"
+        }
+      }
+    },
+    "mimeType": "image/png",
+    "originalFilename": "bvc.png",
+    "path": "images/zwem8fyp/app-content/dfb6474fecf8b70658edc424b3e52263af0dfc45-751x126.png",
+    "sha1hash": "dfb6474fecf8b70658edc424b3e52263af0dfc45",
+    "size": 5998,
+    "uploadId": "I8fXzfr3EDjG5gSajxciMjFXyPQyAOAi",
+    "url": "https://cdn.sanity.io/images/zwem8fyp/app-content/dfb6474fecf8b70658edc424b3e52263af0dfc45-751x126.png"
+  },
+  {
+    "_createdAt": "2020-10-29T05:58:16Z",
+    "_id": "image-fd882686787a4e537376b9a98e31476fdcc29da6-520x153-png",
+    "_rev": "hrTFmg9KmVud0hRRRKAJey",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2020-10-29T05:58:16Z",
+    "assetId": "fd882686787a4e537376b9a98e31476fdcc29da6",
+    "extension": "png",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 3.3986928104575163,
+        "height": 153,
+        "width": 520
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMklEQVQY052RPUvDUBSGb4aidZCItf4DsZM6qHQRrBCxCq0oDhXU3qSiODmaG8Tveyd10c3FTbCLJG4OgjQF/RP+E59LOoijgZdz8uac57wQ0U1CN01CL43VIX2NOhK3I+HuX4nZowvh+BqZTPJPRULq7F1mvegmah7QDXoD9kD1vl7DfvHfB+AxkHdg3+iDfu/5KRoV22agr6WHSFggSZEEBUdqlxSD9PhmGBV+qWhlge00UZ/AOsDuqXV1dzKW39VTQpoFgEuAqgx7gMp4M07mL+KtIPutwkyFOgcwfAT6AuiWfqMTq4n1y7NSLtDLLEsWfQA7DG/S10hYx28CCPAOUNA7No0mbUJ+hroGGAFsACxXT8/HWeKybqItFhporZdmVfjG+vZIKztkShzIcyz3A+DqofTzaFntAAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#2f4e58",
+          "foreground": "#fff",
+          "population": 0.3,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#077480",
+          "foreground": "#fff",
+          "population": 0.45,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d1c7a9",
+          "foreground": "#000",
+          "population": 0.49,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#d1c7a9",
+          "foreground": "#000",
+          "population": 0.49,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#dccb93",
+          "foreground": "#000",
+          "population": 0.1,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#a49554",
+          "foreground": "#fff",
+          "population": 0.03,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#0665a7",
+          "foreground": "#fff",
+          "population": 0.1,
+          "title": "#fff"
+        }
+      }
+    },
+    "mimeType": "image/png",
+    "originalFilename": "awhc.png",
+    "path": "images/zwem8fyp/app-content/fd882686787a4e537376b9a98e31476fdcc29da6-520x153.png",
+    "sha1hash": "fd882686787a4e537376b9a98e31476fdcc29da6",
+    "size": 10855,
+    "uploadId": "q9FDRiNYhRRkRO7oBEzAEnUhwfGOhYbM",
+    "url": "https://cdn.sanity.io/images/zwem8fyp/app-content/fd882686787a4e537376b9a98e31476fdcc29da6-520x153.png"
+  }
+]

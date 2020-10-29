@@ -20,7 +20,7 @@ const Resources = () => {
 
   useEffect(() => {
     client
-      .fetch('*[_type == "resource"] { name, content } | order(word asc)')
+      .fetch('*[_type == "resource"] { name, content } | order(name asc)')
       .then(response => {
         setData(response);
         setIsLoading(false);
