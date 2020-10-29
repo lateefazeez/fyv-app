@@ -16,6 +16,7 @@
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "@sanity/client": "^2.0.1",
+    "@sanity/image-url": "^0.140.19",
     "expo": "^38.0.8",
     "expo-asset": "~8.1.7",
     "expo-constants": "~9.1.1",

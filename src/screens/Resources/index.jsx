@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import PageHeader from 'components/PageHeader';
@@ -11,22 +12,26 @@ import headerImage from 'assets/headers/resources.png';
 // import data from 'config/resources.json';
 
 import colors from 'config/colors.json';
-import client from '../../services/api';
+import client from 'services/api';
 
 const Resources = () => {
-  const [resourceData, setResourceData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     client
       .fetch('*[_type == "resource"] { name, content } | order(word asc)')
       .then(response => {
-        setResourceData(response);
+        setData(response);
+        setIsLoading(false);
       });
   }, []);
 
-  // console.log('Resource: ', resourceData);
-
-  return (
+  return isLoading ? (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <ActivityIndicator animating color={colors.primary} />
+    </View>
+  ) : (
     <>
       <ScrollView
         style={{
@@ -44,7 +49,7 @@ const Resources = () => {
         >
           <Heading>Resources</Heading>
 
-          {resourceData.map(object => (
+          {data.map(object => (
             <ResourceCard
               key={object.name}
               title={object.name}
