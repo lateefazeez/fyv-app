@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -15,77 +15,9 @@ import Paragraph from 'components/Paragraph';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
-import data from 'config/glossary.json';
-
-const Search = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const onSearch = query => setSearchQuery(query);
-
-  return (
-    <Searchbar
-      placeholder="Search"
-      onChangeText={onSearch}
-      value={searchQuery}
-    />
-  );
-};
-
-/* const listData = [
-  {
-    title: 'B',
-    data: ['Breaches'],
-  },
-  {
-    title: 'C',
-    data: ['Complaint', 'Conduct', 'Confidential', 'Consequence', 'Constitute'],
-  },
-  {
-    title: 'D',
-    data: ['Discrimination', 'Draining'],
-  },
-  {
-    title: 'E',
-    data: ['Ethnocultural'],
-  },
-  {
-    title: 'L',
-    data: ['Legislation'],
-  },
-  {
-    title: 'M',
-    data: ['Male-dominated', 'Maneuver', 'Manipulation', 'Misogynist'],
-  },
-  {
-    title: 'O',
-    data: ['Obligation', 'Overwhelming'],
-  },
-  {
-    title: 'R',
-    data: ['Rehabilitation', 'Reprisal'],
-  },
-  {
-    title: 'S',
-    data: ['Standards'],
-  },
-  {
-    title: 'T',
-    data: ['Termination', 'Toxic', 'Trusted'],
-  },
-  {
-    title: 'U',
-    data: ['Undocumented'],
-  },
-  {
-    title: 'W',
-    data: ['Warrant'],
-  },
-]; */
-
-/* const sortedData = data.map(item => ({
-  title: item.title,
-  data: item.data.sort(),
-})); */
+import { getSections } from 'utils';
+import client from '../services/api';
+// import glossaryData from 'config/glossary.json';
 
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(true);
@@ -126,7 +58,8 @@ const Item = ({ title }) => {
         {!hiddenDescription && (
           <View
             style={{
-              padding: 24,
+              paddingHorizontal: 24,
+              paddingVertical: 16,
               backgroundColor: colors.lightGrey,
               borderColor: colors.mediumGrey,
               borderStyle: 'solid',
@@ -135,23 +68,15 @@ const Item = ({ title }) => {
           >
             <View
               style={{
-                flexDirection: 'row',
+                // TODO: verify what is happening with this view styling
+                flexDirection: 'row-reverse',
                 alignItems: 'center',
               }}
             >
-              <Paragraph
-                style={{
-                  color: colors.primary,
-                  fontStyle: 'italic',
-                  fontWeight: 'bold',
-                  marginBottom: 0,
-                  marginTop: 0,
-                }}
-              >
-                {title.phonetics}
-              </Paragraph>
               <IconButton
-                style={{ marginLeft: 8 }}
+                style={{
+                  marginLeft: 8,
+                }}
                 icon="volume-high"
                 size={24}
                 color={colors.darkGrey}
@@ -159,16 +84,31 @@ const Item = ({ title }) => {
                   Speech.speak(title.word, { pitch: 0.9, rate: 0.6 })
                 }
               />
+              <Paragraph
+                style={{
+                  color: colors.primary,
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  marginBottom: 0,
+                  marginTop: 0,
+                  paddingLeft: 0,
+                }}
+              >
+                {title.phonetics}
+              </Paragraph>
             </View>
+
             <Paragraph
               style={{
                 fontSize: 14,
                 color: colors.darkGrey,
+                marginBottom: 0,
                 marginTop: 0,
               }}
             >
               {title.category}
             </Paragraph>
+
             <Paragraph style={{ marginBottom: 0 }}>
               {title.description}
             </Paragraph>
@@ -182,6 +122,9 @@ const Item = ({ title }) => {
 const Glossary = ({ navigation }) => {
   const [filterBookmarks, setFilterBookmarks] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [glossaryData, setGlossaryData] = useState([]);
+  const [shownData, setShownData] = useState([]);
+  const [search, setSearch] = useState('');
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -203,7 +146,11 @@ const Glossary = ({ navigation }) => {
             name="magnify"
             size={24}
             color={colors.white}
-            onPress={() => setShowSearch(!showSearch)}
+            onPress={() => {
+              setSearch('');
+              setShowSearch(!showSearch);
+              setShownData(getSections(glossaryData));
+            }}
             style={{ marginRight: 16 }}
           />
           <Icon
@@ -218,12 +165,41 @@ const Glossary = ({ navigation }) => {
     });
   }, [navigation, filterBookmarks, showSearch]);
 
+  useEffect(() => {
+    client
+      .fetch(
+        '*[_type == "glossary"] { word, category, description, phonetics} | order(word asc)',
+      )
+      .then(response => {
+        setGlossaryData(response);
+        setShownData(getSections(response));
+      });
+  }, []);
+
+  const searchData = userText => {
+    setSearch(userText);
+
+    const searchWord = userText.trim().toUpperCase();
+
+    const foundWords = glossaryData.filter(item => {
+      return item.word.toUpperCase().match(searchWord);
+    });
+
+    setShownData(getSections(foundWords));
+  };
+
   return (
     <>
       <SafeAreaView style={{ flex: 1 }}>
-        {showSearch && <Search />}
+        {showSearch && (
+          <Searchbar
+            placeholder="Search"
+            onChangeText={searchData}
+            value={search}
+          />
+        )}
         <SectionList
-          sections={data}
+          sections={shownData}
           keyExtractor={(item, index) => item + index}
           renderItem={({ item }) => <Item title={item} />}
           renderSectionHeader={({ section: { title } }) => (
