@@ -5,7 +5,9 @@ import {
   View,
   SafeAreaView,
   SectionList,
+  AsyncStorage,
 } from 'react-native';
+// import { AsyncStorage } from '@react-native-community/async-storage';
 import * as Speech from 'expo-speech';
 import { Searchbar, IconButton } from 'react-native-paper';
 import { RectButton } from 'react-native-gesture-handler';
@@ -16,8 +18,6 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
 import { getSections } from 'utils';
-import client from '../services/api';
-// import glossaryData from 'config/glossary.json';
 
 const Item = ({ title }) => {
   const [hiddenDescription, setHiddenDescription] = useState(true);
@@ -163,17 +163,27 @@ const Glossary = ({ navigation }) => {
         </View>
       ),
     });
-  }, [navigation, filterBookmarks, showSearch]);
+  }, [navigation, filterBookmarks, showSearch, glossaryData]);
 
   useEffect(() => {
-    client
-      .fetch(
-        '*[_type == "glossary"] { word, category, description, phonetics} | order(word asc)',
-      )
-      .then(response => {
-        setGlossaryData(response);
-        setShownData(getSections(response));
-      });
+    (async () => {
+      try {
+        const storedData = await AsyncStorage.getItem('GLOSSARY');
+        const data = JSON.parse(storedData);
+
+        const sortedData = data.sort((a, b) => {
+          return a.word > b.word;
+        });
+
+        setGlossaryData(sortedData);
+        setShownData(getSections(sortedData));
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+
+    // setGlossaryData(data);
+    // setShownData(getSections(data));
   }, []);
 
   const searchData = userText => {
