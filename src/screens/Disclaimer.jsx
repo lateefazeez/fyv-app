@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, StyleSheet, Image, Alert } from 'react-native';
+import { View, StyleSheet, Image, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
-import { TouchableRipple, ActivityIndicator } from 'react-native-paper';
+import { TouchableRipple } from 'react-native-paper';
 
 import client from 'services/api';
+import getData from 'utils/getData';
 import imageUrlBuilder from '@sanity/image-url';
 
+import Loading from 'components/Loading';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
 import Subheading from 'components/Subheading';
-
-import getData from 'utils/getData';
 
 import colors from 'config/colors.json';
 
@@ -37,12 +37,7 @@ const Disclaimer = ({ navigation }) => {
   }, [navigation]);
 
   return isLoading ? (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ActivityIndicator animating color={colors.primary} />
-      <TouchableRipple onPress={() => console.log(data)}>
-        <Text>Log</Text>
-      </TouchableRipple>
-    </View>
+    <Loading />
   ) : (
     <>
       <ScrollView contentContainerStyle={{ padding: 24, paddingBottom: 88 }}>

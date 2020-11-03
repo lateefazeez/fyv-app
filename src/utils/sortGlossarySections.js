@@ -3,11 +3,7 @@ const sortGlossarySections = data => {
   const titles = [];
   const words = [];
 
-  const sortedData = data.sort((a, b) => {
-    return a.word > b.word;
-  });
-
-  sortedData.forEach(({ word, category, description, phonetics }) => {
+  data.forEach(({ word, category, description, phonetics }) => {
     const title = word.slice(0, 1).toUpperCase();
     if (!titles.includes(title)) titles.push(title);
 

@@ -1,6 +1,9 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, Alert } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
+
+import getData from 'utils/getData';
+import Loading from 'components/Loading';
 
 import Paragraph from 'components/Paragraph';
 import Heading from 'components/Heading';
@@ -16,8 +19,28 @@ import wcbBackground from 'assets/buttons/wcb.png';
 
 import colors from 'config/colors.json';
 
-const Ohs = () => {
-  return (
+const Ohs = ({ navigation }) => {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getData('OHS').then(response => {
+      if (response) {
+        setData(response[0]);
+        setIsLoading(false);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
+      }
+    });
+  }, [navigation]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <ScrollView
       style={{
         flex: 1,
@@ -31,21 +54,7 @@ const Ohs = () => {
         }}
       >
         <Heading>Occupational Health & Safety</Heading>
-        <Paragraph>
-          Most workers in Alberta are protected under the Alberta Health and
-          Safety Act, Regulation and Code. Some workers, such as federal
-          workers, live in caregivers, or farm workers may have their own
-          separate laws.
-        </Paragraph>
-        <Paragraph>
-          These laws are the minimum standards for protecting workers and
-          involve both workers and employers.
-        </Paragraph>
-
-        <Paragraph>
-          Workers in Alberta are also covered by the Alberta Workers’
-          Compensation Board (WCB) in the case of injury.
-        </Paragraph>
+        <Paragraph>{data.description}</Paragraph>
       </View>
 
       <View
@@ -82,18 +91,16 @@ const Ohs = () => {
         }}
       >
         <ExternalRefButton
-          icon="web"
+          icon={data.button.type}
           onPress={() => {
-            WebBrowser.openBrowserAsync(
-              'https://www.alberta.ca/ohs-legislation.aspx',
-            );
+            WebBrowser.openBrowserAsync(data.button.url);
           }}
           iconColor={colors.primary}
           style={{
             marginTop: 32,
           }}
         >
-          Current Legislation
+          {data.button.label}
         </ExternalRefButton>
       </View>
     </ScrollView>
