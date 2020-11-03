@@ -7,7 +7,7 @@ import DrawerNavigation from 'navigation/DrawerNavigation';
 
 import IntroSlider from 'components/IntroSlider';
 
-import localData from 'config/testData.json';
+import localData from 'config/localData.json';
 import client from './src/services/api';
 
 console.ignoredYellowBox = ['Setting a timer'];

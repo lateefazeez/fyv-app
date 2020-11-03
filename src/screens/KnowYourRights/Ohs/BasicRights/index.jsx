@@ -2,8 +2,6 @@ import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as WebBrowser from 'expo-web-browser';
-import ParsedText from 'react-native-parsed-text';
-import { testAlert } from 'utils';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';

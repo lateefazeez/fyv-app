@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
 import { TouchableRipple, ActivityIndicator } from 'react-native-paper';
@@ -11,37 +11,37 @@ import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
 import Subheading from 'components/Subheading';
 
+import getData from 'utils/getData';
+
 import colors from 'config/colors.json';
 
-// import Bvc from 'assets/logos/bvc.png';
-// import Alberta from 'assets/logos/alberta.png';
-// import AWHC from 'assets/logos/awhc.png';
-// import Sodexo from 'assets/logos/sodexo.png';
-
-const Disclaimer = () => {
+const Disclaimer = ({ navigation }) => {
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
 
   const builder = imageUrlBuilder(client);
-  let fundingPartnerLogoURL = '';
 
   useEffect(() => {
-    client.fetch('*[_type == "disclaimer"][0]').then(response => {
-      setData(response);
-      setIsLoading(false);
-
-      fundingPartnerLogoURL = builder
-        .image(response.fundingPartner.logo.asset)
-        .url()
-        .toString();
-
-      console.log('fundingPartnerLogoURL: ', fundingPartnerLogoURL);
+    getData('DISCLAIMER').then(response => {
+      if (response) {
+        setData(response[0]);
+        setIsLoading(false);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
+      }
     });
-  }, []);
+  }, [navigation]);
 
   return isLoading ? (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <ActivityIndicator animating color={colors.primary} />
+      <TouchableRipple onPress={() => console.log(data)}>
+        <Text>Log</Text>
+      </TouchableRipple>
     </View>
   ) : (
     <>
@@ -61,7 +61,6 @@ const Disclaimer = () => {
               style={{
                 height: 72,
                 width: data.fundingPartner.imageWidth,
-
                 resizeMode: 'contain',
                 margin: 16,
               }}

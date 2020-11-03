@@ -1,130 +1,39 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  SectionList,
-  AsyncStorage,
-} from 'react-native';
-// import { AsyncStorage } from '@react-native-community/async-storage';
-import * as Speech from 'expo-speech';
-import { Searchbar, IconButton } from 'react-native-paper';
-import { RectButton } from 'react-native-gesture-handler';
+import { Text, View, SafeAreaView, SectionList, Alert } from 'react-native';
+import { Searchbar } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Paragraph from 'components/Paragraph';
+import Loading from 'components/Loading';
+import GlossaryItem from 'components/GlossaryItem';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import colors from 'config/colors.json';
 
-import { getSections } from 'utils';
-
-const Item = ({ title }) => {
-  const [hiddenDescription, setHiddenDescription] = useState(true);
-
-  return (
-    <View
-      style={{
-        borderColor: colors.mediumGrey,
-        borderStyle: 'solid',
-        borderWidth: 0.5,
-      }}
-    >
-      <View>
-        <RectButton
-          style={{ backgroundColor: colors.white }}
-          onPress={() => {
-            setHiddenDescription(!hiddenDescription);
-          }}
-        >
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              paddingHorizontal: 24,
-              paddingVertical: 16,
-            }}
-          >
-            <Text style={styles.itemTitle}>{title.word}</Text>
-
-            <Icon
-              name={hiddenDescription ? 'chevron-down' : 'chevron-up'}
-              size={24}
-              color={colors.darkGrey}
-            />
-          </View>
-        </RectButton>
-
-        {!hiddenDescription && (
-          <View
-            style={{
-              paddingHorizontal: 24,
-              paddingVertical: 16,
-              backgroundColor: colors.lightGrey,
-              borderColor: colors.mediumGrey,
-              borderStyle: 'solid',
-              borderWidth: 0.5,
-            }}
-          >
-            <View
-              style={{
-                // TODO: verify what is happening with this view styling
-                flexDirection: 'row-reverse',
-                alignItems: 'center',
-              }}
-            >
-              <IconButton
-                style={{
-                  marginLeft: 8,
-                }}
-                icon="volume-high"
-                size={24}
-                color={colors.darkGrey}
-                onPress={() =>
-                  Speech.speak(title.word, { pitch: 0.9, rate: 0.6 })
-                }
-              />
-              <Paragraph
-                style={{
-                  color: colors.primary,
-                  fontStyle: 'italic',
-                  fontWeight: 'bold',
-                  marginBottom: 0,
-                  marginTop: 0,
-                  paddingLeft: 0,
-                }}
-              >
-                {title.phonetics}
-              </Paragraph>
-            </View>
-
-            <Paragraph
-              style={{
-                fontSize: 14,
-                color: colors.darkGrey,
-                marginBottom: 0,
-                marginTop: 0,
-              }}
-            >
-              {title.category}
-            </Paragraph>
-
-            <Paragraph style={{ marginBottom: 0 }}>
-              {title.description}
-            </Paragraph>
-          </View>
-        )}
-      </View>
-    </View>
-  );
-};
+import sortGlossarySections from 'utils/sortGlossarySections';
+import getData from 'utils/getData';
 
 const Glossary = ({ navigation }) => {
-  const [filterBookmarks, setFilterBookmarks] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
-  const [glossaryData, setGlossaryData] = useState([]);
+  const [data, setData] = useState([]);
   const [shownData, setShownData] = useState([]);
   const [search, setSearch] = useState('');
+  const [currentWord, setCurrentWord] = useState('');
+
+  const handleOnExpand = ({ word }) => {
+    setCurrentWord(word);
+  };
+
+  const searchData = userText => {
+    setSearch(userText);
+
+    const searchWord = userText.trim().toUpperCase();
+
+    const foundWords = data.filter(item => {
+      return item.word.toUpperCase().match(searchWord);
+    });
+
+    setShownData(sortGlossarySections(foundWords));
+  };
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -132,24 +41,13 @@ const Glossary = ({ navigation }) => {
       headerRight: () => (
         <View style={{ flexDirection: 'row' }}>
           <Icon
-            name={
-              filterBookmarks
-                ? 'bookmark-multiple'
-                : 'bookmark-multiple-outline'
-            }
-            size={24}
-            color={colors.white}
-            onPress={() => setFilterBookmarks(!filterBookmarks)}
-            style={{ marginRight: 16 }}
-          />
-          <Icon
             name="magnify"
             size={24}
             color={colors.white}
             onPress={() => {
               setSearch('');
               setShowSearch(!showSearch);
-              setShownData(getSections(glossaryData));
+              setShownData(sortGlossarySections(data));
             }}
             style={{ marginRight: 16 }}
           />
@@ -163,42 +61,27 @@ const Glossary = ({ navigation }) => {
         </View>
       ),
     });
-  }, [navigation, filterBookmarks, showSearch, glossaryData]);
+  }, [navigation, showSearch, data]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const storedData = await AsyncStorage.getItem('GLOSSARY');
-        const data = JSON.parse(storedData);
-
-        const sortedData = data.sort((a, b) => {
-          return a.word > b.word;
-        });
-
-        setGlossaryData(sortedData);
-        setShownData(getSections(sortedData));
-      } catch (error) {
-        console.log(error);
+    getData('GLOSSARY').then(response => {
+      if (response) {
+        setData(response);
+        setShownData(sortGlossarySections(response));
+        setIsLoading(false);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
       }
-    })();
-
-    // setGlossaryData(data);
-    // setShownData(getSections(data));
-  }, []);
-
-  const searchData = userText => {
-    setSearch(userText);
-
-    const searchWord = userText.trim().toUpperCase();
-
-    const foundWords = glossaryData.filter(item => {
-      return item.word.toUpperCase().match(searchWord);
     });
+  }, [navigation]);
 
-    setShownData(getSections(foundWords));
-  };
-
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <SafeAreaView style={{ flex: 1 }}>
         {showSearch && (
@@ -209,11 +92,32 @@ const Glossary = ({ navigation }) => {
           />
         )}
         <SectionList
+          stickySectionHeadersEnabled
           sections={shownData}
           keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => <Item title={item} />}
+          renderItem={({ item }) => (
+            <GlossaryItem
+              object={item}
+              handleOnExpand={handleOnExpand}
+              currentWord={currentWord}
+            />
+          )}
           renderSectionHeader={({ section: { title } }) => (
-            <Text style={styles.sectionHeader}>{title}</Text>
+            <Text
+              style={{
+                color: '#fff',
+                fontSize: 16,
+                fontWeight: 'bold',
+                backgroundColor: colors.primary,
+                paddingVertical: 4,
+                paddingHorizontal: 24,
+                borderColor: colors.mediumGrey,
+                borderStyle: 'solid',
+                borderBottomWidth: 1,
+              }}
+            >
+              {title}
+            </Text>
           )}
         />
       </SafeAreaView>
@@ -222,18 +126,3 @@ const Glossary = ({ navigation }) => {
   );
 };
 export default Glossary;
-
-const styles = StyleSheet.create({
-  sectionHeader: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    backgroundColor: colors.primary,
-    paddingVertical: 4,
-    paddingHorizontal: 24,
-  },
-  itemTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
