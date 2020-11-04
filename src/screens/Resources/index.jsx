@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, Alert } from 'react-native';
-import { ActivityIndicator } from 'react-native-paper';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
+import Loading from 'components/Loading';
 
 import getData from 'utils/getData';
 
@@ -32,9 +32,7 @@ const Resources = ({ navigation }) => {
   }, [navigation]);
 
   return isLoading ? (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ActivityIndicator animating color={colors.primary} />
-    </View>
+    <Loading />
   ) : (
     <>
       <ScrollView
