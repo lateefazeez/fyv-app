@@ -98,7 +98,7 @@ const fetchAndStoreContent = async () => {
         return JSON.stringify(response);
       });
     const fetchedEmploymentStandards = await client
-      .fetch('*[_id == "employmentStandards"]')
+      .fetch('*[_type == "employmentStandards"][0]{..., resourceCard->}')
       .then(response => {
         return JSON.stringify(response);
       });
