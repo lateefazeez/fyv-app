@@ -21,7 +21,7 @@ const CovidInfo = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getData('').then(response => {
+    getData('COVID_INFO').then(response => {
       if (response) {
         setData(response[0]);
         setIsLoading(false);
@@ -54,7 +54,7 @@ const CovidInfo = ({ navigation }) => {
             paddingBottom: 80,
           }}
         >
-          <Heading>{data.pageTitle}</Heading>
+          <Heading />
           <Paragraph>
             Due to COVID-19, there is a pandemic in Canada. COVID-19 affects
             worker safety.

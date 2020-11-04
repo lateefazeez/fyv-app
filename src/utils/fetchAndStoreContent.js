@@ -3,6 +3,7 @@ import NetInfo from '@react-native-community/netinfo';
 
 import localData from 'config/localData.json';
 import client from 'services/api';
+import CovidInfo from '../screens/KnowYourRights/Ohs/CovidInfo';
 
 const fetchAndStoreContent = async () => {
   const isConnected = await NetInfo.fetch();
@@ -30,6 +31,18 @@ const fetchAndStoreContent = async () => {
     const disclaimer = JSON.stringify(
       localData.filter(item => item._id === 'disclaimer'),
     );
+    const covidInfo = JSON.stringify(
+      localData.filter(item => item._id === 'covidInfo'),
+    );
+    const employmentStandards = JSON.stringify(
+      localData.filter(item => item._id === 'employmentStandards'),
+    );
+    const humanRights = JSON.stringify(
+      localData.filter(item => item._id === 'humanRights'),
+    );
+    const introSlides = JSON.stringify(
+      localData.filter(item => item._id === 'introSlides'),
+    );
 
     await AsyncStorage.multiSet([
       ['APP_SETTINGS', appSettings],
@@ -38,6 +51,10 @@ const fetchAndStoreContent = async () => {
       ['RESOURCES', resources],
       ['GLOSSARY', glossary],
       ['DISCLAIMER', disclaimer],
+      ['COVID_INFO', covidInfo],
+      ['EMPLOYMENT_STANDARDS', employmentStandards],
+      ['HUMAN_RIGHTS', humanRights],
+      ['INTRO_SLIDES', introSlides],
     ]);
   }
 
@@ -75,6 +92,26 @@ const fetchAndStoreContent = async () => {
       .then(response => {
         return JSON.stringify(response);
       });
+    const fetchedCovidInfo = await client
+      .fetch('*[_id == "covidInfo"]')
+      .then(response => {
+        return JSON.stringify(response);
+      });
+    const fetchedEmploymentStandards = await client
+      .fetch('*[_id == "employmentStandards"]')
+      .then(response => {
+        return JSON.stringify(response);
+      });
+    const fetchedHumanRights = await client
+      .fetch('*[_id == "humanRights"]')
+      .then(response => {
+        return JSON.stringify(response);
+      });
+    const fetchedIntroSlides = await client
+      .fetch('*[_id == "introSlides"]')
+      .then(response => {
+        return JSON.stringify(response);
+      });
 
     await AsyncStorage.multiSet([
       ['APP_SETTINGS', fetchedAppSettings],
@@ -83,6 +120,10 @@ const fetchAndStoreContent = async () => {
       ['DISCLAIMER', fetchedDisclaimer],
       ['GLOSSARY', fetchedGlossary],
       ['RESOURCES', fetchedResources],
+      ['COVID_INFO', fetchedCovidInfo],
+      ['EMPLOYMENT_STANDARDS', fetchedEmploymentStandards],
+      ['HUMAN_RIGHTS', fetchedHumanRights],
+      ['INTRO_SLIDES', fetchedIntroSlides],
     ]);
   }
 };

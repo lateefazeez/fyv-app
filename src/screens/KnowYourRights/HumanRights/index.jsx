@@ -1,6 +1,9 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, Alert } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
+
+import getData from 'utils/getData';
+import Loading from 'components/Loading';
 
 import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
@@ -10,8 +13,28 @@ import ExternalRefButton from 'components/ExternalRefButton';
 import headerImage from 'assets/headers/humanrights.png';
 import colors from 'config/colors.json';
 
-const HumanRights = () => {
-  return (
+const HumanRights = ({ navigation }) => {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getData('HUMAN_RIGHTS').then(response => {
+      if (response) {
+        setData(response[0]);
+        setIsLoading(false);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
+      }
+    });
+  }, [navigation]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <ScrollView
       style={{
         flex: 1,
