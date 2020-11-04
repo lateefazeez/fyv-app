@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
@@ -9,7 +9,7 @@ import nextButtonImg from 'assets/intro/nextButton.png';
 import doneButtonImg from 'assets/intro/doneButton.png';
 
 import colors from 'config/colors.json';
-import slides from 'config/introSlides';
+import getSlides from './introSlides';
 
 const doneButton = () => {
   return (
@@ -27,7 +27,13 @@ const nextButton = () => {
   );
 };
 
-const App = ({ onDone, ...props }) => {
+const IntroSlider = ({ onDone, ...props }) => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getSlides().then(response => console.log(response));
+  }, []);
+
   const renderItem = ({ item }) => {
     return (
       <View style={[styles.slide, { backgroundColor: item.backgroundColor }]}>
@@ -55,7 +61,7 @@ const App = ({ onDone, ...props }) => {
         renderItem={renderItem}
         renderDoneButton={doneButton}
         renderNextButton={nextButton}
-        data={slides}
+        data={data}
         onDone={onDone}
         activeDotStyle={{ backgroundColor: 'rgba(0, 0, 0, .8)' }}
         {...props}
@@ -64,7 +70,7 @@ const App = ({ onDone, ...props }) => {
   );
 };
 
-export default App;
+export default IntroSlider;
 
 const styles = StyleSheet.create({
   doneButton: {

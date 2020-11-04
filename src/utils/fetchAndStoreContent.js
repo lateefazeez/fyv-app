@@ -3,7 +3,6 @@ import NetInfo from '@react-native-community/netinfo';
 
 import localData from 'config/localData.json';
 import client from 'services/api';
-import CovidInfo from '../screens/KnowYourRights/Ohs/CovidInfo';
 
 const fetchAndStoreContent = async () => {
   const isConnected = await NetInfo.fetch();
@@ -105,12 +104,12 @@ const fetchAndStoreContent = async () => {
     const fetchedHumanRights = await client
       .fetch('*[_id == "humanRights"]')
       .then(response => {
-        return JSON.stringify(response);
+        return JSON.stringify(response[0]);
       });
     const fetchedIntroSlides = await client
       .fetch('*[_id == "introSlides"]')
       .then(response => {
-        return JSON.stringify(response);
+        return JSON.stringify(response[0]);
       });
 
     await AsyncStorage.multiSet([

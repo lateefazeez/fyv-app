@@ -20,7 +20,7 @@ const HumanRights = ({ navigation }) => {
   useEffect(() => {
     getData('HUMAN_RIGHTS').then(response => {
       if (response) {
-        setData(response[0]);
+        setData(response);
         setIsLoading(false);
       } else {
         Alert.alert(
@@ -50,41 +50,23 @@ const HumanRights = ({ navigation }) => {
         }}
       >
         <Heading>Human Rights</Heading>
-        <Paragraph>
-          In addition to workplace safety, hazards, rights, and standards,
-          Alberta has [legislation] that relates to the rights of all people,
-          regardless of background such as [ethnocultural] group, source of
-          income, participation in a labour union, gender, age, [sexual
-          orientation], or immigration status.
-        </Paragraph>
+        <Paragraph>{data.paragraph1}</Paragraph>
 
         <ExternalRefButton
-          icon="file-download"
-          onPress={() =>
-            WebBrowser.openBrowserAsync(
-              'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
-            )
-          }
+          icon={data.linkbutton1.type}
+          onPress={() => WebBrowser.openBrowserAsync(data.linkbutton1.url)}
           style={{ marginBottom: 36 }}
         >
-          Alberta Human Rights
+          {data.linkbutton1.label}
         </ExternalRefButton>
 
-        <Paragraph>
-          Human Rights in Alberta relate to the idea that everyone should be
-          free from [discrimination], and applies to employers and workers. In
-          cases of human rights violations specific steps need to be taken.
-        </Paragraph>
+        <Paragraph>{data.paragraph2}</Paragraph>
 
         <ExternalRefButton
-          icon="file-download"
-          onPress={() =>
-            WebBrowser.openBrowserAsync(
-              'https://www.albertahumanrights.ab.ca/Documents/GuideProcess_Complainants.pdf',
-            )
-          }
+          icon={data.linkbutton2.type}
+          onPress={() => WebBrowser.openBrowserAsync(data.linkbutton2.url)}
         >
-          Complainants Guide
+          {data.linkbutton2.label}
         </ExternalRefButton>
       </View>
     </ScrollView>

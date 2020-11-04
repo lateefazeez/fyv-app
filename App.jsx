@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import DrawerNavigation from 'navigation/DrawerNavigation';
-import IntroSlider from 'components/IntroSlider';
+import IntroSlider from 'screens/IntroSlider';
 import fetchAndStoreContent from 'utils/fetchAndStoreContent';
 
 const App = () => {
