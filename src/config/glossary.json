@@ -1,5 +1,4 @@
 [
-
   {
     "word": "Collective Agreement",
     "phonetics": "kuh . lek . tiv   uh . gree . muhnt",
@@ -36,7 +35,6 @@
     "category": "noun",
     "description": "A possible cause of danger or harm."
   },
-
   {
     "word": "Isolating",
     "phonetics": "ai . suh . lei . tuhng",
@@ -137,6 +135,6 @@
     "word": "Violation",
     "phonetics": "vahy . uh . ley . shuhn",
     "category": "noun",
-    "description": "An  act that does not follpw existing law."
+    "description": "An  act that does not follow existing law."
   }
 ]

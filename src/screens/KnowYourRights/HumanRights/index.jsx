@@ -32,7 +32,7 @@ const HumanRights = () => {
           Alberta has [legislation] that relates to the rights of all people,
           regardless of background such as [ethnocultural] group, source of
           income, participation in a labour union, gender, age, [sexual
-          orientation], or immigration status
+          orientation], or immigration status.
         </Paragraph>
 
         <ExternalRefButton
