@@ -14,7 +14,7 @@ import PageHeader from 'components/PageHeader';
 import headerImage from 'assets/headers/ohs.png';
 import covidBackground from 'assets/buttons/covid.png';
 import hazardsBackground from 'assets/buttons/hazards.png';
-import basicrightsBackground from 'assets/buttons/basicrights.png';
+import basicRightsBackground from 'assets/buttons/basicrights.png';
 import wcbBackground from 'assets/buttons/wcb.png';
 
 import colors from 'config/colors.json';
@@ -77,7 +77,7 @@ const Ohs = ({ navigation }) => {
           justifyContent: 'space-between',
         }}
       >
-        <OHSButton background={basicrightsBackground}>Basic Rights</OHSButton>
+        <OHSButton background={basicRightsBackground}>Basic Rights</OHSButton>
 
         <OHSButton target={"Workers' Compensation"} background={wcbBackground}>
           Workers' Compensation Board
@@ -95,7 +95,6 @@ const Ohs = ({ navigation }) => {
           onPress={() => {
             WebBrowser.openBrowserAsync(data.button.url);
           }}
-          iconColor={colors.primary}
           style={{
             marginTop: 32,
           }}

@@ -40,7 +40,7 @@ const GlossaryItem = ({ handleOnExpand, object, currentWord }) => {
             </Text>
 
             <Icon
-              name={expanded ? 'chevron-down' : 'chevron-up'}
+              name={expanded ? 'chevron-up' : 'chevron-down'}
               size={24}
               color={colors.darkGrey}
             />
