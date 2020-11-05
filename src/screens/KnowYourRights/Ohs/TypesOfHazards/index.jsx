@@ -29,7 +29,7 @@ const TypesOfHazards = ({ navigation }) => {
         const { slide1, slide2, slide3, slide4 } = response;
         const slidesData = getSlides([slide1, slide2, slide3, slide4]);
 
-        // setSlides(slidesData);
+        setSlides(slidesData);
         console.log('slidesData: ', slidesData);
       } else {
         Alert.alert(

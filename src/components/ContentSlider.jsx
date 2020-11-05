@@ -17,7 +17,12 @@ const ContentSlider = ({ slides, style, ...props }) => (
     }
     {...props}
   >
-    {slides.map((slide, index) => slide(index))}
+    {slides.map(slide => {
+      if (typeof slide === 'function') {
+        return slide();
+      }
+      return slide;
+    })}
   </Swiper>
 );
 
