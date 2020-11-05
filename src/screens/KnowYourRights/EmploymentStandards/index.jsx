@@ -53,7 +53,9 @@ const EmploymentStandards = ({ navigation }) => {
       >
         <Heading>Employment Standards</Heading>
 
-        <Paragraph>{data.mainParagraph}</Paragraph>
+        <Paragraph>{data.paragraphOne}</Paragraph>
+        <Paragraph>{data.paragraphTwo}</Paragraph>
+        <Paragraph>{data.paragraphThree}</Paragraph>
 
         <ResourceCard
           title={data.resourceCard.name}

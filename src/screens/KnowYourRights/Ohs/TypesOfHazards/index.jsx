@@ -61,6 +61,7 @@ const TypesOfHazards = ({ navigation }) => {
             paddingBottom: 80,
           }}
         >
+          <Paragraph>{data.midParagraph}</Paragraph>
           <ResourceCard
             title={data.customResourceCard.name}
             content={data.customResourceCard.content}

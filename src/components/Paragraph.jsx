@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Alert,
   Text,
@@ -12,10 +12,12 @@ import {
 import ParsedText from 'react-native-parsed-text';
 import Constants from 'expo-constants';
 
-import Glossary from 'config/glossary.json';
+// import Glossary from 'config/glossary.json';
 import colors from 'config/colors.json';
+import getData from 'utils/getData';
 
 const Paragraph = ({ children, style }) => {
+  const [data, setData] = useState([]);
   const [currentWord, setCurrentWord] = useState();
   const [foundWord, setFoundWord] = useState();
   const windowWidth = useWindowDimensions().width;
@@ -23,7 +25,21 @@ const Paragraph = ({ children, style }) => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
-  const parseGlossaryWord = matchingString => {
+  useEffect(() => {
+    getData('GLOSSARY').then(response => {
+      if (response) {
+        setData(response);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+      }
+    });
+  }, []);
+
+  const parseGlossaryWord = (matchingString, matches) => {
+    matches = [];
     const pattern = /\[(.*?)\]/i;
     const match = matchingString.match(pattern);
 
@@ -34,7 +50,7 @@ const Paragraph = ({ children, style }) => {
   const displayTooltip = () => {
     let foundOnGlossaryWord;
 
-    Glossary.forEach(item => {
+    data.forEach(item => {
       if (item.word.toUpperCase() === currentWord.toUpperCase()) {
         foundOnGlossaryWord = item;
       }

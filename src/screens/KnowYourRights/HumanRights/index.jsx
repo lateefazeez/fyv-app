@@ -61,6 +61,7 @@ const HumanRights = ({ navigation }) => {
         </ExternalRefButton>
 
         <Paragraph>{data.paragraph2}</Paragraph>
+        <Paragraph>{data.subParagraph2}</Paragraph>
 
         <ExternalRefButton
           icon={data.linkbutton2.type}
