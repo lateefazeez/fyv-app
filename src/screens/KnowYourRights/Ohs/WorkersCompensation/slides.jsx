@@ -16,24 +16,22 @@ const getSlides = data => {
     })
     .filter(object => object !== undefined);
 
-  return slides.map((slide, index) => {
-    return (
-      <View key={slide.title} style={styles.container}>
-        <View style={styles.upperContainer}>
-          <Image style={styles.image} source={images[index]} />
-        </View>
-
-        <View style={styles.lowerContainer}>
-          <View style={styles.headline}>
-            <Text style={styles.textHeading}>
-              {slide.boldTitle || slide.title}
-            </Text>
-          </View>
-          <Text style={styles.textTitle}>{slide.description}</Text>
-        </View>
+  return slides.map((slide, index) => (
+    <View key={slide.title} style={styles.container}>
+      <View style={styles.upperContainer}>
+        <Image style={styles.image} source={images[index]} />
       </View>
-    );
-  });
+
+      <View style={styles.lowerContainer}>
+        <View style={styles.headline}>
+          <Text style={styles.textHeading}>
+            {slide.boldTitle || slide.title}
+          </Text>
+        </View>
+        <Text style={styles.textTitle}>{slide.description}</Text>
+      </View>
+    </View>
+  ));
 };
 
 export default getSlides;
