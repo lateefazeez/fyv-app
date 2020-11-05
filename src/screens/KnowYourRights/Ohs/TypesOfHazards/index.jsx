@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, Alert } from 'react-native';
 
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import Paragraph from 'components/Paragraph';
@@ -7,14 +7,43 @@ import PageHeader from 'components/PageHeader';
 import Heading from 'components/Heading';
 import ResourceCard from 'components/ResourceCard';
 import ContentSlider from 'components/ContentSlider';
+import Loading from 'components/Loading';
+import getData from 'utils/getData';
 
 import headerImage from 'assets/headers/typesofhazards.png';
 
 import colors from 'config/colors.json';
-import slides from './slides';
+import getSlides from './slides';
 
-const TypesOfHazards = () => {
-  return (
+const TypesOfHazards = ({ navigation }) => {
+  const [data, setData] = useState([]);
+  const [slides, setSlides] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getData('TYPES_OF_HAZARDS').then(response => {
+      if (response) {
+        setData(response);
+        setIsLoading(false);
+
+        const { slide1, slide2, slide3, slide4 } = response;
+        const slidesData = getSlides([slide1, slide2, slide3, slide4]);
+
+        // setSlides(slidesData);
+        console.log('slidesData: ', slidesData);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
+      }
+    });
+  }, [navigation]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <ScrollView
         style={{
@@ -26,13 +55,7 @@ const TypesOfHazards = () => {
 
         <View style={{ paddingHorizontal: 24 }}>
           <Heading>Types of Hazards</Heading>
-          <Paragraph>
-            In Alberta, there are 4 [hazards] categories that relate to Alberta
-            workplace health and safety.
-          </Paragraph>
-          <Paragraph>
-            Employers must make workplaces safe from these hazards.
-          </Paragraph>
+          <Paragraph>{data.description}</Paragraph>
         </View>
 
         <ContentSlider showsButtons slides={slides} />
@@ -44,32 +67,15 @@ const TypesOfHazards = () => {
           }}
         >
           <ResourceCard
-            title="Ask An Expert"
-            content={{
-              description:
-                'Question about Hazards? Contact Alberta OHS. If they don’t know the answer, they will point you in the right direction.',
-              phone: '+18664158690',
-              website: 'https://www.alberta.ca/ask-expert.aspx',
-            }}
+            title={data.customResourceCard.name}
+            content={data.customResourceCard.content}
           />
 
-          <Paragraph>
-            You can also make an anonymous health and safety complaints to
-            Alberta OHS online or by phone.
-          </Paragraph>
-
-          <Paragraph>
-            The [complaint] can be related to you or another.
-          </Paragraph>
+          <Paragraph>{data.paragraph}</Paragraph>
 
           <ResourceCard
-            title="Occupational Health & Safety Contact Centre"
-            content={{
-              description:
-                'The Alberta Occupational Health and Safety (AOHS) Contact Centre can answer questions related to workplace hazards. Contact them if you or anyone else are in danger of injury.\n\nIMPORTANT: You may also file an anonymous complaint through AOHS.',
-              phone: '+1 866-415-8690',
-              website: 'https://www.alberta.ca/occupational-health-safety.aspx',
-            }}
+            title={data.resourceCard.name}
+            content={data.resourceCard.content}
           />
         </View>
       </ScrollView>

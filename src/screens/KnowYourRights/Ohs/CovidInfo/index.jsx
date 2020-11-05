@@ -23,7 +23,7 @@ const CovidInfo = ({ navigation }) => {
   useEffect(() => {
     getData('COVID_INFO').then(response => {
       if (response) {
-        setData(response[0]);
+        setData(response);
         setIsLoading(false);
       } else {
         Alert.alert(

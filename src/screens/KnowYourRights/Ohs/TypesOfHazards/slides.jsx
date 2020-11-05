@@ -7,6 +7,13 @@ import PhysicalImage from 'assets/sliders/physical.png';
 import ChemicalImage from 'assets/sliders/chemical.png';
 import colors from 'config/colors.json';
 
+const imagesArray = [
+  BiologicalImage,
+  ChemicalImage,
+  PhysicalImage,
+  PsychosocialImage,
+];
+
 const slide01 = index => {
   return (
     <View key={index} style={styles.container}>
@@ -66,8 +73,28 @@ const slide04 = index => {
   );
 };
 
-const slides = [slide01, slide02, slide03, slide04];
-export default slides;
+const getSlides = dataArray => {
+  const slides = [];
+
+  for (let i = 0; i < dataArray.length; i++) {
+    const imageObject = { image: imagesArray[i] };
+    const newObject = { ...dataArray[i], ...imageObject };
+    slides.push(newObject);
+  }
+
+  return slides.map(slide => {
+    return (
+      <View key={slide.title} style={styles.container}>
+        <Image style={styles.image} source={slide.image} />
+        <View style={styles.headline}>
+          <Text style={styles.textBold}>{slide.title}</Text>
+        </View>
+        <Text style={styles.textDetail}>{slide.description}</Text>
+      </View>
+    );
+  });
+};
+export default getSlides;
 
 const styles = StyleSheet.create({
   container: {

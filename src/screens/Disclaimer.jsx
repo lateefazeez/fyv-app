@@ -24,7 +24,7 @@ const Disclaimer = ({ navigation }) => {
   useEffect(() => {
     getData('DISCLAIMER').then(response => {
       if (response) {
-        setData(response[0]);
+        setData(response);
         setIsLoading(false);
       } else {
         Alert.alert(

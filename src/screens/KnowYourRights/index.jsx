@@ -22,7 +22,7 @@ const KnowYourRights = ({ navigation }) => {
   useEffect(() => {
     getData('KNOW_YOUR_RIGHTS').then(response => {
       if (response) {
-        setData(response[0]);
+        setData(response);
         setIsLoading(false);
       } else {
         Alert.alert(

@@ -9,10 +9,6 @@ const fetchAndStoreContent = async () => {
   const storedItems = await AsyncStorage.getAllKeys();
 
   if (!storedItems && !isConnected) {
-    const appSettings = JSON.stringify(
-      localData.filter(item => item._id === 'appSettings'),
-    );
-
     const knowYourRights = JSON.stringify(
       localData.filter(item => item._id === 'knowYourRights'),
     );
@@ -43,8 +39,11 @@ const fetchAndStoreContent = async () => {
       localData.filter(item => item._id === 'introSlides'),
     );
 
+    const typesOfHazards = JSON.stringify(
+      localData.filter(item => item._id === 'typesOfHazards'),
+    );
+
     await AsyncStorage.multiSet([
-      ['APP_SETTINGS', appSettings],
       ['KNOW_YOUR_RIGHTS', knowYourRights],
       ['OHS', ohs],
       ['RESOURCES', resources],
@@ -54,24 +53,19 @@ const fetchAndStoreContent = async () => {
       ['EMPLOYMENT_STANDARDS', employmentStandards],
       ['HUMAN_RIGHTS', humanRights],
       ['INTRO_SLIDES', introSlides],
+      ['TYPES_OF_HAZARDS', typesOfHazards],
     ]);
   }
 
   if (isConnected) {
-    const fetchedAppSettings = await client
-      .fetch('*[_id == "appSettings"]')
-      .then(response => {
-        return JSON.stringify(response);
-      });
-
     const fetchedKnowYourRights = await client
       .fetch('*[_id == "knowYourRights"]')
       .then(response => {
-        return JSON.stringify(response);
+        return JSON.stringify(response[0]);
       });
 
     const fetchedOhs = await client.fetch('*[_id == "ohs"]').then(response => {
-      return JSON.stringify(response);
+      return JSON.stringify(response[0]);
     });
 
     const fetchedResources = await client
@@ -89,12 +83,12 @@ const fetchAndStoreContent = async () => {
     const fetchedDisclaimer = await client
       .fetch('*[_id == "disclaimer"]')
       .then(response => {
-        return JSON.stringify(response);
+        return JSON.stringify(response[0]);
       });
     const fetchedCovidInfo = await client
       .fetch('*[_id == "covidInfo"]')
       .then(response => {
-        return JSON.stringify(response);
+        return JSON.stringify(response[0]);
       });
     const fetchedEmploymentStandards = await client
       .fetch('*[_type == "employmentStandards"][0]{..., resourceCard->}')
@@ -112,8 +106,14 @@ const fetchAndStoreContent = async () => {
         return JSON.stringify(response[0]);
       });
 
+    const fetchedTypesOfHazards = await client
+      .fetch('* [ _id == "typesOfHazards" ][ 0 ]{ ..., resourceCard->}')
+      .then(response => {
+        return JSON.stringify(response);
+      });
+
     await AsyncStorage.multiSet([
-      ['APP_SETTINGS', fetchedAppSettings],
+      ['INTRO_SLIDES', fetchedIntroSlides],
       ['KNOW_YOUR_RIGHTS', fetchedKnowYourRights],
       ['OHS', fetchedOhs],
       ['DISCLAIMER', fetchedDisclaimer],
@@ -122,7 +122,7 @@ const fetchAndStoreContent = async () => {
       ['COVID_INFO', fetchedCovidInfo],
       ['EMPLOYMENT_STANDARDS', fetchedEmploymentStandards],
       ['HUMAN_RIGHTS', fetchedHumanRights],
-      ['INTRO_SLIDES', fetchedIntroSlides],
+      ['TYPES_OF_HAZARDS', fetchedTypesOfHazards],
     ]);
   }
 };

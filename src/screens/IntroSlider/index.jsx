@@ -31,7 +31,9 @@ const IntroSlider = ({ onDone, ...props }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getSlides().then(response => console.log(response));
+    getSlides().then(response => {
+      setData(response);
+    });
   }, []);
 
   const renderItem = ({ item }) => {
