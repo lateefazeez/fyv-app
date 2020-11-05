@@ -35,8 +35,6 @@ const CovidInfo = ({ navigation }) => {
     });
   }, [navigation]);
 
-  console.log(data);
-
   return isLoading ? (
     <Loading />
   ) : (

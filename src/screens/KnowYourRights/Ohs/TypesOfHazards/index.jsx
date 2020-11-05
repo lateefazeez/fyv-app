@@ -24,13 +24,8 @@ const TypesOfHazards = ({ navigation }) => {
     getData('TYPES_OF_HAZARDS').then(response => {
       if (response) {
         setData(response);
+        setSlides(getSlides(response));
         setIsLoading(false);
-
-        const { slide1, slide2, slide3, slide4 } = response;
-        const slidesData = getSlides([slide1, slide2, slide3, slide4]);
-
-        setSlides(slidesData);
-        console.log('slidesData: ', slidesData);
       } else {
         Alert.alert(
           'Data not found',
