@@ -53,87 +53,29 @@ const CovidInfo = ({ navigation }) => {
           }}
         >
           <Heading />
-          <Paragraph>
-            Due to COVID-19, there is a pandemic in Canada. COVID-19 affects
-            worker safety.
-          </Paragraph>
-          <Paragraph>
-            As a workplace hazard, it is called a biological hazard. Although
-            employers must make work safe for workers during this time, many
-            workers, such as health care aides, are at more risk because of
-            workplace contact and poor safety rules.
-          </Paragraph>
-          <Subheading>What if I test positive for COVID-19?</Subheading>
+          <Paragraph>{data.mainParagraph}</Paragraph>
+          <Subheading>{data.subHeading}</Subheading>
           <View style={{ paddingLeft: 16 }}>
-            <Unorderedlist>
-              <Paragraph style={{ fontWeight: 'bold' }}>
-                You cannot lose your job because of COVID-19.
-              </Paragraph>
-            </Unorderedlist>
-
-            <Unorderedlist>
-              <Paragraph>
-                If you have COVID-19, you should tell your employer because it
-                affects the safety of other people you work with.
-              </Paragraph>
-            </Unorderedlist>
-
-            <Unorderedlist>
-              <Paragraph>
-                You should stay home and follow the advice of Alberta Health
-                Services by calling 811.
-              </Paragraph>
-            </Unorderedlist>
-
-            <Unorderedlist>
-              <Paragraph>You must isolate for 14 days.</Paragraph>
-            </Unorderedlist>
-
-            <Unorderedlist>
-              <Paragraph>
-                Depending on your work, you might get paid leave during this
-                time.
-              </Paragraph>
-            </Unorderedlist>
+            {data.covidSteps.map(step => (
+              <Unorderedlist>
+                <Paragraph style={step.bold ? { fontWeight: 'bold' } : null}>
+                  {step.description}
+                </Paragraph>
+              </Unorderedlist>
+            ))}
           </View>
-          <Paragraph>
-            If you were exposed to COVID-19 while at work, you may file WCB
-            paperwork and apply for paid leave.
-          </Paragraph>
-          <Paragraph>
-            For more information, please refer to the following fact sheet and
-            additional documentation:
-          </Paragraph>
-          <ExternalRefButton
-            icon="file-download"
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                'https://www.wcb.ab.ca/assets/pdfs/workers/WFS_COVID-19.pdf',
-              );
-            }}
-          >
-            COVID-19 Fact Sheet
-          </ExternalRefButton>
-          <ExternalRefButton
-            icon="web"
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                'https://www.canada.ca/en/government/publicservice/covid-19/rights-responsibilities.html',
-              );
-            }}
-          >
-            Rights and Responsibilities
-          </ExternalRefButton>
-          <ExternalRefButton
-            icon="web"
-            onPress={async () => {
-              await WebBrowser.openBrowserAsync(
-                'https://www.alberta.ca/covid-19-leave.aspx',
-              );
-            }}
-          >
-            COVID-19 Leave and Pay
-          </ExternalRefButton>
+          <Paragraph>{data.finalParagraph}</Paragraph>
+
+          {data.buttons.map(button => (
+            <ExternalRefButton
+              icon={button.type}
+              onPress={async () => {
+                await WebBrowser.openBrowserAsync(button.url);
+              }}
+            >
+              {button.label}
+            </ExternalRefButton>
+          ))}
         </View>
       </ScrollView>
       <FloatingButtonFYV />
