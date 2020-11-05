@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "React-FindingYourVoice",
-    "slug": "React-FindingYourVoice",
+    "name": "FindingYourVoice",
+    "slug": "findingyourvoice",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,6 +23,6 @@
       "favicon": "./assets/favicon.png"
     },
     "description": "Finding Your Voice, Knowing Your Rights responds to the unique needs of newcomer youth by exploring the intersectional vulnerabilities of being young, a newcomer, an English language learner, and a new-to-Canada worker.",
-    "githubUrl": "https://github.com/FindingYourVoice/React-FindingYourVoice"
+    "githubUrl": "https://github.com/FindingYourVoice/fyv-app"
   }
 }
