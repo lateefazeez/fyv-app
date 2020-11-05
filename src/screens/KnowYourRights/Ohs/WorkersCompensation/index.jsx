@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, Alert } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
 import PageHeader from 'components/PageHeader';
@@ -9,14 +9,38 @@ import ResourceCard from 'components/ResourceCard';
 import FloatingButtonFYV from 'components/FloatingButtonFYV';
 import ExternalRefButton from 'components/ExternalRefButton';
 import ContentSlider from 'components/ContentSlider';
+import Loading from 'components/Loading';
+import getData from 'utils/getData';
 
 import headerImage from 'assets/headers/wcb.png';
 
 import colors from 'config/colors.json';
-import slides from './slides';
+import getSlides from './slides';
 
-const WorkersCompensation = () => {
-  return (
+const WorkersCompensation = ({ navigation }) => {
+  const [data, setData] = useState([]);
+  const [slides, setSlides] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getData('WCB').then(response => {
+      if (response) {
+        setData(response);
+        setSlides(getSlides(response));
+        setIsLoading(false);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
+        navigation.goBack();
+      }
+    });
+  }, [navigation]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <ScrollView
         style={{
@@ -28,10 +52,7 @@ const WorkersCompensation = () => {
         <View style={{ backgroundColor: colors.lightGrey }}>
           <View style={{ paddingHorizontal: 24 }}>
             <Heading>Workers' Compensation Board</Heading>
-            <Paragraph>
-              If you are injured at work, it is your right to report the injury.
-              If this happens to you, follow these steps:
-            </Paragraph>
+            <Paragraph>{data.description}</Paragraph>
           </View>
 
           <ContentSlider showsButtons slides={slides} />
@@ -44,42 +65,20 @@ const WorkersCompensation = () => {
             }}
           >
             <ExternalRefButton
-              icon="format-list-checkbox"
+              icon={data.button.type}
               onPress={async () => {
-                await WebBrowser.openBrowserAsync(
-                  'https://www.wcb.ab.ca/claims/report-an-injury/for-workers.html',
-                );
+                await WebBrowser.openBrowserAsync(data.button.url);
               }}
               style={{ marginBottom: 24 }}
             >
-              File a WCB Report
+              {data.button.label}
             </ExternalRefButton>
 
-            <Paragraph>
-              It does not matter if you believe the injury was your fault, or if
-              your employer tells you it was your fault. WCB is “no-fault”
-              insurance that applies to most workplaces.
-            </Paragraph>
-            <Paragraph>
-              Employers have a responsibility to help you with your paperwork.
-              However, there are cases where employers do not help or discourage
-              workers from filing paperwork. If this is the case, ask a trusted
-              co-worker to help you. It is your right to report an injury, and
-              reporting an injury is needed to claim any injury benefits.
-            </Paragraph>
-            <Paragraph>
-              Confused? Don’t be afraid to call WCB. If they don’t know the
-              answer, they can point you in the right direction.
-            </Paragraph>
+            <Paragraph>{data.additionalInformation}</Paragraph>
 
             <ResourceCard
-              title="Workers’ Compensation Board"
-              content={{
-                description:
-                  'The Workers’ Compensation Board Alberta can answer questions related to workplace injuries and benefits.\n\nIMPORTANT: You may also report a workplace injury through WCB.',
-                phone: '+1 866-922-9221',
-                website: 'https://www.wcb.ab.ca/',
-              }}
+              title={data.resourceCard.name}
+              content={data.resourceCard.content}
             />
           </View>
         </View>

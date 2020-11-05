@@ -1,68 +1,42 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import colors from 'config/colors.json';
 
 import Step1Image from 'assets/sliders/wcb_step1.png';
 import Step2Image from 'assets/sliders/wcb_step2.png';
 import Step3Image from 'assets/sliders/wcb_step3.png';
 
-export const slide01 = index => {
-  return (
-    <View key={index} style={styles.container}>
-      <View style={styles.upperContainer}>
-        <Image style={styles.image} source={Step1Image} />
-      </View>
+import colors from 'config/colors.json';
 
-      <View style={styles.lowerContainer}>
-        <View style={styles.headline}>
-          <Text style={styles.textHeading}>1</Text>
+const images = [Step1Image, Step2Image, Step3Image];
+
+const getSlides = data => {
+  const slides = Object.values(data)
+    .map(object => {
+      if (object._type === 'slide') return object;
+    })
+    .filter(object => object !== undefined);
+
+  return slides.map((slide, index) => {
+    return (
+      <View key={slide.title} style={styles.container}>
+        <View style={styles.upperContainer}>
+          <Image style={styles.image} source={images[index]} />
         </View>
-        <Text style={styles.textTitle}>Tell your employer.</Text>
+
+        <View style={styles.lowerContainer}>
+          <View style={styles.headline}>
+            <Text style={styles.textHeading}>
+              {slide.boldTitle || slide.title}
+            </Text>
+          </View>
+          <Text style={styles.textTitle}>{slide.description}</Text>
+        </View>
       </View>
-    </View>
-  );
+    );
+  });
 };
 
-export const slide02 = index => {
-  return (
-    <View key={index} style={styles.container}>
-      <View style={styles.upperContainer}>
-        <Image style={styles.image} source={Step2Image} />
-      </View>
-
-      <View style={styles.lowerContainer}>
-        <View style={styles.headline}>
-          <Text style={styles.textHeading}>2</Text>
-        </View>
-        <Text style={styles.textTitle}>
-          Apply any First Aid and tell your health care provider.
-        </Text>
-      </View>
-    </View>
-  );
-};
-
-export const slide03 = index => {
-  return (
-    <View key={index} style={styles.container}>
-      <View style={styles.upperContainer}>
-        <Image style={styles.image} source={Step3Image} />
-      </View>
-
-      <View style={styles.lowerContainer}>
-        <View style={styles.headline}>
-          <Text style={styles.textHeading}>3</Text>
-        </View>
-        <Text style={styles.textTitle}>
-          Tell the Workers’ Compensation Board by filling a report online.
-        </Text>
-      </View>
-    </View>
-  );
-};
-
-const slides = [slide01, slide02, slide03];
-export default slides;
+export default getSlides;
 
 const styles = StyleSheet.create({
   container: {

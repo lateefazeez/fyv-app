@@ -43,6 +43,12 @@ const fetchAndStoreContent = async () => {
       localData.filter(item => item._id === 'typesOfHazards'),
     );
 
+    const basicRights = JSON.stringify(
+      localData.filter(item => item._id === 'basicRights'),
+    );
+
+    const wcb = JSON.stringify(localData.filter(item => item._id === 'wcb'));
+
     await AsyncStorage.multiSet([
       ['KNOW_YOUR_RIGHTS', knowYourRights],
       ['OHS', ohs],
@@ -54,6 +60,8 @@ const fetchAndStoreContent = async () => {
       ['HUMAN_RIGHTS', humanRights],
       ['INTRO_SLIDES', introSlides],
       ['TYPES_OF_HAZARDS', typesOfHazards],
+      ['BASIC_RIGHTS', basicRights],
+      ['WCB', wcb],
     ]);
   }
 
@@ -112,6 +120,18 @@ const fetchAndStoreContent = async () => {
         return JSON.stringify(response);
       });
 
+    const fetchedBasicRights = await client
+      .fetch('*[_id == "basicRights"]')
+      .then(response => {
+        return JSON.stringify(response[0]);
+      });
+
+    const fetchedWcb = await client
+      .fetch('*[_id == "wcb"][0]{..., resourceCard->}')
+      .then(response => {
+        return JSON.stringify(response);
+      });
+
     await AsyncStorage.multiSet([
       ['INTRO_SLIDES', fetchedIntroSlides],
       ['KNOW_YOUR_RIGHTS', fetchedKnowYourRights],
@@ -123,6 +143,8 @@ const fetchAndStoreContent = async () => {
       ['EMPLOYMENT_STANDARDS', fetchedEmploymentStandards],
       ['HUMAN_RIGHTS', fetchedHumanRights],
       ['TYPES_OF_HAZARDS', fetchedTypesOfHazards],
+      ['BASIC_RIGHTS', fetchedBasicRights],
+      ['WCB', fetchedWcb],
     ]);
   }
 };
