@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Alert,
   Text,
@@ -12,33 +12,40 @@ import {
 import ParsedText from 'react-native-parsed-text';
 import Constants from 'expo-constants';
 
-import Glossary from 'config/glossary.json';
 import colors from 'config/colors.json';
+import getData from 'utils/getData';
 
 const Paragraph = ({ children, style }) => {
-  const [currentWord, setCurrentWord] = useState();
+  const [data, setData] = useState([]);
   const [foundWord, setFoundWord] = useState();
   const windowWidth = useWindowDimensions().width;
 
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
-  const parseGlossaryWord = matchingString => {
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-
-    setCurrentWord(match[1].replace(/[[\]']+/g, ''));
-    return currentWord;
-  };
-
-  const displayTooltip = () => {
-    let foundOnGlossaryWord;
-
-    Glossary.forEach(item => {
-      if (item.word.toUpperCase() === currentWord.toUpperCase()) {
-        foundOnGlossaryWord = item;
+  useEffect(() => {
+    getData('GLOSSARY').then(response => {
+      if (response) {
+        setData(response);
+      } else {
+        Alert.alert(
+          'Data not found',
+          'Something went wrong. Please try again.',
+        );
       }
     });
+  }, []);
+
+  const parseGlossaryWord = (matchingString, matches) => {
+    return matches[1];
+  };
+
+  const displayTooltip = matchingString => {
+    const word = matchingString.replace(/[[\]']+/g, '');
+
+    const foundOnGlossaryWord = data.find(
+      item => item.word.toUpperCase() === word.toUpperCase(),
+    );
 
     if (!foundOnGlossaryWord) {
       Alert.alert('This word was not found in the glossary.');
@@ -50,7 +57,6 @@ const Paragraph = ({ children, style }) => {
 
   const hideTooltip = () => {
     setFoundWord();
-    setCurrentWord();
     setTooltipVisible(false);
   };
 
