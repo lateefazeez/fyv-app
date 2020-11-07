@@ -17,9 +17,9 @@ const ContentSlider = ({ slides, style, ...props }) => (
     }
     {...props}
   >
-    {slides.map(slide => {
+    {slides.map((slide, index) => {
       if (typeof slide === 'function') {
-        return slide();
+        return slide(index);
       }
       return slide;
     })}

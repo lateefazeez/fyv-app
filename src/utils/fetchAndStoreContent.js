@@ -10,10 +10,10 @@ const fetchAndStoreContent = async () => {
 
   if (!storedItems && !isConnected) {
     const knowYourRights = JSON.stringify(
-      localData.filter(item => item._id === 'knowYourRights'),
+      localData.find(item => item._id === 'knowYourRights'),
     );
 
-    const ohs = JSON.stringify(localData.filter(item => item._id === 'ohs'));
+    const ohs = JSON.stringify(localData.find(item => item._id === 'ohs'));
 
     const resources = JSON.stringify(
       localData.filter(item => item._type === 'resource'),
@@ -24,30 +24,30 @@ const fetchAndStoreContent = async () => {
     );
 
     const disclaimer = JSON.stringify(
-      localData.filter(item => item._id === 'disclaimer'),
+      localData.find(item => item._id === 'disclaimer'),
     );
     const covidInfo = JSON.stringify(
-      localData.filter(item => item._id === 'covidInfo'),
+      localData.find(item => item._id === 'covidInfo'),
     );
     const employmentStandards = JSON.stringify(
-      localData.filter(item => item._id === 'employmentStandards'),
+      localData.find(item => item._id === 'employmentStandards'),
     );
     const humanRights = JSON.stringify(
-      localData.filter(item => item._id === 'humanRights'),
+      localData.find(item => item._id === 'humanRights'),
     );
     const introSlides = JSON.stringify(
-      localData.filter(item => item._id === 'introSlides'),
+      localData.find(item => item._id === 'introSlides'),
     );
 
     const typesOfHazards = JSON.stringify(
-      localData.filter(item => item._id === 'typesOfHazards'),
+      localData.find(item => item._id === 'typesOfHazards'),
     );
 
     const basicRights = JSON.stringify(
-      localData.filter(item => item._id === 'basicRights'),
+      localData.find(item => item._id === 'basicRights'),
     );
 
-    const wcb = JSON.stringify(localData.filter(item => item._id === 'wcb'));
+    const wcb = JSON.stringify(localData.find(item => item._id === 'wcb'));
 
     await AsyncStorage.multiSet([
       ['KNOW_YOUR_RIGHTS', knowYourRights],
@@ -89,9 +89,9 @@ const fetchAndStoreContent = async () => {
       });
 
     const fetchedDisclaimer = await client
-      .fetch('*[_id == "disclaimer"]')
+      .fetch('*[_type == "disclaimer"][0]{..., logo->}')
       .then(response => {
-        return JSON.stringify(response[0]);
+        return JSON.stringify(response);
       });
     const fetchedCovidInfo = await client
       .fetch('*[_id == "covidInfo"]')
@@ -146,6 +146,19 @@ const fetchAndStoreContent = async () => {
       ['BASIC_RIGHTS', fetchedBasicRights],
       ['WCB', fetchedWcb],
     ]);
+
+    console.log('INTRO_SLIDES', fetchedIntroSlides);
+    console.log('KNOW_YOUR_RIGHTS', fetchedKnowYourRights);
+    console.log('OHS', fetchedOhs);
+    console.log('DISCLAIMER', fetchedDisclaimer);
+    console.log('GLOSSARY', fetchedGlossary);
+    console.log('RESOURCES', fetchedResources);
+    console.log('COVID_INFO', fetchedCovidInfo);
+    console.log('EMPLOYMENT_STANDARDS', fetchedEmploymentStandards);
+    console.log('HUMAN_RIGHTS', fetchedHumanRights);
+    console.log('TYPES_OF_HAZARDS', fetchedTypesOfHazards);
+    console.log('BASIC_RIGHTS', fetchedBasicRights);
+    console.log('WCB', fetchedWcb);
   }
 };
 
