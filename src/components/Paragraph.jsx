@@ -12,13 +12,11 @@ import {
 import ParsedText from 'react-native-parsed-text';
 import Constants from 'expo-constants';
 
-// import Glossary from 'config/glossary.json';
 import colors from 'config/colors.json';
 import getData from 'utils/getData';
 
 const Paragraph = ({ children, style }) => {
   const [data, setData] = useState([]);
-  const [currentWord, setCurrentWord] = useState();
   const [foundWord, setFoundWord] = useState();
   const windowWidth = useWindowDimensions().width;
 
@@ -39,22 +37,15 @@ const Paragraph = ({ children, style }) => {
   }, []);
 
   const parseGlossaryWord = (matchingString, matches) => {
-    matches = [];
-    const pattern = /\[(.*?)\]/i;
-    const match = matchingString.match(pattern);
-
-    setCurrentWord(match[1].replace(/[[\]']+/g, ''));
-    return currentWord;
+    return matches[1];
   };
 
-  const displayTooltip = () => {
-    let foundOnGlossaryWord;
+  const displayTooltip = matchingString => {
+    const word = matchingString.replace(/[[\]']+/g, '');
 
-    data.forEach(item => {
-      if (item.word.toUpperCase() === currentWord.toUpperCase()) {
-        foundOnGlossaryWord = item;
-      }
-    });
+    const foundOnGlossaryWord = data.find(
+      item => item.word.toUpperCase() === word.toUpperCase(),
+    );
 
     if (!foundOnGlossaryWord) {
       Alert.alert('This word was not found in the glossary.');
@@ -66,7 +57,6 @@ const Paragraph = ({ children, style }) => {
 
   const hideTooltip = () => {
     setFoundWord();
-    setCurrentWord();
     setTooltipVisible(false);
   };
 

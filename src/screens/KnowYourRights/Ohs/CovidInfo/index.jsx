@@ -57,7 +57,7 @@ const CovidInfo = ({ navigation }) => {
           <Subheading>{data.subHeading}</Subheading>
           <View style={{ paddingLeft: 16 }}>
             {data.covidSteps.map(step => (
-              <Unorderedlist>
+              <Unorderedlist key={step.description}>
                 <Paragraph style={step.bold ? { fontWeight: 'bold' } : null}>
                   {step.description}
                 </Paragraph>
