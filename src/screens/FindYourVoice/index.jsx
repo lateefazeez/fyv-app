@@ -852,7 +852,7 @@ const FindYourVoice = () => {
     {
       id: 'item 2',
       message:
-        '2) Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal Human rights and racism relate to someone experiencing discrimination due to race and/or religion. Refer to this Human Rights plain language guide for more information.',
+        '2) Workers also have the option of making a human rights complaint to the Alberta Human Rights Tribunal. Human rights and racism relate to someone experiencing discrimination due to race and/or religion. Refer to this Human Rights plain language guide for more information.',
       trigger: 'plain language guide 2',
     },
     {
@@ -878,7 +878,7 @@ const FindYourVoice = () => {
             icon="web"
             style={{ marginTop: 8, width: '80%' }}
           >
-            Albreta Human Rights Complaint
+            Alberta Human Rights Complaint
           </InChatRefButton>
         </View>
       ),
@@ -1199,7 +1199,7 @@ const FindYourVoice = () => {
     },
     {
       id: '17b',
-      message: 'Your employer also has to report any injuries to WCB',
+      message: 'Your employer also has to report any injuries to WCB.',
       trigger: '18b',
     },
     {
@@ -1228,7 +1228,7 @@ const FindYourVoice = () => {
     },
     {
       id: 'click intructions',
-      message: 'Click below for more information',
+      message: 'Click below for more information.',
       trigger: 'WCB languages',
     },
     // {

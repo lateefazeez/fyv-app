@@ -147,18 +147,18 @@ const fetchAndStoreContent = async () => {
       ['WCB', fetchedWcb],
     ]);
 
-    console.log('INTRO_SLIDES', fetchedIntroSlides);
-    console.log('KNOW_YOUR_RIGHTS', fetchedKnowYourRights);
-    console.log('OHS', fetchedOhs);
-    console.log('DISCLAIMER', fetchedDisclaimer);
-    console.log('GLOSSARY', fetchedGlossary);
-    console.log('RESOURCES', fetchedResources);
-    console.log('COVID_INFO', fetchedCovidInfo);
-    console.log('EMPLOYMENT_STANDARDS', fetchedEmploymentStandards);
-    console.log('HUMAN_RIGHTS', fetchedHumanRights);
-    console.log('TYPES_OF_HAZARDS', fetchedTypesOfHazards);
-    console.log('BASIC_RIGHTS', fetchedBasicRights);
-    console.log('WCB', fetchedWcb);
+    // console.log('INTRO_SLIDES', fetchedIntroSlides);
+    // console.log('KNOW_YOUR_RIGHTS', fetchedKnowYourRights);
+    // console.log('OHS', fetchedOhs);
+    // console.log('DISCLAIMER', fetchedDisclaimer);
+    // console.log('GLOSSARY', fetchedGlossary);
+    // console.log('RESOURCES', fetchedResources);
+    // console.log('COVID_INFO', fetchedCovidInfo);
+    // console.log('EMPLOYMENT_STANDARDS', fetchedEmploymentStandards);
+    // console.log('HUMAN_RIGHTS', fetchedHumanRights);
+    // console.log('TYPES_OF_HAZARDS', fetchedTypesOfHazards);
+    // console.log('BASIC_RIGHTS', fetchedBasicRights);
+    // console.log('WCB', fetchedWcb);
   }
 };
 
