@@ -861,7 +861,7 @@ const FindYourVoice = () => {
         <View>
           <InChatRefButton
             onPress={async () =>
-              await WebBrowser.openBrowserAsync(
+              WebBrowser.openBrowserAsync(
                 'https://www.albertahumanrights.ab.ca/Documents/HR_in_AB_printable_booklet.pdf',
               )
             }
@@ -871,7 +871,7 @@ const FindYourVoice = () => {
           </InChatRefButton>
           <InChatRefButton
             onPress={async () =>
-              await WebBrowser.openBrowserAsync(
+              WebBrowser.openBrowserAsync(
                 'https://www.albertahumanrights.ab.ca/complaints/forms/Pages/complaint_form_and_guide.aspx',
               )
             }
