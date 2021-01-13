@@ -22,7 +22,6 @@
       "buildNumber": "1.0.0"
     },
     "android": {
-      "supportsTablet": true,
       "package": "com.bowvalleycollege.findingyourvoice",
       "versionCode": 1,
       "permissions": []
