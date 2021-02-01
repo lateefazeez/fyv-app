@@ -18,11 +18,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bowvalleycollege.findingyourvoice",
+      "bundleIdentifier": "com.codelate.findingyourvoice",
       "buildNumber": "1.0.1"
     },
     "android": {
-      "package": "com.bowvalleycollege.findingyourvoice",
+      "package": "com.codelate.findingyourvoice",
       "versionCode": 1,
       "permissions": []
     },
