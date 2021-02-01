@@ -2,7 +2,7 @@
   "expo": {
     "name": "FindingYourVoice",
     "slug": "findingyourvoice",
-    "version": "1.0.1",
+    "version": "1.0.1, 1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -18,11 +18,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.codelate.findingyourvoice",
-      "buildNumber": "1.0.1"
+      "bundleIdentifier": "com.bowvalleycollege.findingyourvoice",
+      "buildNumber": "1.0.1, 1"
     },
     "android": {
-      "package": "com.codelate.findingyourvoice",
+      "package": "com.bowvalleycollege.findingyourvoice",
       "versionCode": 1,
       "permissions": []
     },
