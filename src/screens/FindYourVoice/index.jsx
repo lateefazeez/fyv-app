@@ -32,7 +32,7 @@ const FindYourVoice = () => {
   const handleEnd = () => {
     return Alert.alert(
       'Do you want to quit?',
-      'All the displayed messages are going to be reseted. Are you sure?',
+      'We have reached the end of this educational scenario. Please take a moment to rate the app and tell us how helpful it was.',
       [
         {
           text: 'Cancel',
@@ -40,7 +40,7 @@ const FindYourVoice = () => {
           style: 'cancel',
         },
         {
-          text: 'Yes, quit',
+          text: 'Yes, Quit',
           onPress: () => {
             StoreReview.requestReview();
           },
@@ -134,7 +134,8 @@ const FindYourVoice = () => {
       id: '7',
       options: [
         { value: 'yes', label: 'YES, I do', trigger: 'right to know' },
-        { value: 'no', label: "NO, I don't", trigger: '9' },
+        // { value: 'no', label: "NO, I don't", trigger: '9' },
+        { value: 'no', label: "NO, I don't", trigger: 'you should ask' },
       ],
     },
     {
@@ -166,7 +167,51 @@ const FindYourVoice = () => {
       trigger: '10',
     },
     {
-      id: '9',
+      id: 'you should ask',
+      message:
+        'You should ask for information. Do you feel safe and/or comfortable doing this?',
+      trigger: 'ask decision',
+    },
+    {
+      id: 'ask decision',
+      options: [
+        { value: 'yes', label: 'YES, I do', trigger: 'information tools' },
+        // { value: 'no', label: "NO, I don't", trigger: '9' },
+        { value: 'no', label: "NO, I don't", trigger: 'feel safe' },
+      ],
+    },
+    {
+      id: 'information tools',
+      message:
+        'Information is one of the best tools workers can have. It helps them make decisions about health and safety. Information can also be overwhelming and/or confusing. Many newcomers who start a new job are assumed to understand their training even when it is too fast or too much.',
+      trigger: 'for example',
+    },
+    {
+      id: 'for example',
+      message:
+        'For example, Ana, a new worker at a hardware store was given 6 hours to read a large training manual in English. Afterwards, she was asked a few questions and passed a test.',
+      trigger: 'however',
+    },
+    {
+      id: 'however',
+      message:
+        'However, she forgot most of what she read in a few days and nothing was done by her employer to be sure that she applied her training properly in the future. Because of this, it is best if Ana asks questions to be safe at work.',
+      trigger: 'information can',
+    },
+    {
+      id: 'information can',
+      message:
+        'Information can come from many places. For example, you can get it during training and from your boss. One of the best sources of information can be from trusted co-workers.',
+      trigger: 'for example some',
+    },
+    {
+      id: 'for example some',
+      message:
+        'For example, some workers speak with native language speaker co-workers to learn more about health and safety and reduce any confusion. Other sources can be senior co-workers or health and safety representatives.',
+      trigger: 'end injury prevention',
+    },
+    {
+      id: 'feel safe',
       message:
         'All workers should feel safe to say they are not trained to do a task or to say a task is not safe.',
       trigger: '15',
@@ -626,13 +671,13 @@ const FindYourVoice = () => {
                 style={{ height: 220, backgroundColor: colors.effectOne }}
                 activeDotColor={colors.white}
                 dotColor="rgba(0,0,0,0.2)"
-                nextButton={(
+                nextButton={
                   <Icon
                     name="chevron-right"
                     size={26}
                     color="rgba(0,0,0,0.2)"
                   />
-                )}
+                }
                 prevButton={
                   <Icon name="chevron-left" size={26} color="rgba(0,0,0,0.2)" />
                 }
@@ -689,7 +734,7 @@ const FindYourVoice = () => {
         },
         { value: 'C', label: 'Racist Incident', trigger: 'racist incident' },
 
-        { value: 'D', label: 'Quit', trigger: 'end_options' },
+        { value: 'D', label: 'Quit', trigger: 'end' },
       ],
     },
     {
@@ -710,7 +755,7 @@ const FindYourVoice = () => {
     {
       id: '5a',
       message: 'Thank you and have a great day',
-      trigger: 'end_options',
+      trigger: 'end',
     },
     {
       id: '6a',
@@ -740,7 +785,7 @@ const FindYourVoice = () => {
     {
       id: '9a',
       message: 'To be added',
-      trigger: 'end_options',
+      trigger: 'end',
     },
     // {
     //   id: '10a',
@@ -1082,7 +1127,7 @@ const FindYourVoice = () => {
           trigger: 'reporting injury',
         },
 
-        { value: 'D', label: 'Quit', trigger: 'end_options' },
+        { value: 'D', label: 'Quit', trigger: 'end' },
       ],
     },
 
@@ -1477,19 +1522,19 @@ const FindYourVoice = () => {
     {
       id: '35b',
       message:
-        'Rehabilitation may include time off, therapy, and modified duties at work. Employers have a duty to accommodate an injured worker.',
+        "Rehabilitation may include time off, therapy, and modified duties at work. Employers have a duty to cooperate in an injured worker's return to work.",
       trigger: '36b',
     },
     {
       id: '36b',
       message:
-        'Accommodated duties are work that you can do with your injury at your regular pay. If employers are not able to give you accommodated duties, you will still be paid by WCB for a period of time.',
+        'Modified duties are work that you can do with your injury at your regular pay. If employers are not able to give you accommodated duties, you will still be paid by WCB for a period of time.',
       trigger: 'during rehabilitation', // add learn more after it
     },
     {
       id: 'during rehabilitation',
       message:
-        'During rehabilitation workers receive pay from WCB if they are unable to work because of their injury. This WCB pay is not taxed and is 90% of your regular pay. WCB also covers health costs that are related to the injury, such as medication and physiotherapy.',
+        'During rehabilitation workers receive pay from WCB if they are unable to work because of their injury. This WCB pay is called wage replacement and is not taxed. WCB also covers health costs that are related to the injury, such as medication and physiotherapy.',
       trigger: 'continue2', // add learn more after it
     },
     // {
@@ -1520,7 +1565,7 @@ const FindYourVoice = () => {
     //   ],
     // },
     {
-      id: 'during rehabilitation',
+      id: 'continue2',
       message: 'During rehabilitation, can you return to work?',
       trigger: '54b',
     },
@@ -1886,7 +1931,7 @@ const FindYourVoice = () => {
           trigger: 'injury prevention',
         },
 
-        { value: 'D', label: 'Quit', trigger: 'end_options' },
+        { value: 'D', label: 'Quit', trigger: 'end' },
       ],
     },
 
