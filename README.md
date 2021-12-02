@@ -22,12 +22,6 @@ npm start
 npm test
 ```
 
-## Running Storybook Visual Testbed
-
-```sh
-npm run storybook
-```
-
 ## Final Product
 
 !["Screenshot of App screens"](https://github.com/lateefazeez/fyv-app/blob/master/assets/images/1605716186241.jpeg?raw=true)
